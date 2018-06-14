@@ -1,0 +1,4 @@
+site_name: Tomochain docs
+
+theme:
+  name: 'material'
