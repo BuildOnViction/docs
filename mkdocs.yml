@@ -2,7 +2,13 @@ site_name: Tomochain Documentation
 
 theme:
   name: 'material'
+  custom_dir: material_override
 
+markdown_extensions:
+    - mdx_math:
+        enable_dollar_delimiter: True 
+extra_javascript:
+    - js/MathJax.js?config=TeX-AMS_HTML
 pages:
     - Introduction: index.md
     - Getting started: started.md    
