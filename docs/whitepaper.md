@@ -1,6 +1,3 @@
-Introduction
-============
-
 The blockchain industry and the infrastructure of the Internet of Value
 are being built rapidly around the globe, and to many the atmosphere is
 eerily similar to the building of the Internet in the late ‘90s, with
