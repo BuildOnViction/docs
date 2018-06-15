@@ -1,4 +1,4 @@
-site_name: Tomochain documentation
+site_name: Tomochain Documentation
 
 theme:
   name: 'material'
@@ -6,5 +6,6 @@ theme:
 pages:
     - Introduction: index.md
     - Getting started: started.md    
+    - Technical Whitepaper: whitepaper.md
     - Important Links: links.md
     - About: about.md
