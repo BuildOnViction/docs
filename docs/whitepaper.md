@@ -64,11 +64,11 @@ are fair in the sense that the probability distribution function is
 uniform eventually.
 
 <span>*Structure of the remainder of the paper*</span>.
-Section \[Sec:TomochainOverview\] explains the intuition ideas and
+Section: [TomochainOverview](#Sec:TomochainOverview) explains the intuition ideas and
 overview architectural design of masternodes, framework and background
 protocols that help mass readers (e.g., investors, traders, others) who
 may not have technical knowledge understand our mechanism easily.
-Section \[Sec:StakeVoting\] presents stakeholder policy, masternode
+Section: [StakeVoting](#Sec:StakeVoting) presents stakeholder policy, masternode
 committee voting systems, and reward mechanism.
 Section \[Sec:ProtocolOverview\] explains the motivation and double
 validation process as well as finality checkpoint of the protocol. In
@@ -88,7 +88,7 @@ The Tomochain architecture {#Sec:TomochainOverview}
 
 The blockchain is produced and maintained by a set of *masternodes* in a
 consistent manner through the protocol as shown in Fig.
-\[fig:architecture\]. These masternodes are full nodes that hold \$TOMO.
+[architecture](#fig:architecture). These masternodes are full nodes that hold \$TOMO.
 For a coin-holder to become a masternode, two requirements must be
 satisfied:
 
@@ -107,7 +107,7 @@ mechanism. This new technique significantly decreases the probability of
 having invalid blocks in the blockchain. These enhancements and the
 components of are step-by-step detailed in the followings.
 
-![image](figures/architecture.jpg){width="\linewidth"}
+![image](figures/architecture.jpg){#fig:architecture}
 
 Stakeholders & Voting {#Sec:StakeVoting}
 ---------------------
@@ -419,9 +419,9 @@ keeps that standardization in the design so that one block is considered
 as irreversible if it collects up to $\frac{3}{4}$ signatures of all
 masternodes committee. The time-line of blockchain creation process,
 checking finality and mark the block as immutable is described as in
-Figure \[fig:ChainMaking\] below.
+Figure: [ChainMaking](#fig:ChainMaking) below.
 
-\[h\] ![image](figures/ChainMakingProcess3.jpg){width="6.0"}
+![ChainMaking](figures/ChainMakingProcess3.jpg){#fig:ChainMaking}
 
 Consensus Protocol: Formalization {#Sec:ProtocolFormalization}
 ---------------------------------
@@ -526,9 +526,9 @@ seconds).
 In summary, the consensus protocol of can be formalized in
 Algorithm \[Al:ValidatorGeneration\]. The
 Algorithm \[Al:ValidatorGeneration\] is simulated and explained as a
-process shown in Fig. \[fig:EpochProcess\].
+process shown in Fig. [EpochProcess](#fig:EpochProcess).
 
-\[h\] ![image](figures/Figure_Epoch.jpg){width="0.9\linewidth"}
+![image](figures/Figure_Epoch.jpg){#fig:EpochProcess}
 
 Security Analysis {#Sec:SecurityAnalysis}
 =================
