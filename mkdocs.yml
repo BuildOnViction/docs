@@ -4,7 +4,8 @@ theme:
   name: 'material'
 
 pages:
-    - 'Home': 'index.md'
-    - 'Technical Whitepaper': 'whitepaper.md'
-    - 'Get Started': 'started.md'
-
+    - Introduction: index.md
+    - Getting started: started.md    
+    - Technical Whitepaper: whitepaper.md
+    - Important Links: links.md
+    - About: about.md
