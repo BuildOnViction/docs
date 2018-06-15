@@ -8,6 +8,7 @@ markdown_extensions:
     - mdx_math:
         enable_dollar_delimiter: True 
     - fontawesome_markdown
+    - markdown.extensions.extra
 
 extra_javascript:
     - js/MathJax.js?config=TeX-AMS_HTML
