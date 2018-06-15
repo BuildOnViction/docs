@@ -1,5 +1,4 @@
-Introduction
-============
+# Introduction
 
 The blockchain industry and the infrastructure of the Internet of Value
 are being built rapidly around the globe, and to many the atmosphere is
@@ -83,10 +82,9 @@ compare with several existing blockchains in
 Section \[Sec:relatedwork\]. Finally, we conclude the paper in Section
 \[Sec:Conclusion\].
 
-Tomochain Masternode Design
-===========================
+## Tomochain Masternode Design
 
-The Tomochain architecture {#Sec:TomochainOverview}
+The Tomochain architecture
 --------------------------
 
 The blockchain is produced and maintained by a set of *masternodes* in a
@@ -112,11 +110,9 @@ components of are step-by-step detailed in the followings.
 
 ![image](figures/architecture.jpg){width="\linewidth"}
 
-Stakeholders & Voting {#Sec:StakeVoting}
----------------------
+## Stakeholders & Voting
 
-Coin Holders, Masternodes {#coin-holders-masternodes .unnumbered}
--------------------------
+### Coin Holders, Masternodes
 
 Coin-holder is as simple as its name: users who join the network, who
 own and transfer \$TOMO. Masternodes are full-nodes which maintain a
@@ -155,8 +151,7 @@ to race for their position so that all weak masternodes will eventually
 be eliminated. Therefore, only the strongest masternodes are voted and
 can flourish.
 
-Voting & Masternode Committee {#voting-masternode-committee .unnumbered}
------------------------------
+### Voting & Masternode Committee
 
 There are maximum ninety-nine masternodes elected in the masternode
 committee. The required amount of deposit for masternode role is set at
@@ -173,8 +168,7 @@ governance *Voting DApp* as reference information to give votes. The set
 of masternodes is dynamically sorted by the amount of \$TOMO and counted
 up to ninety-nine, upon reception of votes.
 
-Reward Mechanism {#reward-mechanism .unnumbered}
-----------------
+### Reward Mechanism
 
 For each iteration of 990 blocks (called epoch), a checkpoint block is
 created, which implements only reward works. The masternode, who takes
@@ -195,11 +189,9 @@ by the masternode and coin-holders, respectively. The last ten percent
 of $X$ credits to the foundation. Coin-holders who unvote before the
 checkpoint block will not receive any shared reward.
 
-Tomochain Consensus Protocol {#Sec:ProtocolOverview}
-----------------------------
+## Tomochain Consensus Protocol
 
-Double Validation Process {#double-validation-process .unnumbered}
--------------------------
+### Double Validation Process
 
 In , masternodes share equal responsibility to run the system and keep
 it stable. Full nodes should run on powerful hardware configuration and
@@ -288,10 +280,9 @@ analyzing some attacking scenarios as shown in Fig.
 
 \[h\]
 
-Randomization for Block Verifiers for Double Validation {#randomization-for-block-verifiers-for-double-validation .unnumbered}
--------------------------------------------------------
+### Randomization for Block Verifiers for Double Validation
 
-### The First Masternode/Block Creator {#the-first-masternodeblock-creator .unnumbered}
+### The First Masternode/Block Creator
 
 The first masternode/block creator in a given epoch $e$ can be selected
 by a round-turn game and can be formal defined as an array:
@@ -359,7 +350,7 @@ epoch $e+1$, the process is performed by the following steps.
     resulting output is a matrix $n \times 1$ indicating the order of
     block verifiers for the next epoch $e+1$.
 
-### The Second Masternode/Block Verifier {#the-second-masternodeblock-verifier .unnumbered}
+### The Second Masternode/Block Verifier
 
 Then, each node soon compute the common array $\nu_2$ for the order of
 the block verifiers by the following steps as in Equation \[eq:matrix\].
@@ -407,8 +398,7 @@ $$\label{eq:eq2}
 Then, $\nu_2$ is obtained by modulo operation of element values of
 $\nu'_2$ as in Equation \[eq:eq2\]:
 
-Finality Analysis {#finality-analysis .unnumbered}
------------------
+### Finality Analysis
 
 There is a standard definition of “total economic finality”: it takes
 place when $\frac{3}{4}$ of all masternodes make maximum-odds bets that
@@ -426,11 +416,9 @@ Figure \[fig:ChainMaking\] below.
 
 \[h\] ![image](figures/ChainMakingProcess3.jpg){width="6.0"}
 
-Consensus Protocol: Formalization {#Sec:ProtocolFormalization}
----------------------------------
+## Consensus Protocol: Formalization
 
-Basic Concepts & Protocol Description {#basic-concepts-protocol-description .unnumbered}
--------------------------------------
+### Basic Concepts & Protocol Description
 
 We begin by describing the blockchain protocol in the "stakeholder and
 voting” setting, where leaders are assigned to blockchain slots with
@@ -449,8 +437,7 @@ like  @Cardano2017 and  @Pass2017 [@PassCrypto2017]. In particular, we
 recall the following concepts and definitions that were presented
 in @Cardano2017:
 
-Time, Slots, Epoch {#time-slots-epoch .unnumbered}
-------------------
+### Time, Slots, Epoch
 
 We consider a setting where time is divided into discrete units called
 *slots*. A ledger, described in more detail below, associates with each
@@ -533,11 +520,9 @@ process shown in Fig. \[fig:EpochProcess\].
 
 \[h\] ![image](figures/Figure_Epoch.jpg){width="0.9\linewidth"}
 
-Security Analysis {#Sec:SecurityAnalysis}
-=================
+## Security Analysis
 
-Nothing-at-stake {#nothing-at-stake .unnumbered}
-----------------
+### Nothing-at-stake
 
 Nothing-at-stake is a well-known problem in PoS-based blockchain, just
 like 51% attack in PoW algorithm. PoW-based miners require CapEx
@@ -569,8 +554,7 @@ second issue because even one malicious masternode creates two blocks at
 his turn, only one block then can be validated by the second randomly
 selected masternode.
 
-Long-range attack {#long-range-attack .unnumbered}
------------------
+### Long-range attack
 
 In , block is valid only if it collects double validation and finalized
 once $\frac{3}{4}$ of masternodes verify. Therefore, as long as the
@@ -581,8 +565,7 @@ of masternodes, which makes the block finalized. Thus, there is no
 chance for one malicious masternode to create longer valid chain because
 other masternodes will refuse it.
 
-Censorship Attack {#censorship-attack .unnumbered}
------------------
+### Censorship Attack
 
 If there are more than $\frac{3}{4}$ malicious masternodes in ,
 censorship attack might happen. For example, these masternodes refuse
@@ -601,8 +584,7 @@ However, in worst case, has to do a soft fork in order to reduce number
 of masternodes to keep the chain running and figure out slasher
 mechanisms for those malicious masternodes.
 
-Relay Attack {#relay-attack .unnumbered}
-------------
+### Relay Attack
 
 supports EIP155\
 **(https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md)**.
@@ -628,8 +610,7 @@ chains. Table \[table:chainid\] shows recognized $CHAIN\_ID$s.
 
   : Chains and chain\_id<span data-label="table:chainid"></span>
 
-Safety and liveness {#safety-and-liveness .unnumbered}
--------------------
+### Safety and liveness
 
 Safety implies having a single agreed upon chain where there are not two
 or more competing chains with valid transactions in either @Safety. A
@@ -647,8 +628,7 @@ epoch, thus if even an attacking masternode omits some transactions, the
 latter will be processed and validated by the next honest masternode in
 the next block.
 
-DDOS Attack {#ddos-attack .unnumbered}
------------
+### DDOS Attack
 
 Masternodes are encouraged to run in well-known public cloud providers
 such as AWS, Google Cloud or Microsoft Azure which provides multiple
@@ -657,8 +637,7 @@ fail-stop, the network still works correctly as long as the number of
 failing and/or attacked nodes is less than 1/4 of the number of
 masternodes.
 
-Spam Attack {#spam-attack .unnumbered}
------------
+### Spam Attack
 
 keeps the same transaction fee mechanism as Ethereum which is indicated
 via gasPrice. However, supports minimum transaction fee (at 1 wei),
@@ -667,8 +646,7 @@ amount of low fee transactions to the system. However, masternodes
 always sort transactions and pick up only high fee transactions into the
 proposing block. Thus, spammers have little chance to harm the system.
 
-Related work {#Sec:relatedwork}
-============
+## Related work
 
 Consensus plays an important role to guarantee the success of
 distributed and decentralized systems. Bitcoin’s core consensus
@@ -739,8 +717,7 @@ have a very small probability of becoming block creators, while, in ,
 these stakers can choose an optimal strategy to vote for potential
 masternodes to get incentives.
 
-Conclusion and perspectives {#Sec:Conclusion}
-===========================
+## Conclusion and perspectives
 
 In this paper, we proposed PoSV, a PoS Voting-based blockchain protocol
 with heuristic and fair voting mechanism, rigorous security guarantees,
@@ -750,10 +727,8 @@ having forks, fast confirmation time, plus the contributions and
 benefits of masternodes are fair in the sense that the probability
 distribution function is uniform eventually.
 
-0.3cm
 
-Perspectives {#perspectives .unnumbered}
-------------
+### Perspectives
 
 -   **Future work** The team is currently working on the implementation
     of the Proof-of-Stake Voting, which will be released on schedule as
@@ -779,7 +754,7 @@ Perspectives {#perspectives .unnumbered}
     of TomoChain. We will publish a TomoChain economic analysis and
     proposal, separate from this technical paper in a later date.
 
-## :fa-book: References
+## References
 
 Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008.
 
