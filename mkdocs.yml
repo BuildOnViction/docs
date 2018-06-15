@@ -2,3 +2,9 @@ site_name: Tomochain documentation
 
 theme:
   name: 'material'
+
+pages:
+    - Introduction: index.md
+    - Getting started: started.md    
+    - Important Links: links.md
+    - About: about.md
