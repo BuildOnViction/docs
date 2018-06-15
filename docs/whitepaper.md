@@ -107,7 +107,7 @@ mechanism. This new technique significantly decreases the probability of
 having invalid blocks in the blockchain. These enhancements and the
 components of are step-by-step detailed in the followings.
 
-![image](figures/architecture.jpg){#fig:architecture}
+![architecture](figures/architecture.jpg){#fig:architecture}
 
 Stakeholders & Voting {#Sec:StakeVoting}
 ---------------------
@@ -263,6 +263,9 @@ analyzing some attacking scenarios as shown in Fig.
     blockchain with “garbage” or invalid blocks which require a “rebase”
     to restore the validity of the blockchain.
 
+
+![singlevalidatioin](figures/singlevalidation.jpg){#fig:singlevalidation}
+
 -   **Double Validation** We claim that our DV technique significantly
     reduces the probability of having garbage blocks in the blockchain.
     Assuming that M1 and M2 are the block creator and block verifier,
@@ -283,7 +286,8 @@ analyzing some attacking scenarios as shown in Fig.
     however, has a very low probability. In other words, DV strengthens
     the consistency of the blockchain and makes it hard to break.
 
-\[h\]
+
+![doublevalidatioin](figures/doublevalidation.jpg){#fig:doublevalidation}
 
 Randomization for Block Verifiers for Double Validation {#randomization-for-block-verifiers-for-double-validation .unnumbered}
 -------------------------------------------------------
