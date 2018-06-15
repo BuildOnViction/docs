@@ -609,22 +609,22 @@ supports EIP155\
 Transactions in are included $CHAIN\_ID$ specified for different public
 chains. Table \[table:chainid\] shows recognized $CHAIN\_ID$s.
 
-  CHAIN\_ID   Chain(s)
-  ----------- -------------------------------------------
-  1           Ethereum mainnet
-  2           Morden (disused), Expanse mainnet
-  3           Ropsten
-  4           Rinkeby
-  30          Rootstock mainnet
-  31          Rockstock testnet
-  42          Kovan
-  61          Ethereum Classic mainnet
-  62          Ethereum Classic testnet
-  1337        Geth private chains (default)
-  77          Sokol, the public POA Network testnet
-  99          Core, the public POA Network main network
-  88          Mainnet
-  89          Testnet
+  CHAIN\_ID  | Chain(s)
+  -----------| -------------------------------------------
+  1          | Ethereum mainnet
+  2          | Morden (disused), Expanse mainnet
+  3          | Ropsten
+  4          | Rinkeby
+  30         | Rootstock mainnet
+  31         | Rockstock testnet
+  42         | Kovan
+  61         | Ethereum Classic mainnet
+  62         | Ethereum Classic testnet
+  1337       | Geth private chains (default)
+  77         | Sokol, the public POA Network testnet
+  99         | Core, the public POA Network main network
+  88         | Mainnet
+  89         | Testnet
 
   : Chains and chain\_id<span data-label="table:chainid"></span>
 
@@ -779,11 +779,11 @@ Perspectives {#perspectives .unnumbered}
     of TomoChain. We will publish a TomoChain economic analysis and
     proposal, separate from this technical paper in a later date.
 
-<span>00</span> Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics
-cash system. 2008.
+## :fa-book: References
 
-Ethereum Foundation. Ethereum’s White Paper. , 2014. Online available
-25/05/2018.
+Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008.
+
+Ethereum Foundation. Ethereum’s White Paper. , 2014. Online available 25/05/2018.
 
 D. Larimer. Delegated Proof-of-Stake (DPOS). BitShare White Paper 2014.
 

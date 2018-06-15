@@ -7,8 +7,14 @@ theme:
 markdown_extensions:
     - mdx_math:
         enable_dollar_delimiter: True 
+    - fontawesome_markdown
+
 extra_javascript:
     - js/MathJax.js?config=TeX-AMS_HTML
+
+extra_css:
+    - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+
 pages:
     - Introduction: index.md
     - Getting started: started.md    
