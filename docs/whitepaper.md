@@ -69,27 +69,27 @@ uniform eventually.
 
 ### Structure of the remainder of the paper
 
-* TomochainOverview: explains the intuition ideas and
+* [TomochainOverview](#Sec:Masternode Design): explains the intuition ideas and
 overview architectural design of masternodes, framework and background
 protocols that help mass readers (e.g., investors, traders, others) who
 may not have technical knowledge understand our mechanism easily.
-* StakeVoting presents stakeholder policy, masternode
+* [StakeVoting](#Sec:StakeVoting) presents stakeholder policy, masternode
 committee voting systems, and reward mechanism.
-* ProtocolOverview explains the motivation and double
+* [ProtocolOverview](#Sec:ProtocolOverview) explains the motivation and double
 validation process as well as finality checkpoint of the protocol. 
-* In Section ProtocolFormalization, we present the formalization of
+* In Section [ProtocolFormalization](#Sec:ProtocolFormalization), we present the formalization of
 our model in a mathematical way to show the soundness of our model and
 protocol. 
-* Section SecurityAnalysis discusses the security
+* Section [SecurityAnalysis](#Sec:SecurityAnalysis) discusses the security
 analysis and resistant strain of potential attacks. We discuss and
 compare with several existing blockchains in
 Section 
-* Section relatedwork. 
-* Finally, we conclude the paper in Section Conclusion.
+* Section [related work](#Sec:relatedwork). 
+* Finally, we conclude the paper in Section [Conclusion](#Sec:Conclusion).
 
-## Tomochain Masternode Design
+## Tomochain Masternode Design {#Sec:Masternode Design}
 
-### The Tomochain architecture
+### The Tomochain architecture 
 
 The blockchain is produced and maintained by a set of *masternodes* in a
 consistent manner through the protocol as shown in Fig.
@@ -114,7 +114,7 @@ components of are step-by-step detailed in the followings.
 
 ![architecture](figures/architecture.jpg){#fig:architecture}
 
-## Stakeholders & Voting
+## Stakeholders & Voting {#Sec:StakeVoting}
 
 ### Coin Holders, Masternodes
 
@@ -759,7 +759,7 @@ distribution function is uniform eventually.
     of TomoChain. We will publish a TomoChain economic analysis and
     proposal, separate from this technical paper in a later date.
 
-## :fa-book: References
+## :fa-book: References {#Sec:References}
 
 Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008. [pdf](https://bitcoin.org/bitcoin.pdf)
 
