@@ -1,5 +1,7 @@
 # Introduction
 
+version 1.0 ([pdf version](https://tomochain.com/docs/technical-whitepaper--1.0.pdf))
+
 The blockchain industry and the infrastructure of the Internet of Value
 are being built rapidly around the globe, and to many the atmosphere is
 eerily similar to the building of the Internet in the late ‘90s, with
@@ -479,8 +481,7 @@ the number of users introduced up to that slot that will represent who
 are the active participants in the view of $V_j$. Public-keys will be
 marked as “idle” if the corresponding stakeholder has been corrupted.
 
-As mentioned in Section \[Sec:TomochainOverview\], in our setting, we
-assume that the fixed collection of $m$ masternodes
+As mentioned in Section TomochainOverview, in our setting, we assume that the fixed collection of $m$ masternodes
 $V_1, V_2, ...., V_m$ interact throughout the protocol. Masternode $V_i$
 possesses $s_i$ stake (coin) before the protocol starts. For each $V_i$
 a verification and signing key pair $(vk_i,sk_i)$ for a prescribed
@@ -489,21 +490,21 @@ the verification keys $vk_1, . . .$ are known by all stakeholders.
 Before describing the protocol, we establish basic definitions following
 the notation of @Garay2015.
 
-\[Genesis Block\] The genesis block $B_0$ contains the list of
+- **Genesis Block** The genesis block $B_0$ contains the list of
 stakeholders identified by their public-keys, their respective stakes
 $(vk_1, s_1), . . . , (vk_n, s_n)$ and auxiliary information $\rho$,
 where the auxiliary information $\rho$ will be used to seed the slot
 leader election process.
 
-\[State\] A state is an encoded string $st \in \{0,1\}^\lambda$.
+- **State** A state is an encoded string $st \in \{0,1\}^\lambda$.
 
-\[Block\] A block $B$ generated at a slot $ sl_i \in \{sl_1,...,sl_R\}$
+- **Block** A block $B$ generated at a slot $ sl_i \in \{sl_1,...,sl_R\}$
 contains the current state $st \in \{0, 1\}^{\lambda}$, data
 $d \in \{0, 1\}^{*}$, the slot number $sl_i$ and a signature
 $\Sigma  =  Sign_{ski} (st, d, sl_i)$ computed under $sk_i$
 corresponding to the masternode $V_i$ generating the block.
 
-\[Blockchain\] A blockchain $C$ (or simply chain) relative to the
+- **Blockchain** A blockchain $C$ (or simply chain) relative to the
 genesis block $B_0$ is a sequence of blocks $B_1,..., B_n$ associated
 with a strictly increasing sequence of slots for which the state $st_i$
 of $B_i$ is equal to $ H (B_{i-1})$, where $H$ is a prescribed
@@ -512,7 +513,7 @@ its number of blocks. The block $B_n$ is the head of the chain, denoted
 $head(C)$. We treat the empty string $\epsilon$ as a legal chain and by
 convention set $head(\epsilon) = \epsilon$.
 
-\[Epoch\] An epoch is a set of $R$ adjacent slots
+- **Epoch** An epoch is a set of $R$ adjacent slots
 $S = \{sl_1, . . . , sl_R\}$. The value $R$ is also a parameter (slots
 number in each epoch) of the protocol we analyze in our model.
 
@@ -521,9 +522,7 @@ seconds; an epoch is a set $R$ of 990 slots
 $\{ sl_1, sl_2, ..., sl_{990}\}$ (an epoch time duration equals to 1980
 seconds).
 
-In summary, the consensus protocol of can be formalized in
-Algorithm \[Al:ValidatorGeneration\]. The
-Algorithm \[Al:ValidatorGeneration\] is simulated and explained as a
+In summary, the consensus protocol of can be formalized in Algorithm ValidatorGeneration. The Algorithm ValidatorGeneration is simulated and explained as a
 process shown in Fig. [EpochProcess](#fig:EpochProcess).
 
 ![image](figures/Figure_Epoch.jpg){#fig:EpochProcess}
@@ -775,7 +774,7 @@ proof-of-stake. Self-Published, 2012.
 V. Buterin. On public and private blockchains. Ethereum Blog, 2015.
 
 A. Kiayias, A. Russell, B. David, and R. Oliynykov: Ouroboros: A
-Provably Secure Proof-of-Stake Blockchain Protocol. IACR-CRYPTO-2017.
+Provably Secure Proof-of-Stake Blockchain Protocol. IACR-CRYPTO-2017. [pdf](https://eprint.iacr.org/2016/889.pdf)
 
 D. Mingxiao, et al. A Review on Consensus Algorithms of Blockchain. 2017
 IEEE International Conference on Systems, Man, and Cybernetics (SMC)
@@ -800,18 +799,18 @@ Online available 25/05/2018.
 
 EOS Team. EOS.IO Technical White Paper v2.
 <https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md>.
-Online available 25/05/2018.
+Online available 25/05/2018. [link](https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md)
 
 Bitshares Team. Delegated Proof-of-Stake Consensus.
 https://bitshares.org/technology/delegated-proof-of-stake-consensus/.
-Online available 25/05/2018.
+Online available 25/05/2018. [link](https://bitshares.org/technology/delegated-proof-of-stake-consensus)
 
 R. Pass, and E. Shi. (2017). Hybrid consensus: Efficient consensus in
 the permissionless model. In LIPIcs-Leibniz International Proceedings in
 Informatics (Vol. 91). Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik.
 
 V. Buterin, and V. Griffith. (2017). Casper the Friendly Finality
-Gadget. arXiv preprint arXiv:1710.09437.
+Gadget. arXiv preprint arXiv:1710.09437. [link](https://arxiv.org/abs/1710.09437)
 
 H. McCook. Under the Microscope: Economic and Environmental Costs of
 Bitcoin Mining.
