@@ -1,3 +1,5 @@
+# Introduction
+
 The blockchain industry and the infrastructure of the Internet of Value
 are being built rapidly around the globe, and to many the atmosphere is
 eerily similar to the building of the Internet in the late ‘90s, with
@@ -63,25 +65,27 @@ confirmation times, plus the contributions and benefits of masternodes
 are fair in the sense that the probability distribution function is
 uniform eventually.
 
-<span>*Structure of the remainder of the paper*</span>.
-Section: [TomochainOverview](#Sec:TomochainOverview) explains the intuition ideas and
+### Structure of the remainder of the paper
+
+* TomochainOverview: explains the intuition ideas and
 overview architectural design of masternodes, framework and background
 protocols that help mass readers (e.g., investors, traders, others) who
 may not have technical knowledge understand our mechanism easily.
-Section: [StakeVoting](#Sec:StakeVoting) presents stakeholder policy, masternode
+* StakeVoting presents stakeholder policy, masternode
 committee voting systems, and reward mechanism.
-Section \[Sec:ProtocolOverview\] explains the motivation and double
-validation process as well as finality checkpoint of the protocol. In
-Section \[Sec:ProtocolFormalization\], we present the formalization of
+* ProtocolOverview explains the motivation and double
+validation process as well as finality checkpoint of the protocol. 
+* In Section ProtocolFormalization, we present the formalization of
 our model in a mathematical way to show the soundness of our model and
-protocol. Section \[Sec:SecurityAnalysis\] discusses the security
+protocol. 
+* Section SecurityAnalysis discusses the security
 analysis and resistant strain of potential attacks. We discuss and
 compare with several existing blockchains in
-Section \[Sec:relatedwork\]. Finally, we conclude the paper in Section
-\[Sec:Conclusion\].
+Section 
+* Section relatedwork. 
+* Finally, we conclude the paper in Section Conclusion.
 
-Tomochain Masternode Design
-===========================
+## Tomochain Masternode Design
 
 The Tomochain architecture {#Sec:TomochainOverview}
 --------------------------
@@ -605,8 +609,7 @@ mechanisms for those malicious masternodes.
 Relay Attack {#relay-attack .unnumbered}
 ------------
 
-supports EIP155\
-**(https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md)**.
+supports [EIP155](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md)
 Transactions in are included $CHAIN\_ID$ specified for different public
 chains. Table \[table:chainid\] shows recognized $CHAIN\_ID$s.
 
@@ -751,7 +754,6 @@ having forks, fast confirmation time, plus the contributions and
 benefits of masternodes are fair in the sense that the probability
 distribution function is uniform eventually.
 
-0.3cm
 
 Perspectives {#perspectives .unnumbered}
 ------------
