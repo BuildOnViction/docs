@@ -616,8 +616,7 @@ chains. Table \[table:chainid\] shows recognized $CHAIN\_ID$s.
 
   : Chains and chain\_id<span data-label="table:chainid"></span>
 
-Safety and liveness {#safety-and-liveness .unnumbered}
---
+### Safety and liveness {#safety-and-liveness .unnumbered}
 
 Safety implies having a single agreed upon chain where there are not two
 or more competing chains with valid transactions in either @Safety. A
@@ -762,14 +761,14 @@ distribution function is uniform eventually.
 
 ## :fa-book: References
 
-Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008.
+Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008. [pdf](https://bitcoin.org/bitcoin.pdf)
 
-Ethereum Foundation. Ethereum’s White Paper. , 2014. Online available 25/05/2018.
+Ethereum Foundation. Ethereum’s White Paper. , 2014. Online available 25/05/2018. [link](https://github.com/ethereum/wiki/wiki/White-Paper)
 
 D. Larimer. Delegated Proof-of-Stake (DPOS). BitShare White Paper 2014.
 
 S. King and S. Nadal. PPCoin: Peer-to-peer crypto-currency with
-proof-of-stake. Self-Published, 2012.
+proof-of-stake. Self-Published, 2012. [pdf](https://peercoin.net/assets/paper/peercoin-paper.pdf)
 
 V. Buterin. On public and private blockchains. Ethereum Blog, 2015.
 
