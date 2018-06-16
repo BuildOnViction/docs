@@ -518,6 +518,8 @@ its number of blocks. The block $B_n$ is the head of the chain, denoted
 $head(C)$. We treat the empty string $\epsilon$ as a legal chain and by
 convention set $head(\epsilon) = \epsilon$.
 
+![al 1](figures/al1.png)
+
 \[Epoch\] An epoch is a set of $R$ adjacent slots
 $S = \{sl_1, . . . , sl_R\}$. The value $R$ is also a parameter (slots
 number in each epoch) of the protocol we analyze in our model.
