@@ -245,7 +245,7 @@ existing blockchains as follows.
 
 Let’s show the improvements of DV compared to Single Validation through
 analyzing some attacking scenarios as shown in Fig.
-\[fig:singlevalidation\] and Fig. \[fig:doublevalidation\].
+[SV](#fig:singlevalidation) and Fig. [DV](#fig:doublevalidation).
 
 -   **Single Validation** In Single Validation, in an epoch, each
     masternode, e.g. M1, sequentially takes its turn to create a
@@ -253,9 +253,9 @@ analyzing some attacking scenarios as shown in Fig.
     then validates the created block100. If block100 is invalid (that
     potentially means that M1 is an attacker) and contains a transaction
     that invalidly benefits M1, if M2 is honest (see Fig.
-    \[fig:singlevalidation\] \[a\]), it rejects block100 and creates
+    [SV a](#fig:singlevalidation)), it rejects block100 and creates
     another block100 next to block99. But, if M2 is an attacker
-    (see Fig. \[fig:singlevalidation\] \[b\]) that corporates with M1,
+    (see Fig. [SV b](#fig:singlevalidation)) that corporates with M1,
     M2 ignores the invalidation of block100, signs it and creates next
     block, namely block101 that is valid. Then, the next masternode M3
     verifies that block101 is valid, M3 signs block101 and creates a
@@ -270,12 +270,12 @@ analyzing some attacking scenarios as shown in Fig.
     reduces the probability of having garbage blocks in the blockchain.
     Assuming that M1 and M2 are the block creator and block verifier,
     respectively, for block100 in our DV. If block100 is invalid and M2
-    is honest (see Fig. \[fig:doublevalidation\] \[a\]), M2 will not
+    is honest (see Fig. [DV a](#fig:doublevalidation)), M2 will not
     seal this block. Therefore, the next block creator M3 for creating
     block101 will see that block100 does not have enough 2 signatures,
     thus reject block100 and create another block100 next to block99. On
     the other hand, if M2 is also an attacker pairing/handshaking with
-    M1 (see Fig. \[fig:doublevalidation\] \[b\]), M2 signs block100
+    M1 (see Fig. [DV b](#fig:doublevalidation)), M2 signs block100
     despite its invalidity (remember that the block verifier M2 is
     randomly selected, there has little chance of successfully pairing
     M1 and M2). Next, even though M3 will verify that block100 has two
