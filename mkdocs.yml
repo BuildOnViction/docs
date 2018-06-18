@@ -18,6 +18,25 @@ extra_javascript:
 extra_css:
     - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
 
+extra:
+    social:
+        - type: 'github'
+          link: 'https://github.com/tomochain'
+        - type: 'twitter'
+          link: 'https://twitter.com/tomochainANN'
+        - type: 'reddit'
+          link: 'https://www.reddit.com/r/Tomochain/'
+        - type: 'facebook'
+          link: 'https://www.facebook.com/tomochainofficial/'
+        - type: 'telegram'
+          link: 'https://t.me/tomochain'
+        - type: 'medium'
+          link: 'https://medium.com/tomochain'
+
+site_url: https://docs.tomochain.com
+repo_url: https://github.com/tomochain/docs
+repo_name: tomochain/docs
+
 pages:
     - Introduction: index.md
     - Getting started: started.md    
