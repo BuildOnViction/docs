@@ -22,4 +22,4 @@ pip install -r requirements.txt
 On linux, using bash script
 ```
 bash docs.sh
-``
+```
