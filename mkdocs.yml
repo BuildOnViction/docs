@@ -44,5 +44,10 @@ pages:
     - Introduction: index.md
     - Getting started: started.md    
     - Technical Whitepaper: whitepaper.md
+    - Contribution:
+        - Github: contribution/github.md
+        - Team: contribution/team.md
     - Important Links: links.md
     - About: about.md
+
+copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>tomodocs v0.0.1-unstable. Tomochain Project 2018.
