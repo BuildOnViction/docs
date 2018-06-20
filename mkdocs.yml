@@ -42,8 +42,13 @@ repo_name: tomochain/docs
 
 pages:
     - Introduction: index.md
-    - Getting started: started.md    
+    - Getting Started:
+        - Beginer's Guide: get-started/started.md    
+        - Testnet: get-started/testnet.md 
+        - Running a Node: get-started/run-node.md    
+        - Create your own network: get-started/private-network.md
     - Technical Whitepaper: whitepaper.md
+    - Use Cases: use-cases/index.md
     - Contribution:
         - Github: contribution/github.md
         - Team: contribution/team.md
