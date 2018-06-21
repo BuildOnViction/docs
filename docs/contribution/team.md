@@ -1,3 +1,3 @@
-Tomochain is supported by a contractor team that you can take a look at [https://tomochain.com/#team](https://tomochain.com/#team)
+You can take a look at Tomochain's team of contractor on our website [tomochain.com/#team](https://tomochain.com/#team).
 
-If you want to join our contractor team, feel free to click `Apply Now` at [https://tomochain.com/careers](https://tomochain.com/careers)
+If you want to join us, feel free to apply on [tomochain.com/careers](https://tomochain.com/careers)!
