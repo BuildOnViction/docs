@@ -5,7 +5,7 @@ git clone --branch gh-pages https://${GH_TOKEN}@github.com/tomochain/docs.git gh
 rsync -av site/ gh-pages/
 cd gh-pages
 git config user.name "Travis CI"
-git config user.email "thanhson1085@gmail.com"
+git config user.email "noreply@tomochain.com"
 git add .
 git commit -m "Deploy from Travis CI"
 git push
