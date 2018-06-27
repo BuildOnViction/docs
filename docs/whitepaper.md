@@ -1,6 +1,6 @@
 # Introduction
 
-version 1.0 ([pdf version](https://tomochain.com/docs/technical-whitepaper--1.0.pdf))
+version 1.0 ([pdf version](https://tomochain.com/docs/technical-whitepaper---1.0.pdf))
 
 The blockchain industry and the infrastructure of the Internet of Value
 are being built rapidly around the globe, and to many the atmosphere is
@@ -18,7 +18,7 @@ common knowledge. In 2008, Satoshi Nakamoto - “proposed his celebrated
 permissionless setting: anyone can join (or leave) the protocol
 execution (without getting permission from a centralized or distributed
 authority), and the protocol instructions do not depend on the
-identities of the players” @PassCrypto2017. Later on, Ethereum with its
+identities of the players” (see [here](#PassCrypto2017)). Later on, Ethereum with its
 Ethereum Virtual Machine (EVM) proposed several significant enhancements
 compared to Bitcoin, including Smart Contracts. Both Bitcoin and
 Ethereum have some issues, especially with transaction processing
@@ -32,14 +32,13 @@ blockchains:
     handle around 10 transactions/second. This small throughput severely
     hinders a wide-spread adoption of such crypto-currencies.
 
--   **Confirmation times:** The 10 minutes Bitcoin block-time
-     @Bitcoin08 is significantly larger than network latency.
+-   **Confirmation times:** The 10 minutes [Bitcoin](#Bitcoin08) block-time is significantly larger than network latency.
     Furthermore, a Bitcoin block requires 5 subsequent blocks following
     it so that it can be confirmed; thus it takes on average one hour
     for a transaction to be confirmed (with low confidence). While
     Ethereum uses a smaller block-time, the average confirmation time
-    still remains relatively high, around 13 minutes @Thunder2018
-    [@Cardano2017]. These long confirmation times hinder many important
+    still remains relatively high, around 13 minutes
+    [Cardano](#Cardano2017). These long confirmation times hinder many important
     applications (especially smart contract applications).
 
 -   **Fork Generation:** The problem of fork chain consumes
@@ -69,22 +68,17 @@ uniform eventually.
 
 ### Structure of the remainder of the paper
 
-* [TomochainOverview](#Sec:MasternodeDesign): explains the intuition ideas and
+* Section [Tomochain Overview](#Sec:MasternodeDesign): explains the intuition ideas and
 overview architectural design of masternodes, framework and background
 protocols that help mass readers (e.g., investors, traders, others) who
 may not have technical knowledge understand our mechanism easily.
-* [StakeVoting](#Sec:StakeVoting) presents **Tomochain** stakeholder policy, masternode
+* Section [Stakeholders & Voting](#Sec:StakeVoting) presents **Tomochain** stakeholder policy, masternode
 committee voting systems, and reward mechanism.
-* [ProtocolOverview](#Sec:ProtocolOverview) explains the motivation and double
+* Section [Tomochain consensus protocol](#Sec:ProtocolOverview) explains the motivation and double
 validation process as well as finality checkpoint of the protocol. 
-* In Section [ProtocolFormalization](#Sec:ProtocolFormalization), we present the formalization of
-our model in a mathematical way to show the soundness of our model and
-protocol. 
-* Section [SecurityAnalysis](#Sec:SecurityAnalysis) discusses the security
-analysis and resistant strain of potential attacks. We discuss and
-compare **Tomochain** with several existing blockchains in
-Section 
-* Section [related work](#Sec:relatedwork). 
+* In Section [Protocol formalizations](#Sec:ProtocolFormalization), we present the formalization of our model in a mathematical way to show the soundness of our model and protocol. 
+* Section [Security Analysis](#Sec:SecurityAnalysis) discusses the security analysis and resistant strain of potential attacks. 
+* We discuss and compare **Tomochain** with several existing blockchains in Section [related work](#Sec:relatedwork). 
 * Finally, we conclude the paper in Section [Conclusion](#Sec:Conclusion).
 
 ## Tomochain Masternode Design {#Sec:MasternodeDesign}
@@ -155,7 +149,7 @@ to race for their position so that all weak masternodes will eventually
 be eliminated. Therefore, only the strongest masternodes are voted and
 can flourish.
 
-Voting & Masternode Committee {#voting-masternode-committee .unnumbered}
+###Voting & Masternode Committee {#voting-masternode-committee .unnumbered}
 
 There are maximum ninety-nine masternodes elected in the masternode
 committee. The required amount of deposit for masternode role is set at
@@ -209,7 +203,7 @@ namely **Single Validation**. In the followings, we first describe the
 
 ### Double Validation (DV)
 
-Similar to some existing PoS-based blockchains such as Cardano, each
+Similar to some existing PoS-based blockchains such as [Cardano](#Cardano2017), each
 block is created by a block producer, namely masternode, that takes its
 block creation permission turn following a pre-determined and circular
 sequence of masternodes for each epoch. However, differently from these
@@ -244,7 +238,7 @@ existing blockchains as follows.
 
 Let’s show the improvements of DV compared to Single Validation through
 analyzing some attacking scenarios as shown in Fig.
-[SV](#fig:singlevalidation) and Fig. [DV](#fig:doublevalidation).
+[Single Validation example](#fig:singlevalidation) and Fig. [Double Validation example](#fig:doublevalidation).
 
 -   **Single Validation** In Single Validation, in an epoch, each
     masternode, e.g. M1, sequentially takes its turn to create a
@@ -263,7 +257,7 @@ analyzing some attacking scenarios as shown in Fig.
     to restore the validity of the blockchain.
 
 
-![singlevalidatioin](figures/singlevalidation.jpg){#fig:singlevalidation}
+![singlevalidatioin](figures/singlevalidation.jpg){#fig:singlevalidation}*Single Validation (SV): (a) SV with block creation masternode as an attacker and (b) SV with two consecutive block creation masternodes as attackers*
 
 -   **Double Validation** We claim that our DV technique significantly
     reduces the probability of having garbage blocks in the blockchain.
@@ -286,7 +280,7 @@ analyzing some attacking scenarios as shown in Fig.
     the consistency of the blockchain and makes it hard to break.
 
 
-![doublevalidatioin](figures/doublevalidation.jpg){#fig:doublevalidation}
+![doublevalidatioin](figures/doublevalidation.jpg){#fig:doublevalidation}*Double Validation (DV): (a) DV with block creator as an attacker and (b) DV with both block creator and block verifier as attackers*
 
 Randomization for Block Verifiers for Double Validation {#randomization-for-block-verifiers-for-double-validation .unnumbered}
 ----
@@ -324,29 +318,16 @@ epoch $e+1$, the process is performed by the following steps.
     list of block verifiers for the next epoch of $V_i$, and
     $\theta_i \in \{-1, 0, 1\}$ is used for increasing the
     unpredictability of the random numbers. Second, each masternode
-    $V_i$ has to encrypt the array $Recommend_i$ using a secret key, say
-    $Secret_i = Encrypt (Recommend_i)$. Next, each masternode forms a
-    "*lock*” message that contains encrypted shares $Secret_i$; signs
-    this message with its blockchain’s private key, specifies the
-    epoch’s number and attaches its public key. In this case, every
-    masternode can check who created this *lock* message and which epoch
-    it relates to. Then, each node $V_i$ sends this *lock* message to a
-    **Smart contract** stored in a block of the blockchain, so
+    $V_i$ has to encrypt the array $Recommend_i$ using a secret key $SK_i$, say
+    $Secret_i = Encrypt (Recommend_i, SK_i)$. Next, each masternode forms a
+    "*lock*” message that contains encrypted secret array $Secret_i$; signs off this message with its blockchain’s private key through the Elliptic Curve Digital Signature Algorithm (ECDSA) scheme currently used in Ethereum and Bitcoin along with the corresponding epoch index and its public key generated from its private key. By doing this, every
+    masternode can check who created this *lock* message through ECDSA verification scheme and which epoch
+    it relates to. Then, each node $V_i$ sends their *lock* message with its signature and public key to a
+    **Smart contract** stored in the blockchain, so that
     eventually each masternode collects and knows the *lock*s from all
     other masternodes.
 
--   **Step 2: Discovery and Recovery Phase:** The discovery phase is
-    where a masternode sends an ”*unlock*” message, or special value for
-    other masternodes to open its *lock*. A *lock* is like a black box
-    (with a secret value $Secret_i$ encrypted of $Recommend_i$ in it),
-    and the act of opening involves a key that reveals the box to
-    retrieve the value of $Recommend_i$. Eventually, a masternode has
-    both *lock*s and *unlock*s of others. If some elector is an
-    adversary and can publish its *lock* but not publish its *unlock*,
-    in this case, other masternodes can ignore the adversary’s *lock*
-    and set all its random values be $1$ as default. The idea is simple:
-    a masternode can keep working successfully even if some masternodes
-    are adversaries.
+-   **Step 2: Discovery and Recovery Phase:** The recovery phase is for every node to reveal its previous lock message so that other nodes can get to know the secret array it has sent before. A masternode only starts revealing its lock message if all masternodes have sent their lock messages to the smart contract or a certain timeout event occurs. Each masternode then opens its lock message by sending an ”*unlock*” message to the smart contract for other masternodes to open the corresponding lock. Imagine a commitment-like scheme in this case where a lock message is a commitment message locking its contained recommendation array $Recommend_i$ (so that no one can open or guess the contained array), and the unlock message gives the key for other masternodes to decrypt the box and retrieve the values of $Recommend_i$. Eventually, a masternode has both locks and unlocks of others. If some elector is an adversary which might publish its lock but not intend to send the corresponding unlock, other masternodes can ignore the adversary’s lock and set all its random values be *1* as default. The idea is simple: the network can keep working successfully even if some masternodes are adversaries.
 
 -   **Step 3: Assembled Matrix and Computation Phase:** At the point of
     the slot $n^{th}$ of the epoch $e$, the secret arrays $Secret_I$ in
@@ -362,7 +343,9 @@ epoch $e+1$, the process is performed by the following steps.
 ### The Second Masternode/Block Verifier {#the-second-masternodeblock-verifier .unnumbered}
 
 Then, each node soon compute the common array $\nu_2$ for the order of
-the block verifiers by the following steps as in Equation \[eq:matrix\].
+the block verifiers by the following steps as in the upper equation as belows.
+Then, $\nu_2$ is obtained by modulo operation of element values of
+$\nu'_2$ as in the lower equation in the followings:
 
 $$\label{eq:matrix}
 \begin{bmatrix} \nu'_2
@@ -404,19 +387,16 @@ $$\label{eq:eq2}
 \left| v_{2.n}^{e+1} \right| & mod & m
 \end{bmatrix}$$
 
-Then, $\nu_2$ is obtained by modulo operation of element values of
-$\nu'_2$ as in Equation \[eq:eq2\]:
-
-Finality Analysis {#finality-analysis .unnumbered}
+###Finality Analysis {#finality-analysis .unnumbered}
 
 
-There is a standard definition of “total economic finality”: it takes
+*"There is a standard definition of “total economic finality”: it takes
 place when $\frac{3}{4}$ of all masternodes make maximum-odds bets that
 a given block or state will be finalized. This condition offers very
 strong incentives for masternodes to never try colluding revert the
 block: once masternodes make such maximum-odds bets, in any blockchain
 where that block or state is not present, the masternodes lose their
-entire deposit.
+entire deposit"* (see [here](#finality).
 
 **Tomochain** keeps that standardization in the design so that one block is considered
 as irreversible if it collects up to $\frac{3}{4}$ signatures of all
@@ -430,94 +410,39 @@ Figure: [ChainMaking](#fig:ChainMaking) below.
 
 ### Basic Concepts & Protocol Description {#basic-concepts-protocol-description .unnumbered}
 
-We begin by describing the blockchain protocol in the "stakeholder and
-voting” setting, where leaders are assigned to blockchain slots with
-probability proportional to their (fixed) initial stake and votes
-received from coin-holders which will be the effective stake
-distribution throughout the execution. To simplify our presentation, we
-abstract this leader (chairman and vice-chairman) selection process,
-treating it simply as an “ideal functionality” that faithfully carries
-out the process of randomly assigning masternodes to slots. In the
-following, we explain how to instantiate this functionality with a
-specific secure computation.
+In order to have a solid foundation for us to prove that our blockchain can achieve what are claimed, we first present our preliminary formalizations of the concepts that will be used in our yellow paper later. 
+
 
 To start, as we are dealing with proof of stake consensus algorithm, we
 follow the way of formalization in the recent works in the literature
-like  @Cardano2017 and  @Pass2017 [@PassCrypto2017]. In particular, we
+like  [Cardano](#Cardano2017) and  [here](#Pass2017) and here [here](#PassCrypto2017). In particular, we
 recall the following concepts and definitions that were presented
-in @Cardano2017:
+in [Cardano](#Cardano2017) and adapt them to the context of Tomochain.
 
 ### Time, Slots, Epoch {#time-slots-epoch .unnumbered}
+As previously described, ideally, each epoch is divided into 990 block time, that is called block slot.
+Only one block can be created in a slot. We assume that there is a roughly synchronized clock that allows for masternodes to learn the current slot. This simplification will effectively permit masternodes to execute the signing and validation process of the PoSV consensus, where each masternode must collectively create a block to the current slot. For more simplification, each slot $sl_r$ is accessed by an integer $r \in \{1, 2, ...990\}$, and suppose that the real time window that corresponds to each slot has the following properties, which are similar to what are specified in [Cardano](#Cardano2017).
 
-We consider a setting where time is divided into discrete units called
-*slots*. A ledger, described in more detail below, associates with each
-time slot (at most) one ledger *block*. Players are equipped with
-(roughly synchronized) clocks that indicate the current slot. This will
-permit them to carry out a distributed protocol intending to
-collectively assign a block to this current slot. In general, each slot
-$sl_r$ is indexed by an integer $r \in \{1, 2, . . .\}$, and we assume
-that the real time window that corresponds to each slot has the
-following properties.
+1. Every masternode can determine the index of the current slot based on the current time and ”any discrepancies between parties’ local time are insignificant in comparison with the length of time represented by a slot” [Cardano](#Cardano2017)
 
-1.  The current slot is determined by a publicly-known and monotonically
-    increasing function of current time.
+2. The amount of a slot time is sufficient to guarantee that any message transmitted by an honest party at the beginning of the time window will be received by any other honest party by the end of that time window. While this assumption similar to [Cardano](#Cardano2017), Tomochain requires it in order for a block creator to propagate its created block to the corresponding block verifier to ensure that the block is signed by both the masternodes before the next block creator builds another block on top of it.
 
-2.  Each player has access to the current time. Any discrepancies
-    between parties’ local time are insignificant in comparison with the
-    length of time represented by a slot.
 
-3.  The length of the time window that corresponds to a slot is
-    sufficient to guarantee that any message transmitted by an honest
-    party at the beginning of the time window will be received by any
-    other honest party by the end of that time window (even accounting
-    for small inconsistencies in parties’ local clocks). In particular,
-    while network delays may occur, they never exceed the slot
-    time window.
+As mentioned in Section [TomochainOverview](#Sec:MasternodeDesign), in our setting, we assume that the fixed collection of $m$ (99) masternodes
+$V_1, V_2, ...., V_m$ interact throughout the protocol. 
+For each $V_i$ a public/private key pair ($pk_i$,$sk_i$) for a prescribed signature scheme, ideally ECDSA, is generated. Furthermore, we assume that the public keys $pk_1$,..,$pk_m$ of the masternodes are distributed and known by all of them (that means a masternode knows all public keys of other nodes). Some notable definitions of the blockchain concepts are defined following the notation in [here](#Garay2015).
 
-In each slot $sl_r$, and for each active masternode $V_j$ there will be
-a set $S_j(r)$ of public-keys and stake pairs of the form
-$(vk_i,s_i) \in {0,1}^* \times N$, for $i = 1,...,n_r$ where $n_r$ is
-the number of users introduced up to that slot that will represent who
-are the active participants in the view of $V_j$. Public-keys will be
-marked as “idle” if the corresponding stakeholder has been corrupted.
+- **State** A state (defined as in [here](#Cardano2017)) is an encoded string $st \in \{0,1\}^\lambda$.
 
-As mentioned in Section TomochainOverview, in our setting, we assume that the fixed collection of $m$ masternodes
-$V_1, V_2, ...., V_m$ interact throughout the protocol. Masternode $V_i$
-possesses $s_i$ stake (coin) before the protocol starts. For each $V_i$
-a verification and signing key pair $(vk_i,sk_i)$ for a prescribed
-signature scheme is generated; we assume without loss of generality that
-the verification keys $vk_1, . . .$ are known by all stakeholders.
-Before describing the protocol, we establish basic definitions following
-the notation of @Garay2015.
-
-- **Genesis Block** The genesis block $B_0$ contains the list of
-stakeholders identified by their public-keys, their respective stakes
-$(vk_1, s_1), . . . , (vk_n, s_n)$ and auxiliary information $\rho$,
-where the auxiliary information $\rho$ will be used to seed the slot
-leader election process.
-
-- **State** A state is an encoded string $st \in \{0,1\}^\lambda$.
-
-- **Block** A block $B$ generated at a slot $ sl_i \in \{sl_1,...,sl_R\}$
+- **Block** A block (defined as in [here](#Cardano2017)) $B$ generated at a slot $ sl_i \in \{sl_1,...,sl_R\}$
 contains the current state $st \in \{0, 1\}^{\lambda}$, data
 $d \in \{0, 1\}^{*}$, the slot number $sl_i$ and a signature
 $\Sigma  =  Sign_{ski} (st, d, sl_i)$ computed under $sk_i$
 corresponding to the masternode $V_i$ generating the block.
 
-- **Blockchain** A blockchain $C$ (or simply chain) relative to the
-genesis block $B_0$ is a sequence of blocks $B_1,..., B_n$ associated
-with a strictly increasing sequence of slots for which the state $st_i$
-of $B_i$ is equal to $ H (B_{i-1})$, where $H$ is a prescribed
-collision-resistant hash function. The length of a chain $len(C) = n$ is
-its number of blocks. The block $B_n$ is the head of the chain, denoted
-$head(C)$. We treat the empty string $\epsilon$ as a legal chain and by
-convention set $head(\epsilon) = \epsilon$.
+- **Blockchain** A blockchain (defined as in [here](#Cardano2017)) $C$ is a sequence of blocks $B_1,..., B_n$ associated with a strictly increasing sequence of slots for which the state sti of $B_i$ is equal to $H(B_{i−1})$, where $H$ is a collision-resistant cryptography hash function. A blockchain has a number of properties, including the length of a chain $len(C) = n$, which is its number of blocks, and the block $B_n$ is the head of the chain, denoted $head(C)$. 
 
 ![al 1](figures/al1.png)
-
-- **Epoch** An epoch is a set of $R$ adjacent slots
-$S = \{sl_1, . . . , sl_R\}$. The value $R$ is also a parameter (slots
-number in each epoch) of the protocol we analyze in our model.
 
 As mentioned earlier, in our **Tomochain** model, we set each time *slot* $sl_i$ as 2
 seconds; an epoch is a set $R$ of 990 slots
@@ -537,7 +462,7 @@ Nothing-at-stake is a well-known problem in PoS-based blockchain, just
 like 51% attack in PoW algorithm. PoW-based miners require CapEx
 (capital expenditures) for buying mining equipment such as ASICs and
 OpEx (operation expenditures) such as electricity to solve mathematical
-puzzles securing the network @capex. That means, there is always an
+puzzles securing the network (see [here](#capex)). That means, there is always an
 intrinsic cost for miners in mining regardless of its success. In case
 of a fork, miners therefore always allocate their resource (equipment)
 to the chain that they believe is correct in order to get incentives for
@@ -620,13 +545,13 @@ chains. Table \[table:chainid\] shows recognized $CHAIN\_ID$s.
 ### Safety and liveness {#safety-and-liveness .unnumbered}
 
 Safety implies having a single agreed upon chain where there are not two
-or more competing chains with valid transactions in either @Safety. A
+or more competing chains with valid transactions in either (see [here](#Safety). A
 consensus protocol can be *safe* when blocks have settlement finality,
 or else probabilistic finality. This last sentence reveals that can
 provide safety because it has a settlement finality.
 
 A consensus protocol is considered *live* if it can eventually propagate
-and make valid transactions onto the blockchain @Safety. An occurrence
+and make valid transactions onto the blockchain (see [here](#Safety). An occurrence
 of a liveness fault is when transaction omission, information
 withholding, or message reordering, among a number of violations are
 observed. This type of fault is unlikely to happen in **Tomochain** because the block
@@ -657,10 +582,10 @@ proposing block. Thus, spammers have little chance to harm the system.
 
 Consensus plays an important role to guarantee the success of
 distributed and decentralized systems. Bitcoin’s core consensus
-protocol, often referred to as Nakamoto consensus @Bitcoin08, realizes a
+protocol, often referred to as Nakamoto consensus [Bitcoin](#Bitcoin08), realizes a
 “replicated state machine” abstraction, where nodes in a permissionless
 network reach agreement about a set of transactions committed as well as
-their ordering  @hybrid. However, known permissionless consensus
+their ordering  (see [here](#hybrid). However, known permissionless consensus
 protocols such as Bitcoin’s Nakamoto consensus come at a cost. Bitcoin
 and Ethereum rely on PoW to roughly enforce the idea of “one vote per
 hashpower” and to defend against Sybil attacks. Unfortunately, PoW-based
@@ -671,12 +596,12 @@ because it costs a lot of electricity energy.
 
 In order to design an efficient and cost-effective consensus protocol in
 the permissionless model, PoS has been discussed extensively in the
-Bitcoin and Ethereum forum @Ethe2014 [@Larime2016]. A PoS blockchain can
+Bitcoin and [Ethereum forum](#Ethe2014). A PoS blockchain can
 substitute the costly PoW in Nakamoto’s blockchain while still providing
 similar guarantees in terms of transaction processing in the presence of
 a dishonest minority of users, where this “minority” is to be understood
 here in the context of stake rather than computational
-power @Cardano2017. The Ethereum design Casper @Casper, published by
+power [Cardano](#Cardano2017). The Ethereum design [Casper](#Casper), published by
 Buterin & Griffith, provides as its initial version a PoW/PoS hybrid
 consensus protocol, which might eventually switch to a pure PoS system.
 As in **Tomochain**, Ethereum Casper requires that *validators* (term similar to
@@ -692,9 +617,9 @@ performance and security of blockchain, but also reduce the fork
 situation in an efficient and practical manner.
 
 Recently, there are several consensus protocol research works that are
-closely related to **Tomochain** such as EOS @EOS and Ouroboros of
-Cardano @Cardano2017. The mechanism of *voting* for masternodes for
-reaching consensus is utilized by Bitshares @bitshare and EOS @EOS,
+closely related to **Tomochain** such as [EOS](#EOS) and Ouroboros of
+[Cardano](#Cardano2017). The mechanism of *voting* for masternodes for
+reaching consensus is utilized by [Bitshares](#bitshare) and [EOS](#EOS),
 whose consensus protocol is termed *Delegated Proof-of-Stake* (DPoS).
 DPoS is similar to the Proof-of-Stake Voting consensus of **Tomochain** in the sense
 that masternodes (block creators or *witnesses* in DPoS) are elected
@@ -707,7 +632,7 @@ previously analyzed. EOS also has a maximum of 21 block producers for
 each epoch, which is *less decentralized* than **Tomochain** with a maximum of 99
 masternodes elected.
 
-The research-backed Cardano @Cardano2017 blockchain solution, namely
+The research-backed [Cardano](#Cardano2017) blockchain solution, namely
 Ouroboros, with the ADA coin, which is purely based on Proof-of-Stake,
 promisingly claims to provide rigorous security guarantees. Similarly to
 **Tomochain**, Ouroboros has a set of block producers for each epoch for creating
@@ -762,57 +687,56 @@ distribution function is uniform eventually.
 
 ## :fa-book: References {#Sec:References}
 
-Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008. [pdf](https://bitcoin.org/bitcoin.pdf)
+Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008. [pdf](https://bitcoin.org/bitcoin.pdf){#Bitcoin08}
 
-Ethereum Foundation. Ethereum’s White Paper. , 2014. Online available 25/05/2018. [link](https://github.com/ethereum/wiki/wiki/White-Paper)
+Ethereum Foundation. Ethereum’s White Paper. , 2014. Online available 25/05/2018. [link](https://github.com/ethereum/wiki/wiki/White-Paper){#Ethe2014}.
 
-D. Larimer. Delegated Proof-of-Stake (DPOS). BitShare White Paper 2014.
+D. Larimer. Delegated Proof-of-Stake (DPOS). BitShare White Paper 2014. [link](https://bitshares.org/technology/delegated-proof-of-stake-consensus/){#Larime2016}.
 
 S. King and S. Nadal. PPCoin: Peer-to-peer crypto-currency with
-proof-of-stake. Self-Published, 2012. [pdf](https://peercoin.net/assets/paper/peercoin-paper.pdf)
+proof-of-stake. Self-Published, 2012. [pdf](https://peercoin.net/assets/paper/peercoin-paper.pdf){#King2012}
 
-V. Buterin. On public and private blockchains. Ethereum Blog, 2015.
+V. Buterin. On public and private blockchains. Ethereum Blog, 2015. [link](https://blog.ethereum.org/2015/08/07/on-public-and-private-blockchains/){#Vitalik2015}.
 
 A. Kiayias, A. Russell, B. David, and R. Oliynykov: Ouroboros: A
-Provably Secure Proof-of-Stake Blockchain Protocol. IACR-CRYPTO-2017. [pdf](https://eprint.iacr.org/2016/889.pdf)
+Provably Secure Proof-of-Stake Blockchain Protocol. IACR-CRYPTO-2017.[pdf](https://eprint.iacr.org/2016/889.pdf){#Cardano2017}
 
 D. Mingxiao, et al. A Review on Consensus Algorithms of Blockchain. 2017
 IEEE International Conference on Systems, Man, and Cybernetics (SMC)
-Banff Center, Banff, Canada, October 5-8, 2017
+Banff Center, Banff, Canada, October 5-8, 2017[link](https://ieeexplore.ieee.org/document/8123011/){#Du2018}
 
 R. Pass and E. Shi. Rethinking Large-Scale Consensus. In the Proceedings
 of the IEEE 30th Computer Security Foundations Symposium, 2017. Thunder
-Token Foundation: Thunder Consensus White Paper, Janurary, 2018.
+Token Foundation: Thunder Consensus White Paper, Janurary, 2018[pdf](https://eprint.iacr.org/2018/302.pdf){#Pass2017}.
 
 R. Pass, L. Seeman, and A. Shelat. Analysis of the Blockchain Protocol
-in Asynchronous Networks. In EUROCRYPTO 2017.
+in Asynchronous Networks. In EUROCRYPTO 2017[pdf](https://eprint.iacr.org/2016/454.pdf){#PassCrypto2017}.
 
 Juan A. Garay, A. Kiayias, and N. Leonardos. The bitcoin backbone
 protocol: Analysis and applications. In Elisabeth Oswald and Marc
 Fischlin, editors, Advances in Cryptology - EUROCRYPT 2015, Volume 9057
-of Lecture Notes in Computer Science, pages 281–310. Springer, 2015.
+of Lecture Notes in Computer Science, pages 281–310. Springer, 2015[pdf](https://eprint.iacr.org/2014/765.pdf){#Garay2015}.
 
 Tendermint Team. Understanding the Basics of a Proof-of-Stake Security
-Model.
-https://blog.cosmos.network/understanding-the-basics-of-a-proof-of-stake-security-model-de3b3e160710.
-Online available 25/05/2018.
+Model.[link](https://blog.cosmos.network/understanding-the-basics-of-a-proof-of-stake-security-model-de3b3e160710){#Safety}.
+
+V. Buterin. On Settlement Finality. [link](https://blog.ethereum.org/2016/05/09/on-settlement-finality/){#finality}.
 
 EOS Team. EOS.IO Technical White Paper v2.
 <https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md>.
-Online available 25/05/2018. [link](https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md)
+Online available 25/05/2018. [link](https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md){#EOS}
 
 Bitshares Team. Delegated Proof-of-Stake Consensus.
 https://bitshares.org/technology/delegated-proof-of-stake-consensus/.
-Online available 25/05/2018. [link](https://bitshares.org/technology/delegated-proof-of-stake-consensus)
+Online available 25/05/2018. [link](https://bitshares.org/technology/delegated-proof-of-stake-consensus){#bitshare}
 
 R. Pass, and E. Shi. (2017). Hybrid consensus: Efficient consensus in
 the permissionless model. In LIPIcs-Leibniz International Proceedings in
-Informatics (Vol. 91). Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik.
+Informatics (Vol. 91). Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik [pdf](http://drops.dagstuhl.de/opus/volltexte/2017/8004/pdf/LIPIcs-DISC-2017-39.pdf){#hybrid}.
 
 V. Buterin, and V. Griffith. (2017). Casper the Friendly Finality
-Gadget. arXiv preprint arXiv:1710.09437. [link](https://arxiv.org/abs/1710.09437)
+Gadget. arXiv preprint arXiv:1710.09437. [link](https://arxiv.org/abs/1710.09437){#Casper}
 
 H. McCook. Under the Microscope: Economic and Environmental Costs of
 Bitcoin Mining.
-<https://www.coindesk.com/microscope-economic-environmental-costs-bitcoin-mining/>.
-Online available 25/05/2018.
+[link](https://www.coindesk.com/microscope-economic-environmental-costs-bitcoin-mining/){#capex}
