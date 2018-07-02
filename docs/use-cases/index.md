@@ -1,3 +1,5 @@
+# Use Cases
+---
 Partners willing to run applications on top of Tomochain:
 
 - Social Network: [https://replyblock.com](https://replyblock.com)
