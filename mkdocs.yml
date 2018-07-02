@@ -48,6 +48,10 @@ pages:
         - Running a Node: get-started/run-node.md    
         - Create your own network: get-started/private-network.md
     - Technical Whitepaper: whitepaper.md
+    - FAQ:
+        - General: faq/general.md
+        - Tomochain: faq/tomochain.md
+        - Other: faq/other.md
     - Use Cases: use-cases/index.md
     - Contribution:
         - Github: contribution/github.md

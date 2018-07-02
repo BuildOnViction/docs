@@ -1,2 +1,0 @@
-# FAQ
-To be updated
