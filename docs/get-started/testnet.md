@@ -2,6 +2,7 @@ Tomochain Testnet Information:
 ```
 Chain ID: 89
 RPC: https://testnet.tomochain.com
+Websocket: wss://testnet.tomochain.com/ws
 ```
 
 Testnet status: [https://stats-testnet.tomochain.com](https://stats-testnet.tomochain.com)
