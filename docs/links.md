@@ -6,12 +6,10 @@
 
 * Whitepaper - [https://tomochain.com/docs/technical-whitepaper--1.0.pdf](https://tomochain.com/docs/technical-whitepaper--1.0.pdf)
 
-* Network stats - [https://stats.tomocoin.io](https://stats.tomocoin.io)
+* Network stats - [https://stats.testnet.tomochain.com](https://stats.testnet.tomochain.com)
 
-* Explorer - [https://explorer-testnet.tomochain.com](https://explorer-testnet.tomochain.com)
+* Explorer - [https://scan.testnet.tomochain.com](https://scan.testnet.tomochain.com)
 
-* Governance dapp - [https://validators-testnet.tomochain.com](https://validators-testnet.tomochain.com)
-
-* Dapp tutorial - [https://github.com/nuuneoi/tomochain-dapp-example](https://github.com/nuuneoi/tomochain-dapp-example)
+* Governance DApp - [https://master.testnet.tomochain.com](https://master.testnet.tomochain.com)
 
 * Github - [https://github.com/tomochain](https://github.com/tomochain)
