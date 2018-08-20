@@ -6,7 +6,7 @@ This page will introduce you to masternode voting in the Tomochain ecosystem.
 
 In order to vote, you first need to create a wallet in our testnet.
 
-You can create it really easily with Myetherwallet or Metamask. The url of our testnet is `testnet.tomochain.com`
+You can create it really easily with Myetherwallet or Metamask. The url of our testnet is `https://testnet.tomochain.com`
 
 You can follow [this tutorial](https://medium.com/tomochain/tomo-guideline-how-to-connect-metamask-wallet-to-tomochain-f25053361ef) for Metamask.
 
