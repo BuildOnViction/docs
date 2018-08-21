@@ -1,8 +1,11 @@
 # General
 ---
 #### What is Tomocoin (TOMO)? How can I earn Tomocoin (TOMO)?
-TomoCoin - ticker is TOMO - is the native cryptocurrency of TomoChain. TomoCoin will also be protocol token for TomoChain infrastructure. TOMO is a cryptocurrency of fixed supply, consequently, it is long-term and non-inflationary. TOMO is important in several dimensions to the Tomo network, firstly, TOMO will be used as a source of funding to complete the development of TomoChain, and TomoWallet; secondly, TOMO being used in the Reward Engine/ Ecosystem Building program as an incentive mechanism to build Tomo network community; thirdly, TOMO being used as a long-term decentralized governance instrument of Tomo network, that means we will build tools to gather opinions from coin holders to decide the future direction of the Tomo network including TomoChain infrastructure, TomoWallet and Tomo application.
-You can earn TOMO from exchanges.
+TomoCoin (TOMO) is the native cryptocurrency to TomoChain, and will be the reserve cryptocurrency for all third-party apps running on TomoChain. Being the protocol token for the TomoChain infrastructure, TOMO will be needed by all parties utilising TomoChain to build apps or issue and integrate cryptographic tokens into their apps.
+ 
+The supply of TOMO is fixed, long-term and non-inflationary. In addition to above, TOMO is integral to the TomoChain network for a number of reasons: First, TOMO will be used to fund the development of TomoChain and TomoWallet; Second, TOMO will be used as a reward to incentivise the building of the Tomo engine/ecosystem; Third, TOMO will be used as a long-term, decentralized governance instrument of the Tomo network – the details of which will be announced in our upcoming technical white paper.
+
+TOMO is currently available on a number of exchanges.
 
 ---
 
@@ -10,20 +13,24 @@ You can earn TOMO from exchanges.
 
 The planned allocation of coin are following:
 
-- 50% of coins going to the token sale participants
+- 55% of coins going to the token sale participants
 - 15% of coins going to the company, advisors and bounties
-- 35% of coins going to the Reward Engine/ Ecosystem Building program.
+- 30% of coins going to the Reward Engine/ Ecosystem Building program.
 
 ---
 
 #### Can I mine TOMO?
-TOMO is non-mineable cryto.
+TOMO is a non-mineable cryptocurrency.
 
-What is total supply and circulating supply of TOMO?
+---
 
-TOMO token supply is fixed at 100.000.000 TomoChain in total. The circulating supply is 55.000.000
+#### What is total supply and circulating supply of TOMO?
 
-How can I send TOMO to my wallet?
+TOMO token supply is fixed at 100,000,000 TomoChain in total. The current circulating supply is 55,000,000
+
+---
+
+#### How can I send TOMO to my wallet?
 
 You can store TOMO in wallet supporting ERC20 Standard. We recommend to store TOMO in MYETHERWALLET + TREZOR/LEDGER NANO S + METAMASK + Mist + Parity + Trust.
 
@@ -36,9 +43,9 @@ Decimals: 18
 ---
 
 #### What would your currency be if not an ERC20 token?
-TOMO only stays ERC20 until the mainnet launch.
+TOMO will only be an ERC20 until the TomoChain mainnet launch.
 
 ---
 
-#### Is TOMO going to be swapped some day? If yes how do I know I'll be able to swap them if I take them from exchange? How will the switch from Erc20 token to your own ?
-We will lock your token before swapping to mainnet, so there are no chance to loose the token. Locking token means you are not able to transfer token to another address.
+#### Is TOMO going to be swapped some day? If yes, how do I know I’ll be able to swap my tokens if I take them from an exchange? How will you switch from an ERC20 token to your own?
+We will lock your tokens before swapping to mainnet, so there is no chance of losing the tokens. Whilst tokens are locked, they are not transferable to another address. 
