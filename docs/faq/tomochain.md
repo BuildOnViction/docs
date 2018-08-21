@@ -1,30 +1,36 @@
 # TOMOCHAIN
 ---
 #### What is Tomochain? How it works?
-TomoChain is our blockchain infrastructure solution to the scalability problem with ReplyBlock and with blockchain technology in general. TomoChain is a public permissioned blockchain with integrated smart contract functionalities (currently based on the Ethereum code-base) which allows for nearly zero fee & instant transaction speed with public auditability of financial transaction records. TomoChain opts to use Proof of Authority (atm) and build nodes in multiple locations to make sure the database is in a highly secure, immutable state. ReplyBlock will be the first application utilizing this blockchain infrastructure which later on will be offered to other companies for token issuance and integrations.
+TomoChain is an innovative solution to the scalability problem with the Ethereum blockchain, and other current blockchain platforms. TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support near-zero fee, and 2-second transaction confirmation time. Security, stability and chain finality are guaranteed via novel techniques such as double validation, staking via smart-contracts and true randomization processes. 
+
+TomoChain supports all EVM-compatible smart-contracts, protocols, and atomic cross-chain token transfers. New scaling techniques such as sharding, EVM parallelisation, private-chain generation, hardware integration will be continuously researched and incorporated into TomoChain's Masternode architecture which will be an ideal scalable smart-contract public blockchain for decentralized apps, token issuances and token integrations for small and big businesses.
 
 ---
 
 #### Is there a way to see the raw data that is stored in the blockchain?
-Yes, it is. Tokensale information will be available for viewing on ethplorer or etherscan.
+Yes, it is. Token Sale information will be available for viewing on ethplorer or etherscan.
 
 ---
 
 #### How can I check out TomoChain infrastructure?
-The testnet for TomoChain is available at https://stats-testnet.tomochain.com
+The TomoChain testnet 2.0 is available at [https://medium.com/tomochain/tomochain-public-testnet-2-0-announcement-c7f49e28eefa](https://medium.com/tomochain/tomochain-public-testnet-2-0-announcement-c7f49e28eefa)
 
-The demo wallet is available at https://wallet.tomocoin.io
+Tomo Faucet:[https://faucet.testnet.tomochain.com/](https://faucet.testnet.tomochain.com/)
 
-Tomochain Testnet Block Explorer: https://explorer-testnet.tomochain.com
+Tomo Stats: [https://stats.testnet.tomochain.com/](https://stats.testnet.tomochain.com/)
 
-And you can build a node to join our testnet: https://github.com/tomochain/tomochain-testnet
+Tomo Master: [https://master.testnet.tomochain.com/](https://master.testnet.tomochain.com/)
+
+Tomo Scan: [https://scan.testnet.tomochain.com/](https://scan.testnet.tomochain.com/)
+
+And you can build a node to join our testnet: [https://github.com/tomochain/tomochain-testnet](https://github.com/tomochain/tomochain-testnet)
 
 ---
 
 #### What is the difference between POA network and Tomo? Where is the advantage?
-At the moment, TomoChain uses PoA consensus like POA Network does. However, POA uses code base of Parity, Tomochain use code base of Ethereum. Secondly, next year (est time), Tomochain will move from PoA consensus to masternode and POS.
-Thirdly, confirmation time if Tomochain for 1 block is 2s while a POA network block requires 5s.
-Plus, Tomochain testnet can handle 1000tx.
+At the moment, TomoChain uses PoA consensus like POA Network does. However, POA uses code base of Parity, Tomochain uses code base of Ethereum. Secondly, in the end of 2018, Tomochain will move from PoA consensus to PoSV masternodes.
+Thirdly, reagrading confirmation time, with Tomochain technology, one block will be created every 2s while a POA network block requires 5s.
+Plus, Tomochain testnet 2.0 can handle +2000tx.
 
 ---
 
@@ -35,17 +41,10 @@ At the second stage, Master-nodes can be chosen by the network in a trust-less w
 
 ---
 
-#### What technology is used to get TPS to 1000 per second?
-In 2018, Proof of Authority network is run by social consensus. Nodes can be chosen via the governance D-app (decentralized on-chain voting). In the second stage of the main-net, we will move to a Master-node system based on Proof of Stake + Proof of Credibility consensus. As a whole global cryptocurrency system is pretty decentralized with many different blockchain, design, development team etc. For each chain, decentralization is not a binary choice but a matter of where you are on a scale. See this paper on quantifying decentralization by Balaji Srinivasan. TomoChain is designed to have a smaller but efficient number full-node in order to scale better, lower fee and faster confirmation. The chain will still be secure, transparent and fully audit-able.
-
----
-
 #### Why dont you publish all the codes on Github?
-Private development is done in GitLab which free and more convenient. The codes for cross-chain transfer protocol, updates to Geth codebases.
+Private development is done in GitLab which free and more convenient. The codes for cross-chain transfer protocol, updates to Geth codebases. Plus, only ReplyBlock is privately developed on Gitlab. But these softwares are actually running on the testnet and production (ReplyBlock) already.
 
-ReplyBlock is privately developed on Gitlab. But these softwares are actually running on the testnet and production (ReplyBlock) already.
-
-Tomochain, Tomo Governance DApp, Block Explorer publish the source code on: https://github.com/tomochain. We released ICO smart-contract codes, container codes for building node and joint testnet, slides for tomochain roadmap, cross chain transfer demo codes. It should be clear that we are having private repos, and publish codes publicly when they are ready for public, or need to be audited.
+Tomochain products, such as Tomo Governance DApp, Block Explorer publish the source code on: https://github.com/tomochain. We released ICO smart-contract codes, container codes for building node and joint testnet, slides for tomochain roadmap, cross chain transfer demo codes. It should be clear that we are having private repos, and publish codes publicly when they are ready for public, or need to be audited.
 
 We chose the model our team are comfortable with. Publishing work-in-progress is not suitable for us atm for multiple reasons including inviting unnecessary distractions, designing needs a to be done before coding. Protecting and auditing important codes are also more responsible, until the team reaches a certain scale.
 
@@ -56,11 +55,11 @@ We are also working with some third parties who we signed NDA (non disclosure ag
 #### Is Tomochain a side chain of Ethereum?
 No, it isn't. Tomochain has its own blockchain.
 
-What is the diifference between Tomocoin and Tomochain?
+---
 
-Tomocoin ($TOMO) is token.
+#### What is the difference between Tomocoin and Tomochain?
 
-Tomochain is an infrustructure.
+Tomocoin (TOMO) is token. Tomochain is an infrustructure.
 
 ---
 
@@ -75,31 +74,27 @@ You can contact to us via channels:
 - Website: [https://tomochain.com](https://tomochain.com)
 - Medium: [https://medium.com/tomochain](https://medium.com/tomochain)
 - Reddit: [https://www.reddit.com/r/Tomochain/](https://www.reddit.com/r/Tomochain/)
+- LinkedIn: [https://www.linkedin.com/company/tomochain/](https://www.linkedin.com/company/tomochain/)
 
 ---
 
-#### How will you help the Ethereum network?
-Tomochain is an innovative solution to the scalability problem with the Ethereum blockchain in particular and with all current blockchain network in general. TomoChain plans to support horizontal scaling via adding more second layer blockchains with good performance integrated with Ethereum network for backup and atomic cross-chain transfer. TomoChain is envisioned to be a network of chains that supports instant conﬁrmation, near zero transaction fee, and smart contracts which will be an ideal solution for decentralized apps, token issuances and token integrations for small and big businesses alike.
-
-
-Tomochain has an unique position in which it adds value to the Ethereum's ecosystem by addressing the scalabilty, governance issues while keeping the same smart-contracts and general architecture.
-
----
-
-#### Is Tomochain centralized?
-Now we use PoA, next year move to MN and PoS. You can tell the difference and to what extent how decentralized each concesus is. We make sure the quantity is large enough to ensure the decentralization. Plus, $tomo is protocol token that plays a role of governance system. Therefore, Tomochain is decentralized.
-
----
-
-#### How many tokens are needed for masternode?
-The masternode will be live in 2019 so no information at the moment. Check out this technical whitepaper for more information about masternode [TechnicalWhitepaper1.0](/whitepaper/)
-
----
-
-#### How are you going to get paid while running masternode when were there near zero transaction fees?
-There are additional services such as token exchanges, cross chain swaps, ICO AirDrop etc. that will generate sufficient revenues for Masternodes.
+#### How to become a Tomochain masternode?
+You need to deposit 50k TOMO to become a masternode candidate. Candidates become Masternodes if they belong to the top 150 most voted. 
  
 ---
 
-#### How this masternode works ? How come just holding their token can achieve masternode?
-There will be a staking mechanism that allows coin holders to vote/ stake for the masternodes of theirs choices and receive proportional revenues. These are being worked on at the moment.
+#### What are Candidate/ Masternode incentives?
+
+Masternodes will receive a significant amount of block rewards, which likely exceeds the cost for running the infrastructure. However, Masternodes need to invest in TomoChain by depositing  at least 50K Tomo, and stake them for a long term. Furthermore, after depositing 50K Tomo to become a Candidate, if the account cannot become a Masternode (has less votes than Top  150 most voted  Candidates), he/she will receive no rewards. Therefore, Candidates have an incentive to do as much as they can such as signaling their capability to support TomoChain to get into top 150 most voted Candidates.
+
+---
+
+#### What are Token Voter incentives? Do voters get reward from node holders too?
+
+Token voters should vote for Candidates who signal a strong support for TomoChain because if the Candidate does not become a Masternode, voters will not receive any rewards. However, token voters should also vote for the less voted Candidates because the most voted Candidates will receive less reward per token stake comparatively. 
+
+---
+
+#### How will reward be divided? 
+
+The reward achieved by each Masternode  will be divided into three portions. The first portion of 40% called “Infrastructure Reward” goes to the Masternode. The second portion of 50% called “Staking Reward” goes to the pool of all voters  for that  Masternode which is shared proportionally based on the token  stake. The last portion of 10% called “Foundation Reward” goes to a special account controlled by the Masternode Foundation, which is run by TomoChain company initially. 
