@@ -6,15 +6,18 @@ This page will show you how to vote for masternodes in the Tomochain ecosystem.
 
 In order to vote, you first need to have a wallet.
 
-If you do not have one already, you can easily create it with Myetherwallet or Metamask. 
+If you do not have one already, you can easily create it [TomoWallet](https://wallet.testnet.tomochain.com).
 
-The url of our testnet is `https://testnet.tomochain.com`
+You also can use Myetherwallet or Metamask to create your own wallet. 
+
+The RPC url of our testnet is `https://testnet.tomochain.com`, and Network ID is 89.
 
 You can follow [this tutorial](https://medium.com/tomochain/tomo-guideline-how-to-connect-metamask-wallet-to-tomochain-f25053361ef) in order to connect your Metamask wallet to our testnet.
 
 ## Get some TOMO
+[TomoWallet](https://wallet.testnet.tomochain.com) provides a function named `Earn TOMO to test`. It will allows you to get 15 TOMO on the Testnet.
 
-We have a service called "Faucet" who allows you to get 15 TOMO at a time. Note that, faucet $TOMO is only used for experimenting with the testnet and has no value in our TomoChain mainnet, which will be launched in Q4 this year. 
+We also have a service called "Faucet" who allows you to get 15 TOMO at a time. Note that, faucet TOMO is only used for experimenting with the testnet and has no value in our TomoChain mainnet, which will be launched in Q4 this year. 
 
 To get faucet TOMO:
 1. Access the faucet site at: [https://faucet.testnet.tomochain.com](https://faucet.testnet.tomochain.com)
