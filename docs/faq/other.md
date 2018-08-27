@@ -1,12 +1,12 @@
 # Other
 ---
 #### What is ReplyBlock?
-Reply Block is the Q&A application for blockchain enthusiatics and crypto advocates. It is rebranded from Tomoapp.
+Reply Block is the Q&A application for blockchain enthusiasts and crypto advocates. It is rebranded from Tomoapp.
 
 ---
 
 #### What is the difference between Tomo application and ReplyBlock?
-Tomo application refers to all D-app will be built on top of Tomochain in the future. Reply Block is the first D-app built on Tomochain and funded by Tomochain.
+Tomo application refers to all D-apps will be built on top of Tomochain in the future. Reply Block is the first D-app built on Tomochain and funded by Tomochain.
 
 ---
 
