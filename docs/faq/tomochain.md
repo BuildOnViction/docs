@@ -23,7 +23,7 @@ Tomo Master: [https://master.testnet.tomochain.com/](https://master.testnet.tomo
 
 Tomo Scan: [https://scan.testnet.tomochain.com/](https://scan.testnet.tomochain.com/)
 
-And you can build a node to join our testnet: [https://github.com/tomochain/tomochain-testnet](https://github.com/tomochain/tomochain-testnet)
+Tomo Wallet: [https://wallet.testnet.tomochain.com/](https://wallet.testnet.tomochain.com/)
 
 ---
 
