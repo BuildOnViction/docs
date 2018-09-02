@@ -15,22 +15,22 @@ The RPC url of our testnet is `https://testnet.tomochain.com`, and Network ID is
 You can follow [this tutorial](https://medium.com/tomochain/tomo-guideline-how-to-connect-metamask-wallet-to-tomochain-f25053361ef) in order to connect your Metamask wallet to our testnet.
 
 ## Get some TOMO
-[TomoWallet](https://wallet.testnet.tomochain.com) provides a function named `Earn TOMO to test`. It will allows you to get 15 TOMO on the Testnet.
+[TomoWallet](https://wallet.testnet.tomochain.com) provides a function named `Earn TOMO to test`. It allows you to get 15 TOMO on the Testnet.
 
-We also have a service called "Faucet" who allows you to get 15 TOMO at a time. Note that, faucet TOMO is only used for experimenting with the testnet and has no value in our TomoChain mainnet, which will be launched in Q4 this year. 
+We also have a service called "Faucet" which allows you to get 15 TOMO at a time. Note that, faucet TOMO is only used for experimenting with the testnet and has no value in our TomoChain mainnet which will be launched in Q4 this year. 
 
 To get faucet TOMO:
 1. Access the faucet site at: [https://faucet.testnet.tomochain.com](https://faucet.testnet.tomochain.com)
 
 2. Enter your wallet address in the field and tick the `I'm not a robot` box.
 
-3. Click `REQUEST 15 TOMO` and Wait for some second for the transaction to be confirmed.
+3. Click `REQUEST 15 TOMO` and Wait for some seconds for the transaction to be confirmed.
 
 You will receive a success confirmation message and the amount of TOMO in your wallet should be updated. You can check your TOMO balance by either looking at your wallet or using [TomoScan](https://scan.testnet.tomochain.com).
 
 ## How To Vote
 
-Now that you have some TOMO. You can access our governance dapp, [Tomomaster](https://master.testnet.tomochain.com/), to start voting for masternodes.
+Now you have some TOMO. You can access our governance dapp, [Tomomaster](https://master.testnet.tomochain.com/), to start voting for masternodes.
 
 
 Tomomaster natively supports Metamask. You can also access your account page (the vertical three dots on the top right) to fill in your wallet Private Key or MNEMONIC (see image below).
@@ -54,7 +54,7 @@ Every epoch (~30 minutes), you will automatically receive rewards for each maste
 
 If you do not want to support a masternode you voted for, you can unvote it by clicking the `Unvote` button on the masternode's page and enter the amount of TOMO you want to unvote. 
 
-After unvoting, your TOMO is still locked in the smart contract for around 2 days before you are able to withdraw.
+After unvoting, your TOMO is still locked in the smart contract for 48 hours before you are able to withdraw.
 
 ## How to Withdraw
 
