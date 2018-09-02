@@ -29,7 +29,7 @@ Tomo Wallet: [https://wallet.testnet.tomochain.com/](https://wallet.testnet.tomo
 
 #### What is the difference between POA network and TomoChain? Where is the advantage?
 At the moment, TomoChain uses PoA consensus like POA Network does. However, POA uses code base of Parity, whereas Tomochain uses the code base of Ethereum. Secondly, in the end of 2018, Tomochain will move from PoA consensus to PoSV masternodes.
-Thirdly, reagarding confirmation time, with Tomochain technology, one block will be created every 2s while a POA network block requires 5s. Finally, the Tomochain testnet 2.0 can handle over 2000tx.
+Thirdly, regarding confirmation time, with Tomochain technology, one block will be created every 2s while a POA network block requires 5s. Finally, the Tomochain testnet 2.0 can handle over 2000 .
 
 ---
 
@@ -78,7 +78,7 @@ You can contact us via our channels:
 ---
 
 #### What is required to become a Tomochain masternode?
-You need to deposit 50k TOMO to become a masternode candidate. Candidates become masternodes if they belong to the top 150 most voted. 
+You need to deposit 50k TOMO to become a masternode candidate. Candidates become masternodes if they belong to the top 150 most votedtps candidates. 
  
 ---
 
@@ -90,10 +90,10 @@ Masternodes will receive a significant amount of block rewards, which likely exc
 
 #### What are Token Voter incentives? Do voters get reward from node holders too?
 
-Token voters should vote for candidates who signal strong support for TomoChain - as candidates that do not become masternodes will receive no rewards, and hence voters will also not be rewarded. However, token voters should also consider voting for candidates with lower number of votes, as the most voted candidates will have to share rewards over a larger number of voters.
+Token voters should vote for candidates who signal strong support for TomoChain - as candidates that do not become masternodes will receive no rewards, and hence voters will also not be rewarded. However, token voters should also consider voting for candidates with lower number of votes, as the most voted candidates will have to share rewards with a larger number of voters.
 
 ---
 
 #### How will reward be divided? 
 
-The rewards achieved by each masternode will be divided into three portions. The first portion of 40% called “Infrastructure Reward” and this goes to the masternode. The second portion of 50% called “Staking Reward” goes to the pool of voters for that masternode and is shared proportionally based on the number of tokens staked. The last portion of 10% called “Foundation Reward” goes to a special account controlled by the Masternode Foundation, which will initially be run by the TomoChain company.
+The rewards achieved by each masternode will be divided into three portions. The first portion of 40% called “Infrastructure Reward” goes to the masternode. The second portion of 50% called “Staking Reward” goes to the pool of voters for that masternode and is shared proportionally based on the number of tokens staked. The last portion of 10% called “Foundation Reward” goes to a special account controlled by the Masternode Foundation, which will initially be run by the TomoChain company.
