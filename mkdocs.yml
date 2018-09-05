@@ -48,6 +48,9 @@ pages:
         - Testnet: get-started/testnet.md 
         # - Running a Node: get-started/run-node.md    
         # - Create your own network: get-started/private-network.md
+    - Wallets:
+        - Metamask: wallets/metamask.md
+        - TomoWallet: wallets/tomowallet.md
     - Technical Whitepaper: whitepaper.md
     - FAQ:
         - General: faq/general.md
