@@ -55,7 +55,6 @@ When you first start your fullnode with tmn, you need to give some informations.
 It should be formated as a slug string.
 Slug format autorize all letters and numbers, dashes ("-") and underscore ("_").
 You can name it to reflect your identity, company name, etc.
-#TODO
 
 `--net`: The netowrk your fullnode will connect to.
 You can chose here to connect it to the Tomochain Testnet or Mainnet (once launched).
@@ -63,7 +62,7 @@ You can chose here to connect it to the Tomochain Testnet or Mainnet (once launc
 `--pkey`: The private key of the account that your fullnode will use.
 A tomochain fullnode use an account to be uniquely identified and to receive rewards.
 
-It could look like this.
+It could look like this:
 
 ```
 tmn start --name companyabcd --net testnet --pkey b9d3b1d2d65f928db8124eec2374ca542c283d81b35152e7b538bc7a2219d116
@@ -71,11 +70,11 @@ tmn start --name companyabcd --net testnet --pkey b9d3b1d2d65f928db8124eec2374ca
 
 Once started, you should see your node on the [stats page](https://stats.testnet.tomochain.com)!
 
-Note: it can take up to 15 minutes to properly end the first syncd
+Note: it can take up to 15 minutes to properly end the first synchronization.
 
 ### Usage
 
-Once your node is started, it
+With a fullnode created, you can now interact
 
 ## Docker images
 
