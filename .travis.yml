@@ -1,4 +1,11 @@
-before_install: sudo pip install -r requirements.txt
 sudo: required
-script:
-    - bash build.sh
+jobs:
+  include:
+    - stage: Deploy the site (master only)
+      before_script: sudo pip install -r requirements.txt
+      script:
+        - bash build.sh
+
+stages:
+  - name: Deploy the site (master only)
+    if: type != pull_request AND branch = master
