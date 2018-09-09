@@ -1,10 +1,10 @@
 # Running and applying a masternode
 
-With the recent release of Tomochain Testnet 2.0 with our PoSV consensus, you might be interested in creating a Tomochain fullnode and applying it to be a masternode.
+With the recent release of Tomochain Testnet 2.0 with our PoSV consensus, you might be interested in creating a Tomochain full node and applying it to be a masternode.
 
-To run a fullnode and meet the requirements to apply on our governance DApp, you have to run two services:
+To run a full node and meet the requirements to apply on our governance DApp, you have to run two services:
 - The [Tomochain client](https://github.com/tomochain/tomochain), our Tomochain implementation written in _Go_.
-- [Telegraf](https://github.com/influxdata/telegraf), an agent to collect performance metrics of your fullnode.
+- [Telegraf](https://github.com/influxdata/telegraf), an agent to collect performance metrics of your full node.
 
 We provide different way of running a node to assure flexibility in integration depending on your current infrastructure.
 
@@ -13,12 +13,11 @@ We provide different way of running a node to assure flexibility in integration 
 Our team extensively tested performances and came up with those minimal requirements for any Tomochain masternode host:
 
 - Should be facing internet directly (no NAT, public IP)
-<!-- TODO: edit values -->
-- Should have at least 8 core, 16 threads at 2.5Ghz
+- Should have at least 8 core, 16 threads at 2.5Ghz <!-- TODO: edit values -->
 - Should have at least 8 Go of RAM
 - Storage should be of SSD type
 
-The fullnode will serve on port `30303` for p2p communication with other nodes, `8545` for RPC api and `8546` for websocket api.
+The full node will serve on port `30303` for p2p communication with other nodes, `8545` for RPC api and `8546` for websocket api.
 You may need to edit your firewall configuration accordingly.
 
 ## tmn
@@ -53,18 +52,18 @@ pip3 install -U tmn
 
 ### First start
 
-When you first start your fullnode with tmn, you need to give some informations.
+When you first start your full node with tmn, you need to give some informations.
 
-`--name`: The name of your fullnode.
+`--name`: The name of your full node.
 It should be formatted as a slug string.
 Slug format authorize all letters and numbers, dashes ("-") and underscore ("\_").
 You can name it to reflect your identity, company name, etc.
 
-`--net`: The netowrk your fullnode will connect to.
+`--net`: The netowrk your full node will connect to.
 You can chose here to connect it to the Tomochain Testnet or Mainnet (once launched).
 
-`--pkey`: The private key of the account that your fullnode will use.
-A tomochain fullnode use an account to be uniquely identified and to receive rewards.
+`--pkey`: The private key of the account that your full node will use.
+A tomochain full node use an account to be uniquely identified and to receive rewards.
 
 It could look like this:
 
@@ -80,14 +79,14 @@ Note: it can take up to 15 minutes to properly end the first synchronization.
 
 You can now interact with it via the other commands:
 
-`stop`: Stop your fullnode.
+`stop`: Stop your full node.
 
-`start`: Start your fullnode if it was stopped.
+`start`: Start your full node if it was stopped.
 
-`status`: The current status of your fullnode.
+`status`: The current status of your full node.
 
-`inspect`: Display the details related to your fullnode.
-Useful for applying your fullnode as a masternode.
+`inspect`: Display the details related to your full node.
+Useful for applying your full node as a masternode.
 
 `remove`: Completely remove your masternode, unique identity and data.
 
@@ -104,27 +103,26 @@ You will need to run our two docker images: `tomochain/tomochain` and `tomochain
 
 ### Running the tomochain image
 
-To run a fullnode, you need to provide those configurations through environment variables:
+To run a full node, you need to provide those configurations through environment variables:
 
-`IDENTITY`: The unique identity of your fullnode.
+`IDENTITY`: The unique identity of your full node.
 The identity should be of this format: `$NAME_$IDENTIFIER`.
 Please use letters, numbers, dashes ("-") and underscore ("\_") only in the name.
 The identifier should be a 6 character hexadecimal string.
 You can generate one easily with the command `uuidgen | cut -c -6`
 
-`PRIVATE_KEY`: The private key of the account that your fullnode will use.
-A tomochain fullnode use an account to be uniquely identified and to receive rewards.
+`PRIVATE_KEY`: The private key of the account that your full node will use.
+A tomochain full node use an account to be uniquely identified and to receive rewards.
 
 `BOOTNODES`: The bootnodes specific to the network you want to connect to.
-They should be separated by commas without any whitespace.
-<!-- TODO: bootnode address? -->
+They should be separated by commas without any whitespace. <!-- TODO: bootnode address? -->
+
 
 `NETSTATS_HOST`: The netstats endpoint specific to the network you want to connect to.
 For Testnet, it's `stats.testnet.tomochain.com`.
 
-<!-- TODO: remove? and set 443 as default -->
 `NETSTATS_PORT`: The port of the netstats endpoint.
-For Testnet, it's `443`.
+For Testnet, it's `443`. <!-- TODO: remove? and set 443 as default -->
 
 It is also strongly recommended to use a named volume to store the blockchain data.
 This way, the node will not need to re-download the whole blockchain on every restart.
@@ -154,10 +152,14 @@ You will also need to mount different repertories of your host system to let tel
 
 `/etc` -> `/rootfs/etc`
 
-Here is an example of running a telegraf container configured to use our Testnet:
+Here is an example of running a telegraf container configured to use our Testnet: <!-- TODO update images! infra-telegraf:devnet -> telegraf:latest -->
 ```
 docker run -v /var/run/docker.sock:/var/run/docker.sock:ro -v /sys:/rootfs/sys:ro -v /proc:/rootfs/proc:ro -v /etc:/rootfs/etc:ro -e METRICS_ENDPOINT=https://metrics.testnet.tomochain.com tomochain/telegraf:latest
 ```
-<!-- TODO update images! infra-telegraf:devnet -> telegraf:latest -->
 
 ## Binaries
+
+You can also run directly the tomo binary.
+Please refer to the tomochain repository [readme](https://github.com/tomochain/tomochain).
+You will also need to run the telegraf docker image anyway.
+You can refer to the "Docker images" part of this document to that effect.
