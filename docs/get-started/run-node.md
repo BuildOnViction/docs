@@ -58,10 +58,10 @@ When you first start your full node with tmn, you need to give some informations
 
 `--name`: The name of your full node.
 It should be formatted as a slug string.
-Slug format authorize all letters and numbers, dashes ("-") and underscore ("\_").
+Slug format authorize all letters and numbers, dashes ("-") and underscores ("\_").
 You can name it to reflect your identity, company name, etc.
 
-`--net`: The netowrk your full node will connect to.
+`--net`: The network your full node will connect to.
 You can chose here to connect it to the TomoChain Testnet or Mainnet (once launched).
 
 `--pkey`: The private key of the account that your full node will use.
