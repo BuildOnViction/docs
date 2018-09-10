@@ -5,6 +5,7 @@ Once your full node is up and running, you need to apply it to make him eligible
 As 50'000 TOMO are required for applying, the first thing to do is to fill out he following [form](https://docs.google.com/forms/d/183UxYRET9I183L7lFHCredjaTd9oj4kmf4UdH7eLNNs).
 
 Our team will then review your demand and send you the required funds.
+*Note: That is TOMO on testnet, no value for trading*
 
 ## Applying as masternode
 You can now apply by going on the [TomoMaster](https://master.testnet.tomochain.com) page, login your wallet (that contains 50'000 TOMO).
