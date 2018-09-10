@@ -1,2 +1,4 @@
 .*sw*
 env
+venv
+site
