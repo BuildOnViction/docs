@@ -6,7 +6,7 @@ As 50'000 TOMO are required for applying, the first thing to do is to fill out h
 
 Our team will then review your demand and send you the required funds.
 
-## Applying as a Masternode
+## Applying as masternode
 You can now apply by going on the [TomoMaster](https://master.testnet.tomochain.com) page, login your wallet (that contains 50'000 TOMO).
 
 On the top right corner, click on "Become a Candidate".
@@ -21,7 +21,7 @@ Your full node will now be listed on TomoMaster. People can view its details and
 
 If your node is in the top 150 most voted nodes, it will be promoted as a masternode and will start producing blocks at the next epoch.
 
-## Resigning as a Candidate
+## Resigning as masternode
 In case, you want to stop your node. You need to access [TomoMaster](https://master.testnet.tomochain.com), go to your candidate detail page, and click `Resign` button.
 
 After resigning successfully, you can access the node and run command:
