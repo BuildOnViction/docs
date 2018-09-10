@@ -9,3 +9,15 @@
 .md-footer-meta {
     background-color: #724d91 !important;
 }
+
+@media only screen and (max-width: 76.1875em) {
+    html .md-nav--primary .md-nav__title--site {
+        background-color: #724d91 !important;
+    }
+}
+
+@media only screen and (max-width: 59.9375em) {
+    .md-nav__source {
+        background-color: #4f3c7f !important;
+    }
+}
