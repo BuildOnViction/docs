@@ -8,7 +8,7 @@ theme:
 
 markdown_extensions:
     - mdx_math:
-        enable_dollar_delimiter: True 
+        enable_dollar_delimiter: True
     - fontawesome_markdown
     - markdown.extensions.extra
     - markdown.extensions.toc:
@@ -43,10 +43,10 @@ google_analytics: ['UA-124597188-1', 'docs.tomochain.com']
 
 pages:
     - Introduction: index.md
-    - Getting Started:
-        - Voter's Guide: get-started/started.md    
-        - Testnet: get-started/testnet.md 
-        # - Running a Node: get-started/run-node.md    
+    - Get started:
+        - Voter's Guide: get-started/started.md
+        - Testnet: get-started/testnet.md
+        - Running a masternode: get-started/masternode.md
         # - Create your own network: get-started/private-network.md
     - Wallets:
         - Metamask: wallets/metamask.md

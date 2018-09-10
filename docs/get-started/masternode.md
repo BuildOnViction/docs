@@ -172,7 +172,7 @@ As 50'000 TOMO are required for applying, the first thing to do is to fill out h
 
 Our team will then review your demand and send you the required funds.
 
-You can now apply by going on the [Tomomaster](https://master.testnet.tomochain.com) page.
+You can now apply by going on the [TomoMaster](https://master.testnet.tomochain.com) page.
 On the top right corner, click on "Become a Candidate".
 
 Enter the amount of TOMO you want to deposit (minimum 50'000).
@@ -181,6 +181,6 @@ Enter your coinbase address. This is the public key of the account that your mas
 
 Confirm with apply and proceed to make the payement.
 
-Your full node will now be listed on Tomomaster. People can view its details and vote for it.
+Your full node will now be listed on TomoMaster. People can view its details and vote for it.
 
 If your node is in the top 150 most voted nodes, it will be promoted as a masternode and will start producing blocks at the next epoch.
