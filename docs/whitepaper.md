@@ -87,7 +87,7 @@ validation process as well as finality checkpoint of the protocol.
 
 The **Tomochain** blockchain is produced and maintained by a set of *masternodes* in a
 consistent manner through the **Tomochain consensus** protocol as shown in Fig.
-[architecture](#fig:architecture). These masternodes are full nodes that hold \$TOMO.
+[architecture](#fig:architecture). These masternodes are full nodes that hold TOMO.
 For a token holder to become a masternode, two requirements must be
 satisfied:
 
@@ -96,7 +96,7 @@ satisfied:
 
 -   The token holder must be one of the most voted masternode candidates
     in the system. The voting by token holders is credited through a
-    *Voting DApp* that allows token holders to *send \$TOMO through the
+    *Voting DApp* that allows token holders to *send TOMO through the
     smart contract mechanism*.
 
 In addition to the voting system which is an improvement over the
@@ -113,22 +113,22 @@ components of **Tomochain** are step-by-step detailed in the followings.
 ### Token holders, Masternodes {#coin-holders-masternodes .unnumbered}
 
 Token holder is as simple as its name: users who join the network, who
-own and transfer \$TOMO. Masternodes are full-nodes which maintain a
+own and transfer TOMO. Masternodes are full-nodes which maintain a
 copy of the blockchain, produce blocks and keep the chain consistent. It
 is worth noting that, **Tomochain** does not have miners as in the current
 Proof-of-Work-based blockchain systems such as Bitcoin and Ethereum.
 Only masternodes can produce and validate blocks.
 
 Masternodes are selected via a voting system. The first requirement of
-being masternodes is to deposit 50 000 \$TOMO to the Voting Smart
+being masternodes is to deposit 50 000 TOMO to the Voting Smart
 Contract. Then, these depositors are listed as masternode candidates in
 the Voting DApp, which allows token holders to vote for them by sending
-\$TOMO to the smart contract.
+TOMO to the smart contract.
 
 Masternodes which work hard in the system to create and verify blocks
-will be incentivized with \$TOMO. Furthermore, token holders who vote for
-these incentivized masternodes will also receive \$TOMO in proportion to
-the amount of \$TOMO they have invested via ballots. **Tomochain** engineers take
+will be incentivized with TOMO. Furthermore, token holders who vote for
+these incentivized masternodes will also receive TOMO in proportion to
+the amount of TOMO they have invested via ballots. **Tomochain** engineers take
 responsibility to design that fair, explicit, automated and accountable
 reward mechanism.
 
@@ -153,17 +153,17 @@ can flourish.
 
 There are maximum ninety-nine masternodes elected in the masternode
 committee. The required amount of deposit for masternode role is set at
-50 000 \$TOMO. This amount is locked in a *voting smart contract*. Once
+50 000 TOMO. This amount is locked in a *voting smart contract*. Once
 a masternode is demoted (by not remaining in the top ninety-nine voted
 masternodes) or intentionally quits the masternode candidates
 list/masternode committee, the deposit will have been locked for a
 month.
 
 Token holders can vote at any time, by any number of votes (which is
-actually counted by the amount of \$TOMO they bet on some masternode
+actually counted by the amount of TOMO they bet on some masternode
 candidates). They can use masternode’s performance statistics in the
 governance *Voting DApp* as reference information to give votes. The set
-of masternodes is dynamically sorted by the amount of \$TOMO and counted
+of masternodes is dynamically sorted by the amount of TOMO and counted
 up to ninety-nine, upon reception of votes.
 
 ### Reward Mechanism {#reward-mechanism .unnumbered}
@@ -175,12 +175,12 @@ all of the created blocks in the epoch and count number of signatures.
 The reward mechanism is designed following the policy as follows: the
 higher number of signatures one masternode has made, the more reward he
 earns. For instance, within an epoch, masternode A who has sealed twice
-the blocks than masternode B earns double amount of \$TOMO than
+the blocks than masternode B earns double amount of TOMO than
 masternode B does.
 
 Furthermore, there is also a reward sharing ratio among token holders and
 masternode who has been elected supported by the token holders. For
-example, within an epoch, one masternode receives $X$ \$TOMO. Ten
+example, within an epoch, one masternode receives $X$ TOMO. Ten
 percent of $X$ is sent to the masternode’s address. Eighty percent of
 $X$ is shared in proportion to the amount of tokens deposited and voted
 by the masternode and token holders, respectively. The last ten percent
@@ -508,9 +508,9 @@ valid blocks or simply become inactive. In this case, chain is stuck.
 In fact, masternodes are paid for their effort of correctly working so
 that the chain is actively updated in a consistent manner. More
 importantly, becoming masternode means a certain amount of tokens is
-locked, 50 000 \$TOMO in particular. As a result, in order to control
+locked, 50 000 TOMO in particular. As a result, in order to control
 more than$\frac{3}{4}$ masternodes, attackers must hold a considerable
-amount of \$TOMO and gain huge support from token holders. And because of
+amount of TOMO and gain huge support from token holders. And because of
 this, the attackers do not have incentives to do any malicious action to
 harm the chain.
 
@@ -624,7 +624,7 @@ whose consensus protocol is termed *Delegated Proof-of-Stake* (DPoS).
 DPoS is similar to the Proof-of-Stake Voting consensus of **Tomochain** in the sense
 that masternodes (block creators or *witnesses* in DPoS) are elected
 through a voting system. However, **Tomochain** requires that masternodes need to
-deposit a required minimum amount of \$TOMO to become a masternode
+deposit a required minimum amount of TOMO to become a masternode
 candidate, which puts more pressure on the masternodes to work honestly.
 Furthermore, the **Double Validation** mechanism of **Tomochain** lowers the
 probability of handshaking attacks and having invalid blocks, as
@@ -678,7 +678,7 @@ distribution function is uniform eventually.
     could be offset by the revenues generated. In this context, the cost
     of network infrastructure consists of two parts: the physical cost
     of having hardware such as servers, memories that passes the network
-    technical requirements; and the capital cost of having \$TOMO locked
+    technical requirements; and the capital cost of having TOMO locked
     into smart-contracts. The revenues for Masternodes would primarily
     come from Reward Engine emission, and later on from service revenues
     such as token exchange fees provided by applications running on top
