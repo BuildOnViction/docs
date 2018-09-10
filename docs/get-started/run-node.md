@@ -1,16 +1,16 @@
 # Running a TomoChain full node
 
-With the recent release of Tomochain Testnet 2.0 with our PoSV consensus, you might be interested in creating a Tomochain full node and applying it to be a masternode.
+With the recent release of TomoChain Testnet 2.0 with our PoSV consensus, you might be interested in creating a TomoChain full node and applying it to be a masternode.
 
 To run a full node and meet the requirements to apply on our governance DApp, you have to run two services:
-- The [Tomochain client](https://github.com/tomochain/tomochain), our Tomochain implementation written in _Go_.
+- The [TomoChain client](https://github.com/tomochain/tomochain), our TomoChain implementation written in _Go_.
 - [Telegraf](https://github.com/influxdata/telegraf), an agent to collect performance metrics of your full node.
 
 We provide different way of running a node to assure flexibility in integration depending on your current infrastructure.
 
 ## General hardware notice
 
-Our team extensively tested performances and came up with those minimal requirements for any Tomochain masternode host:
+Our team extensively tested performances and came up with those minimal requirements for any TomoChain masternode host:
 
 - Must be facing internet directly (no NAT, public IP)
 - Must have at least 8 cores
@@ -23,7 +23,7 @@ You may need to edit your firewall configuration accordingly.
 
 ## tmn
 
-We made a simple command line interface called [tmn](https://github.com/tomochain/masternode) to easily and quickly start a Tomochain masternode.
+We made a simple command line interface called [tmn](https://github.com/tomochain/masternode) to easily and quickly start a TomoChain masternode.
 It takes care of starting the necessary docker containers with the proper settings for you.
 It will really suits you if you don't already have a big infrastructure running.
 Spin up a machine in your favorite cloud and get your masternode running in a few minutes!
@@ -61,7 +61,7 @@ Slug format authorize all letters and numbers, dashes ("-") and underscore ("\_"
 You can name it to reflect your identity, company name, etc.
 
 `--net`: The netowrk your full node will connect to.
-You can chose here to connect it to the Tomochain Testnet or Mainnet (once launched).
+You can chose here to connect it to the TomoChain Testnet or Mainnet (once launched).
 
 `--pkey`: The private key of the account that your full node will use.
 A tomochain full node use an account to be uniquely identified and to receive rewards.
