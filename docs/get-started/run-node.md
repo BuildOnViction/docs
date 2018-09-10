@@ -14,7 +14,7 @@ Our team extensively tested performances and came up with those minimal requirem
 
 - Must be facing internet directly (no NAT, public IP)
 - Must have at least 8 cores
-- Must have at least 32Go of RAM
+- Must have at least 32G of RAM
 - Must use a PaaS ("cloud") provider of your choice (AWS, Digital Ocean, Google Cloud, etc.)
 - Storage must be SSD
 
