@@ -15,6 +15,7 @@ Our team extensively tested performances and came up with those minimal requirem
 - Must be facing internet directly (no NAT, public IP)
 - Must have at least 8 cores
 - Must have at least 32Go of RAM
+- Must use a PaaS ("cloud") provider of your choice (AWS, Digital Ocean, Google Cloud, etc.)
 - Storage must be SSD
 
 The full node will serve on port `30303` for p2p communication with other nodes, `8545` for RPC api and `8546` for websocket api.
