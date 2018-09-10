@@ -3,6 +3,7 @@
 With the recent release of TomoChain Testnet 2.0 with our PoSV consensus, you might be interested in creating a TomoChain full node and applying it to be a masternode.
 
 To run a full node and meet the requirements to apply on our governance DApp, you have to run two services:
+
 - The [TomoChain client](https://github.com/tomochain/tomochain), our TomoChain implementation written in _Go_.
 - [Telegraf](https://github.com/influxdata/telegraf), an agent to collect performance metrics of your full node.
 
