@@ -1,4 +1,5 @@
 site_name: Tomochain Documentation
+site_description: The most efficient platform for token economy
 
 theme:
   name: 'material'
