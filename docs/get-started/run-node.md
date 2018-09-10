@@ -64,12 +64,12 @@ You can name it to reflect your identity, company name, etc.
 You can chose here to connect it to the TomoChain Testnet or Mainnet (once launched).
 
 `--pkey`: The private key of the account that your full node will use.
-A tomochain full node use an account to be uniquely identified and to receive rewards.
+A tomochain full node use an account to be uniquely identified and to receive transaction fee.
 
 It could look like this:
 
 ```
-tmn start --name companyabcd --net testnet --pkey b9d3b1d2d65f928db8124eec2374ca542c283d81b35152e7b538bc7a2219d116
+tmn start --name companyabcd --net testnet --pkey [YOUR_COINBASE_PRIVATE_KEY]
 ```
 
 Once started, you should see your node on the [stats page](https://stats.testnet.tomochain.com)!
