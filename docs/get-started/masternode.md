@@ -117,7 +117,6 @@ A tomochain full node use an account to be uniquely identified and to receive re
 `BOOTNODES`: The bootnodes specific to the network you want to connect to.
 They should be separated by commas without any whitespace. <!-- TODO: bootnode address? -->
 
-
 `NETSTATS_HOST`: The netstats endpoint specific to the network you want to connect to.
 For Testnet, it's `stats.testnet.tomochain.com`.
 
