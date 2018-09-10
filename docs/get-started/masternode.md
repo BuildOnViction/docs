@@ -12,10 +12,10 @@ We provide different way of running a node to assure flexibility in integration 
 
 Our team extensively tested performances and came up with those minimal requirements for any Tomochain masternode host:
 
-- Should be facing internet directly (no NAT, public IP)
-- Should have at least 8 core, 16 threads at 2.5Ghz <!-- TODO: edit values -->
-- Should have at least 8 Go of RAM
-- Storage should be of SSD type
+- Must be facing internet directly (no NAT, public IP)
+- Must have at least 8 cores
+- Must have at least 32Go of RAM
+- Storage must be SSD
 
 The full node will serve on port `30303` for p2p communication with other nodes, `8545` for RPC api and `8546` for websocket api.
 You may need to edit your firewall configuration accordingly.
