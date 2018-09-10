@@ -1,6 +1,6 @@
-# Tomochain Documentation
+# TomoChain Documentation
 
-Docs for [Tomochain](https://docs.tomochain.com)
+Docs for [TomoChain](https://docs.tomochain.com)
 
 ## Installation
 
