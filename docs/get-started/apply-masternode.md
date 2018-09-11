@@ -28,7 +28,7 @@ People can view its details and vote for it.
 
 If your node is in the top 150 most voted nodes, it will be promoted as a masternode and will start producing blocks at the next epoch.
 
-## Resigning as masternode
+## Resigning your masternode
 In case you want to stop your node, you need to resign it from the governance first in order to retrieve your locked funds.
 Access [TomoMaster](https://master.testnet.tomochain.com), go to your candidate detail page, and click the `Resign` button.
 Your funds will be available to withdraw 30 days after the resignation.
