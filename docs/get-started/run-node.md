@@ -98,7 +98,7 @@ Useful for applying your full node as a masternode.
 
 ### Prerequisites
 
-To use tmn, you should meet this requirements in addition of the hardware ones:
+To run the docker images, you should meet this requirement in addition of the hardware ones:
 
 - [Docker CE](https://docs.docker.com/install/)
 
