@@ -8,7 +8,7 @@ As 50'000 TOMO are required for applying, the first thing to do is to fill out h
 
 Our team will then review your demand and send you the required funds.
 
-*Note: Those TOMO are only usable in testnet, they have absolutly no trading value*
+*Note: Those TOMO are only usable in testnet, they have absolutely no trading value*
 
 ## Applying as masternode
 You can now apply by going on the [TomoMaster](https://master.testnet.tomochain.com) page.
