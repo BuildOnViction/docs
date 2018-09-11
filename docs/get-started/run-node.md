@@ -168,7 +168,8 @@ docker run \
     -v /var/run/docker.sock:/var/run/docker.sock:ro \
     -v /sys:/rootfs/sys:ro -v /proc:/rootfs/proc:ro \
     -v /etc:/rootfs/etc:ro \
-    -e METRICS_ENDPOINT=https://metrics.testnet.tomochain.com tomochain/telegraf:latest
+    -e METRICS_ENDPOINT=https://metrics.testnet.tomochain.com \
+    tomochain/telegraf:latest
 ```
 
 ## Binaries
