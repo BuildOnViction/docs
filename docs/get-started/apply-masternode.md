@@ -2,7 +2,7 @@
 Once your full node is up and running, you need to apply it to make him eligible as a masternode.
 
 ## Getting sufficient TOMO
-As 50'000 TOMO are required for applying, the first thing to do is to fill out he following [form](https://docs.google.com/forms/d/183UxYRET9I183L7lFHCredjaTd9oj4kmf4UdH7eLNNs):
+As 50'000 TOMO are required for applying, the first thing to do is to fill out the following [form](https://docs.google.com/forms/d/183UxYRET9I183L7lFHCredjaTd9oj4kmf4UdH7eLNNs):
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0BiG8Rs5v4ItkwykgWUXsavLRZNA9W_EHTDis7klk5mNJnw/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
