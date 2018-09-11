@@ -48,7 +48,7 @@ pages:
         - Voter's Guide: get-started/started.md
         - Testnet: get-started/testnet.md
         - Running a node: get-started/run-node.md
-        - Apply your node as a masternode: get-started/apply-masternode.md
+        - Applying your node as a masternode: get-started/apply-masternode.md
         # - Create your own network: get-started/private-network.md
     - Wallets:
         - Metamask: wallets/metamask.md
