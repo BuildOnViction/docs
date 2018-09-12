@@ -36,12 +36,12 @@ If you have other production grade environment than cloud provider at your displ
 
 We made a simple command line interface called [tmn](https://github.com/tomochain/masternode) to easily and quickly start a TomoChain masternode.
 It takes care of starting the necessary docker containers with the proper settings for you.
-It will really suits you if you don't already have a big infrastructure running.
+It will really suit you if you don't already have a big infrastructure running.
 Spin up a machine in your favorite cloud and get your masternode running in a few minutes!
 
 ### Prerequisites
 
-To use tmn, you should meet this requirements in addition of the hardware ones:
+To use tmn, you should meet these requirements in addition to the hardware ones:
 
 - [Docker CE](https://docs.docker.com/install/)
 - [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.6
@@ -72,10 +72,10 @@ Slug format authorize all letters and numbers, dashes ("-") and underscores ("\_
 You can name it to reflect your identity, company name, etc.
 
 `--net`: The network your full node will connect to.
-You can chose here to connect it to the TomoChain Testnet or Mainnet (once launched).
+You can choose here to connect it to the TomoChain Testnet or Mainnet (once launched).
 
 `--pkey`: The private key of the account that your full node will use.
-A tomochain full node use an account to be uniquely identified and to receive transaction fee.
+A TomoChain full node uses an account to be uniquely identified and to receive transaction fee.
 
 It could look like this:
 
@@ -95,7 +95,7 @@ You can now interact with it via the other commands:
 
 `stop`: Stop your full node.
 
-`start`: Start your full node if it was stopped.
+`start`: Start your full node if it is stopped.
 
 `status`: The current status of your full node.
 
