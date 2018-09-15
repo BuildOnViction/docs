@@ -1,6 +1,6 @@
 MyEtherWallet released version 3.21.14, supports TomoChain Testnet 2.0. So you are able to easily use MEW to transfer/receive TOMO on Testnet.
 
-From [MyEtherWallet](https://myetherwallet.com) homepage, at top right corner, you can select TomoChain Testnet
+From [MyEtherWallet](https://myetherwallet.com){:target="_blank"} homepage, at top right corner, you can select TomoChain Testnet
 
 ![mew1](/figures/mew1.png)
 
