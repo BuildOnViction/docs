@@ -51,8 +51,9 @@ pages:
         - Applying to become a masternode: get-started/apply-masternode.md
         # - Create your own network: get-started/private-network.md
     - Wallets:
-        - Metamask: wallets/metamask.md
         - TomoWallet: wallets/tomowallet.md
+        - MyEtherWallet: wallets/mew.md
+        - Metamask: wallets/metamask.md
     - Technical Whitepaper: whitepaper.md
     - FAQ:
         - General: faq/general.md
