@@ -14,20 +14,20 @@ On the homepage, you click `Earn TOMO to test` on the bottom left corner. After 
 
 
 ## Transfer TOMO
-On left menu, click `Tranfer` to go to `Tranfer TOMO` page.
+On the left menu, click `Tranfer` to go to `Tranfer TOMO` page.
 
 ![tomowallet3](/figures/tomowallet3.jpg)
 
-You just need to enter a valid recipient address and amount TOMO you want to send and click `SEND`.
+You just need to enter a valid recipient address and the amount of TOMO you want to send and click `SEND`.
 
-After few seconds, you transaction will be presented at `Transactions` page as the below:
+After a few seconds, you transaction will be presented at `Transactions` page as the below:
 
 ![tomowallet4](/figures/tomowallet4.jpg)
 
 ## Delete a wallet
-In case, you want to access other wallets, you need to delete current wallet. Make sure you already backup `Private Key` and `Recovery Phrases`. So you can import your wallet again.
+In case, you want to access other wallets, you need to delete the current wallet. Make sure you already backup `Private Key` and `Recovery Phrases` so you can import your wallet again.
 
 To delete your wallet, just go to `details` page, and click `DELETE THIS WALLET` button.
 
 ## Import your wallet
-On the first page, clock `IMPORT YOUR WALLET`. After that, enter our `Private Key` or `Recovery Phrases`, click `IMPORT` button.
+On the first page, click `IMPORT YOUR WALLET`. After that, enter your `Private Key` or `Recovery Phrases`, then click `IMPORT` button.
