@@ -2,11 +2,11 @@ Tomochain will guide you how to connect MetaMask to Tomochain Testnet. It is an 
 
 Get started! You first need to install Extension MetaMask on Chrome or Brave browsers. Once you agree to the Metamask Terms of Use and create an account successfully, follow instructions:
 
-**Step 1:** Click to MetaMask logo on the browser to open the Extention -> select “Network” -> select “Custom RPC” as shown below:
+**Step 1:** Click to MetaMask logo on the browser to open the Extention -> select `Network` -> select `Custom RPC` as shown below:
 
 ![metamask1](/figures/metamask1.jpg)
 
-**Step 2:** When Setting screen pops up, you enter “https://testnet.tomochain.com” into New RPC URL Texbox then Save.
+**Step 2:** When Setting screen pops up, you enter `https://testnet.tomochain.com` into New RPC URL Texbox then Save.
 
 ![metamask2](/figures/metamask2.jpg)
  
