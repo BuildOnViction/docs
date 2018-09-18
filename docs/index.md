@@ -16,4 +16,3 @@ In the newly published technical paper, Tomochain proposes the Proof-of-Stake Vo
 - Randomization to guarantee the fair and prevent handshaking attack
 - Fast confirmation time and efficient checkpoints for finality or rebase
 
-Tomochain Team is currently implementing these mechanisms based on the Ethereum source code.
