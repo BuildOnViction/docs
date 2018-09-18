@@ -76,6 +76,9 @@ You can choose here to connect it to the TomoChain Testnet or Mainnet (once laun
 
 `--pkey`: The private key of the account that your full node will use.
 A TomoChain full node uses an account to be uniquely identified and to receive transaction fee.
+**Important note:** we advise for security measures to use a fresh new account for your masternode.
+This is not the account who will receive the rewards.
+The rewards are sent to the account who will make the 50k TOMO initial deposit.
 
 It could look like this:
 
@@ -87,7 +90,7 @@ tmn start --name [YOUR_NODE_NAME] \
 
 Once started, you should see your node on the [stats page](https://stats.testnet.tomochain.com)!
 
-Note: it can take up to 15 minutes to properly end the first synchronization.
+Note: it can take up to one hour to properly sync the entire blockchain.
 
 ### Usage
 
@@ -103,3 +106,30 @@ You can now interact with it via the other commands:
 Useful for applying your full node as a masternode.
 
 `remove`: Completely remove your masternode, unique identity and data.
+
+### Troubleshooting
+
+#### tmn: command not found
+
+It might happen that your PATH is not set by default to include the default user binary directory.
+You can add it by adding it to your shell $PATH:
+
+On GNU/Linux:
+```
+echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+```
+
+On MacOS:
+Replace `[VERSION]` by your version of python (3.5, 3.6, 3.7) 
+```
+echo 'export PATH=$PATH:~/Library/Python/[VERSION]/bin' >> ~/.bashrc
+```
+
+#### error: could not access the docker daemon
+
+If you have installed Docker, you probably forgot to add your user to the docker group.
+Please run this, close your session and open it again.
+
+```
+usermod -aG docker $your_user_name
+```
