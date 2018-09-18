@@ -151,10 +151,10 @@ can flourish.
 
 ###Voting & Masternode Committee {#voting-masternode-committee .unnumbered}
 
-There are maximum ninety-nine masternodes elected in the masternode
+There are maximum one hundred fifty masternodes elected in the masternode
 committee. The required amount of deposit for masternode role is set at
 50 000 TOMO. This amount is locked in a *voting smart contract*. Once
-a masternode is demoted (by not remaining in the top ninety-nine voted
+a masternode is demoted (by not remaining in the top one hundred fifty voted
 masternodes) or intentionally quits the masternode candidates
 list/masternode committee, the deposit will have been locked for a
 month.
@@ -164,7 +164,7 @@ actually counted by the amount of TOMO they bet on some masternode
 candidates). They can use masternode’s performance statistics in the
 governance *Voting DApp* as reference information to give votes. The set
 of masternodes is dynamically sorted by the amount of TOMO and counted
-up to ninety-nine, upon reception of votes.
+up to one hundred fifty, upon reception of votes.
 
 ### Reward Mechanism {#reward-mechanism .unnumbered}
 
