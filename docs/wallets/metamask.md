@@ -1,4 +1,4 @@
-Tomochain will guide you how to connect MetaMask to Tomochain Testnet. It is an essential step to study an overview of Tomochain features in term of meeting the crypto trading needs on system. To developers looking to learn about Dapp and Smart Contract.
+Tomochain will guide you how to connect MetaMask to Tomochain Testnet. It is an essential step to study an overview of Tomochain features in term of meeting the crypto trading needs on system. 
 
 Get started! You first need to install Extension MetaMask on Chrome or Brave browsers. Once you agree to the Metamask Terms of Use and create an account successfully, follow instructions:
 
