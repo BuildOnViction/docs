@@ -182,6 +182,7 @@ Furthermore, there is also a reward sharing ratio among token holders and
 masternode who has been elected supported by the token holders. 
 Specifically, each epoch consists of 900 blocks, which will reward a total of 250 TOMO in the first two years. 
 This amount of 250 TOMO will be divided to all of the Masternodes proportionally to the number of signatures they sign during the epoch. 
+
 Afterward, the reward achieved by each Masternode  will be divided into three portions. 
 -   **Infrastructure Reward**: The first portion of 40% called **Infrastructure Reward** goes to the Masternode.
 	
