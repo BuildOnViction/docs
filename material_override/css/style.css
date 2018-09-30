@@ -1,23 +1,23 @@
 .md-header {
-    background-color: #4f3c7f !important;
+    background-image: linear-gradient(-220deg,#272f4b 0,#1a1f36 41%,#15152d 64%,#211841 96%) !important;
 }
 
 .md-footer-nav {
-    background-color: #724d91 !important;
+    background-color: #1a1f36 !important
 }
 
 .md-footer-meta {
-    background-color: #724d91 !important;
+    background-color: #272f4b !important;
 }
 
 @media only screen and (max-width: 76.1875em) {
     html .md-nav--primary .md-nav__title--site {
-        background-color: #724d91 !important;
+        background-color: #1a1f36 !important
     }
 }
 
 @media only screen and (max-width: 59.9375em) {
     .md-nav__source {
-        background-color: #4f3c7f !important;
+        background-color: #272f4b !important;
     }
 }
