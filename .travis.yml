@@ -4,6 +4,8 @@ jobs:
   include:
     - stage: Deploy the site (master only)
       before_script: pip3 install -r requirements.txt
+      python:
+        - "3.6"
       script:
         - bash build.sh
 
