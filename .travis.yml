@@ -6,7 +6,7 @@ python:
 jobs:
   include:
     - stage: Deploy the site (master only)
-      before_script: sudo pip install -r requirements.txt
+      before_script: pip3 install -r requirements.txt
       script:
         - bash build.sh
 
