@@ -1,4 +1,3 @@
-mkdocs==0.17.4
-mkdocs-material==2.9.0
+mkdocs==1.0.4
+mkdocs-material==3.0.4
 python-markdown-math==0.5
-fontawesome-markdown==0.2.6

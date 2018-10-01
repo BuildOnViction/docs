@@ -690,7 +690,7 @@ distribution function is uniform eventually.
     of TomoChain. We will publish a TomoChain economic analysis and
     proposal, separate from this technical paper in a later date.
 
-## :fa-book: References {#Sec:References}
+## References {#Sec:References}
 
 Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008. [pdf](https://bitcoin.org/bitcoin.pdf){#Bitcoin08}
 
