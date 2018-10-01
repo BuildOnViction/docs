@@ -10,10 +10,11 @@ theme:
 markdown_extensions:
     - mdx_math:
         enable_dollar_delimiter: True
-    - fontawesome_markdown
     - markdown.extensions.extra
     - markdown.extensions.toc:
         permalink: True
+    - codehilite:
+        guess_lang: false
 
 extra_javascript:
     - js/MathJax.js?config=TeX-AMS_HTML
@@ -23,6 +24,7 @@ extra_css:
     - css/style.css
 
 extra:
+    disqus: 'tomochain-documentation'
     social:
         - type: 'github'
           link: 'https://github.com/tomochain'
@@ -42,7 +44,7 @@ repo_url: https://github.com/tomochain/docs
 repo_name: tomochain/docs
 google_analytics: ['UA-124597188-1', 'docs.tomochain.com']
 
-pages:
+nav:
     - Introduction: index.md
     - Get started:
         - Voter's Guide: get-started/started.md
