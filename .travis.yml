@@ -1,8 +1,5 @@
 sudo: required
 language: python
-python:
-    - "3.6"
-    - "3.6-dev"
 jobs:
   include:
     - stage: Deploy the site (master only)
