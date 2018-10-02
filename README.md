@@ -6,7 +6,7 @@ Docs for [TomoChain](https://docs.tomochain.com)
 
 ## Installation
 
-Requires `python`, `pip`, `virtualenv`
+Requires `python 3.6`, `pip3`, `virtualenv`
 
 Create working enviroment
 ```
@@ -17,7 +17,7 @@ virtualenv env
 
 Intall libraries
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### Run
