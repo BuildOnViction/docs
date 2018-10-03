@@ -43,13 +43,13 @@ You can access it at [localhost:3000](http://localhost:3000/).
 ./ serve.sh
 ```
 
-Don't forget to activate/deactivate your virtualenv when you start or stop working on this project.
+Note: don't forget to activate/deactivate your virtualenv when you start/stop working on this project.
 
 ```bash
-# activate: in the project folder
+# activate: from the project folder
 source .env/bin/activate
 
-# deactivate: everywhere
+# deactivate: from everywhere
 deactivate
 ```
 
