@@ -33,7 +33,7 @@ source .env/bin/activate
 Install the required libraries in your project's virtualenv.
 
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 You can now edit some files and check your changes live by running a local server.
