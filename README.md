@@ -39,7 +39,7 @@ pip3 install -r requirements.txt
 You can now edit some files and check your changes live by running a local server.
 You can access it at [localhost:3000](http://localhost:3000/).
 
-```
+```bash
 ./ serve.sh
 ```
 
@@ -47,11 +47,19 @@ You can access it at [localhost:3000](http://localhost:3000/).
 
 ### Branches
 
-If you are a technical writer with assigned issues, please create one branch for each of them.
+If you are a technical writer with assigned issues, please work on a separate branch for each of them.
 
 They should be named `tw/[id of the issue]`
 
-`git checkout -b 24`
+Example:
+
+`git checkout -b tw/24`
+
+All other branches can be named with a short descriptive word.
+
+Example:
+
+`git checkout -b guidelines`
 
 ### Commits
 
