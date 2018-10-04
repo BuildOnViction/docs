@@ -1,4 +1,3 @@
-
 Once your full node is up and running, you need to apply it to make him eligible as a masternode.
 
 ## Getting sufficient TOMO
@@ -6,7 +5,7 @@ As 50'000 TOMO are required to apply, the first thing to do is to fill out the f
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0BiG8Rs5v4ItkwykgWUXsavLRZNA9W_EHTDis7klk5mNJnw/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
-Our team will then review your request and send you the required funds. 
+Our team will then review your request and send you the required funds.
 
 *Note: Those TOMO are only usable in testnet, they have absolutely no trading value*
 
@@ -18,7 +17,7 @@ On the top right corner, click on "Become a Candidate".
 
 Enter the amount of TOMO you want to deposit (minimum 50'000).
 
-Enter your coinbase address. This is the public key of the account that your masternode is using. 
+Enter your coinbase address. This is the public key of the account that your masternode is using.
 If your are running your node with `tmn`, you can simply run `tmn inspect` to get it.
 
 Confirm with apply and proceed to make the payement.

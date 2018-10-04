@@ -2,7 +2,7 @@
 
 The blockchain industry and the infrastructure of the Internet of Value are being built rapidly around the globe, and to many the atmosphere is eerily similar to the building of the Internet in the late ’90s, with pioneers and dreamers coming together to build a new future. The objective of TomoChain is to become a leading part of this phenomenon through seamlessly merging an ecosystem of applications with cryptographic tokens used by millions of mainstream users with a unique blockchain infrastructure architecture, allowing for fast, frictionless payment and a secure, decentralised, and trusted store of value.
 
-![tomochain](/figures/home.png)
+![tomochain](/assets/home.png)
 
 > TomoChain aims to be a public EVM-compatible blockchain with the following advantages: low transaction fee, fast confirmation time, double validation and randomization for security guarantees. TomoChain envisions an ecosystem of different DApps running on the TomoChain blockchain infrastructure.
 

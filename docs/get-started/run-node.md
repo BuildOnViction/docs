@@ -1,5 +1,3 @@
-# Running a TomoChain full node
-
 With the recent release of TomoChain Testnet 2.0 with our PoSV consensus, you might be interested in creating a TomoChain full node and applying it to be a masternode.
 
 To run a full node and meet the requirements to apply on our governance DApp, you have to run two services:
@@ -120,7 +118,7 @@ echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
 ```
 
 On MacOS:
-Replace `[VERSION]` by your version of python (3.5, 3.6, 3.7) 
+Replace `[VERSION]` by your version of python (3.5, 3.6, 3.7)
 ```
 echo 'export PATH=$PATH:~/Library/Python/[VERSION]/bin' >> ~/.bashrc
 ```

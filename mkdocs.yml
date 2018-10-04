@@ -1,4 +1,4 @@
-site_name: Tomochain Documentation
+site_name: TomoChain Documentation
 site_description: The most efficient platform for token economy
 
 theme:
@@ -6,15 +6,18 @@ theme:
   custom_dir: material_override
   logo: 'images/logo.svg'
   favicon: 'images/favicon.ico'
+  feature:
+    tabs: true
 
 markdown_extensions:
-    - mdx_math:
-        enable_dollar_delimiter: True
-    - markdown.extensions.extra
-    - markdown.extensions.toc:
-        permalink: True
-    - codehilite:
-        guess_lang: false
+  - admonition
+  - mdx_math:
+      enable_dollar_delimiter: True
+  - markdown.extensions.extra
+  - markdown.extensions.toc:
+      permalink: True
+  - codehilite:
+      guess_lang: false
 
 extra_javascript:
     - js/MathJax.js?config=TeX-AMS_HTML
@@ -24,7 +27,7 @@ extra_css:
     - css/style.css
 
 extra:
-    disqus: 'tomochain-documentation'
+    disqus:
     social:
         - type: 'github'
           link: 'https://github.com/tomochain'
@@ -45,27 +48,38 @@ repo_name: tomochain/docs
 google_analytics: ['UA-124597188-1', 'docs.tomochain.com']
 
 nav:
-    - Introduction: index.md
+    - General:
+      - Introduction: index.md
+      - Use cases: general/use-cases.md
+      - Networks: general/networks.md
+      - Important links: general/important-links.md
+      - FAQ: general/faq.md
+      - About: general/about.md
     - Get started:
-        - Voter's Guide: get-started/started.md
-        - Testnet: get-started/testnet.md
-        - Running a node: get-started/run-node.md
-        - Applying to become a masternode: get-started/apply-masternode.md
-        # - Create your own network: get-started/private-network.md
-    - Wallets:
-        - TomoWallet: wallets/tomowallet.md
-        - MyEtherWallet: wallets/mew.md
-        - Metamask: wallets/metamask.md
-    - Technical Whitepaper: whitepaper.md
-    - FAQ:
-        - General: faq/general.md
-        - Tomochain: faq/tomochain.md
-        - Other: faq/other.md
-    - Use Cases: use-cases/index.md
-    - Contribution:
-        - Github: contribution/github.md
-        - Team: contribution/team.md
-    - Important Links: links.md
-    - About: about.md
+      - 1. Connect your wallet: get-started/wallet.md
+      - 2. Voting: get-started/voting.md
+      - 3. Run a node in testnet: get-started/run-node.md
+      - 4. Apply your node: get-started/apply-node.md
+    # - TomoChain client:
+    #   - Getting started: misc/wip.md
+    #   - Contributing: misc/wip.md
+    # - TomoMaster:
+    #   - Getting started: misc/wip.md
+    #   - Contributing: misc/wip.md
+    # - TomoScan:
+    #   - Getting started: misc/wip.md
+    #   - Contributing: misc/wip.md
+    # - TomoWallet:
+    #   - Getting started: misc/wip.md
+    #   - Contributing: misc/wip.md
+    # - Masternode:
+    #   - Run a masternode:
+    #   - Tmn: misc/wip.md
+    #   - Docker: misc/wip.md
+    #   - Applying: misc/wip.md
+    #   - Contributing: misc/wip.md
+    #   - FAQ: misc/wip.md
+    - Whitepapers and research:
+      - Technical whitepaper: wp-and-research/technical-whitepaper.md
 
-copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>tomodocs v0.1.0. Tomochain Project 2018.
+copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
