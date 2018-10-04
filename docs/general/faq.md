@@ -1,7 +1,91 @@
-# TOMOCHAIN
+# Frequently asked questions
+
+#### What is Tomocoin (TOMO)? How can I earn Tomocoin (TOMO)?
+TomoCoin (TOMO) is the native cryptocurrency to TomoChain, and will be the reserve cryptocurrency for all third-party apps running on TomoChain. Being the protocol token for the TomoChain infrastructure, TOMO will be needed by all parties utilising TomoChain to build apps or issue and integrate cryptographic tokens into their apps.
+
+The supply of TOMO is fixed, long-term and non-inflationary. In addition to the above, TOMO is integral to the TomoChain network for a number of reasons: First, TOMO will be used to fund the development of TomoChain and TomoWallet; Second, TOMO will be used as a reward to incentivise the building of the Tomo engine/ecosystem; Third, TOMO will be used as a long-term, decentralized governance instrument of the Tomo network – the details of which will be announced in our upcoming technical white paper.
+
+TOMO is currently available on a number of exchanges.
+
 ---
+
+#### How are the TOMO distributed?
+
+The planned token allocation is as follows:
+
+- 55% goes to the token sale participants
+- 15% goes to the company, advisors and bounties
+- 30% goes to the Reward Engine/ Ecosystem Building program.
+
+---
+
+#### Can I mine TOMO?
+TOMO is a non-mineable cryptocurrency.
+
+---
+
+#### What is total supply and circulating supply of TOMO?
+
+TOMO total token supply is fixed at 100,000,000 TOMO. The current circulating supply is 55,000,000 TOMO
+
+---
+
+#### How can I send TOMO to my wallet?
+
+You can store TOMO in wallet supporting ERC20 Standard. We recommend to store TOMO in MYETHERWALLET + TREZOR/LEDGER NANO S + METAMASK + Mist + Parity + Trust.
+
+```
+Tomocoin Token Address: 0x8b353021189375591723e7384262f45709a3c3dc
+Token Symbol: TOMO
+Decimals: 18
+```
+
+---
+
+#### What would your currency be if not an ERC20 token?
+TOMO will only be an ERC20 until the TomoChain mainnet launch.
+
+---
+
+#### Is TOMO going to be swapped some day? If yes, how do I know I’ll be able to swap my tokens if I take them from an exchange? How will you switch from an ERC20 token to your own?
+We will lock your tokens before swapping to mainnet, so there is no chance of losing the tokens. Whilst tokens are locked, they are not transferable to another address.
+
+#### What is ReplyBlock?
+Reply Block is the Q&A application for blockchain enthusiasts and crypto advocates. It is rebranded from Tomoapp.
+
+---
+
+#### What is the difference between Tomo application and ReplyBlock?
+Tomo application refers to all D-apps will be built on top of Tomochain in the future. Reply Block is the first D-app built on Tomochain and funded by Tomochain.
+
+---
+
+#### What about the exchange?
+We do not and will not discuss anything related to exchanges due to the regulation. We will announce once it's ready.
+
+---
+
+#### Where is your company registered? Could i have a copy of certificate of incorporation, list of directors and details of registered office address?
+Check it out [(https://www.sgpbusiness.com/company/Tomochain-Pte-Ltd](https://www.sgpbusiness.com/company/Tomochain-Pte-Ltd)
+
+Feel free to buy ACRA copy if you want to know more details
+
+---
+
+#### What is the price in presale and ICO?
+```
+Presale Price: $0.2
+ICO Price: $0.25 = 0.0003125ETH
+```
+---
+
+#### How many people in the team?
+The management team is 5 people - Check it out [https://tomochain.com](https://tomochain.com/). Tomo team size is about 25 people now and we are growing the size according to the work volume
+
+---
+
 #### What is Tomochain? How does it work?
-TomoChain is an innovative solution to the scalability problem of the Ethereum blockchain, and other current blockchain platforms. TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support near-zero fees, and 2-second transaction confirmation times. Security, stability and chain finality are guaranteed via novel techniques such as double validation, staking via smart-contracts and true randomization processes. 
+TomoChain is an innovative solution to the scalability problem of the Ethereum blockchain, and other current blockchain platforms. TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support near-zero fees, and 2-second transaction confirmation times. Security, stability and chain finality are guaranteed via novel techniques such as double validation, staking via smart-contracts and true randomization processes.
 
 TomoChain supports all EVM-compatible smart-contracts, protocols, and atomic cross-chain token transfers. New scaling techniques such as sharding, EVM parallelisation, private-chain generation, hardware integration will be continuously researched and incorporated into TomoChain's Masternode architecture which will be an ideal scalable smart-contract public blockchain for decentralized apps, token issuances and token integrations for small and big businesses.
 
@@ -87,8 +171,8 @@ You can keep in touch with our latest news here:
 ---
 
 #### What is required to become a Tomochain masternode?
-You need to deposit 50k TOMO to become a masternode candidate. Candidates become masternodes if they belong to the top 150 most voted candidates. 
- 
+You need to deposit 50k TOMO to become a masternode candidate. Candidates become masternodes if they belong to the top 150 most voted candidates.
+
 ---
 
 #### What are Candidate/ Masternode incentives?
@@ -104,6 +188,6 @@ However, token voters should also consider voting for candidates with lower numb
 
 ---
 
-#### How will reward be divided? 
+#### How will reward be divided?
 
 The rewards achieved by each masternode will be divided into three portions. The first portion of 40% called “Infrastructure Reward” goes to the masternode. The second portion of 50% called “Staking Reward” goes to the pool of voters for that masternode and is shared proportionally based on the number of tokens staked. The last portion of 10% called “Foundation Reward” goes to a special account controlled by the Masternode Foundation, which will initially be run by the TomoChain company.

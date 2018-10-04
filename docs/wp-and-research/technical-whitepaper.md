@@ -75,10 +75,10 @@ may not have technical knowledge understand our mechanism easily.
 * Section [Stakeholders & Voting](#Sec:StakeVoting) presents **TomoChain** stakeholder policy, masternode
 committee voting systems, and reward mechanism.
 * Section [TomoChain consensus protocol](#Sec:ProtocolOverview) explains the motivation and double
-validation process as well as finality checkpoint of the protocol. 
-* In Section [Protocol formalizations](#Sec:ProtocolFormalization), we present the formalization of our model in a mathematical way to show the soundness of our model and protocol. 
-* Section [Security Analysis](#Sec:SecurityAnalysis) discusses the security analysis and resistant strain of potential attacks. 
-* We discuss and compare **TomoChain** with several existing blockchains in Section [related work](#Sec:relatedwork). 
+validation process as well as finality checkpoint of the protocol.
+* In Section [Protocol formalizations](#Sec:ProtocolFormalization), we present the formalization of our model in a mathematical way to show the soundness of our model and protocol.
+* Section [Security Analysis](#Sec:SecurityAnalysis) discusses the security analysis and resistant strain of potential attacks.
+* We discuss and compare **TomoChain** with several existing blockchains in Section [related work](#Sec:relatedwork).
 * Finally, we conclude the paper in Section [Conclusion](#Sec:Conclusion).
 
 ## TomoChain Masternode Design {#Sec:MasternodeDesign}
@@ -106,7 +106,7 @@ mechanism. This new technique significantly decreases the probability of
 having invalid blocks in the blockchain. These enhancements and the
 components of **TomoChain** are step-by-step detailed in the followings.
 
-![architecture](figures/architecture.jpg){#fig:architecture}
+![architecture](/assets/architecture.jpg){#fig:architecture}
 
 ## Stakeholders & Voting {#Sec:StakeVoting}
 
@@ -179,15 +179,15 @@ the blocks than masternode B earns double amount of TOMO than
 masternode B does.
 
 Furthermore, there is also a reward sharing ratio among token holders and
-masternode who has been elected supported by the token holders. 
-Specifically, each epoch consists of 900 blocks, which will reward a total of 250 TOMO in the first two years. 
-This amount of 250 TOMO will be divided to all of the Masternodes proportionally to the number of signatures they sign during the epoch. 
+masternode who has been elected supported by the token holders.
+Specifically, each epoch consists of 900 blocks, which will reward a total of 250 TOMO in the first two years.
+This amount of 250 TOMO will be divided to all of the Masternodes proportionally to the number of signatures they sign during the epoch.
 
-Afterward, the reward achieved by each Masternode  will be divided into three portions. 
+Afterward, the reward achieved by each Masternode  will be divided into three portions.
 -   **Infrastructure Reward**: The first portion of 40% called **Infrastructure Reward** goes to the Masternode.
-	
+
 -   **Staking Reward**: The second portion of 50% called **Staking Reward** goes to the pool of all voters  for that Masternode which is shared proportionally based on the token stake.
-	
+
 -   **Foundation Reward**: The last portion of 10% called **Foundation Reward** goes to a special account controlled by the Masternode Foundation, which is run by **TomoChain** company initially.
 
 It is worth noting that coin-holders who unvote before the checkpoint block will not receive any shared reward in the **Staking Reward** portion.
@@ -262,7 +262,7 @@ analyzing some attacking scenarios as shown in Fig.
     to restore the validity of the blockchain.
 
 
-![singlevalidatioin](figures/singlevalidation.jpg){#fig:singlevalidation}*Single Validation (SV): (a) SV with block creation masternode as an attacker and (b) SV with two consecutive block creation masternodes as attackers*
+![singlevalidatioin](/assets/singlevalidation.jpg){#fig:singlevalidation}*Single Validation (SV): (a) SV with block creation masternode as an attacker and (b) SV with two consecutive block creation masternodes as attackers*
 
 -   **Double Validation** We claim that our DV technique significantly
     reduces the probability of having garbage blocks in the blockchain.
@@ -285,7 +285,7 @@ analyzing some attacking scenarios as shown in Fig.
     the consistency of the blockchain and makes it hard to break.
 
 
-![doublevalidatioin](figures/doublevalidation.jpg){#fig:doublevalidation}*Double Validation (DV): (a) DV with block creator as an attacker and (b) DV with both block creator and block verifier as attackers*
+![doublevalidatioin](/assets/doublevalidation.jpg){#fig:doublevalidation}*Double Validation (DV): (a) DV with block creator as an attacker and (b) DV with both block creator and block verifier as attackers*
 
 Randomization for Block Verifiers for Double Validation {#randomization-for-block-verifiers-for-double-validation .unnumbered}
 ----
@@ -295,10 +295,10 @@ Randomization for Block Verifiers for Double Validation {#randomization-for-bloc
 The first masternode/block creator in a given epoch $e$ can be selected
 by a round-turn game and can be formal defined as an array:
 
-$$\begin{bmatrix} 
+$$\begin{bmatrix}
 \nu_1
 \end{bmatrix}
-= \begin{bmatrix} 
+= \begin{bmatrix}
 V_{1.1}^e  \\
 V_{1.2}^e\\
 \cdot\\
@@ -369,7 +369,7 @@ r_{1.2}     & r_{2.2}       & \ddots  & \vdots   \\
 r_{1.3}      &  \ddots   & \ddots  & r_{m.3}  \\
 \vdots  &              & r_{m-1.n-1}  & r_{m.n-1}  \\
 r_{1.n}      & \cdots      & r_{m-1.n}      & r_{m.n}
-\end{bmatrix}   
+\end{bmatrix}
 \begin{bmatrix}
 \theta_1  \\
 \theta_2  \\
@@ -409,13 +409,13 @@ masternodes committee. The time-line of blockchain creation process,
 checking finality and mark the block as immutable is described as in
 Figure: [ChainMaking](#fig:ChainMaking) below.
 
-![ChainMaking](figures/ChainMakingProcess3.jpg){#fig:ChainMaking}
+![ChainMaking](/assets/ChainMakingProcess3.jpg){#fig:ChainMaking}
 
 ## Consensus Protocol: Formalization {#Sec:ProtocolFormalization}
 
 ### Basic Concepts & Protocol Description {#basic-concepts-protocol-description .unnumbered}
 
-In order to have a solid foundation for us to prove that our blockchain can achieve what are claimed, we first present our preliminary formalizations of the concepts that will be used in our yellow paper later. 
+In order to have a solid foundation for us to prove that our blockchain can achieve what are claimed, we first present our preliminary formalizations of the concepts that will be used in our yellow paper later.
 
 
 To start, as we are dealing with proof of stake consensus algorithm, we
@@ -434,7 +434,7 @@ Only one block can be created in a slot. We assume that there is a roughly synch
 
 
 As mentioned in Section [TomochainOverview](#Sec:MasternodeDesign), in our setting, we assume that the fixed collection of $m$ (150) masternodes
-$V_1, V_2, ...., V_m$ interact throughout the protocol. 
+$V_1, V_2, ...., V_m$ interact throughout the protocol.
 For each $V_i$ a public/private key pair ($pk_i$,$sk_i$) for a prescribed signature scheme, ideally ECDSA, is generated. Furthermore, we assume that the public keys $pk_1$,..,$pk_m$ of the masternodes are distributed and known by all of them (that means a masternode knows all public keys of other nodes). Some notable definitions of the blockchain concepts are defined following the notation in [here](#Garay2015).
 
 - **State** A state (defined as in [here](#Cardano2017)) is an encoded string $st \in \{0,1\}^\lambda$.
@@ -445,9 +445,9 @@ $d \in \{0, 1\}^{*}$, the slot number $sl_i$ and a signature
 $\Sigma  =  Sign_{ski} (st, d, sl_i)$ computed under $sk_i$
 corresponding to the masternode $V_i$ generating the block.
 
-- **Blockchain** A blockchain (defined as in [here](#Cardano2017)) $C$ is a sequence of blocks $B_1,..., B_n$ associated with a strictly increasing sequence of slots for which the state sti of $B_i$ is equal to $H(B_{i−1})$, where $H$ is a collision-resistant cryptography hash function. A blockchain has a number of properties, including the length of a chain $len(C) = n$, which is its number of blocks, and the block $B_n$ is the head of the chain, denoted $head(C)$. 
+- **Blockchain** A blockchain (defined as in [here](#Cardano2017)) $C$ is a sequence of blocks $B_1,..., B_n$ associated with a strictly increasing sequence of slots for which the state sti of $B_i$ is equal to $H(B_{i−1})$, where $H$ is a collision-resistant cryptography hash function. A blockchain has a number of properties, including the length of a chain $len(C) = n$, which is its number of blocks, and the block $B_n$ is the head of the chain, denoted $head(C)$.
 
-![al 1](figures/al1.png)
+![al 1](/assets/al1.png)
 
 As mentioned earlier, in our **TomoChain** model, we set each time *slot* $sl_i$ as 2
 seconds; an epoch is a set $R$ of 900 slots
@@ -457,7 +457,7 @@ seconds).
 In summary, the consensus protocol of **TomoChain** can be formalized in Algorithm ValidatorGeneration. The Algorithm ValidatorGeneration is simulated and explained as a
 process shown in Fig. [EpochProcess](#fig:EpochProcess).
 
-![image](figures/Figure_Epoch.jpg){#fig:EpochProcess}
+![image](/assets/Figure_Epoch.jpg){#fig:EpochProcess}
 
 ## Security Analysis {#Sec:SecurityAnalysis}
 
