@@ -11,5 +11,6 @@ deploy:
   repo: tomochain/docs
   target-branch: gh-pages
   local-dir: site
+  fqdn: docs.tomochain.com
   on:
     branch: master
