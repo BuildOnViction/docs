@@ -1,13 +1,15 @@
-sudo: required
 language: python
-python: 3.6
-jobs:
-  include:
-    - stage: Deploy the site (master only)
-      before_script: pip3 install -r requirements.txt
-      script:
-        - bash build.sh
+python: "3.6"
 
-stages:
-  - name: Deploy the site (master only)
-    if: type != pull_request AND branch = master
+script:
+  - mkdocs build --clean
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github-token: $GH_TOKEN
+  repo: tomochain/docs
+  target-branch: gh-pages
+  local-dir: site
+  on:
+    branch: master
