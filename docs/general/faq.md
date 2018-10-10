@@ -1,40 +1,40 @@
 # Frequently asked questions
 
-## TomoCoin
+## TOMO
 
-!!! quote "What are TomoCoins? How can I earn them?"
-    TomoCoin (TOMO) is the native cryptocurrency of TomoChain and will be the reserve cryptocurrency for all third-party apps running on TomoChain.
+!!! quote "What are TOMO? How can I earn them?"
+    TOMO is the native cryptocurrency of TomoChain and will be the reserve cryptocurrency for all third-party apps running on TomoChain.
     Being the protocol token for the TomoChain infrastructure, TOMO will be needed by all parties utilising TomoChain to build apps or issue and integrate cryptographic tokens into their apps.
 
-    The supply of TomoCoin is fixed, long-term and non-inflationary.
+    The supply of TOMO is fixed, long-term and non-inflationary.
 
-    In addition to the above, TomoCoin is an integral part of the TomoChain network for a number of reasons.
+    In addition to the above, TOMO is an integral part of the TomoChain network for a number of reasons.
 
-    - Tomocoin will be used to fund the development of TomoChain and it's ecosystem (TomoScan, TomoMater, TomoWallet, etc.).
-    - Tomocoin will be used as a reward to incentivise the building of the TomoChain engine/ecosystem.
-    - Tomocoin will be used as a long-term, decentralized governance instrument of the TomoChain network.
+    - TOMO will be used to fund the development of TomoChain and it's ecosystem (TomoScan, TomoMater, TomoWallet, etc.).
+    - TOMO will be used as a reward to incentivise the building of the TomoChain engine/ecosystem.
+    - TOMO will be used as a long-term, decentralized governance instrument of the TomoChain network.
 
     You can check our [technical whitepaper](/wp-and-research/technical-whitepaper/) for more details.
 
     ---
-    You can trade TomoCoins on various exchanges.
+    You can trade TOMO on various exchanges.
     Take a look in the "Exchanges" section on this page of our [main website](https://tomochain.com/about-us).
 
-!!! quote "How are the TomoCoins distributed?"
+!!! quote "How are TOMO distributed?"
     The token allocation is splitted as follow:
+    - 55 millions TOMO was alrealy allocated after the token sale period;  
+    - 12 millions TOMO are reserved for the team vested over the next 4 years; 
+    - 16 millions TOMO are reserved for strategic partners and an ecosystem building fund; 
+    - 17 millions TOMO are reserved as block rewards for the next 8 years
 
-    - 55% goes to the token sale participants
-    - 15% goes to the company, advisors and bounties
-    - 30% goes to the Reward Engine/ Ecosystem Building program.
+!!! quote "Can I mine TOMO?"
+    TOMO is a non-mineable cryptocurrency.
 
-!!! quote "Can I mine TomoCoins?"
-    TomoCoin is a non-mineable cryptocurrency.
-
-!!! quote "What is TomoCoin's total supply and circulating supply?"
-    TomoCoin total token supply is fixed at 100,000,000 TOMO.
+!!! quote "What is TOMO's total supply and circulating supply?"
+    TOMO total token supply is fixed at 100,000,000 TOMO.
     The current circulating supply is 55,000,000 TOMO.
 
-!!! quote "How can I send TomoCoins to my wallet?"
+!!! quote "How can I send TOMO to my wallet?"
     You can store TOMO in wallet supporting ERC20 Standard.
     We recommend to store TOMO in MYETHERWALLET + TREZOR/LEDGER NANO S + METAMASK + Mist + Parity + Trust.
 
@@ -48,8 +48,8 @@
     We do not discuss about exchange related questions due to the regulation.
     We will announce every exchange news on our official canals on due time.
 
-!!! quote "Is TomoCoin a token?"
-    Yes, the TomoCoin is actually and ERC20 token on the Ethereum blockchain.
+!!! quote "Is TOMO a token?"
+    Yes, TOMO is actually an ERC20 token on the Ethereum blockchain.
     It will be swapped to an independent token on our Mainnet release.
 
 !!! quote "How will it be swapped?"
@@ -78,8 +78,8 @@
     No.
     TomoChain will have its own blockchain when our Mainnet is launched in Q4 2018.
 
-!!! quote "What is the difference between TomoCoin and TomoChain?"
-    TomoCoin (TOMO) is the native currency of the TomoChain ecosystem.
+!!! quote "What is the difference between TOMO and TomoChain?"
+   TOMO is the native currency of the TomoChain ecosystem.
 
 ### Blockchain
 
@@ -95,8 +95,8 @@
     If you want to access it directly, you can find the links to our different products deployed in Testnet on our [Netwoks](/general/networks/) page.
 
 !!! quote "What is a masternode in the TomoChain ecosystem?"
-    A TomoChain masternode is a server who will use it's computing power to contribute to the network.
-    It's job will be to create and signe blocks.
+    A TomoChain masternode is a server who will use its computing power to contribute to the network.
+    Its job is to create and sign blocks.
 
     Masternodes are elected using the PoSV consensus via our governance dApp [TomoMaster](https://master.testnet.tomochain.com)
 
@@ -113,7 +113,7 @@
 
 !!! quote "What are the voters incentives? Do voters get rewards too?"
     Token voters should vote for the candidates who demonstrate strong support to the TomoChain ecosystem.
-    If strong candidates are voted to masternode, the network will be more powerfull and the voters will earn more rewards.
+    If strong candidates are voted to become masternodes, the network will be more powerfull and the voters will earn more rewards.
 
     More informations on the voting and reward mechanism in the [economical whitepaper](https://docs.google.com/document/d/197Cu57A6OYPoEQbrUVr067qNVEzP_FEwaDCFff7hnlM).
 
