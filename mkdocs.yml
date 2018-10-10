@@ -42,7 +42,7 @@ extra:
         - type: 'medium'
           link: 'https://medium.com/tomochain'
 
-site_url: https://tomochain.com
+site_url: https://docs.tomochain.com
 repo_url: https://github.com/tomochain/docs
 repo_name: tomochain/docs
 google_analytics: ['UA-124597188-1', 'docs.tomochain.com']
