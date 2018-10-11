@@ -3,7 +3,6 @@
 Partners willing to run applications on top of Tomochain:
 
 - Social Network: [https://replyblock.com](https://replyblock.com)
-- Supply Chain: [https://devery.io/](https://devery.io/)
 - E-commerce: [http://binkabi.io](http://binkabi.io)
 - Advertising Ecosystem: [https://bigbom.com](https://bigbom.com)
 - AI platform: [https://vnext.vn/](https://vnext.vn/)
@@ -15,5 +14,6 @@ Partners willing to run applications on top of Tomochain:
 - Travel Network: [https://www.triip.me/](https://www.triip.me/)
 - Decentralized Domain Name: [https://www.portal.network/](https://www.portal.network/)
 
+You can consult a list of dApps on Tomochain using the following link:
 
-To be updated ...
+[https://tomochain.com/dapps/](https://tomochain.com/dapps/)
