@@ -42,7 +42,7 @@ Spin up a machine in your favorite cloud and get your masternode running in a fe
 To use tmn, you should meet these requirements in addition to the hardware ones:
 
 - [Docker CE](https://docs.docker.com/install/)
-- [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.6
+- [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.5
 
 ### Installation
 
