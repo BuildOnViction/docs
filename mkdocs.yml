@@ -81,5 +81,6 @@ nav:
     #   - FAQ: misc/wip.md
     - Whitepapers and research:
       - Technical whitepaper: wp-and-research/technical-whitepaper.md
+      - Economics paper: wp-and-research/economics-paper.md
 
 copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
