@@ -1,6 +1,6 @@
 # TomoChain Proposal for Decentralized Applications-Oriented Proof-of-Stake Sharding Architecture
 
-## PREFACE
+## Preface
 
 ### TomoChain's vision and mission
 
@@ -19,7 +19,7 @@ New scaling techniques such as sharding, EVM parallelisation, private-chain gene
 This document describes TomoChain’s initial proposal for decentralized applications-oriented Proof-of-Stake Sharding Architecture. 
 This preliminary draft is not our final design specification and it is subject to change. Comments are welcomed and appreciated.
 
-## ABSTRACT AND KEYWORDS
+## Abstract and Keywords
 
 ### Abstract:
 This paper proposes a sharding architecture solution for the TomoChain public blockchain infrastructure.
@@ -34,7 +34,7 @@ Masternodes of a shard that create a fraudulent block will be detected and penal
 ### Keywords:
 Sharding, Blockchain, Smart contract, TomoChain, cross-shard transactions, randomization, data availability,security, PoSV, consensus.
 
-## INTRODUCTION
+## I. Introduction
 
 Blockchain has become one of the most disruptive technologies that enable many decentralized applications, including but not limited to cryptocurrencies, smart contract, voting and supply chain management. 
 Blockchain proponents have been trying to inject it into this Industry 4.0 revolution era. 
@@ -51,7 +51,8 @@ Regarding on-chain scaling, Sharding and Proof-of-Stake-based consensus are of p
 The goal is to parallelize the transaction processing by dividing the blockchain network into sub-networks each of which stores a portion of the whole blockchain and processes a subset of non-overlapping transactions. 
 The application of sharding to decentralized blockchain systems has the following technical challenges that will be addressed in this paper: 
 
--   **Assignment of masternodes to specific shards**: This process is critical to ensure that masternodes are assigned to shards in a randomized manner to avoid an adaptive attack. In the latter, malicious masternodes can all join the same shard in order to collude it.
+-   **Assignment of masternodes to specific shards**: This process is critical to ensure that masternodes are assigned to shards in a randomized manner to avoid an adaptive attack. 
+In the latter, malicious masternodes can all join the same shard in order to collude it.
 
 -   **Cross-shard transaction**: Cross-shard transactions enable every account to transact with any other accounts. 
 The challenge is how to execute cross-shard transactions securely and safely knowing that a cross-shard transaction involves more than two shards. 
@@ -71,7 +72,8 @@ Several blockchain-related works have been trying to propose a sharding solution
 In [6], Elastico is proposed as the first sharding solution for public blockchains. 
 Elastico partitions the blockchain network into smaller committees, each of which then processes a disjoint set of transactions, called a shard. 
 However, Elastico offers horizontal scaling but with high failure probabilities [12]. 
-Zilliqa [7] inherits the sharding architecture solution from Elastico. Both Elastico and Zilliqa support network sharding and utilizes Practical Byzantine Fault Tolerance [8] as intra-shard consensus. 
+Zilliqa [7] inherits the sharding architecture solution from Elastico. 
+Both Elastico and Zilliqa support network sharding and utilizes Practical Byzantine Fault Tolerance [8] as intra-shard consensus. 
 In these approaches, micro blocks, which are created by the shards, are then aggregated into a final block by another consensus round run among the final committee members. 
 OmniLedger [9] using the Unspent Transaction Output (UTXO) provides atomic cross-shard transactions. 
 A common missing feature of these aforementioned approaches is the lack of smart contract support. 
@@ -88,7 +90,7 @@ Section IV presents an incentive-driven mutual game verification game for fast t
 Section V details the reshuffling and data availability problem and solution. 
 Finally, we conclude the paper and show some perspectives in Section VI.
 
-## SHARDING ARCHITECTURE
+## II. Sharding architecture
 
 This section describes the sharding architecture and the used consensus protocol. 
 We assume readers of this paper have basic understanding of our Proof-of-Stake Voting (PoSV) consensus protocol previously released and presented in [10]. 
@@ -187,7 +189,7 @@ These attackers can create invalid blocks to create, for example, money out of t
 In order to deal with this issue, we provide a game theory incentive-driven approach that is similar to Plasma. 
 This approach is presented in Section IV.
 
-## CROSS-SHARD TRANSACTION SCHEMES
+## III. Cross-shard transaction schemes
 
 ### Cross-shard transaction
 
@@ -215,7 +217,8 @@ Therefore, the transaction confirmation latency increases, which is not expected
 To deal with this issue, we propose another cross-shard transaction scheme, namely transfer-first cross-shard transaction scheme (TFC). 
 In this latter, instead of directly doing a smart contract call cross-shard transaction, the sender at one shard can:
 
--   Send the expected amount to another external account that is managed by herself/himself at the receiver shard through a simple balance transfer. Note that, this latter still requires the Lock-Commit scheme to make simple balance transfer. 
+-   Send the expected amount to another external account that is managed by herself/himself at the receiver shard through a simple balance transfer. 
+Note that, this latter still requires the Lock-Commit scheme to make simple balance transfer. 
 However, Lock-Commit scheme for simple balance transfer does not involve the complexity of gas refund as for smart contracts. 
 This is because the Lock-Commit scheme for cross-shard simple balance transfer will consume a fixed amount gas (the gas for two balance transfers or 2300*2 gas).
 
@@ -278,7 +281,7 @@ There is one issue that this solution cannot deal with is when a contract A call
 We approach this issue by early detecting this problem through an off-chain smart contract analysis when the user wants to deploy this smart contract A to the network. 
 Then, an exception is raised that does not allow to place A onto the network.
 
-## INCENTIVE-DRIVEN MUTUAL VERIFICATION GAME FOR SAFETY AND SECURITY
+## IV. Incentive-driven mutual verification game for safety and security
 
 Sharding is usually considered when the system has many participating nodes. 
 This is because higher number of nodes per shard decreases the probability that a shard is colluded meaning that invalid blocks created by a colluded shard can be finalized. 
@@ -317,15 +320,17 @@ Eventually, the elected masternode will be quickly voted out of the masternode l
 All masternodes then have chance of verifying the validity of the shard blocks to detect the malicious behavior and get incentives. 
 We call this mechanism an incentive-driven mutual verification game. 
 If one shard is colluded and an invalid block is produced by attackers, whether the attackers in the shard want to or not, they have to send the invalid block to the root chain to finalize. 
-Exposing an invalid block to the root chain is extremely risky for the attackers to lose all of their deposits (Note that, masternodes are not required to verify blocks submitted to the root chain (that makes computation throughput on the root chain significantly less than the shard chains’). Masternodes can propagate the shard blocks submitted to the root chain to the masternode candidates or any challenger that will verify the validity of the shard blocks, which solves the data availability problem in this case). 
+Exposing an invalid block to the root chain is extremely risky for the attackers to lose all of their deposits (note that, masternodes are not required to verify blocks submitted to the root chain (that makes computation throughput on the root chain significantly less than the shard chains’). 
+Masternodes can propagate the shard blocks submitted to the root chain to the masternode candidates or any challenger that will verify the validity of the shard blocks, which solves the data availability problem in this case). 
 It is worth noting that, the attackers have no incentives to not propagate invalid blocks to the root chain. 
 This is because, by doing so, the attackers have spent computation resources and operational costs for only locally postponing the transactions within one shard. 
 Furthermore, the attackers will be voted out of the masternode list because of their low performance and these postponed transactions will then be processed by the same shard but with a different set of masternodes once network reshuffling has been executed.   
 
-**Fraud proofs**: If a block with an invalid state transition is signed off and propagated throughout the network, any other participant who receives the block can submit a merkleized fraud proof to the Voting smart contract (Note that, the Voting smart contract contains all deposits and voted tokens, therefore, the penalty for masternodes creating invalid blocks will be executed by a function within the contract. The penalty function is executed once a fraud proof for an invalid block is submitted by any nodes) on the root chain and the shard chain rejects the invalid block and is rolled back. 
+**Fraud proofs**: If a block with an invalid state transition is signed off and propagated throughout the network, any other participant who receives the block can submit a merkleized fraud proof to the Voting smart contract (note that, the Voting smart contract contains all deposits and voted tokens, therefore, the penalty for masternodes creating invalid blocks will be executed by a function within the contract. 
+The penalty function is executed once a fraud proof for an invalid block is submitted by any nodes) on the root chain and the shard chain rejects the invalid block and is rolled back. 
 
 Fraud proofs ensure that all state transitions are validated. 
-Example fraud proofs are proof of transaction spendability (funds are available in the current shard), proof-of-state transition (including checking the signature for the ability a transaction can be validated and executed, proof of inclusion/exclusion across blocks, and deposit/withdrawal proofs.
+Example fraud proofs are proof of transaction spendability (funds are available in the current shard), proof-of-state transition (including checking the signature for the ability a transaction can be validated and executed, proof of inclusion/exclusion across blocks, and deposit/withdrawal proofs).
 
 In order for this construction to have minimal proofs, though, all blocks must provide a commitment to a merkleized trie of the current state, a trie of outputs spent, a merkle tree of transactions, and a reference to the prior state being modified.
 
@@ -348,7 +353,7 @@ The latter aims at providing both fast confirmation and detection of Byzantiness
 
 By utilizing the very strong incentivizing-penalizing incentive-driven mutual verification game, challengers are strongly encouraged to work hard in order to keep the system safe and secure and shard masternodes are discouraged to act maliciously.
 
-## RESHUFFLING AND DATA AVAILABILITY
+## V. Reshuffling and data availability
 
 To enhance further the security of shards, it is very important that shards should be dynamic for resilience against attacks and failures of nodes in a shard. 
 For example, one shard might be stuck in a situation where blocks are valid but cannot be finalized because attacking masternodes do not validate these blocks. 
@@ -378,7 +383,7 @@ These strategies will be rigorously analyzed before making a final decision sinc
 While the first strategy has advantage of simplicity and masternodes and candidates can switch from one shard to any other shard smoothly, the storage and network bandwidth of masternodes might be more needed. 
 On the other hand, the second strategy can save more storage and network bandwidth, it raises a question: which masternodes should be kicked out of a shard if the performance of all masternodes in that shard is efficiently equal to each other’s.
 
-## CONCLUSION
+## VI. Conclusion
 
 The paper has presented a new solution to sharding architecture for public blockchains. 
 It aims at being transparent to users and significantly improving the transaction processing performance, while still maintaining basic security requirements of the system. 
@@ -392,7 +397,7 @@ Moreover, we also discuss the data availability problem in state sharding when s
 We are currently analyzing rigorously the safety and security properties of the proposed architecture to show its soundness. 
 In future, once the analysis will have been done, we will implement the proposed architecture on top of the TomoChain blockchain.
 
-## REFERENCES
+## References
 
 [1]   	S. Nakamoto, “Bitcoin: A Peer-to-Peer Electronic Cash System,” p. 9.
 
