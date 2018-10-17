@@ -2,7 +2,6 @@
 
 This tab now contains all the major new features about the Tomochain software. You can follow the progress of the project here chronologically.
 
-
 # Tomochain
 [v0.2.0] – 09-10-2018
   - Enhanced masternode set selection on each epoch.
