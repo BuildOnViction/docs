@@ -1,8 +1,8 @@
 # TomoChain Proposal for Decentralized Applications-Oriented Proof-of-Stake Sharding Architecture
 
-## **PREFACE**
+## PREFACE
 
-### **TomoChain's vision and mission**
+### TomoChain's vision and mission
 
 Our mission is to be a leading force in building the Internet of Value, and its infrastructure. 
 We are working to create an alternative, scalable financial system which is more secure, transparent, efficient, inclusive and equitable for everyone.
@@ -14,14 +14,14 @@ Security, stability and chain finality are guaranteed via novel techniques such 
 TomoChain supports all EVM-compatible smart-contracts, protocols, and atomic cross-chain token transfers. 
 New scaling techniques such as sharding, EVM parallelisation, private-chain generation, hardware integration will be continuously researched and incorporated into TomoChain's Masternode architecture which will be an ideal scalable smart-contract public blockchain for decentralized apps, token issuances and token integrations for small and big businesses.
 
-### **Scope**
+### Scope
 
 This document describes TomoChain’s initial proposal for decentralized applications-oriented Proof-of-Stake Sharding Architecture. 
 This preliminary draft is not our final design specification and it is subject to change. Comments are welcomed and appreciated.
 
 ## ABSTRACT AND KEYWORDS
 
-### **Abstract**:
+### Abstract:
 This paper proposes a sharding architecture solution for the TomoChain public blockchain infrastructure.
 Besides the aims at significantly improving the transaction processing performance in the current TomoChain design with the Proof-of-Stake Voting (PoSV) consensus, the presented sharding is designed in order to support decentralized applications’ performance. 
 The solution uses PoSV for intra-shard consensus because PoSV provides two-second block-time and fast confirmation time. 
@@ -31,10 +31,10 @@ Moreover, we also address the data availability problem in state sharding when s
 In addition, to be able to provide security and safety for shards, we provide an incentive-driven mutual verification game that aims at offering fast transaction confirmation time and fast detection of a malicious behavior that creates fraudulent blocks. 
 Masternodes of a shard that create a fraudulent block will be detected and penalized by losing all of their deposits to the node that detects the invalidity of the block. 
 
-### **Keywords**:
+### Keywords:
 Sharding, Blockchain, Smart contract, TomoChain, cross-shard transactions, randomization, data availability,security, PoSV, consensus.
 
-## **INTRODUCTION**
+## INTRODUCTION
 
 Blockchain has become one of the most disruptive technologies that enable many decentralized applications, including but not limited to cryptocurrencies, smart contract, voting and supply chain management. 
 Blockchain proponents have been trying to inject it into this Industry 4.0 revolution era. 
@@ -88,7 +88,7 @@ Section IV presents an incentive-driven mutual game verification game for fast t
 Section V details the reshuffling and data availability problem and solution. 
 Finally, we conclude the paper and show some perspectives in Section VI.
 
-## **SHARDING ARCHITECTURE**
+## SHARDING ARCHITECTURE
 
 This section describes the sharding architecture and the used consensus protocol. 
 We assume readers of this paper have basic understanding of our Proof-of-Stake Voting (PoSV) consensus protocol previously released and presented in [10]. 
@@ -98,7 +98,7 @@ Specifically, TomoChain features a voting-based system to elect 150 Masternodes 
 Each coin-holder must deposit at least 50 000 TOMO to a Voting smart contract and must satisfy a set of infrastructure requirements. 
 The set of Masternodes is dynamically selected through votes made by coin-holders that send their tokens to the Voting smart contract.
 
-### **Sharding architecture overview**
+### Sharding architecture overview
 
 Figure 1 shows the proposed sharding architecture. 
 Without loss of generality, we suppose there are $N$ masternodes that are selected among the candidates. 
@@ -134,7 +134,7 @@ This is because it is very hard for a masternode to create two blocks within 2s.
 
 It is worth noting that, in order for attackers to create another longer shard chain than an existing shard chain, the attackers need to successfully revert both the shard chain and the root chain, which are unlikely to happen since the root chain is secured by all masternodes.
 
-### **Shard assignment through randomization sampling**
+### Shard assignment through randomization sampling
 
 As a reminder, masternodes in TomoChain in an epoch is selected at the end of the previous epoch and there is also a randomization process during the previous epoch in order to select block verifiers for double validation. 
 The addresses of the set of masternodes for next epoch is recorded in the Voting smart contract in a decreasing order of total votes for them. 
@@ -158,7 +158,7 @@ Figure 1 shows an example of the result of the decentralized randomization sampl
 The shards are communicated with each other through a cross-shard communication scheme, which is presented in the next section. 
 Each shard sends their created blocks, block hashes and block signatures to the root chain that stores them in the TomoChain block signer smart contract (see Section Consensus protocol for more information).
 
-### **Consensus protocol**
+### Consensus protocol
 
 In PoSV, there are currently two consensus smart contracts deployed onto TomoChain:
 
@@ -187,9 +187,9 @@ These attackers can create invalid blocks to create, for example, money out of t
 In order to deal with this issue, we provide a game theory incentive-driven approach that is similar to Plasma. 
 This approach is presented in Section IV.
 
-## **CROSS-SHARD TRANSACTION SCHEMES**
+## CROSS-SHARD TRANSACTION SCHEMES
 
-### **Cross-shard transaction**
+### Cross-shard transaction
 
 A cross-shard transaction involves sending some coins from a sender in one shard to a receiver in another shard. 
 It enables any account in a shard to transact with any other account in other shards. 
@@ -241,7 +241,7 @@ It brings transparency to users as they are interacting with a one-shard system.
 One issue with this cross-shard transaction scheme is that the transaction fee would be higher than the non-sharding blockchain system since any cross-shard transaction must pay an additional fee at the sender shard of the transaction for the Lock at sending shard phase. 
 However, the issue can be alleviated if the scheme is implemented along with a near-zero fee transaction system such as TomoChain.
 
-### **Smart contract message calls chain**
+### Smart contract message calls chain
 
 A smart contract, executed within a shard, might call another smart contract managed by another shard in the middle of its execution. 
 Many smart contracts can be involved in a smart contract message calls chain. 
@@ -256,7 +256,8 @@ For simplification, we assume that the user’s address is managed by Shard1.
 Otherwise, the user can use the TFC cross-shard transaction scheme presented previously. 
 
 The TFC cross-shard transaction scheme previously presented in Cross-shard transaction is not applicable to the illustrative example. 
-The reason is that, the method calls between smart contracts are not transactions, but message calls. Message calls are not directly written to the blockchain. 
+The reason is that, the method calls between smart contracts are not transactions, but message calls. 
+Message calls are not directly written to the blockchain. 
 Even if we can wisely consider message calls as transactions in this case, the message call m1 to m2 executed in Shard1 must wait for the message call in Shard2 to be confirmed, which in turns needs to wait for the message call in Shard3 to be confirmed. 
 This wait-for-confirmation chain critically decreases the performance of the system since the operations of waiting shards are blocked.
 
@@ -277,7 +278,7 @@ There is one issue that this solution cannot deal with is when a contract A call
 We approach this issue by early detecting this problem through an off-chain smart contract analysis when the user wants to deploy this smart contract A to the network. 
 Then, an exception is raised that does not allow to place A onto the network.
 
-## **INCENTIVE-DRIVEN MUTUAL VERIFICATION GAME FOR SAFETY AND SECURITY**
+## INCENTIVE-DRIVEN MUTUAL VERIFICATION GAME FOR SAFETY AND SECURITY
 
 Sharding is usually considered when the system has many participating nodes. 
 This is because higher number of nodes per shard decreases the probability that a shard is colluded meaning that invalid blocks created by a colluded shard can be finalized. 
@@ -347,7 +348,7 @@ The latter aims at providing both fast confirmation and detection of Byzantiness
 
 By utilizing the very strong incentivizing-penalizing incentive-driven mutual verification game, challengers are strongly encouraged to work hard in order to keep the system safe and secure and shard masternodes are discouraged to act maliciously.
 
-## **RESHUFFLING AND DATA AVAILABILITY**
+## RESHUFFLING AND DATA AVAILABILITY
 
 To enhance further the security of shards, it is very important that shards should be dynamic for resilience against attacks and failures of nodes in a shard. 
 For example, one shard might be stuck in a situation where blocks are valid but cannot be finalized because attacking masternodes do not validate these blocks. 
@@ -377,7 +378,7 @@ These strategies will be rigorously analyzed before making a final decision sinc
 While the first strategy has advantage of simplicity and masternodes and candidates can switch from one shard to any other shard smoothly, the storage and network bandwidth of masternodes might be more needed. 
 On the other hand, the second strategy can save more storage and network bandwidth, it raises a question: which masternodes should be kicked out of a shard if the performance of all masternodes in that shard is efficiently equal to each other’s.
 
-## **CONCLUSION**
+## CONCLUSION
 
 The paper has presented a new solution to sharding architecture for public blockchains. 
 It aims at being transparent to users and significantly improving the transaction processing performance, while still maintaining basic security requirements of the system. 
@@ -391,7 +392,7 @@ Moreover, we also discuss the data availability problem in state sharding when s
 We are currently analyzing rigorously the safety and security properties of the proposed architecture to show its soundness. 
 In future, once the analysis will have been done, we will implement the proposed architecture on top of the TomoChain blockchain.
 
-## **REFERENCES**
+## REFERENCES
 
 [1]   	S. Nakamoto, “Bitcoin: A Peer-to-Peer Electronic Cash System,” p. 9.
 
