@@ -391,7 +391,8 @@ The paper uniquely identified and solved cross-shard transactions for smart cont
 The proposed solution uses the Proof-of-Stake Voting (PoSV) efficient consensus protocol proposed by Tomochain for intra-shard consensus. 
 Specifically, we relied on our decentralized randomization algorithm for randomized shard assignment of masternodes and proposed two cross-shard smart contract transaction schemes combined with a new smart contract deployment strategy. 
 The latter places dependent smart contracts onto the same shard, which eliminates smart contract message calls chain problem involving multiple shards. 
-In order to ensure safety and security of shards, we proposed an incentive-driven mutual verification game. In this latter, masternodes that create and/or verify an invalid block are penalized by losing all of their deposits to any participant that detects the invalidity by providing fraud proofs. 
+In order to ensure safety and security of shards, we proposed an incentive-driven mutual verification game.
+In this latter, masternodes that create and/or verify an invalid block are penalized by losing all of their deposits to any participant that detects the invalidity by providing fraud proofs. 
 Moreover, we also discuss the data availability problem in state sharding when shard reshuffling takes place and propose several possible solutions.
 
 We are currently analyzing rigorously the safety and security properties of the proposed architecture to show its soundness. 
