@@ -199,8 +199,9 @@ Our Lock-Commit cross-shard transaction requires cross-shard communication and i
 
 -   Lock at sending shard: The transaction is first processed by the sender shard which decreases the balance of the sender account. 
 At the end of this phase, a lock transaction receipt is generated which is signed by the masternode which produces the block containing the transaction. 
-The receipt is only generated if the transaction has been finalized (A block is considered as “finalized” meaning that it is irreversible and any attempt to modify it is refused by the network) by the shard (the block is verified and signed by ¾ the number of masternodes of the shard sending their signatures to the Block Signer smart contract on the root chain). 
-It plays the role of a Proof-of-Acceptance which is then sent to the receiver shard for processing. The Proof-of-Acceptance consists of the transaction, the Merkle proof of the transaction in the block at the sender shard, and the finality proof of the block.
+The receipt is only generated if the transaction has been finalized (A block is considered as “finalized” meaning that it is irreversible and any attempt to modify it is refused by the network) by the shard (the block is verified and signed by ¾ the number of masternodes of the shard sending their signatures to the Block Signer smart contract on the root chain).
+It plays the role of a Proof-of-Acceptance which is then sent to the receiver shard for processing.
+The Proof-of-Acceptance consists of the transaction, the Merkle proof of the transaction in the block at the sender shard, and the finality proof of the block.
 
 -   Commitment at receiving shard: The leader of the receiver shard sends the Proof-of-Acceptance for the transaction at the lock phase to the receiver shard. 
 This latter processes the proof as a transaction which might increase the balance of the receiver. 
