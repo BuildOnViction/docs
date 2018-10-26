@@ -7,7 +7,7 @@ On TomoMaster, this area shows you what the current block is, the block time, ho
 The candidates list includes everyone who has deposited enough tokens to run a masternode as well as those who resigned running a masternode.
 A candidate is required to be one of the top 150 most voted masternode candidates on this list to become a masternode earning rewards.
 Voters can use this list to help choose which masternode candidate or candidates they would like to stake their tokens for.
-!! tip.
+!!! tip
     Voting for the top voted masternode candidate could lower your rewards as the rewards that go to voters per token is inversely proportional to the number of tokens staked for a specific masternode.
 
 
