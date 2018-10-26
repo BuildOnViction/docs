@@ -1,30 +1,25 @@
-*This tutorial assumes that you already have a VPS working, an IaaS ("cloud") provider of your choice (AWS, Digital Ocean, Google Cloud, etc.)*
-
-Documentation on installing and running `tmn`.
-
 We made a simple command line interface called [tmn](https://github.com/tomochain/masternode) to easily and quickly start a TomoChain masternode.
 It takes care of starting the necessary docker containers with the proper settings for you.
 It will really suit you if you don't already have a big infrastructure running.
 Spin up a machine in your favorite cloud and get your masternode running in a few minutes!
 
-## How to Install Prerequisites
+## Prerequisites
 
-We will now prepare the prerequisites for tmn. To use tmn, you need Python >= 3.5 and Docker installed.
+Python >= 3.5 and Docker are required.
 
-- [Docker CE](https://docs.docker.com/install/)
 - [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.5
+- [Docker CE](https://docs.docker.com/install/)
 
 ### Installation of Python
 
-Type these two commands on the console with an `ENTER` after each:
+To install Python under debian based distribution, run the following commands:
 ```
 apt update
-```
-```
+
 apt install python3-pip
 ```
 
-Check if you have installed the right Python version (must be newer than 3.5)
+To check if you have installed the right Python version (must be greater than 3.5):
 ```
 python3 --version
 ```
@@ -35,13 +30,13 @@ python3 --version
  
 To install Docker, first update the apt package index.
 Then Install packages to allow apt to use a repository over HTTPS.
-The third command adds Docker’s official GPG key.
 ```
 sudo apt update
-```
-```
+
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
+
+Add Docker’s official GPG key:
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
@@ -61,8 +56,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 Update the apt package index. Then install the latest version of Docker CE:
 ```
 sudo apt update
-```
-```
+
 sudo apt install docker-ce
 ```
 
@@ -78,11 +72,6 @@ sudo docker run hello-world
 
 This command downloads a test image and runs it in a container.
 When the container runs, it prints an informational message and exits.
-
-Docker CE is installed and running. The docker group is created and we have or user added to it.
-
-Congratulations! You have already installed Python and Docker.
-You have the prerequisites ready to run TomoChain’s tmn.
 
 ## How to Install tmn
 
@@ -100,23 +89,6 @@ Update it from pip.
 pip3 install -U tmn
 ```
 
-To check that *tmn* has been correctly installed, use the command `show tmn` to show some info:
-```
-pip3 show tmn
-```
-
-```
-Name: tmn
-Version: 0.2.5
-Summary: Quickstart your masternode
-Home-page: https://tomochain.com
-Author: Etienne Napoleone
-Author-email: etienne@tomochain.com
-License: GPL-3.0+
-Location: /root/.local/lib/python3.6/site-packages
-Requires: clint, pastel, python-slugify, docker, click
-```
-
 ### First start
 
 When you first start your full node with tmn, you need to give some information.
@@ -131,23 +103,20 @@ You can choose here to connect it to the TomoChain Testnet or Mainnet (once laun
 
 `--pkey`: The private key of the account that your full node will use.
 A TomoChain full node uses an account to be uniquely identified and to receive transaction fee.
-**Important note:** we advise for security measures to use a fresh new account for your masternode.
-This is not the account who will receive the rewards.
-The rewards are sent to the account who will make the 50k TOMO initial deposit.
+
+!!! note "Important note:"
+	We advise for security measures to use a fresh new account for your masternode.
+	This is not the account who will receive the rewards.
+	The rewards are sent to the account who will make the 50k TOMO initial deposit.
 
 It could look like this:
 ```
 tmn start --name [YOUR_NODE_NAME] --net testnet --pkey [YOUR_COINBASE_PRIVATE_KEY]
 ```
 
-We used the following command for our node (copy your own name & private key):
-```
-tmn start --name Atlantis --net testnet --pkey cf03cb58************
-```
-
 Once started, you should see your node on the [stats page](https://stats.testnet.tomochain.com)!
 
-Note: it can take up to one hour (or more) to properly sync the entire blockchain.
+Note: it can take up to one hour to properly sync the entire blockchain.
 
 ![tmn stats](/assets/tmn_stats.png)
 
@@ -175,13 +144,13 @@ You can add it by adding it to your shell $PATH:
 
 On GNU/Linux:
 ```
-echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/.local/bin' >> $HOME/.bashrc
 ```
 
 On MacOS:
 Replace `[VERSION]` by your version of python (3.5, 3.6, 3.7)
 ```
-echo 'export PATH=$PATH:~/Library/Python/[VERSION]/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/Library/Python/[VERSION]/bin' >> $HOME/.bashrc
 ```
 
 ### error: could not access the docker daemon
