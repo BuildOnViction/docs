@@ -73,7 +73,7 @@ sudo docker run hello-world
 This command downloads a test image and runs it in a container.
 When the container runs, it prints an informational message and exits.
 
-## How to Install tmn
+## tmn
 
 ### Installation
 
