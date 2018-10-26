@@ -29,10 +29,12 @@ python3 --version
 ### Installation of Docker CE
  
 To install Docker, first update the apt package index.
-Then Install packages to allow apt to use a repository over HTTPS.
 ```
 sudo apt update
+```
 
+Then Install packages to allow apt to use a repository over HTTPS.
+```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
