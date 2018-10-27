@@ -1,12 +1,13 @@
 # [Home](https://master.testnet.tomochain.com/)
 ### Network Status
-On TomoMaster, this area shows you what the current block is, the block time, how much blocks are in each epoch, and the next checkpoint (end of epoch).
+On TomoMaster, this area shows you what the current block is, the block time, how many blocks are in each epoch, and the next checkpoint (end of epoch).
 
 
-### Candidates list
+### Candidates List
 The candidates list includes everyone who has deposited enough tokens to run a masternode as well as those who resigned running a masternode.
 A candidate is required to be one of the top 150 most voted masternode candidates on this list to become a masternode earning rewards.
 Voters can use this list to help choose which masternode candidate or candidates they would like to stake their tokens for.
+
 !!! tip
     Voting for the top voted masternode candidate could lower your rewards as the rewards that go to voters per token is inversely proportional to the number of tokens staked for a specific masternode.
 
@@ -18,12 +19,13 @@ Simply click ‘Vote’ and you will taken to a page that allows you to vote thr
 
 ### Unvoting
 If you do not want to support a masternode you voted for, you can unvote it by clicking the Unvote button on the masternode's page and enter the amount of TOMO you want to unvote.
+
 !!! warning
     After unvoting, your TOMO will be locked in the smart contract for 48 hours before you are able to withdraw.
 
 
 # [Candidate](https://master.testnet.tomochain.com/candidate/0xfc5571921c6d3672e13b58ea23dea534f2b35fa0)
-### General information
+### General Information
 On the top of the page, you can find general information on a masternode candidate.
 Voters can use this information to better understand the masternode candidates they plan to vote for.
 
@@ -39,7 +41,7 @@ If the masternode has been receiving less rewards than other masternodes, it mig
 
 
 ### Voters
-Under the section for voters, you can see the list of Tomo holders who voted for this candidate.
+Under the section for voters, you can see the list of TOMO stakers who voted for this candidate.
 
 
 ### Signs
@@ -51,19 +53,21 @@ In this section, you can see all transactions of this candidate.
 
 
 # [Voter](https://master.testnet.tomochain.com/voter/0x487d62d33467c4842c5e54eb370837e4e88bba0f)
-# General information
+### General Information
 On this page you can find general information about specific voters.
+
 !!! tip
-    As a voter, use this feature to make sure your earning your fair share of rewards.
+    As a voter, use this page to make sure you're earning your fair share of rewards.
 
 
 ### Candidates
-The candidates section shows all candidates that have been voted by this voter.
+The candidates section shows all masternode candidates that have been voted by this voter.
 
 ### Rewards
 The rewards section shows the rewards the voter has been receiving.
+
 !!! tip
-    If you voted an equal amount of TOMO for different masternodes and you see one if giving less rewards, you may have voted for a weak masternode and should consider changing your vote.
+    If you voted an equal amount of TOMO for different masternodes and you see one is giving less rewards, you may have voted for a weak masternode and should consider changing your vote.
 
 
 ### Transactions
@@ -71,11 +75,11 @@ This section shows all transactions by the voter.
 
 
 # [Settings](https://master.testnet.tomochain.com/setting)
-### Network provider
-Use settings to select the network provider you are using for TomoMaster.
+### Network Provider
+Use settings to select the network provider you are using for TomoMaster (e.g., Metamask, TomoChain Testnet, Custom Network).
 
 
-### Account infos
+### Account Infos
 This section will show you information about your public address and TOMO balance.
 
 
@@ -84,7 +88,7 @@ This web page is used by TOMO holders looking to apply to become a masternode ca
 
 # Search
 On the top of the page, you can find a search bar.
-You can use this bar to search for a Candidate or Voter by it's address.
+You can use this bar to search for a Candidate or Voter by its address.
 
 !!! tip
     The search will not work if your input is not an address.
