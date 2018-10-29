@@ -12,14 +12,14 @@ Python >= 3.5 and Docker are required.
 
 ### Installation of Python
 
-To install Python under debian based distribution, run the following commands:
+To install Python under debian based distribution, run the following commands.
 ```
 apt update
 
 apt install python3-pip
 ```
 
-To check if you have installed the right Python version (must be greater than 3.5):
+To check if you have installed the right Python version (must be greater than 3.5).
 ```
 python3 --version
 ```
@@ -38,7 +38,7 @@ Then Install packages to allow apt to use a repository over HTTPS.
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
-Add Docker’s official GPG key:
+Add Docker’s official GPG key.
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
@@ -50,12 +50,12 @@ apt-key fingerprint 0EBFCD88
 
 ![tmn docker key](/assets/tmn_key.png)
 
-Set up the stable Docker repository:
+Set up the stable Docker repository.
 ```
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
 
-Update the apt package index. Then install the latest version of Docker CE:
+Update the apt package index. Then install the latest version of Docker CE.
 ```
 sudo apt update
 
@@ -66,10 +66,12 @@ Once installed, add your current user to the Docker group.
 ```
 usermod -aG docker $your_user_name
 ```
+!!! warning
+    You need to relog into your account for this to take effect.
 
 Verify that Docker CE is installed correctly by running the hello-world image:
 ```
-sudo docker run hello-world
+docker run hello-world
 ```
 
 This command downloads a test image and runs it in a container.
