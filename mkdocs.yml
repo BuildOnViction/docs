@@ -73,9 +73,9 @@ nav:
     # - TomoWallet:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
-    # - Masternode:
+    - Masternode:
     #   - Run a masternode:
-    #   - Tmn: masternode/tmn.md
+      - Tmn: masternode/tmn.md
     #   - Docker: misc/wip.md
     #   - Applying: misc/wip.md
     #   - Contributing: misc/wip.md
