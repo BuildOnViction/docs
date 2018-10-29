@@ -64,8 +64,8 @@ nav:
     # - TomoChain client:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
-    # - TomoMaster:
-    #   - Getting started: misc/wip.md
+    - TomoMaster:
+      - Features: tomomaster/features.md
     #   - Contributing: misc/wip.md
     # - TomoScan:
     #   - Getting started: misc/wip.md
