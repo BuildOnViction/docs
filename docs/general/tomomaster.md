@@ -1,4 +1,4 @@
-# [Home](https://master.testnet.tomochain.com/)
+## [Home](https://master.testnet.tomochain.com/)
 ### Network Status
 On TomoMaster, this area shows you what the current block is, the block time, how many blocks are in each epoch, and the next checkpoint (end of epoch).
 
@@ -24,7 +24,7 @@ If you do not want to support a masternode you voted for, you can unvote it by c
     After unvoting, your TOMO will be locked in the smart contract for 48 hours before you are able to withdraw.
 
 
-# [Candidate](https://master.testnet.tomochain.com/candidate/0xfc5571921c6d3672e13b58ea23dea534f2b35fa0)
+## [Candidate](https://master.testnet.tomochain.com/candidate/0xfc5571921c6d3672e13b58ea23dea534f2b35fa0)
 ### General Information
 On the top of the page, you can find general information on a masternode candidate.
 Voters can use this information to better understand the masternode candidates they plan to vote for.
@@ -52,7 +52,7 @@ In this section, you can see all transactions that the candidate signed.
 In this section, you can see all transactions of this candidate.
 
 
-# [Voter](https://master.testnet.tomochain.com/voter/0x487d62d33467c4842c5e54eb370837e4e88bba0f)
+## [Voter](https://master.testnet.tomochain.com/voter/0x487d62d33467c4842c5e54eb370837e4e88bba0f)
 ### General Information
 On this page you can find general information about specific voters.
 
@@ -74,7 +74,7 @@ The rewards section shows the rewards the voter has been receiving.
 This section shows all transactions by the voter.
 
 
-# [Settings](https://master.testnet.tomochain.com/setting)
+## [Settings](https://master.testnet.tomochain.com/setting)
 ### Network Provider
 Use settings to select the network provider you are using for TomoMaster (e.g., Metamask, TomoChain Testnet, Custom Network).
 
@@ -83,10 +83,10 @@ Use settings to select the network provider you are using for TomoMaster (e.g., 
 This section will show you information about your public address and TOMO balance.
 
 
-# [Apply](https://master.testnet.tomochain.com/apply)
+## [Apply](https://master.testnet.tomochain.com/apply)
 This web page is used by TOMO holders looking to apply to become a masternode candidate.
 
-# Search
+## Search
 On the top of the page, you can find a search bar.
 You can use this bar to search for a Candidate or Voter by its address.
 
