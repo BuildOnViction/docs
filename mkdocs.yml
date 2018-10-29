@@ -77,7 +77,7 @@ nav:
     #   - Run a masternode:
       - Tmn: masternode/tmn.md
     #   - Docker: misc/wip.md
-    #   - Applying: misc/wip.md
+      - Applying: masternode/applying.md
     #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
     - Whitepapers and research:
