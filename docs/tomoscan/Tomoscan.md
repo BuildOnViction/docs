@@ -29,7 +29,7 @@ The Tokens tab includes all the tokens that are using Tomochain and all the Toke
 
 ### Blocks
 
-You can check all the blocks that were mined on Tomochain using the Search button. 
+You can view here all the blocks that are on the TomoChain.
 
 ![alternative textuelle](/whole block tomoscan.jpg)
 
