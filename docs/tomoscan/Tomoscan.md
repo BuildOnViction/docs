@@ -39,7 +39,7 @@ The informations available are the following :
 -   Txn : number of transactions made on this block.
 -   Miner : the adress of the miner that verified the block.
 -   GasUsed: the nergy needed to mine the block.
--   Finality : it is the guarantee that past transactions can never change. If it is higher, the security is better.
+- Finality: The percentage of the network who validated this block. When it reach 75%, the block reach it's finality state and is added permanently to the chain.
 
 If you click on a block, you will find more informations such as more detailled transactions made on the block and the Blocksigner. Blocksigner is the Masternode that created the block.
 
