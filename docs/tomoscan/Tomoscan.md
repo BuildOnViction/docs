@@ -4,7 +4,7 @@ TomoScan provides a user friendly, details and perfection-oriented user interfac
 
 Here are the different elements of Tomoscan:
 
-### Home
+## Home
 
 /docs/docs/assets/tomoscan home.jpg
       
