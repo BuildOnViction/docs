@@ -38,7 +38,7 @@ The informations available are the following :
 -   Age : the time where the block was mined.
 -   Txn : number of transactions made on this block.
 -   Miner : the adress of the miner that verified the block.
--   GasUsed: the nergy needed to mine the block.
+- GasUsed: the gas used to mine the block.
 - Finality: The percentage of the network who validated this block. When it reach 75%, the block reach it's finality state and is added permanently to the chain.
 
 If you click on a block, you will find more informations such as more detailled transactions made on the block and the Blocksigner. Blocksigner is the Masternode that created the block.
