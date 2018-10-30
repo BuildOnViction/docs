@@ -34,7 +34,7 @@ You can check all the blocks that were mined on Tomochain using the Search butto
 ![alternative textuelle](/whole block tomoscan.jpg)
 
 The informations available are the following :
--   Height : the number of the block.
+- Height: the block number.
 - Age: How long ago the block was created.
 - Txn: number of transactions in this block.
 - Miner: the address of the masternode who created this block.
