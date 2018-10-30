@@ -49,4 +49,4 @@ If you click on a block, you will find more informations such as more detailled 
 
 If you register, you will be able to keep a watchlist of some adressesses, keep them on a list and receive a notification when by email when a transaction is made with this adress,
 
-Please keep in mind that Tomoscan is subject to go through some changes. That is why your feedback is appreciated!
+Please keep in mind that TomoScan is subject to go through some changes. That is why your feedback is appreciated!
