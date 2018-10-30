@@ -1,4 +1,4 @@
-# Tomoscan
+# TomoScan
 
 TomoScan provides a block explorer with user friendly, detailed and professional user interface to the TomoChain ecosystem. 
 From a user perspective, TomoScan brings TomoChain’s transparency to users. 
@@ -8,33 +8,31 @@ Furthermore, TomoScan also offers technical overview and expose useful metrics a
 Here are the pages and features available on TomoScan.
 
 ## Home
-
-/docs/docs/assets/tomoscan home.jpg
       
 ![TomoScan homepage](/assets/tomoscan_home.jpg)
 
--   This is the welcome page of Tomoscan, where you can find various informations about Tomochain like the number of accounts, contracts, number of blocks found and the tokens running on Tomochain.
+-   This is the welcome page of TomoScan, where you can find various informations about TomoChain like the number of accounts, contracts, number of blocks found and the tokens running on TomoChain.
 -   The Search button: you can search an adress in particular and check the TOMO balance, the TOMO USD value, the transactions and a 0x code.
 
-### Transactions.
+## Transactions.
 You can find here all the transactions made on TomoChain.
 You can also check the Signs transactions, Pending Transactions and Other Transactions,
 -   Signs transactions are transactions that are done.
 -   Pending transactions are transactions that are in progress.
 -   Other Transactions correspond to the Sign transactions and the Pending transactions.
 
-### Accounts
+## Accounts
 -   Accounts includes Masternodes and Verified  Contracts,
 -   Verified Contracts are contracts that were verified by the author.
 
-### Tokens
-The Tokens tab includes all the tokens that are using Tomochain and all the Token Transfers from an adress to another.
+## Tokens
+The Tokens tab includes all the tokens that are using TomoChain and all the Token Transfers from an adress to another.
 
-### Blocks
+## Blocks
 
 You can view here all the blocks that are on the TomoChain.
 
-![alternative textuelle](/whole block tomoscan.jpg)
+![TomoScan blocks](/assets/whole_block_TomoScan.jpg)
 
 The informations available are the following :
 - Height: the block number.
@@ -46,9 +44,9 @@ The informations available are the following :
 
 If you click on a block, you will find more informations such as more detailled transactions made on the block and the Blocksigner. Blocksigner is the Masternode that created the block.
 
-![alternative textuelle](/assets/block detailled tomoscan.jpg)
+![TomoScan block](/assets/whole_block_TomoScan.jpg)
 
-### Sign and Register
+## Sign and Register
 
 If you register, you will be able to keep a watchlist of some addresses your interested into.
 You will receive an email notification when this address perform actions.
