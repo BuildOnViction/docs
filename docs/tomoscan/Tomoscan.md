@@ -14,7 +14,7 @@ Here are the different elements of Tomoscan:
 -   The Search button: you can search an adress in particular and check the TOMO balance, the TOMO USD value, the transactions and a 0x code.
 
 ### Transactions.
-You can find here all the transactions made on Tomochain,
+You can find here all the transactions made on TomoChain.
 You can also check the Signs transactions, Pending Transactions and Other Transactions,
 -   Signs transactions are transactions that are done.
 -   Pending transactions are transactions that are in progress.
