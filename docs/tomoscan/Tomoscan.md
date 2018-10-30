@@ -36,7 +36,7 @@ You can check all the blocks that were mined on Tomochain using the Search butto
 The informations available are the following :
 -   Height : the number of the block.
 -   Age : the time where the block was mined.
--   Txn : number of transactions made on this block.
+- Txn: number of transactions in this block.
 - Miner: the address of the masternode who created this block.
 - GasUsed: the gas used to mine the block.
 - Finality: The percentage of the network who validated this block. When it reach 75%, the block reach it's finality state and is added permanently to the chain.
