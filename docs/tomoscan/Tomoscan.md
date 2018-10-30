@@ -47,6 +47,7 @@ If you click on a block, you will find more informations such as more detailled 
 
 ### Sign and Register
 
-If you register, you will be able to keep a watchlist of some adressesses, keep them on a list and receive a notification when by email when a transaction is made with this adress,
+If you register, you will be able to keep a watchlist of some addresses your interested into.
+You will receive an email notification when this address perform actions.
 
 Please keep in mind that TomoScan is subject to go through some changes. That is why your feedback is appreciated!
