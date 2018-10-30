@@ -1,6 +1,9 @@
 # Tomoscan
 
-TomoScan provides a user friendly, details and perfection-oriented user interface for TomoChain block explorer. From a user perspective, TomoScan brings TomoChain’s transparency to users, because all block, transaction, finality, smart contracts, DApp and token information are read from TomoChain and shown to users. Furthermore, TomoScan also offers technical visualisations and does useful statistics about the TomoChain performance, token holders and other functionalities. 
+TomoScan provides a block explorer with user friendly, detailed and professional user interface to the TomoChain ecosystem. 
+From a user perspective, TomoScan brings TomoChain’s transparency to users. 
+All blocks, transactions, smart contracts, tokens and basically everything happening on the chain are shown to the users.
+Furthermore, TomoScan also offers technical overview and expose useful metrics about the TomoChain. 
 
 Here are the pages and features available on TomoScan.
 
