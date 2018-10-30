@@ -8,7 +8,7 @@ Here are the different elements of Tomoscan:
 
 /docs/docs/assets/tomoscan home.jpg
       
-![alternative textuelle](/assets/tomoscan home.jpg)
+![TomoScan homepage](/assets/tomoscan_home.jpg)
 
 -   This is the welcome page of Tomoscan, where you can find various informations about Tomochain like the number of accounts, contracts, number of blocks found and the tokens running on Tomochain.
 -   The Search button: you can search an adress in particular and check the TOMO balance, the TOMO USD value, the transactions and a 0x code.
