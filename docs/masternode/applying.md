@@ -1,31 +1,33 @@
 Once your full node is up and running, you need to apply to make it eligible as a masternode.
 
-## Implications of applying
 Masternodes will receive a significant amount of block rewards, which likely exceeds the cost for running the infrastructure.
-However, Masternodes need to invest in TomoChain by depositing at least 50K Tomo, and stake them for a long term.
-Furthermore, after depositing 50K TOMO to become a Candidate, if the account cannot become a Masternode (has less votes than Top 150 most voted Candidates), he/she will receive no rewards.
-Therefore, Candidates have an incentive to do as much as they can such as signaling their capability to support TomoChain to get into top 150 most voted Candidates.
+However, masternode candidates need to invest in TomoChain by depositing at least 50'000 Tomo, and stake them for a long term.
+Furthermore, after the initial deposit to become a candidate, if he doesn't make it to the top 150 most voted candidates, he will not be promoted as masternode and thus receive no rewards.
+Therefore, candidates have an incentive to do as much as they can such as signalling their capability to support TomoChain to get into top 150 most voted candidates.
 
 ## Requirements
-For a token holder to become a masternode, the following requirements must be satisfied:
+To have a masternode candidate, the following requirements must be satisfied:
 
-* The token holder has a node up and running -- recommended to do this with `tmn`.
+- The token holder has an up and running node -- see our [documentation](https://docs.tomochain.com/masternode/tmn/).
 
-* The token holder must hold a minimum required amount of tokens (50 000 TOMO).
+- The token holder must hold a minimum required amount of tokens (50 000 TOMO).
 These 50 000 TOMO are deposited to the Voting Smart Contract.
 
-* The token holder must be one of the 150 most voted masternode candidates in the system.
+- Must be one of the 150 most voted masternode candidates in the system.
 The voting by token holders is credited through a Voting DApp that allows token holders to send TOMO through the smart contract mechanism.
 
 ## Applying to become a masternode
-You can apply by going to the TomoMaster page.
-Login with the wallet that contains your received 50'000 TOMO.
+You can apply by going on [TomoMaster](https://master.testnet.tomochain.com).
+Connect the wallet that contains the funds you want to deposit.
+
+!!! warning
+    The wallet who makes the initial deposit will be the one receiving block rewards.
 
 On the top right corner, click on "Become a Candidate".
 
 Enter the amount of TOMO you want to deposit (minimum 50'000).
 
-Enter your coinbase address. This is the public key of the account that your masternode is using.
+Enter your coinbase address. This is the address of the account that your masternode is using.
 If your are running your node with `tmn`, you can simply run `tmn inspect` to get it.
 
 !!! note "Important note:"
@@ -38,9 +40,12 @@ Confirm with apply and proceed to make the payment.
 Your full node will now be listed on TomoMaster.
 People can view its details and vote for it.
 
-A Candidate becomes a Masternode when he/she belongs to top 150 most voted Candidates in each epoch (900 blocks or ~30 minutes). 
+A candidate becomes a masternode when it belongs to top 150 most voted candidates in each epoch.
 
-If your node is in the top 150 most voted nodes in each epoch, it will be promoted as a masternode and will start producing blocks at the next epoch.
+!!! info
+    An epoch is a period of 900 blocks (~ 30 minutes) starting from block #1
+
+If your node is in the top 150 most voted candidates at the checkpoint between two epochs, it will be promoted as a masternode and will start producing blocks at the next epoch.
 
 ## Resigning your masternode
 In case you want to stop your node, you need to resign it from the governance first in order to retrieve your locked funds.
