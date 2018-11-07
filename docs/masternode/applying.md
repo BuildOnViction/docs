@@ -57,4 +57,4 @@ After resigning successfully, you can stop your node. If you ran it with `tmn`, 
 tmn remove
 ```
 
-At this point, your masternode is completly terminated.
+At this point, your masternode is completely terminated.
