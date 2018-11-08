@@ -1,6 +1,6 @@
 # TOMOCHAIN - The Most Efficient Platform for the Token Economy
 
-## PREFACE
+## Preface
 
 ### TomoChain's vision and mission
 
@@ -18,7 +18,7 @@ New scaling techniques such as sharding, EVM parallelisation, private-chain gene
 
 This document describes TomoChain’s initial draft for the TomoChain blockchain’s economics system.
 
-## MASTERNODES
+## Masternodes
 
 - **Masternodes** are full-nodes that create, verify and validate new blocks in TomoChain’s platform. 
 
@@ -31,7 +31,7 @@ A Masternode can resign, but the tokens  will be locked for the next 30 days aft
 
 - **Reward**: The reward a Masternode receives in each epoch is proportional to the number of signatures he/she  signs.
 
-## TOKEN VOTING AND STAKING
+## Token Voting and Staking
 
 -   **Token  voting**: Token holders can vote for Masternode Candidates by sending TOMO to each Candidate specific voting address using the official governance d-app. Top 150 most voted Candidates will become Masternodes. 
 Token holders can un-vote a Candidate, but the tokens will be locked for the next 48 hours (86,400  blocks) after the un-voting.   
@@ -39,7 +39,7 @@ Token holders can un-vote a Candidate, but the tokens will be locked for the nex
 -   **Staking**: Masternode token  deposits, and all  tokens used to vote for Masternodes will enter staking program, and earn block rewards in each epoch, plus any fees. 
 Tokens used to vote for Candidates who do not become Masternodes will not earn staking reward.
 
-## TOKEN EMISSION SCHEDULE
+## Token Emission Schedule
 
 -   **Following the fundraising commitment**: The total amount of tokens at the genesis block is 55 million TOMO tokens in circulation; 
 12 millions are reserved for the team vested over the next 4 years; 
@@ -56,9 +56,9 @@ The first portion of 40% called “Infrastructure Reward” goes to the Masterno
 The second portion of 50% called “Staking Reward” goes to the pool of all voters for that Masternode which is shared proportionally based on the token stake. 
 The last portion of 10% called “Foundation Reward” goes to a special account controlled by the Masternode Foundation, which is run by TomoChain company initially. 
 
-## VOTING/STAKING CONSIDERATION
+## Voting/Staking Consideration
 
-### Candidate/ Masternode incentives
+### Candidate/Masternode incentives
 
 Masternodes will receive a significant amount of block rewards, which likely exceeds the cost for running the infrastructure. 
 However, Masternodes need to invest in TomoChain by depositing  at least 50K Tomo, and stake them for a long term. 
@@ -70,7 +70,7 @@ Therefore, Candidates have an incentive to do as much as they can such as signal
 Token voters should vote for Candidates who signal a strong support for TomoChain because if the Candidate does not become a Masternode, voters will not receive any rewards. 
 However, token voters should also vote for the less voted Candidates because the most voted Candidates will receive less reward per token stake comparatively. 
 
-## LONG TERM PLATFORM ECONOMICS CONSIDERATION
+## Long Term Platform Economics Consideration
 
 ### P/E theory of token value
 
@@ -92,7 +92,7 @@ These conditions are applying to Ether and Bitcoin at the moment, and can be app
 TomoChain roadmap includes a built-in decentralized exchange, in which a portion of fees will be added to the pool of epoch rewards. These fees could be substantial if there are many valuable tokens on top of TomoChain. 
 This extra feature can increase the future earnings of the network, and raise TOMO price based on the P/E theory.
 
-## DECENTRALIZED GOVERNANCE
+## Decentralized Governance
 
 ### Become a Masternode
 
@@ -112,13 +112,13 @@ The technical decisions should be considered, debated, and decided upon by quali
 The economic decisions such as the amount of block rewards, inflation rate, the division of block rewards might be based on the consensus of majority of the Masternodes (with their voters). 
 Masternode Council could be one of the coordinating bodies for these activities using the official governance d-app.
 
-## APPENDIX A: HISTORY OF THE PROJECT
+## Appendix A: History of the Project
 
 TomoChain PTE. LTD. raised funds to build TomoChain blockchain platform in early 2018. 
 The ICO whitepaper is at https://goo.gl/avtnZ1. 
 The terms of sale and other documents can be found at  https://tomochain.com/exchanges TomoChain platform will be gradually decentralized in 2-8 years after the mainnet launch, and eventually become a secure public blockchain platform for everyone.
 
-## APPENDIX B: REWARD CALCULATION FORMULA AND DETAILS
+## Appendix B: Reward Calculation Formula and Details
 
 ### General notations
 
