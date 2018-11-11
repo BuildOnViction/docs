@@ -52,7 +52,8 @@ When consulting a single transaction, the page list the following informations:
 - The transaction data.
 
 ## [Accounts](https://scan.testnet.tomochain.com/accounts)
-List the accounts on the TomoChain.[TomoScan accounts](/assets/TomoScan_account.jpg)
+List the accounts on TomoChain.
+[TomoScan accounts](/assets/TomoScan_account.jpg)
  The Accounts part is divided in three parts : all accounts, all masternodes and verified contracts. Various informations can be found:
  
 ### [All accounts](https://scan.testnet.tomochain.com/accounts)
