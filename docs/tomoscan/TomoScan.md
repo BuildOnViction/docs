@@ -63,7 +63,7 @@ List the accounts on TomoChain.
 - The number of transactions made on this account.
 
 ### [All masternodes](https://scan.testnet.tomochain.com/masternodes)
-- The adress of a masternode.
+- The masternode's address.
 - The name of a masternode.
 - Who is the owner.
 - The status, you can check if the masternode is still active.
