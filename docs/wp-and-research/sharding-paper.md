@@ -21,7 +21,7 @@ This preliminary draft is not our final design specification and it is subject t
 
 ## Abstract and Keywords
 
-### Abstract:
+### Abstract
 This paper proposes a sharding architecture solution for the TomoChain public blockchain infrastructure.
 Besides the aims at significantly improving the transaction processing performance in the current TomoChain design with the Proof-of-Stake Voting (PoSV) consensus, the presented sharding is designed in order to support decentralized applications’ performance. 
 The solution uses PoSV for intra-shard consensus because PoSV provides two-second block-time and fast confirmation time. 
@@ -31,10 +31,10 @@ Moreover, we also address the data availability problem in state sharding when s
 In addition, to be able to provide security and safety for shards, we provide an incentive-driven mutual verification game that aims at offering fast transaction confirmation time and fast detection of a malicious behavior that creates fraudulent blocks. 
 Masternodes of a shard that create a fraudulent block will be detected and penalized by losing all of their deposits to the node that detects the invalidity of the block. 
 
-### Keywords:
+### Keywords
 Sharding, Blockchain, Smart contract, TomoChain, cross-shard transactions, randomization, data availability,security, PoSV, consensus.
 
-## I. Introduction
+## Introduction
 
 Blockchain has become one of the most disruptive technologies that enable many decentralized applications, including but not limited to cryptocurrencies, smart contract, voting and supply chain management. 
 Blockchain proponents have been trying to inject it into this Industry 4.0 revolution era. 
@@ -90,7 +90,7 @@ Section IV presents an incentive-driven mutual game verification game for fast t
 Section V details the reshuffling and data availability problem and solution. 
 Finally, we conclude the paper and show some perspectives in Section VI.
 
-## II. Sharding architecture
+## Sharding Architecture
 
 This section describes the sharding architecture and the used consensus protocol. 
 We assume readers of this paper have basic understanding of our Proof-of-Stake Voting (PoSV) consensus protocol previously released and presented in [10]. 
@@ -189,7 +189,7 @@ These attackers can create invalid blocks to create, for example, money out of t
 In order to deal with this issue, we provide a game theory incentive-driven approach that is similar to Plasma. 
 This approach is presented in Section IV.
 
-## III. Cross-shard transaction schemes
+## Cross-shard Transaction Schemes
 
 ### Cross-shard transaction
 
@@ -282,7 +282,7 @@ There is one issue that this solution cannot deal with is when a contract A call
 We approach this issue by early detecting this problem through an off-chain smart contract analysis when the user wants to deploy this smart contract A to the network. 
 Then, an exception is raised that does not allow to place A onto the network.
 
-## IV. Incentive-driven mutual verification game for safety and security
+## Incentive-driven Mutual Verification Game for Safety and Security
 
 Sharding is usually considered when the system has many participating nodes. 
 This is because higher number of nodes per shard decreases the probability that a shard is colluded meaning that invalid blocks created by a colluded shard can be finalized. 
@@ -354,7 +354,7 @@ The latter aims at providing both fast confirmation and detection of Byzantiness
 
 By utilizing the very strong incentivizing-penalizing incentive-driven mutual verification game, challengers are strongly encouraged to work hard in order to keep the system safe and secure and shard masternodes are discouraged to act maliciously.
 
-## V. Reshuffling and data availability
+## Reshuffling and Data Availability
 
 To enhance further the security of shards, it is very important that shards should be dynamic for resilience against attacks and failures of nodes in a shard. 
 For example, one shard might be stuck in a situation where blocks are valid but cannot be finalized because attacking masternodes do not validate these blocks. 
@@ -384,7 +384,7 @@ These strategies will be rigorously analyzed before making a final decision sinc
 While the first strategy has advantage of simplicity and masternodes and candidates can switch from one shard to any other shard smoothly, the storage and network bandwidth of masternodes might be more needed. 
 On the other hand, the second strategy can save more storage and network bandwidth, it raises a question: which masternodes should be kicked out of a shard if the performance of all masternodes in that shard is efficiently equal to each other’s.
 
-## VI. Conclusion
+## Conclusion
 
 The paper has presented a new solution to sharding architecture for public blockchains. 
 It aims at being transparent to users and significantly improving the transaction processing performance, while still maintaining basic security requirements of the system. 
