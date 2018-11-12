@@ -5,37 +5,26 @@ TomoScan brings TomoChain’s transparency to users.
 All blocks, transactions, smart contracts, tokens and basically everything happening on the chain are shown to the users.
 Furthermore, TomoScan also offers technical overview and expose useful metrics about the TomoChain. 
 
-Here are the pages and features available on TomoScan:
-
 ## [Home](https://scan.testnet.tomochain.com/)
       
-![TomoScan homepage](/assets/tomoscan_home.jpg)
+![TomoScan homepage](/assets/tomoscan1.jpg)
 
 This is the home page of TomoScan.
 In the middle of the page you can find a search field that let you find anything by its address.
 Under it, some general stats gives you the total amount of accounts, tokens, contracts and blocks.
 
 ## [Transactions](https://scan.devnet.tomochain.com/txs)
+
+[TomoScan transactions](/assets/tomoscan2.jpg)
+
 All the transactions pages list the following informations:
-- The transaction's ID (Transaction Hash)
-- The block containing this transaction
-- The transaction's age
-- The sender's address
-- The recipient's address
-- The transaction's ammount in TOMO
-- The gas fees
-
-### [All transactions](https://scan.devnet.tomochain.com/txs)
-All the transactions that happenned on the chain.
-
-### [Sign transactions](https://scan.devnet.tomochain.com/txs/signTxs)
-Sign transactions emited by the masternodes.
-
-### [Pending transactions](https://scan.devnet.tomochain.com/txs/pending)
-Transactions that are not yet confirmed.
-
-### [Other Transactions]()
-All the transactions minus the sign and pending ones.
+- The transaction's ID (Transaction Hash).
+- The block containing this transaction.
+- The transaction's age.
+- The sender's address.
+- The recipient's address.
+- The transaction's ammount in TOMO.
+- The gas fees.
 
 ## [Transaction](https://scan.devnet.tomochain.com/txs/0x1185cbc8e3715d0e373be720e480bfad3f622a32734e3aec55607a5e10881750)
 When consulting a single transaction, the page list the following informations:
@@ -51,10 +40,24 @@ When consulting a single transaction, the page list the following informations:
 - The total gas cost.
 - The transaction data.
 
+### [All transactions](https://scan.devnet.tomochain.com/txs)
+All the transactions that happened on the chain.
+
+### [Sign transactions](https://scan.devnet.tomochain.com/txs/signTxs)
+Sign transactions emited by the masternodes.
+
+### [Pending transactions](https://scan.devnet.tomochain.com/txs/pending)
+Transactions that are not yet confirmed.
+
+### [Other Transactions]()
+All the transactions minus the sign and pending ones.
+
 ## [Accounts](https://scan.testnet.tomochain.com/accounts)
+
+[TomoScan accounts](/assets/tomoscan3.jpg)
+
 List the accounts on TomoChain.
-[TomoScan accounts](/assets/TomoScan_account.jpg)
- The Accounts part is divided in three parts : all accounts, all masternodes and verified contracts. Various informations can be found:
+The Accounts part is divided in three parts : all accounts, all masternodes and verified contracts. Various informations can be found:
  
 ### [All accounts](https://scan.testnet.tomochain.com/accounts)
 - The rank: it is based on the number of TOMO the account owns. The more TOMO the account has on his balance, the higher he will be.
@@ -78,6 +81,9 @@ Verified contracts are contracts that were verified by the author. You can find 
 - The date when the contract was verified.
 
 ## [Tokens](https://scan.testnet.tomochain.com/tokens)
+
+[TomoScan tokens](/assets/tomoscan3.jpg)
+
 The Tokens tab includes all the tokens that are using TomoChain and all the Token Transfers from an adress to another.
 
 ### [All Tokens](https://scan.testnet.tomochain.com/tokens)
@@ -91,18 +97,17 @@ The informations found are the following :
 ### [Tokens transfers](https://scan.testnet.tomochain.com/tokentxs)
  This tab contains :
  - The TxHash of the transaction.
- - "Lastseen" as when the transaction occured.
+ - "Lastseen" as when the transaction occurred.
  - "From" is the original adress.
  - "To" is the adress where the tokens are going.
- - Value is how much the transaction worth.
- - Token is the name of the token send in the transaction.
+ - Value : how much the transaction worth.
+ - Token : the name of the token send in the transaction.
 
 ## [Blocks](https://scan.testnet.tomochain.com/blocks)
 
+![TomoScan blocks](/assets/tomoscan5.jpg)
+
 You can view here all the blocks that are on the TomoChain.
-
-![TomoScan blocks](/assets/whole_block_TomoScan.jpg)
-
 The informations available for each block are the following :
 - Height: the block number.
 - Age: How long ago the block was created.
@@ -110,6 +115,10 @@ The informations available for each block are the following :
 - Miner: the address of the masternode who created this block.
 - GasUsed: the gas used to mine the block.
 - Finality: The percentage of the network who validated this block. When it reach 75%, the block reach it's finality state and is added permanently to the chain.
+
+### [Block](https://scan.testnet.tomochain.com/blocks/2354954)
+
+![TomoScan block](/assets/tomoscan6.jpg)
 
 If you click on a block, you will find more detailled informations such as :
 - The height.
@@ -123,8 +132,6 @@ If you click on a block, you will find more detailled informations such as :
 - The Gas Limit.
 - Some extra Data.
 - The Blocksigner, it is the Masternode that created the block.
-
-![TomoScan block](/assets/whole_block_TomoScan.jpg)
 
 ## [Sign and Register]
 
