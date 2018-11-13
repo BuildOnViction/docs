@@ -6,7 +6,7 @@ TomoChain, a independent public blockchain, the most efficient platform for the 
 
 - Chain id: `88`
 - RPC endpoint: `https://mainnet.tomochain.com`
-- Websocket endpoint: `wss://mainnet.tomochain.com/ws`
+- Websocket endpoint: `wss://ws.mainnet.tomochain.com`
 - HD derivation path: `m/44'/889'/0'/0/`
 - Consensus: POSV
 - Block finality: `>75%`
