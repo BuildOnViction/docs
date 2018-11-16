@@ -25,6 +25,8 @@ Our team extensively tested performances and came up with those minimal requirem
 - Must use an IaaS ("cloud") provider of your choice (AWS, Digital Ocean, Google Cloud, etc.)
 - Storage must be SSD
 
+We recommand prioritizing CPU. For example with Digital Ocean, pick a CPU optimized droplet. On AWS EC2, an C5 type instance would be a perfect match.
+
 The full node will serve on port `30303` udp and tcp for p2p communication with other nodes, `8545` tcp for RPC api and `8546` tcp for websocket api.
 You may need to edit your firewall configuration accordingly.
 
