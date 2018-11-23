@@ -46,10 +46,6 @@ If the masternode has been receiving less rewards than other masternodes, it mig
 Under the section for voters, you can see the list of TOMO stakers who voted for this candidate.
 
 
-### Signs
-In this section, you can see all transactions that the candidate signed.
-
-
 ### Transactions
 In this section, you can see all transactions of this candidate.
 
