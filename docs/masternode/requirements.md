@@ -1,10 +1,7 @@
-In TomoChain architecture, there is a maximum of 150 candidates elected to become masternodes.
 The **required deposit to become a masternode candidate is set at 50'000 TOMO.**
 This amount is locked in a voting smart contract.
-Once a masternode intentionally resigns from his masternode role, he will not receive rewards and the deposit will remain locked for 30 days (1,296,000 blocks) after the resignation.
-
+Only the **top 150 most voted candidates** every *epoch* (900 blocks) will become masternodes.
 Masternodes which work hard in the system to create and verify blocks will be incentivized with TOMO.
-If a masternode is demoted (leaving the top 150 most voted candidates) it will not be able to sign blocks and will not receive rewards.
 
 Furthermore, token holders who vote for these masternodes will also receive TOMO in proportion to the amount they have invested via voting.
 Token holders, at any time, can unvote candidates with low performance and give their votes to other candidates with better performance.
@@ -19,7 +16,10 @@ The *last signed block* also indicates the last activity.
 
 It is in your best interest to **keep your masternode working efficiently** to help the network and to be voted and receive rewards.
 
-## General hardware notice
+If a masternode is demoted (leaving the top 150 most voted candidates) it will not be able to sign blocks and will not receive rewards.
+Once a masternode intentionally resigns from his masternode role, he will not receive rewards and the deposit will remain locked for 30 days (1,296,000 blocks) after the resignation.
+
+## General Hardware Notice {#hardware .unnumbered}
 
 Our team extensively tested performances and came up with those minimal requirements for any TomoChain masternode host.
 
@@ -43,19 +43,19 @@ We recommand prioritizing CPU. For example with Digital Ocean, pick a CPU optimi
 
 If you have other production grade environment than cloud provider at your displosal, please tell us more about on our [Gitter](https://gitter.im/tomochain).
 
-## Getting Elected as a Masternode
+## Getting Elected as a Masternode {#getting-elected .unnumbered}
 
-Only the top 150 most voted candidates every period of 900 blocks called epoch will be promoted to masternodes, being able to sign blocks and receiving rewards.
+Only **the top 150 most voted candidates** every period of 900 blocks called *epoch* will be promoted to masternodes, being able to sign blocks and receiving rewards.
 This list will dynamically change every epoch (~30 minutes), removing weak underperforming nodes and promoting the efficient ones.
 All masternodes must keep the highest standards of quality if they want to be reelected and maintain their status and the rewards.
 
-The main points candidates -to be voted- and voters -when choosing a candidate- should take into consideration are the following.
+The main points candidates -to be voted- and voters -when choosing a candidate- should take into consideration are the following:
 
 ### Raw machine performances
 The theoretical power (the hardware) and actual performances (CPU and Memory usage) between masternodes will indicate strong masternodes.
 As more and more DApps will use TomoChain, the load on each masternode will ramp up.
 
-A node who is constantly using 70% of it's CPU power will probably get into more troubles if the load on the blockchain goes up than a node who's currently at 20%.
+A node who is constantly using 70% of its CPU power will probably get into more troubles if the load on the blockchain goes up than a node who's currently at 20%.
 
 There are also other technical factors such as latency or bandwidth.
 
@@ -65,23 +65,23 @@ You can check when the last signing happened to see if masternode is indeed onli
 You can compare the rewards with other masternodes to see if the node is doing the same amount of work.
 
 ### Current stacking
-When voting for a masternode candidate, voters might not want vote for the most voted candidates as it will greatly reduce the rewards they will receive.
+When voting for a masternode candidate, voters might not want to vote for the most voted candidates as it will greatly reduce the rewards they will receive.
 As voting rewards are split between voted TOMO, the more TOMO stacked, the less reward they individually grant.
 
-For example, voting 10'000 TOMO on a masternode A with 100'000 TOMO already stacked will earn the voter more rewards than voting 10'000 TOMO on a masternode B with 1'000'000 TOMO stacked.
-At the same performances, the voter would earn 10 times more if he votes for masternode A.
+*For example, voting 10'000 TOMO on a masternode A with 100'000 TOMO already stacked will earn the voter more rewards than voting 10'000 TOMO on a masternode B with 1'000'000 TOMO stacked.
+At the same performances, the voter would earn 10 times more if he votes for masternode A.*
 
 ### Reputation
 There are also social factors such as reputation.
-A candidate run by a "trusted" company or partner.
-A node with a track record of excellent performance and correct maintenance.
+*A candidate run by a "trusted" company or partner.
+Or a node with a track record of excellent performance and correct maintenance.*
 Nodes with good reputation will be favoured by voters.
 
 This one might be the most subjective point.
 A candidate being owned by a "trusted" company can still encounter problems and be poorly managed.
 In any case, it might still be a factor as some people might have more experience maintaining IT infrastructures than others.
 
-## Maintenance of your Masternode
+## Maintenance of your Masternode {#maintenance .unnumbered}
 
 It is also **important to keep an adequate maintenance of your node.**
 Otherwise your node may stop working properly and decrease its efficiency signing blocks.
