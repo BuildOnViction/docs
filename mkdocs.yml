@@ -67,8 +67,8 @@ nav:
     - TomoMaster:
       - Features: tomomaster/features.md
     #   - Contributing: misc/wip.md
-    # - TomoScan:
-    #   - Getting started: misc/wip.md
+    - TomoScan:
+      - Features: tomoscan/features.md
     #   - Contributing: misc/wip.md
     # - TomoWallet:
     #   - Getting started: misc/wip.md
