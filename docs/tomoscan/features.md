@@ -149,8 +149,8 @@ The page list the following informations:
 - The block finality.
 
 !!! note "Finality"
-The percentage of the network who validated this block. 
-When it reach 75%, the block reach it's finality state and is added permanently to the chain.
+    The percentage of the network who validated this block. 
+    When it reach 75%, the block reach it's finality state and is added permanently to the chain.
 
 ## [Block](https://scan.testnet.tomochain.com/blocks/2354954)
 
