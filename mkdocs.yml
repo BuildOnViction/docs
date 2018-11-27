@@ -64,8 +64,8 @@ nav:
     # - TomoChain client:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
-    # - TomoMaster:
-    #   - Getting started: misc/wip.md
+    - TomoMaster:
+      - Features: tomomaster/features.md
     #   - Contributing: misc/wip.md
     # - TomoScan:
     #   - Getting started: misc/wip.md
@@ -73,11 +73,11 @@ nav:
     # - TomoWallet:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
-    # - Masternode:
+    - Masternode:
     #   - Run a masternode:
-    #   - Tmn: misc/wip.md
+      - Tmn: masternode/tmn.md
     #   - Docker: misc/wip.md
-    #   - Applying: misc/wip.md
+      - Applying: masternode/applying.md
     #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
     - Whitepapers and research:

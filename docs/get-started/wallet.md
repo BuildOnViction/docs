@@ -1,6 +1,6 @@
 ## Metamask
 
-Tomochain will guide you how to connect MetaMask to Tomochain Testnet. It is an essential step to study an overview of Tomochain features in term of meeting the crypto trading needs on system.
+TomoChain will guide you how to connect MetaMask to TomoChain Testnet. It is an essential step to study an overview of TomoChain features in term of meeting the crypto trading needs on system.
 
 Get started! You first need to install Extension MetaMask on Chrome or Brave browsers. Once you agree to the Metamask Terms of Use and create an account successfully, follow instructions:
 
@@ -12,9 +12,9 @@ Get started! You first need to install Extension MetaMask on Chrome or Brave bro
 
 ![metamask2](/assets/metamask2.jpg)
 
-**Step 3:** You successfully connect to Tomochain Testnet after 2 steps. Next, you use TOMO to pay a Gas fee to implement Smart Contact. To have some TOMO in the testnet, you can enter your wallet address in Faucet site [https://faucet.testnet.tomochain.com/](https://faucet.testnet.tomochain.com/) to request some TOMO.
+**Step 3:** You successfully connect to TomoChain Testnet after 2 steps. Next, you use TOMO to pay a Gas fee to implement Smart Contact. To have some TOMO in the testnet, you can enter your wallet address in Faucet site [https://faucet.testnet.tomochain.com/](https://faucet.testnet.tomochain.com/) to request some TOMO.
 
-So, you accomplish connecting the MetaMask to Tomochain (testnet). From now on, you can make transactions and develop Dapp as well as Smart Contract as you wish.
+So, you accomplish connecting the MetaMask to TomoChain (testnet). From now on, you can make transactions and develop Dapp as well as Smart Contract as you wish.
 
 ## MyEtherWallet
 
@@ -36,7 +36,7 @@ You are able to use hardware wallets (Trezor, Ledger Nano S) in MyEtherWallet to
 
 TomoWallet is now available at [https://wallet.testnet.tomochain.com](https://wallet.testnet.tomochain.com). You can create a wallet, get some TOMO on the testnet and transfer/receive TOMO back and forth.
 
-*Note: At the moment, TomoWallet only works on Tomochain Testnet. So all TOMO you have in TomoWallet is only for testing purpose.*
+*Note: At the moment, TomoWallet only works on TomoChain Testnet. So all TOMO you have in TomoWallet is only for testing purpose.*
 
 ### Create a new wallet
 On the first page, click `CREATE NEW WALLET` button. TomoWallet will automatically create a new wallet and show up the address, qr code and the balance in your home page.

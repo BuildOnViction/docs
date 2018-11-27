@@ -1,3 +1,18 @@
+## Mainnet
+
+TomoChain, a independent public blockchain, the most efficient platform for the token economy
+
+### Specifications
+
+- Chain id: `88`
+- RPC endpoint: `https://rpc.tomochain.com`
+- Websocket endpoint: `wss://ws.tomochain.com`
+- HD derivation path: `m/44'/889'/0'/0/`
+- Consensus: POSV
+- Block finality: `>75%`
+- Consensus nodes: up to 150 (masternodes)
+- Genesis block date: `December 14th, 2018`
+
 ## Testnet
 
 The Testnet network is meant to be a public demo of our products and a way for us to test new features.
@@ -7,6 +22,10 @@ The Testnet network is meant to be a public demo of our products and a way for u
 - Chain id: `89`
 - RPC endpoint: `https://testnet.tomochain.com`
 - Websocket endpoint:  `wss://testnet.tomochain.com/ws`
+- HD derivation path: `m/44'/889'/0'/0/`
+- Consensus: POSV
+- Block finality: `>75%`
+- Consensus nodes: up to 150 (masternodes)
 
 ### Usefull links
 
