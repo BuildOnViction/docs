@@ -26,6 +26,18 @@ All the transactions pages list the following informations:
 - The transaction's ammount in TOMO.
 - The gas fees.
 
+### [All transactions](https://scan.devnet.tomochain.com/txs)
+All the transactions that happened on the chain.
+
+### [Sign transactions](https://scan.devnet.tomochain.com/txs/signTxs)
+Sign transactions emited by the masternodes.
+
+### [Pending transactions](https://scan.devnet.tomochain.com/txs/pending)
+Transactions that are not yet confirmed.
+
+### [Other Transactions]()
+All the transactions minus the sign and pending ones.
+
 ## [Transaction](https://scan.devnet.tomochain.com/txs/0x1185cbc8e3715d0e373be720e480bfad3f622a32734e3aec55607a5e10881750)
 When consulting a single transaction, the page list the following informations:
 - The transaction's ID (Transaction Hash).
@@ -40,18 +52,6 @@ When consulting a single transaction, the page list the following informations:
 - The transaction total gas cost.
 - The transaction data.
 
-### [All transactions](https://scan.devnet.tomochain.com/txs)
-All the transactions that happened on the chain.
-
-### [Sign transactions](https://scan.devnet.tomochain.com/txs/signTxs)
-Sign transactions emited by the masternodes.
-
-### [Pending transactions](https://scan.devnet.tomochain.com/txs/pending)
-Transactions that are not yet confirmed.
-
-### [Other Transactions]()
-All the transactions minus the sign and pending ones.
-
 ## [Accounts](https://scan.testnet.tomochain.com/accounts)
 
 ![TomoScan accounts](/assets/tomoscan3.jpg)
@@ -65,18 +65,6 @@ The page list the following informations:
 - The account address.
 - The account balance in TOMO.
 - The account transactions count.
-
-## [Account]()
-
-![TomoScan accounts](/assets/tomoscan3bis.jpg)
-
-When clicking on an account, the following informations display :
-- The account balance in TOMO.
-- The TOMO USD Value.
-- The account transactions count.
-- The code.
-- The mined blocks.
-- The rewards of the account for each epoch.
 
 ### [All masternodes](https://scan.testnet.tomochain.com/masternodes)
 All the masternode accounts that exist on the chain.
@@ -96,6 +84,16 @@ The page list the following informations:
 - The account balance in TOMO.
 - The account transactions count.
 - The account contract verification date.
+
+## [Account](https://scan.testnet.tomochain.com/address/0x487d62d33467c4842c5e54eb370837e4e88bba0f)
+When clicking on an account, the following informations are displayed:
+- The account balance in TOMO.
+- The TOMO USD Value.
+- The account transactions count.
+- The transactions of this account.
+- The mined blocks.
+- The events of this account.
+- The rewards of the account for each epoch.
 
 ## [Tokens](https://scan.testnet.tomochain.com/tokens)
 
@@ -123,11 +121,9 @@ The page list the following informations:
 - The transaction value in token.
 - The token name.
 
-### [Token]()
+### [Token](https://scan.testnet.tomochain.com/tokens/0x98d32c4a93136a8766c8d44381cbf93032e86522)
 
-![TomoScan tokens](/assets/tomoscan4bis.jpg)
-
-If you click on a Token, for example BigBom, more items will be shown such as :
+When clicking on an token, the following informations are displayed:
 - The token name.
 - The number of token holders.
 - The number of transfers made with the token.
@@ -158,8 +154,6 @@ When it reach 75%, the block reach it's finality state and is added permanently 
 
 ## [Block](https://scan.testnet.tomochain.com/blocks/2354954)
 
-![TomoScan block](/assets/tomoscan6.jpg)
-
 When consulting a single block, the page list the following informations:
 - The block height (index).
 - The block age.
@@ -175,7 +169,7 @@ When consulting a single block, the page list the following informations:
 A tab "Transactions" contains the list of transactions in this block.
 A tab "Signers" contains the list of masternode who signed this block.
 
-## [Sign and Register]()
+## [Login and Register]()
 
 If you register, you will be able to keep a watchlist of some addresses you are interested into.
 You will receive an email notification when this address perform actions.
