@@ -1,6 +1,6 @@
 # TomoScan
 
-TomoScan provides a block explorer with user friendly, detailed and professional user interface to the TomoChain ecosystem. 
+TomoScan provides a block explorer to the TomoChain ecosystem with user friendly, detailed and professional user interface. 
 TomoScan brings TomoChain’s transparency to users. 
 All blocks, transactions, smart contracts, tokens and basically everything happening on the chain are shown to the users.
 Furthermore, TomoScan also offers technical overview and expose useful metrics about the TomoChain. 
@@ -15,7 +15,7 @@ Under it, some general stats gives you the total amount of accounts, tokens, con
 
 ## [Transactions](https://scan.devnet.tomochain.com/txs)
 
-[TomoScan transactions](/assets/tomoscan2.jpg)
+![TomoScan transactions](/assets/tomoscan2.jpg)
 
 All the transactions pages list the following informations:
 - The transaction's ID (Transaction Hash).
@@ -54,7 +54,7 @@ All the transactions minus the sign and pending ones.
 
 ## [Accounts](https://scan.testnet.tomochain.com/accounts)
 
-[TomoScan accounts](/assets/tomoscan3.jpg)
+![TomoScan accounts](/assets/tomoscan3.jpg)
 
 List the accounts on TomoChain.
  
@@ -66,14 +66,26 @@ The page list the following informations:
 - The account balance in TOMO.
 - The account transactions count.
 
+## [Account]()
+
+![TomoScan accounts](/assets/tomoscan3bis.jpg)
+
+When clicking on an account, the following informations display :
+- The account balance in TOMO.
+- The TOMO USD Value.
+- The account transactions count.
+- The code.
+- The mined blocks.
+- The rewards of the account for each epoch.
+
 ### [All masternodes](https://scan.testnet.tomochain.com/masternodes)
 All the masternode accounts that exist on the chain.
-The page list the following informations:
+The page list these informations:
 - The account address.
-- The account linked masternode name.
-- The account linked masternode owner.
-- The account linked masternode status.
-- The account linked masternode latest signed block.
+- The account linked to the masternode name.
+- The account linked to the masternode owner.
+- The account linked to the masternode status.
+- The account linked to the masternode latest signed block.
 
 ### [Verified Contracts](https://scan.testnet.tomochain.com/contracts)
 All the verified contracts that exist on the chain.
@@ -87,7 +99,7 @@ The page list the following informations:
 
 ## [Tokens](https://scan.testnet.tomochain.com/tokens)
 
-[TomoScan tokens](/assets/tomoscan3.jpg)
+![TomoScan tokens](/assets/tomoscan4.jpg)
 
 List the tokens on TomoChain and their transfers.
 
@@ -111,6 +123,22 @@ The page list the following informations:
 - The transaction value in token.
 - The token name.
 
+### [Token]()
+
+![TomoScan tokens](/assets/tomoscan4bis.jpg)
+
+If you click on a Token, for example BigBom, more items will be shown such as :
+- The token name.
+- The number of token holders.
+- The number of transfers made with the token.
+- The link of the official site, please keep in mind that TomoScan is constantly updating. 
+  Some links might be  missing.
+- The official contract adress.
+- Number of decimal.
+- Useful links.
+- "Filtered by": use it if you want to see a the transactions of an adress in particular. 
+  In this example, you can check all the transactions made of the BigBom tokens from an adress to another.
+
 ## [Blocks](https://scan.testnet.tomochain.com/blocks)
 
 ![TomoScan blocks](/assets/tomoscan5.jpg)
@@ -120,12 +148,13 @@ The page list the following informations:
 - The block height (index).
 - The block age.
 - The block number of transactions.
-- The block creator
+- The block creator.
 - The block total gas used.
-- The block finality
+- The block finality.
 
-!!! info "Finality"
-    The percentage of the network who validated this block. When it reach 75%, the block reach it's finality state and is added permanently to the chain.
+!!! note "Finality"
+The percentage of the network who validated this block. 
+When it reach 75%, the block reach it's finality state and is added permanently to the chain.
 
 ## [Block](https://scan.testnet.tomochain.com/blocks/2354954)
 
@@ -146,9 +175,10 @@ When consulting a single block, the page list the following informations:
 A tab "Transactions" contains the list of transactions in this block.
 A tab "Signers" contains the list of masternode who signed this block.
 
-## [Sign and Register]
+## [Sign and Register]()
 
 If you register, you will be able to keep a watchlist of some addresses you are interested into.
 You will receive an email notification when this address perform actions.
 
 Please keep in mind that TomoScan is subject to go through some changes.
+This is why your feedback is so much appreciated!
