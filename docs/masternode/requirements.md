@@ -1,23 +1,11 @@
-The **required deposit to become a masternode candidate is set at 50'000 TOMO.**
-This amount is locked in a voting smart contract.
-Only the **top 150 most voted candidates** every *epoch* (900 blocks) will become masternodes.
-Masternodes which work hard in the system to create and verify blocks will be incentivized with TOMO.
+The **required deposit to become a masternode candidate is 50'000 TOMO.**
+This amount is locked in a voting smart contract on TomoMaster.
 
-Furthermore, token holders who vote for these masternodes will also receive TOMO in proportion to the amount they have invested via voting.
-Token holders, at any time, can unvote candidates with low performance and give their votes to other candidates with better performance.
-Token holders have incentives to do that because their voted tokens are seen as investment to their supported masternodes, thus they should choose a voting strategy in order to maximize their profit.
+After the initial deposit, the account needs to become one of the **top 150 most voted candidates** to promote to masternode.
+If he has not enough votes, he will not receive rewards.
+Therefore, candidates are incentivised to do as much as they can to signal their capability to support TomoChain to get into the top 150 most voted candidates.
 
-This simple trick keeps the system healthy since masternodes always have to race for their position so that all weak masternodes will eventually be eliminated.
-Therefore, only the strongest masternodes are voted and can flourish.
-
-The list of masternode candidates is dynamically sorted based on voted tokens.
-The performance of the masternodes will be tracked and reported back to the token holders in terms of three main metrics: *CPU, Memory* and the *number of signed blocks* which indicates their work performance.
-The *last signed block* also indicates the last activity.
-
-It is in your best interest to **keep your masternode working efficiently** to help the network and to be voted and receive rewards.
-
-If a masternode is demoted (leaving the top 150 most voted candidates) it will not be able to sign blocks and will not receive rewards.
-Once a masternode intentionally resigns from his masternode role, he will not receive rewards and the deposit will remain locked for 30 days (1,296,000 blocks) after the resignation.
+Key requirements for masternodes are presented below.
 
 ## General Hardware Notice {#hardware .unnumbered}
 
@@ -39,7 +27,7 @@ Our team extensively tested performances and came up with those minimal requirem
 - Must use an IaaS ("cloud") provider of your choice (AWS, Digital Ocean, Google Cloud, etc.)
 - Storage must be SSD
 
-We recommand prioritizing CPU. For example with Digital Ocean, pick a CPU optimized droplet. On AWS EC2, an C5 type instance would be a perfect match.
+We recommend prioritizing CPU. For example with Digital Ocean, pick a CPU optimized droplet. On AWS EC2, an C5 type instance would be a perfect match.
 
 If you have other production grade environment than cloud provider at your displosal, please tell us more about on our [Gitter](https://gitter.im/tomochain).
 
@@ -94,3 +82,9 @@ Lazy masternodes will be eliminated out of the masternodes list because normally
 
 TomoChain also has a *Slashing Mechanism* solution to mitigate the aforementioned issue to keep the system stable and performing.
 If a masternode does not sign any block during an entire epoch, the masternode will be 'kicked out' of the masternode list for the next 4 epochs and does not have the right to create blocks or receive rewards.
+
+## Resigning and Lock-up {#resigning-lockup .unnumbered}
+
+Masternode candidates must do everything in their hand to get the required votes and to keep their nodes running efficiently on the network.
+Once a candidate intentionally resigns from his masternode role, he will not receive rewards and the initial deposit will remain **locked for 30 days (1,296,000 blocks)** after the resignation.
+The initial deposit can only be withdrawn after this lock-up period.
