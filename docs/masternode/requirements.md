@@ -1,11 +1,10 @@
+## General {#general .unnumbered}
 The **required deposit to become a masternode candidate is 50'000 TOMO.**
 This amount is locked in a voting smart contract on TomoMaster.
 
-After the initial deposit, the account needs to become one of the **top 150 most voted candidates** to promote to masternode.
-If he has not enough votes, he will not receive rewards.
+After the initial deposit, the account needs to become one of the **top 150 most voted candidates** to be promoted to masternode.
+Candidates who are not elected to the masternode position do not receive rewards.
 Therefore, candidates are incentivised to do as much as they can to signal their capability to support TomoChain to get into the top 150 most voted candidates.
-
-Key requirements for masternodes are presented below.
 
 ## General Hardware Notice {#hardware .unnumbered}
 
@@ -34,10 +33,10 @@ If you have other production grade environment than cloud provider at your displ
 ## Getting Elected as a Masternode {#getting-elected .unnumbered}
 
 Only **the top 150 most voted candidates** every period of 900 blocks called *epoch* will be promoted to masternodes, being able to sign blocks and receiving rewards.
-This list will dynamically change every epoch (~30 minutes), removing weak underperforming nodes and promoting the efficient ones.
-All masternodes must keep the highest standards of quality if they want to be reelected and maintain their status and the rewards.
+This list will dynamically change every epoch (~30 minutes), removing weak underperforming masternodes and promoting the efficient candidates.
+All masternode candidates must keep the highest standards of quality if they want to be maintain their status and rewards.
 
-The main points candidates -to be voted- and voters -when choosing a candidate- should take into consideration are the following:
+The main points candidates (to be voted for) and voters (when choosing a candidate) should take into consideration are the following:
 
 ### Raw machine performances
 The theoretical power (the hardware) and actual performances (CPU and Memory usage) between masternodes will indicate strong masternodes.
@@ -73,7 +72,7 @@ In any case, it might still be a factor as some people might have more experienc
 
 It is also **important to keep an adequate maintenance of your node.**
 Otherwise your node may stop working properly and decrease its efficiency signing blocks.
-Lazy masternodes can dramatically decrease the performance of the whole network and cause network instability. 
+Lazy masternodes can dramatically decrease the performance of the whole network and cause network instability.
 
 A *lazy masternode* is a masternode that does not sign/verify any blocks during the entire epoch within which it is elected.
 Some reasons for this might be that the masternode does not have the correct TomoChain software or the masternode crashes due to the lack of e-maintenance and operation by the masternode owner.
