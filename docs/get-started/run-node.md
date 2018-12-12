@@ -20,7 +20,7 @@ Our team extensively tested performances and came up with those minimal requirem
 **Mainnet**
 
 - Must be facing internet directly (no NAT, public IP)
-- Must have at least 8 cores
+- Must have at least 16 cores
 - Must have at least 32GB of RAM
 - Must use an IaaS ("cloud") provider of your choice (AWS, Digital Ocean, Google Cloud, etc.)
 - Storage must be SSD
