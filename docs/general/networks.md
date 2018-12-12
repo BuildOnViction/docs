@@ -13,6 +13,14 @@ TomoChain, a independent public blockchain, the most efficient platform for the 
 - Consensus nodes: up to 150 (masternodes)
 - Genesis block date: `December 14th, 2018`
 
+### Bootnodes
+
+```
+enode://4d3c2cc0ce7135c1778c6f1cfda623ab44b4b6db55289543d48ecfde7d7111fd420c42174a9f2fea511a04cf6eac4ec69b4456bfaaae0e5bd236107d3172b013@52.221.28.223:30301
+enode://298780104303fcdb37a84c5702ebd9ec660971629f68a933fd91f7350c54eea0e294b0857f1fd2e8dba2869fcc36b83e6de553c386cf4ff26f19672955d9f312@13.251.101.216:30301
+enode://46dba3a8721c589bede3c134d755eb1a38ae7c5a4c69249b8317c55adc8d46a369f98b06514ecec4b4ff150712085176818d18f59a9e6311a52dbe68cff5b2ae@13.250.94.232:30301
+```
+
 ## Testnet
 
 The Testnet network is meant to be a public demo of our products and a way for us to test new features.
