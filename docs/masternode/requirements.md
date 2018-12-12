@@ -35,9 +35,11 @@ If you have other production grade environment than cloud provider at your dispo
 
 All IT systems require maintenance.
 
-It is of the owner's responsability to ensure over time that your node has (non-extensive) enough:
+It is of the owner's responsability to ensure over time that your node has enough:
 
 - disk space to store the new blockchain data
 - processing power to keep the chain operating at optimal speed
 - monitoring to be able to react quickly in case of problem
 - security mesures like firewalling, os security patching, ssh via keypairs, etc.
+
+This is a non exhaustive list.
