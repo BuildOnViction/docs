@@ -1,3 +1,7 @@
+Running a masternode candidate require to pay attention to the team's announcements regarding updates and technical notices.
+
+Here are the base recommendations for running a masternode candidate.
+
 ## Minimum hardware requirements {#hardware .unnumbered}
 
 Processing transactions is mostly CPU bound.
