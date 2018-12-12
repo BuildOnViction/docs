@@ -1,6 +1,7 @@
 Alternatively to using our simple tool `tmn`, people or companies with existing infrastructure might want to directly run our docker images for more flexibility.
 
 To achieve that, two containers are needed:
+
 1. tomochain/node - The container who run the TomoChain client
 2. tomochain/telegraf - The container who send the performance metrics to be displayed on TomoMaster
 
