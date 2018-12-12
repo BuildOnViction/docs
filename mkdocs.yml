@@ -77,7 +77,7 @@ nav:
     #   - Run a masternode:
       - Requirements: masternode/requirements.md
       - Tmn: masternode/tmn.md
-    #   - Docker: misc/wip.md
+      - Docker: masternode/docker.md
       - Applying: masternode/applying.md
     #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
