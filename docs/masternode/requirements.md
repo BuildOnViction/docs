@@ -17,6 +17,7 @@ Therefore we recommend running CPU optimized servers.
 
 We recommend using popular cloud providers as there reliability and uptime are close to 100%.
 Those servers would be a good starting point:
+
 - **DigitalOcean**: CPU optimized droplet 32GB/16CPU
 - **Amazon EC2**: C5 instance
 - **Google Cloud Engine**: n1-highcpu-16
