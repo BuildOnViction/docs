@@ -125,7 +125,7 @@ A TomoChain full node uses an account to be uniquely identified and to receive t
 
 It could look like this:
 ```
-tmn start --name [YOUR_NODE_NAME] --net testnet --pkey [YOUR_COINBASE_PRIVATE_KEY]
+tmn start --name [YOUR_NODE_NAME] --net testnet --pkey [YOUR_COINBASE_PRIVATE_KEY] --api
 ```
 
 Once started, you should see your node on the [stats page](https://stats.testnet.tomochain.com)!
