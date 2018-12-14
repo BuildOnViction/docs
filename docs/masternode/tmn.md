@@ -11,7 +11,7 @@ Python >= 3.5 and Docker are required.
 - [Docker CE](https://docs.docker.com/install/)
 
 We recommand to run your masternode on Ubuntu 18.04 LTS.
-This version have python 3.6 and has been reported by multiple people has working out of the box.
+This version have python 3.6 and has been reported as working out of the box.
 
 ### Installation of Python
 
