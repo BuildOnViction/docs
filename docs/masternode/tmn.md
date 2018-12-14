@@ -112,9 +112,16 @@ You can choose here to connect it to the TomoChain Testnet or Mainnet (once laun
 A TomoChain full node uses an account to be uniquely identified and to receive transaction fee.
 
 !!! note "Important note:"
-	We advise for security measures to use a fresh new account for your masternode.
-	This is not the account who will receive the rewards.
-	The rewards are sent to the account who will make the 50k TOMO initial deposit.
+    We advise for security measures to use a fresh new account for your masternode.
+    This is not the account who will receive the rewards.
+    The rewards are sent to the account who will make the 50k TOMO initial deposit.
+
+`--api`: Expose RPC and websocket on ports `8545` and `8546`.
+
+!!! note "Important note:"
+    Those ports should not be accessible directly from the internet.
+    Please setup firewalling accordingly if you need to access them localy.
+    Use a reverse proxy if you want to expose them to the outside.
 
 It could look like this:
 ```
