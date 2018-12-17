@@ -5,7 +5,7 @@ Spin up a machine in your favorite cloud and get your masternode running in a fe
 
 ## Prerequisites
 
-Python >= 3.5 and Docker are required.
+Python >= 3.6 and Docker are required.
 
 - [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.6
 - [Docker CE](https://docs.docker.com/install/)
