@@ -5,13 +5,12 @@ Spin up a machine in your favorite cloud and get your masternode running in a fe
 
 ## Prerequisites
 
-Python >= 3.6 and Docker are required.
-
 - [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.6
 - [Docker CE](https://docs.docker.com/install/)
 
-We recommand to run your masternode on Ubuntu 18.04 LTS.
-This version have python 3.6 and has been reported as working out of the box.
+!!! warning 
+    We recommand to run your masternode on Ubuntu 18.04 LTS.
+    This version have python 3.6 and has been reported as working out of the box.
 
 ### Installation of Python
 
@@ -167,6 +166,11 @@ Replace `[VERSION]` by your version of python (3.5, 3.6, 3.7)
 echo 'export PATH=$PATH:$HOME/Library/Python/[VERSION]/bin' >> $HOME/.bashrc
 ```
 
+Then reload your environment:
+```
+source ~/.bashrc
+```
+
 ### error: could not access the docker daemon
 
 If you have installed Docker, you probably forgot to add your user to the docker group.
@@ -174,4 +178,14 @@ Please run this, close your session and open it again.
 
 ```
 usermod -aG docker $your_user_name
+```
+
+### pip3 install fail due to not being able to build some package
+
+Your OS might not come with build tools preinstalled.
+
+For ubuntu, you can solve that by running:
+
+```
+sudo apt install build-essentials python3-dev python3-wheel
 ```
