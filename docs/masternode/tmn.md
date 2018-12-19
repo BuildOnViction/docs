@@ -187,5 +187,5 @@ Your OS might not come with build tools preinstalled.
 For ubuntu, you can solve that by running:
 
 ```
-sudo apt install build-essentials python3-dev python3-wheel
+sudo apt install build-essential python3-dev python3-wheel
 ```
