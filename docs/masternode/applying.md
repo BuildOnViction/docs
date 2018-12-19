@@ -17,7 +17,7 @@ These 50 000 TOMO are deposited to the Voting Smart Contract.
 The voting by token holders is credited through a Voting DApp that allows token holders to send TOMO through the smart contract mechanism.
 
 ## Applying to become a masternode
-You can apply by going on [TomoMaster](https://master.testnet.tomochain.com).
+You can apply by going on [TomoMaster](https://master.tomochain.com).
 Connect the wallet that contains the funds you want to deposit.
 
 !!! warning
