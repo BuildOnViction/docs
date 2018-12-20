@@ -180,7 +180,7 @@ Please run this, close your session and open it again.
 usermod -aG docker $your_user_name
 ```
 
-### pip3 install fail due to not being able to build some package
+### pip3 install fails due to not being able to build some package
 
 Your OS might not come with build tools preinstalled.
 
@@ -188,4 +188,14 @@ For ubuntu, you can solve that by running:
 
 ```
 sudo apt install build-essential python3-dev python3-wheel
+```
+
+### pip3 install fails due to "No Module named Setuptools"
+
+Your OS might not come with setuptools preinstalled.
+
+For ubuntu, you can solve that by running:
+
+```
+sudo apt install python3-setuptools
 ```
