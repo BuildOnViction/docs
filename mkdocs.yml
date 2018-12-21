@@ -52,8 +52,6 @@ nav:
       - Introduction: index.md
       - Use cases: general/use-cases.md
       - Networks: general/networks.md
-      - Changelog: general/changelog.md
-      - Important links: general/important-links.md
       - FAQ: general/faq.md
       - About: general/about.md
     - Get started:
