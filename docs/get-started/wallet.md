@@ -13,10 +13,10 @@ Once you agree to the Metamask Terms of Use and create an account successfully, 
 **Step 2:** When Settings screen pops up, scroll down to `New Network` and click `Show Advanced Options`.
 Enter the following information, then Save:
 
--New RPC URL: `https://rpc.tomochain.com`
--ChainID: `88`
--Symbol: `TOMO`
--Nickname: `TomoChain Mainnet`
+- New RPC URL: `https://rpc.tomochain.com`
+- ChainID: `88`
+- Symbol: `TOMO`
+- Nickname: `TomoChain Mainnet`
 
 ![metamask2](/assets/metamask2.jpg)
 
@@ -34,10 +34,10 @@ Set `Privacy Mode` On, if you want to connect Metamask with your hardware wallet
 
 **Step 2:** Setup your Custom Node with the following information: Node name, Url, Chain ID and click `Save & Use Custom Node` (as shown below).
 
--Node Name: `TomoChain Mainnet`
--URL: `https://rpc.tomochain.com`
--Port: `443`
--ChainID: `88`
+- Node Name: `TomoChain Mainnet`
+- URL: `https://rpc.tomochain.com`
+- Port: `443`
+- ChainID: `88`
 
 ![mew2](/assets/mew2.jpg)
 
