@@ -50,23 +50,26 @@ A VPS is online 24/7 and provides dedicated resources for the project’s decent
 
 ---
 
-## 1. Start your VPS
+## 1. Choose your hosting provider
 Choose which VPS hosting provider you want to utilize.
 
 The following providers are **sample** VPS providers.
 You could choose elsewhere, or even your own 24/7 server.
 
- * [Vultr](https://www.vultr.com/)
- * [DigitalOcean](https://www.digitalocean.com/)
+ * [Vultr (Beginner friendly)](https://www.vultr.com/)
+ * [DigitalOcean (Popular)](https://www.digitalocean.com/)
  * [AWS (Amazon)](https://aws.amazon.com/)
- * [OVH](https://www.ovh.com)
+ * [OVH (Cheap)](https://www.ovh.com)
  * [GCE (Google)](https://cloud.google.com/compute/)
  * [Linode (Linux geek crowd)](https://www.linode.com/)
 
-> Note on VPS location choice: It is encouraged for masternode operators to utilize various hosting providers and hosting locations (not only Asian hosting locations), so as to encourage a more decentralized network.
-When Asia goes down, you will get more rewards :-)
+> Note on provider choice: It is encouraged for masternode operators to utilize various hosting providers so as to encourage a more decentralized network.
+We have noticed that DigitalOcean has been a very popular choice, however, if this popular provider goes down, others will get more rewards :-)
+
+## 2. Start your VPS server
 
 **Start/Boot your VPS server instance.**  
+Choose **Ubuntu 18.04**. This is an LTS version (Long Term Support). LTS versions are more stable and we have seen less errors when installing Docker and Python.  
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#6122).
 
 > Note on Data Storage: It is recommended to assure that your provider has Block Storage or expandable disk space on SSD drives (more performant).
@@ -85,29 +88,29 @@ ssh root@123.45.6.7
 > Note on Users: Login as the `root` user at first. Later, we will create and switch to your own username.
 
 
-## 2. Change passwords and accounts
+## 3. Change passwords and accounts (as root)
 Root; passwd; adduser; usermod; assure groups
 
-## 3. Configure your VPS (as root)
+## 4. Configure your VPS (as root)
 Apt update, python3, ufw, fail2ban
 
-## 4. Setup Docker (as new user)
+## 5. Setup Docker (as new user)
 Dependencies, download, install, test hello-world
 
-## 5. Installing TMN utility
+## 6. Installing TMN utility
 Pip, install, $PATH, troubleshooting
 
-## 6. Create Wallet Addresses
+## 7. Create Wallet Addresses
 Coinbase (dummy account); Deposit (50k account); Various wallet options; Links elsewhere
 
-## 7. Run TMN and check sync status
+## 8. Run TMN and check sync status
 Tmn start; tmn status; inspect; top; stats.tomo website; # of blocks command
 
-## 8. Apply for Masternode Candidacy
+## 9. Apply for Masternode Candidacy
 Explain; Assure synced; master.tomo; login; apply
 
-## 9. Name your Masternode
+## 10. Name your Masternode
 Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
 
-## 10. Verify initial rewards
+## 11. Verify initial rewards
 Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
