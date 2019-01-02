@@ -67,29 +67,54 @@ You could choose elsewhere, or even your own 24/7 server.
 We have noticed that DigitalOcean has been a very popular choice, however, if this popular provider goes down, others will get more rewards :-)
 
 ## 2. Start your VPS server
-
 **Start/Boot your VPS server instance.**  
-Choose **Ubuntu 18.04**. This is an LTS version (Long Term Support). LTS versions are more stable and we have seen less errors when installing Docker and Python.  
+Choose **Ubuntu 18.04**.
+This is an LTS version (Long Term Support).
+LTS versions are more stable and we have seen less errors when installing Docker and Python.  
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#6122).
 
 > Note on Data Storage: It is recommended to assure that your provider has Block Storage or expandable disk space on SSD drives (more performant).
 Block Storage is pay-as-you-go disk space that you can expand in the future.
-You may not need it now, but you will in the future. Some locations within a hosting provider do not have this, while others will.
+You may not need it now, but you will in the future.
+Some locations within a hosting provider do not have this, while others will.
 
-> Note on Security: Seriously consider utilizing a SSH-Key login. Some providers allow you to set it up upon server creation. It is considerably more secure than passwords. Within 60 mins of your server being up, random hackers will be trying to login with guessed-passwords.
+> Note on Security: Seriously consider utilizing a SSH-Key login. 
+Some providers allow you to set it up upon server creation.
+It is considerably more secure than passwords.
+Within 60 mins of your server being up, random hackers will be trying to login with guessed-passwords.
+
+
+## 3. Change passwords and accounts (as root)
+Root; passwd; adduser; usermod; assure groups
 
 Login to your newly created server with SSH / Putty.  
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#20a7).
 
 ```shell
-ssh root@123.45.6.7
+ssh root@178.62.127.177
 ```
 
 > Note on Users: Login as the `root` user at first. Later, we will create and switch to your own username.
 
+The command line will be shown in the console, the username must be: `root`.
+FIXME Add picture of command line to show root
 
-## 3. Change passwords and accounts (as root)
-Root; passwd; adduser; usermod; assure groups
+Change the root password (only the first time). As a security feature, many providers have a mandatory change of the password the first time you log in with your root user. In this case, you will be asked to input your current password, and enter a new one (it is strongly recommended a 16+ char password with a mix of letters, numbers, special characters).
+FIXME add picture of command line
+
+If you are not asked to change your password on the first connection, you can initiate this yourself (it is highly recommended that you change the default password with a new one) by entering the command `passwd` followed by ENTER.
+
+You will be prompted to enter a new password and then retype the same password to confirm.
+
+> Save your root password as you can get locked out of your own server if you forget it.
+
+You are now logged in as root. The root user is the administrative user in a Linux environment that has very broad privileges. Because of the heightened privileges of the root account, you are _discouraged_ from using it on a regular basis. This is because part of the power inherent with the root account is the ability to make very destructive changes, even by accident.
+
+The next step is to [set up an alternative user account](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04) with a reduced scope of influence for day-to-day work.
+
+Step 3.3. Create a new user. Use the following command to add a new user account that we will use to log in from now on. Our user is called michael, you can replace it with any username that you like:
+
+
 
 ## 4. Configure your VPS (as root)
 Apt update, python3, ufw, fail2ban
