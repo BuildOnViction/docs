@@ -1,3 +1,5 @@
+## About
+
 This is a procedural step-by-step guide to setting up your first Tomochain Masternode using the `tmn` tool.
 It is meant for beginners and first-timers.
 
@@ -32,7 +34,7 @@ You can setup Tomochain nodes in two ways:
 
 This guide only covers #1, the `tmn` tool method, which is a pre-built command that sets up #1 above inside of pre-built docker containers.
 
-## Start your VPS
+## 1. Start your VPS
 VPS Choices; Links to examples; Links to SSH login guide
 
 **Note:** it is recommended to assure that your provider has Block Storage or expandable disk space on SSD drives (more performant).
@@ -41,29 +43,29 @@ You may not need it now, but you will in the future.
 The tomo blockchain will eventually grow to be many hundreds of gigabytes and even a terrabyte.
 As of Jan 2019, it is ~100 GB in size. This has nothing to do with RAM.
 
-## Change passwords and accounts
+## 2. Change passwords and accounts
 Root; passwd; adduser; usermod; assure groups
 
-## Configure your VPS (as root)
+## 3. Configure your VPS (as root)
 Apt update, python3, ufw, fail2ban
 
-## Setup Docker (as new user)
+## 4. Setup Docker (as new user)
 Dependencies, download, install, test hello-world
 
-## Installing TMN utility
+## 5. Installing TMN utility
 Pip, install, $PATH, troubleshooting
 
-## Create Wallet Addresses
+## 6. Create Wallet Addresses
 Coinbase (dummy account); Deposit (50k account); Various wallet options; Links elsewhere
 
-## Run TMN and check sync status
+## 7. Run TMN and check sync status
 Tmn start; tmn status; inspect; top; stats.tomo website; # of blocks command
 
-## Apply for Masternode Candidacy
+## 8. Apply for Masternode Candidacy
 Explain; Assure synced; master.tomo; login; apply
 
-## Name your Masternode
+## 9. Name your Masternode
 Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
 
-## Verify initial rewards
+## 10. Verify initial rewards
 Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
