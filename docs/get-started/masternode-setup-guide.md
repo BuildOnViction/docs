@@ -1,4 +1,4 @@
-This is a procedural step-by-step guide to setting up your first Tomochain Masternode.
+This is a procedural step-by-step guide to setting up your first Tomochain Masternode using the `tmn` tool.
 It is meant for beginners and first-timers.
 
 **Pre-requisite knowledge:**
@@ -10,13 +10,27 @@ Why?
 The upkeep and troubleshooting will become more complex than this guide. 
 Some commands fail and you must know what you are doing.
 
-## Requirements
-Give basics; Link off to https://docs.tomochain.com/masternode/requirements/
+## Requirements / Recommendations
+The following are required items and server specifications.
+[Click here for more details](https://docs.tomochain.com/masternode/requirements/)
 
-50k Tomo; 16xCPU cores; 32GB RAM; 400 GB SSD storage (10GB / day of increasing space); 2 Tomo Addresses
+ * 50,000 Tomo deposit
+ * Server (cloud-VPS or your-own)
+   * 16xCPU cores (CPU-optimized aka high-Ghz)
+   * 32GB RAM
+ * Storage (Disk Space)
+   * 100+ GB for Linux operating system
+   * 10GB / day of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
+ * 2 Tomo Addresses (see below)
 
 ## Introduction
 About masternodes and why...; What? Benefits; VPS
+
+You can setup Tomochain nodes in two ways: 
+ 1. Using the `tmn` tool, or
+ 2. Running tomo (FIXME, link to README on tomo github page) directly.
+
+This guide only covers #1, the `tmn` tool method, which is a pre-built command that sets up #1 above inside of pre-built docker containers.
 
 ## Start your VPS
 VPS Choices; Links to examples; Links to SSH login guide
