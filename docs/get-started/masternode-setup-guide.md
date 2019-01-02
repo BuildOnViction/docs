@@ -25,6 +25,7 @@ The following are required items and server specifications.
    * 10GB / day of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
  * 2 Tomo Addresses (see below)
 
+---
 
 ## Introduction
 
@@ -47,15 +48,42 @@ A VPS is recommended (and often required) for masternode setups, as you will nee
 Unlike your home or office PC, a masternode VPS serves one purpose, to securely and efficiently run a masternode.
 A VPS is online 24/7 and provides dedicated resources for the project’s decentralized network.
 
+---
 
 ## 1. Start your VPS
-VPS Choices; Links to examples; Links to SSH login guide
+Choose which VPS hosting provider you want to utilize.
 
-**Note:** it is recommended to assure that your provider has Block Storage or expandable disk space on SSD drives (more performant).
+The following providers are **sample** VPS providers.
+You could choose elsewhere, or even your own 24/7 server.
+
+ * [Vultr](https://www.vultr.com/)
+ * [DigitalOcean](https://www.digitalocean.com/)
+ * [AWS (Amazon)](https://aws.amazon.com/)
+ * [OVH](https://www.ovh.com)
+ * [GCE (Google)](https://cloud.google.com/compute/)
+ * [Linode (Linux geek crowd)](https://www.linode.com/)
+
+> Note on VPS location choice: It is encouraged for masternode operators to utilize various hosting providers and hosting locations (not only Asian hosting locations), so as to encourage a more decentralized network.
+When Asia goes down, you will get more rewards :-)
+
+**Start/Boot your VPS server instance.**  
+If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#6122).
+
+> Note on Data Storage: It is recommended to assure that your provider has Block Storage or expandable disk space on SSD drives (more performant).
 Block Storage is pay-as-you-go disk space that you can expand in the future.
-You may not need it now, but you will in the future.
-The tomo blockchain will eventually grow to be many hundreds of gigabytes and even a terrabyte.
-As of Jan 2019, it is ~100 GB in size. This has nothing to do with RAM.
+You may not need it now, but you will in the future. Some locations within a hosting provider do not have this, while others will.
+
+> Note on Security: Seriously consider utilizing a SSH-Key login. Some providers allow you to set it up upon server creation. It is considerably more secure than passwords. Within 60 mins of your server being up, random hackers will be trying to login with guessed-passwords.
+
+Login to your newly created server with SSH / Putty.  
+If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#20a7).
+
+```shell
+ssh root@123.45.6.7
+```
+
+> Note on Users: Login as the `root` user at first. Later, we will create and switch to your own username.
+
 
 ## 2. Change passwords and accounts
 Root; passwd; adduser; usermod; assure groups
