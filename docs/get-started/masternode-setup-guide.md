@@ -1,19 +1,19 @@
-## About
+# Tomochain Masternode Setup Guide
 
 This is a procedural step-by-step guide to setting up your first Tomochain Masternode using the `tmn` tool.
 It is meant for beginners and first-timers.
 
-**Pre-requisite knowledge:**
- * **VPS Setup** - You can setup your own cloud-hosted virtual private server (VPS), and 
+## Knowledge Requirements
+ * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS), and 
  * **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
 
-**Do not proceed if you are not confident** with the Linux command-line.
-Why?
-The upkeep and troubleshooting will become more complex than this guide. 
-Some commands fail and you must know what you are doing.
+   **Do not proceed if you are not confident** with the Linux command-line. 
+   Why?
+   The upkeep and troubleshooting will become more complex than this guide.
+   Some commands fail and you must know what you are doing.
 
-## Requirements / Recommendations
-The following are required items and server specifications.
+## Technical Requirements / Recommendations
+The following are required items and server specifications. 
 [Click here for more details](https://docs.tomochain.com/masternode/requirements/)
 
  * 50,000 Tomo deposit
@@ -25,14 +25,28 @@ The following are required items and server specifications.
    * 10GB / day of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
  * 2 Tomo Addresses (see below)
 
+
 ## Introduction
-About masternodes and why...; What? Benefits; VPS
 
-You can setup Tomochain nodes in two ways: 
- 1. Using the `tmn` tool, or
- 2. Running tomo (FIXME, link to README on tomo github page) directly.
+### What is a masternode?
+A masternode is a computer on a decentralized blockchain network that is running 24 hours a day that keeps the system operating.
+It powers the blockchain network by processing transactions and signing blocks.
 
-This guide only covers #1, the `tmn` tool method, which is a pre-built command that sets up #1 above inside of pre-built docker containers.
+### What are the benefits of a masternode?
+Masternodes help support the network by creating and signing blocks, providing faster transaction times, and decentralized operations.
+They utilize PoS (Proof of Stake) vs PoW (Proof of Work) consensus-building.
+Masternode operators are paid a reward (coins) as an incentive for their involved investment of coin-deposit, server setup, and continued operation.
+
+### What is a VPS?
+VPS stands for Virtual Private Server.
+They are paid servers hosted on a cloud-hosting-provider.
+Each VPS runs an independent installation of an operating system (OS), Linux or Windows, and typically provides root access to the OS for advanced management and control.
+
+### Why is a VPS highly recommended for masternodes?
+A VPS is recommended (and often required) for masternode setups, as you will need a dedicated static IP and 99.9% uptime to provide a stable and efficient node for the cryptocurrency’s network.
+Unlike your home or office PC, a masternode VPS serves one purpose, to securely and efficiently run a masternode.
+A VPS is online 24/7 and provides dedicated resources for the project’s decentralized network.
+
 
 ## 1. Start your VPS
 VPS Choices; Links to examples; Links to SSH login guide
