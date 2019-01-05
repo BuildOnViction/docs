@@ -87,8 +87,8 @@ services:
 
 ## `tomochain/telegraf`
 
-!!! info
-    Please set the container hostname to the machine hostname
+!!! warning
+    Please set the container hostname to the your host address without the heading 0x and all lowercase.
 
 ### Tags
 
