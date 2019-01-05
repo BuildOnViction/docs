@@ -88,7 +88,7 @@ services:
 ## `tomochain/telegraf`
 
 !!! warning
-    Please set the container hostname to the your node coinbase address without the heading 0x and all lowercase.
+    Please set the container hostname to the node coinbase address without the heading 0x and all lowercase.
 
 ### Tags
 
