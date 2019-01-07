@@ -3,6 +3,8 @@
 This is a procedural step-by-step guide to setting up your first Tomochain Masternode using the `tmn` tool.
 It is meant for beginners and first-timers.
 
+Security Disclaimer: Despite there being mention of some security elements in this guide, there is **no implied guarentee of security**. You alone must fully secure your server. On a VPS, you will get rogue root login attempts within minutes of setup.
+
 ## Knowledge Requirements
  * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS), and 
  * **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
@@ -70,15 +72,16 @@ We have noticed that DigitalOcean has been a very popular choice, however, if th
 **Start/Boot your VPS server instance.**  
 Choose **Ubuntu 18.04**.
 This is an LTS version (Long Term Support).
-LTS versions are more stable and we have seen less errors when installing Docker and Python.  
+LTS versions are more stable and have seen less errors when installing Docker and Python.
+You must use Ubuntu 18.04 to seek support from the wider community or Tomochain.
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#6122).
 
-> Note on Data Storage: It is recommended to assure that your provider has Block Storage or expandable disk space on SSD drives (more performant).
+> Data Storage: It is recommended to assure that your provider has Block Storage or expandable disk space on SSD drives (more performant).
 Block Storage is pay-as-you-go disk space that you can expand in the future.
 You may not need it now, but you will in the future.
 Some locations within a hosting provider do not have this, while others will.
 
-> Note on Security: Seriously consider utilizing a SSH-Key login. 
+> SSH-Key login: Seriously consider utilizing a **SSH-Key login** over passwords.
 Some providers allow you to set it up upon server creation.
 It is considerably more secure than passwords.
 Within 60 mins of your server being up, random hackers will be trying to login with guessed-passwords.
@@ -93,31 +96,69 @@ If you need help with this, [see this example](https://medium.com/tomochain/how-
 ```shell
 ssh root@178.62.127.177
 ```
+> Note on Users: Login as the `root` user at first.
+Later, we will create and switch to your own username.
 
-> Note on Users: Login as the `root` user at first. Later, we will create and switch to your own username.
-
-The command line will be shown in the console, the username must be: `root`.
-FIXME Add picture of command line to show root
-
-Change the root password (only the first time). As a security feature, many providers have a mandatory change of the password the first time you log in with your root user. In this case, you will be asked to input your current password, and enter a new one (it is strongly recommended a 16+ char password with a mix of letters, numbers, special characters).
-FIXME add picture of command line
+If you did not utilize SSH-key login (highly recommended), you will want to change the root password (only the first time).
+As a security feature, many providers have a mandatory change of the password the first time you log in with your root user.
+In this case, you will be asked to input your current password, and enter a new one (it is strongly recommended to use a 16+ char password with a mix of letters, numbers, special characters).
 
 If you are not asked to change your password on the first connection, you can initiate this yourself (it is highly recommended that you change the default password with a new one) by entering the command `passwd` followed by ENTER.
+
+```shell
+$ passwd
+Enter new UNIX password:
+Retype new UNIX password:
+```
 
 You will be prompted to enter a new password and then retype the same password to confirm.
 
 > Save your root password as you can get locked out of your own server if you forget it.
 
-You are now logged in as root. The root user is the administrative user in a Linux environment that has very broad privileges. Because of the heightened privileges of the root account, you are _discouraged_ from using it on a regular basis. This is because part of the power inherent with the root account is the ability to make very destructive changes, even by accident.
+You are now logged in as root.
+The root user is the administrative user in a Linux environment that has very broad privileges.
+Because of the heightened privileges of the root account, you are _discouraged_ from using it on a regular basis.
+This is because part of the power inherent with the root account is the ability to make very destructive changes, even by accident.
 
 The next step is to [set up an alternative user account](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04) with a reduced scope of influence for day-to-day work.
 
-Step 3.3. Create a new user. Use the following command to add a new user account that we will use to log in from now on. Our user is called michael, you can replace it with any username that you like:
+### Create a new user. 
+Use the following command to add a new user account that we will use to log in to from now on.
+Our user is called michael, you can replace it with any username that you like:
 
+```shell
+adduser michael
+```
+
+You will be asked a few questions, starting with the account password.
+Enter a strong password.
+Optionally, fill in any of the additional information if you want or ignore it.
+This is not required and you can just hit ENTER in any field you wish to skip.
+
+### Grant the user administrative privileges.
+Now, we have a new user account with regular account privileges.
+However, we will need to do administrative tasks from this normal account.
+
+To add these privileges to our new user, we need to add the new user to the **sudo** group.
+This will allow our normal user to run commands with _administrative privileges_ by putting the word `sudo` before each command.
+
+As root, run this command to add your new user to the sudo group (substitute the highlighted word with your new user):
+
+```shell
+usermod -aG sudo michael
+```
+
+Now, when logged in as your regular user, you can type `sudo` before commands to perform actions with superuser privileges.
+
+### You can switch to the new user by typing:
+
+```shell
+su - michael
+```
 
 
 ## 4. Configure your VPS (as root)
-Apt update, python3, ufw, fail2ban
+Apt update, python3, ufw (mention only), fail2ban (mention only)
 
 ## 5. Setup Docker (as new user)
 Dependencies, download, install, test hello-world
