@@ -88,8 +88,6 @@ Within 60 mins of your server being up, random hackers will be trying to login w
 
 
 ## 3. Change passwords and accounts (as root)
-Root; passwd; adduser; usermod; assure groups
-
 Login to your newly created server with SSH / Putty.  
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#20a7).
 
@@ -99,21 +97,13 @@ ssh root@178.62.127.177
 > Note on Users: Login as the `root` user at first.
 Later, we will create and switch to your own username.
 
-If you did not utilize SSH-key login (highly recommended), you will want to change the root password (only the first time).
-As a security feature, many providers have a mandatory change of the password the first time you log in with your root user.
-In this case, you will be asked to input your current password, and enter a new one (it is strongly recommended to use a 16+ char password with a mix of letters, numbers, special characters).
-
-If you are not asked to change your password on the first connection, you can initiate this yourself (it is highly recommended that you change the default password with a new one) by entering the command `passwd` followed by ENTER.
+If you did not utilize SSH-key login (highly recommended), you will want to change the root password (only the first time) with the following command.
 
 ```shell
-$ passwd
-Enter new UNIX password:
-Retype new UNIX password:
+passwd
 ```
 
-You will be prompted to enter a new password and then retype the same password to confirm.
-
-> Save your root password as you can get locked out of your own server if you forget it.
+> Save your root password as you can get locked out of your own server if you forget it. It is strongly recommended to use a 16+ char password with a mix of letters, numbers, special characters.
 
 You are now logged in as root.
 The root user is the administrative user in a Linux environment that has very broad privileges.
@@ -122,7 +112,7 @@ This is because part of the power inherent with the root account is the ability 
 
 The next step is to [set up an alternative user account](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04) with a reduced scope of influence for day-to-day work.
 
-### Create a new user. 
+### Create a new user
 Use the following command to add a new user account that we will use to log in to from now on.
 Our user is called michael, you can replace it with any username that you like:
 
@@ -135,27 +125,44 @@ Enter a strong password.
 Optionally, fill in any of the additional information if you want or ignore it.
 This is not required and you can just hit ENTER in any field you wish to skip.
 
-### Grant the user administrative privileges.
-Now, we have a new user account with regular account privileges.
+### Grant the user administrative privileges
+Now we have a new user account with regular account privileges.
 However, we will need to do administrative tasks from this normal account.
 
 To add these privileges to our new user, we need to add the new user to the **sudo** group.
 This will allow our normal user to run commands with _administrative privileges_ by putting the word `sudo` before each command.
 
-As root, run this command to add your new user to the sudo group (substitute the highlighted word with your new user):
+As root, run this command to add your new user to the sudo group (substitute michael with your new user):
 
 ```shell
 usermod -aG sudo michael
 ```
 
-Now, when logged in as your regular user, you can type `sudo` before commands to perform actions with superuser privileges.
+> -a stands for Append and -G is Group; sudo is the groupname you are adding to your user
 
-### You can switch to the new user by typing:
+### Assure the user received sudo
+Lets check to make sure that the usermod command worked.
 
 ```shell
-su - michael
+cat /etc/group | grep sudo
 ```
 
+> cat shows the text contained in the file /etc/group; | (pipe) sends that text to grep, which returns only lines with the text "sudo" in them.
+Otherwise, the files contents are long and full of groups and users
+
+Assure that you get a response such as `sudo:x:27:michael`.
+This shows your new user (amongst other users) in the sudo group. 
+
+To double check the sudo abilities of your new user, run this command:
+
+```shell
+groups michael
+```
+
+Assure that you get a response such as `michael : michael sudo` from the second command. This shows that michael is part of multiple groups, one being named the same as their username and the other being sudo. Success!
+
+When you eventually (not yet) log in as your regular user, you can type `sudo` before commands to perform actions with superuser privileges.
+Remain logged in as the root user for now, as we have more initial setup to do. After this, you will almost always login as your new user.
 
 ## 4. Configure your VPS (as root)
 Apt update, python3, ufw (mention only), fail2ban (mention only)
