@@ -103,7 +103,8 @@ If you did not utilize SSH-key login (highly recommended), you will want to chan
 passwd
 ```
 
-> Save your root password as you can get locked out of your own server if you forget it. It is strongly recommended to use a 16+ char password with a mix of letters, numbers, special characters.
+> Save your root password as you can get locked out of your own server if you forget it.
+It is strongly recommended to use a 16+ char password with a mix of letters, numbers, special characters.
 
 You are now logged in as root.
 The root user is the administrative user in a Linux environment that has very broad privileges.
@@ -159,13 +160,89 @@ To double check the sudo abilities of your new user, run this command:
 groups michael
 ```
 
-Assure that you get a response such as `michael : michael sudo` from the second command. This shows that michael is part of multiple groups, one being named the same as their username and the other being sudo. Success!
+Assure that you get a response such as `michael : michael sudo` from the second command. 
+This shows that michael is part of multiple groups, one being named the same as their username and the other being sudo.
+Success!
 
-When you eventually (not yet) log in as your regular user, you can type `sudo` before commands to perform actions with superuser privileges.
-Remain logged in as the root user for now, as we have more initial setup to do. After this, you will almost always login as your new user.
+When you eventually (not yet) log in as your new user, you can type `sudo` before commands to perform actions with superuser privileges.
+Remain logged in as the root user for now, as we have more initial setup to do. 
+After this, you will almost always login as your new user.
+
 
 ## 4. Configure your VPS (as root)
-Apt update, python3, ufw (mention only), fail2ban (mention only)
+We will now prepare the [prerequisites for tmn](https://docs.tomochain.com/get-started/run-node/).
+You need Python 3.6+ and Docker installed.
+
+### Upgrade operating system
+
+We should upgrade the Ubuntu operating system and all installed package libraries first.
+You may consider doing this upgrade occasionally  in the future.
+Type these two commands on the console with an ENTER after each:
+
+```shell
+apt update
+apt upgrade
+```
+> Watch out for WARNINGs or ERRORs. 
+A lot of text could fly by, and you should watch all of it in case something installs incorrectly.
+Google anything out of the ordinary and try to understand or fix it.
+
+Reboot your VPS instace in case any of the upgraded components will only fully engage until rebooted fresh.
+
+```shell
+shutdown -h now
+```
+
+### Install Python
+
+```shell
+apt install python3
+apt install python3-pip
+```
+
+Check if you have installed the right Python version (must be newer than version 3.6).
+
+```shell
+python3 --version
+```
+
+### Configure security (optional, but highly recommended)
+
+> THESE SECURITY STEPS ARE NOT EXHAUSIVE.
+YOU SHOULD RESEARCH MORE.
+YOU ARE RESPONSBILE, NOT ANYONE ELSE.
+
+You will want to secure your machine with multiple levels of security. 
+Within a few minutes of the machine being up, bots and hackers attempt to login and probe it for weakness.
+
+At a minimum, you will want to setup UFW (Uncomplicated Fire Wall) and fail2ban.
+
+The below commands give an example of how to set this up.
+
+```shell
+apt install ufw
+ufw allow ssh/tcp
+ufw limit ssh/tcp
+ufw allow 30303/tcp
+ufw allow 30303/udp
+ufw logging on
+ufw enable
+ufw status
+```
+
+> Port 30303 is the only port required for use by tomo.
+There is optional ports 8595 and 8596 tcp that can be used for the API, however opening the API is a security risk and only for advanced users.
+
+```shell
+apt install fail2ban
+echo -e "# Permanently ban 5+ tries\n[DEFAULT]\nbantime = -1\n\n[sshd]\nenabled = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 5" > /etc/fail2ban/jail.local
+systemctl start fail2ban
+systemctl enable fail2ban
+fail2ban-client reload
+fail2ban-client status sshd
+```
+
+> Note that the above permanently bans any shh connection trying more than 5 times; this includes yourself
 
 ## 5. Setup Docker (as new user)
 Dependencies, download, install, test hello-world
