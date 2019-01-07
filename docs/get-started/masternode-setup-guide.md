@@ -115,7 +115,8 @@ The next step is to [set up an alternative user account](https://www.digitalocea
 
 ### Create a new user
 Use the following command to add a new user account that we will use to log in to from now on.
-Our user is called michael, you can replace it with any username that you like:
+Our user is called michael, you can replace it with any username that you like.
+Use the same username as your local mac/PC username and you will have an easier time logging in!
 
 ```shell
 adduser michael
@@ -246,6 +247,85 @@ fail2ban-client status sshd
 
 ## 5. Setup Docker (as new user)
 Dependencies, download, install, test hello-world
+
+From now on, you will almost always want to login as your new user.
+If you are logged in as root still, logout and log back in as the new user.
+You may want to consider denying remote root ssh logins.
+
+```shell
+ssh michael@178.62.127.177
+```
+
+### Install Docker Repositories
+Update the apt package index.
+Then install various packages to allow apt to use a repository over HTTPS.
+The third line adds Docker’s official GPG key.
+
+```shell
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+
+> "OK" is normal output of that last command; -fsS shows less progress, but still error messages and -L allows redirect
+
+> NOTE: Be careful with certain ssh consoles.
+They may not paste the ‘|’ symbol correctly.
+
+Next, verify that you have the correct key, by searching for the last 8 characters of the fingerprint.
+Compare the results to what is below.
+
+```shell
+apt-key fingerprint 0EBFCD88
+```
+
+Example Results (format may be slightly different, but the string of char-numbers the same):
+```
+pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
+sub   rsa4096 2017-02-22 [S]
+```
+
+Use the following command to set up the "stable" repository.
+You could get errors here if you have a release of Ubuntu that is too recent (non LSB).
+
+```shell
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
+
+### Install Docker CE
+Update the apt package index.
+Then install the latest version of Docker CE:
+
+```shell
+sudo apt update
+sudo apt install docker-ce
+```
+
+> Watch out for WARNINGs or ERRORs. 
+Google anything out of the ordinary and try to understand or fix it.
+
+Once installed, add your current user to the Docker group and verify that the user has been added.
+
+```shell
+sudo usermod -aG docker michael
+groups michael
+cat /etc/groups | grep docker
+```
+
+Verify that Docker CE is installed correctly by running the hello-world image.
+
+```shell
+sudo docker run hello-world
+```
+
+This command downloads a test image and runs it in a container.
+When the container runs, it prints an informational message and exits.
+**Docker CE is installed and running.**
+
+Congratulations! You have already installed Python and Docker. You have the prerequisites ready to run TomoChain’s tmn.
+
 
 ## 6. Installing TMN utility
 Pip, install, $PATH, troubleshooting
