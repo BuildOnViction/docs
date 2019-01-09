@@ -324,17 +324,94 @@ This command downloads a test image and runs it in a container.
 When the container runs, it prints an informational message and exits.
 **Docker CE is installed and running.**
 
-Congratulations! You have already installed Python and Docker. You have the prerequisites ready to run TomoChain’s tmn.
+Congratulations! You have already installed Python and Docker.
+You have the prerequisites ready to run TomoChain’s tmn.
+
+********************
+TROUBLESHOOTING
+
+error: could not access the docker daemon
+
+If you have installed Docker, and get this error, you probably forgot to add your user to the docker group.
+Please run this, close your session and open it again.
+
+`usermod -aG docker $your_user_name`
+********************
 
 
 ## 6. Installing TMN utility
 Pip, install, $PATH, troubleshooting
 
+`Tmn` is a simple interface created by TomoChain developers to **help you quickstart your masternode**.
+It is installed as a python package and it utilizes two docker containers once operating.
+We will follow through the steps found here: [guide to install tmn](https://docs.tomochain.com/get-started/run-node/)
+
+> “We made a simple command line interface called tmn to easily and quickly start a TomoChain masternode.
+It takes care of starting the necessary docker containers with the proper settings for you.
+It will really suit you if you don’t already have a big infrastructure running.
+Spin up a machine in your favorite cloud and get your masternode running in a few minutes!”
+
+Install and update the tomochain-created `tmn` utility from pip:
+
+```shell
+pip3 install --user tmn
+pip3 install -U tmn
+```
+
+> Watch out for WARNINGs or ERRORs and fix.
+
+Check that `tmn` has been correctly installed, use the following command to show some tmn info:
+
+```shell
+pip3 show tmn
+
+Name: tmn
+Version: 0.2.5
+Summary: Quickstart your masternode
+Home-page: https://tomochain.com
+Author: Etienne Napoleone
+Author-email: etienne@tomochain.com
+License: GPL-3.0+
+Location: /root/.local/lib/python3.6/site-packages
+Requires: clint, pastel, python-slugify, docker, click
+```
+
+********************
+TROUBLESHOOTING
+
+FIXME packages might need installing
+*******************
+
+
 ## 7. Create Wallet Addresses
 Coinbase (dummy account); Deposit (50k account); Various wallet options; Links elsewhere
 
+
 ## 8. Run TMN and check sync status
 Tmn start; tmn status; inspect; top; stats.tomo website; # of blocks command
+`tmn update`, `tmn --help`, etc
+
+**IMPORTANT:** Logout and SSH back in for $PATH and other aspects to take effect.
+
+```shell
+exit
+```
+
+
+
+
+********************
+TROUBLESHOOTING
+
+`tmn: command not found`
+
+It might happen that your PATH is not set by default to include the default user binary directory. You can add it by adding it to your shell $PATH:
+
+On GNU/Linux:
+
+echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc
+*******************
+
 
 ## 9. Apply for Masternode Candidacy
 Explain; Assure synced; master.tomo; login; apply
