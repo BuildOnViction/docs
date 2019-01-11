@@ -5,6 +5,7 @@ It is meant for beginners and first-timers.
 
 Security Disclaimer: Despite there being mention of some security elements in this guide, there is **no implied guarentee of security**. You alone must fully secure your server. On a VPS, you will get rogue root login attempts within minutes of setup.
 
+
 ## Knowledge Requirements
  * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS), and 
  * **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
@@ -26,8 +27,7 @@ The following are required items and server specifications.
    * 100+ GB for Linux operating system
    * 10GB / day of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
  * 2 Tomo Addresses (see below)
-
----
+ 
 
 ## Introduction
 
@@ -340,7 +340,7 @@ Please run this, close your session and open it again.
 
 
 ## 6. Installing TMN utility
-Pip, install, $PATH, troubleshooting
+FIXME Pip, install, $PATH, troubleshooting
 
 `Tmn` is a simple interface created by TomoChain developers to **help you quickstart your masternode**.
 It is installed as a python package and it utilizes two docker containers once operating.
@@ -358,7 +358,7 @@ pip3 install --user tmn
 pip3 install -U tmn
 ```
 
-> Watch out for WARNINGs or ERRORs and fix.
+> Watch out for WARNINGs or ERRORs and troubleshoot.
 
 Check that `tmn` has been correctly installed, use the following command to show some tmn info:
 
@@ -379,12 +379,34 @@ Requires: clint, pastel, python-slugify, docker, click
 ********************
 TROUBLESHOOTING
 
-FIXME packages might need installing
+FIXME extra packages might need installing
 *******************
 
 
 ## 7. Create Wallet Addresses
-Coinbase (dummy account); Deposit (50k account); Various wallet options; Links elsewhere
+FIXME Coinbase (dummy account); Deposit (50k account); Various wallet options; Links elsewhere
+
+Before being able to proceed further, you will need **two** seperate Tomo addresses to operate a masternode.
+One is like an ID/placeholder/dummy for the Masternode, and the other is where the 50,000 TOMO (50k) is staked from.
+
+* ADDR1 - Coinbase - ID/placeholder/dummy - No coins need to be in this wallet; it can remain empty
+* ADDR2 - Deposit  - 50k Holder           - Put your staked coins here; later the 50k will go into a smart contract; rewards will show here
+
+You will need both the **Public Key** and **Private Key** for both addresses.
+It is advise that you store all of this information somewhere safe, yet accessible.
+You may need to utilize this information during continued operations of your masternode.
+Password manager apps like LastPass and 1Password are your friend.
+Your private key is your money.
+Give it to no one.
+
+> ADDR1 Suggestions: If setting up a single masternode, use Tomo Wallet mobile app.
+Alternatives are Metamask and MEW, in that order.
+You can use Ledger Hardware Wallet, however others can potentially follow your eth history if you re-use an address.
+
+> ADDR2 Suggestions: Preferred to use Ledger Hardware Wallet in combo with Metamask because 50k will be here.
+Assure to use an address you dont have history on eth chain with.
+
+[See here] for a step-by-step example of setting up wallets(https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58)
 
 
 ## 8. Run TMN and check sync status
@@ -396,8 +418,6 @@ Tmn start; tmn status; inspect; top; stats.tomo website; # of blocks command
 ```shell
 exit
 ```
-
-
 
 
 ********************
