@@ -376,6 +376,9 @@ Location: /root/.local/lib/python3.6/site-packages
 Requires: clint, pastel, python-slugify, docker, click
 ```
 
+The next step will be to actually **START TMN**, however we cannot do this until we have two wallet addresses.
+See the next section for this.
+
 ********************
 TROUBLESHOOTING
 
@@ -384,13 +387,11 @@ FIXME extra packages might need installing
 
 
 ## 7. Create Wallet Addresses
-FIXME Coinbase (dummy account); Deposit (50k account); Various wallet options; Links elsewhere
-
 Before being able to proceed further, you will need **two** seperate Tomo addresses to operate a masternode.
 One is like an ID/placeholder/dummy for the Masternode, and the other is where the 50,000 TOMO (50k) is staked from.
 
-* ADDR1 - MN Address - ID/placeholder/dummy - No coins need to be in this wallet; it can remain empty
-* ADDR2 - Deposit    - 50k Holder           - Put your staked coins here; later the 50k will go into a smart contract; rewards will show here
+* **ADDR1 - MN Address** - ID/placeholder/dummy - No coins need to be in this wallet; it can remain empty
+* **ADDR2 - Deposit**    - 50k Holder           - Put your staked coins here; later the 50k will go into a smart contract; rewards will show here
 
 You will need both the **Public Key** and **Private Key** for both addresses.
 It is advise that you store all of this information somewhere safe, yet accessible.
