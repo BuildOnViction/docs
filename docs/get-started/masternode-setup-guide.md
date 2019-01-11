@@ -421,13 +421,36 @@ Links for more info:
 
 
 ## 8. Run TMN and check sync status
-Tmn start; tmn status; inspect; top; stats.tomo website; # of blocks command
+FIXME Tmn start; tmn status; inspect; top; stats.tomo website; # of blocks command
 `tmn update`, `tmn --help`, etc
 
-**IMPORTANT:** Logout and SSH back in for $PATH and other aspects to take effect.
+**IMPORTANT:** Logout and SSH back in so that the $PATH variable takes effect.
+This allows you to run `tmn` from any directory.
 
 ```shell
 exit
+```
+
+Next, you will start `tmn`.
+When you first start your full node with `tmn start`, you need to give some information.
+
+
+> **--name:** The name of your full node. It should be formatted as a slug string. Slug format allows all letters and numbers, dashes ("-") and underscores ("_"). You can name it to reflect your identity, company name, etc.  
+>  
+> **--net:** The network your full node will connect to. You can choose here to connect it to the TomoChain `mainnet` or `testnet`.  
+>  
+> **--pkey:** The private key of your ADDR1 wallet. A TomoChain full node uses an account to be uniquely identified and to receive transaction fees. Transaction fees are not rewards, and they are usually tiny. Important note: we advise for security measures to use a fresh new account for your masternode. This is not the account that will receive the rewards. The rewards are sent to the account that will make the 50k TOMO initial deposit.
+
+The command is structured like this:
+
+```shell
+tmn start --name [YOUR_NODE_NAME] --net mainnet --pkey [YOUR_ADDR2_PRIVATE_KEY]
+```
+
+We used the following command for our node (copy your own **name** & **private key**):
+
+```shell
+tmn start --name Atlantis --net mainnet --pkey cf03cb58************
 ```
 
 
@@ -445,10 +468,10 @@ echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc
 
 
 ## 9. Apply for Masternode Candidacy
-Explain; Assure synced; master.tomo; login; apply
+FIXME Explain; Assure synced; master.tomo; login; apply
 
 ## 10. Name your Masternode
-Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
+FIXME Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
 
 ## 11. Verify initial rewards
-Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
+FIXME Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
