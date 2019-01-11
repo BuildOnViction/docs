@@ -389,8 +389,8 @@ FIXME Coinbase (dummy account); Deposit (50k account); Various wallet options; L
 Before being able to proceed further, you will need **two** seperate Tomo addresses to operate a masternode.
 One is like an ID/placeholder/dummy for the Masternode, and the other is where the 50,000 TOMO (50k) is staked from.
 
-* ADDR1 - Coinbase - ID/placeholder/dummy - No coins need to be in this wallet; it can remain empty
-* ADDR2 - Deposit  - 50k Holder           - Put your staked coins here; later the 50k will go into a smart contract; rewards will show here
+* ADDR1 - MN Address - ID/placeholder/dummy - No coins need to be in this wallet; it can remain empty
+* ADDR2 - Deposit    - 50k Holder           - Put your staked coins here; later the 50k will go into a smart contract; rewards will show here
 
 You will need both the **Public Key** and **Private Key** for both addresses.
 It is advise that you store all of this information somewhere safe, yet accessible.
@@ -399,14 +399,24 @@ Password manager apps like LastPass and 1Password are your friend.
 Your private key is your money.
 Give it to no one.
 
-> ADDR1 Suggestions: If setting up a single masternode, use Tomo Wallet mobile app.
-Alternatives are Metamask and MEW, in that order.
-You can use Ledger Hardware Wallet, however others can potentially follow your eth history if you re-use an address.
+> ADDR1 Suggestions:  
+If setting up a single masternode, you can use a mobile wallet.
+Binances `Trust Wallet` and Tomochains `Tomo Wallet` app are best.
+Alternatives are Metamask and MEW (MyEtherWallet), in that order.
+You can use Ledger Hardware Wallet, however the added security on ADDR1 isnt as necessary.
 
-> ADDR2 Suggestions: Preferred to use Ledger Hardware Wallet in combo with Metamask because 50k will be here.
-Assure to use an address you dont have history on eth chain with.
+> ADDR2 Suggestions:  
+Preferred to use Ledger / Hardware Wallet in combo with Metamask because 50k will be here.
+Assure to use an address you dont have history on eth chain with - otherwise other will be able to see your investment history.
 
-[See here] for a step-by-step example of setting up wallets(https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58)
+Because most wallets do not have Tomo as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
+See the first link below for the guide on how to do this.
+
+Links for more info:
+* [ADVISED: SETTING UP METAMASK or MEW or TRUSTWALLET](http://bit.ly/2A6zrC7)
+* [Using Metamask or Mobile Tomo Wallet](https://docs.tomochain.com/get-started/wallet/)
+* [Links to mobile downloads and other tomo info](https://medium.com/tomochain/tomochain-all-in-one-overview-9fce16e13b5#6b8c)
+* [Old Masternode guide (testnet) Section on wallets](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58)
 
 
 ## 8. Run TMN and check sync status
