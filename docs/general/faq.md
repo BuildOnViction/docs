@@ -6,15 +6,20 @@
 
 !!! quote "What is TomoChain?"
     TomoChain is an innovative solution to the scalability problem of the Ethereum blockchain, and other current blockchain platforms.
-	TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support near-zero fees and 2-second transaction confirmation times.
+	TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support low transaction fees and 2-second transaction confirmation times.
 	Security, stability and chain finality are guaranteed via novel techniques such as double validation, staking via smart-contracts and true randomization processes.
 
 	TomoChain supports all EVM-compatible smart-contracts, protocols, and atomic cross-chain token transfers.
 	New scaling techniques such as sharding, EVM parallelisation, private-chain generation, hardware integration will be continuously researched and incorporated into TomoChain's Masternode architecture.
 	It will be an ideal scalable smart-contract public blockchain for decentralized apps, token issuances and token integrations for small and big businesses.
-
 	
 !!! quote "What problem is TomoChain aiming to solve?"
+	The problems that TomoChain aims to solve can be summarized as follows:
+
+	- The network congestion on Ethereum (low transaction time)
+	- High transaction fees on Ethereum
+	- Most other blockchains are highly centralized and/or do not have interoperability with Ethereum system
+
 	Blockchain has become one of the most disruptive technologies that enables many decentralized applications, including but not limited to cryptocurrencies, smart-contracts, voting and supply-chain management.
 	Blockchain proponents have been trying to inject it into this Industry 4.0 revolution era.
 	In order to reach this goal, the current blockchain infrastructure must at least be able to compete with many mainstream technologies, such as Visa and MasterCard processors in financial services.
@@ -24,18 +29,17 @@
 	TomoChain is continuously working and researching several scaling solutions.
 	Regarding on-chain scaling, Sharding and Proof-of-Stake-based consensus are of potential that can significantly improve transaction processing performance while trying to maintain security requirements of the system. 
 
-	TomoChain supports near-zero fees and 2-second transaction confirmation times.
+	TomoChain supports low fee and 2-second transaction confirmation times.
 	TomoChain can currently process 2'000-5'000 transactions per second (TPS) and once sharding is enabled, TomoChain is expected to reach 20'000-30'000 TPS.
 
 !!! quote "How does TomoChain work? What is the architecture and consensus used?"
-    TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support near-zero fees and 2-second transaction confirmation times.
+    TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support low fees (appro. 1/100 of that of Ethereum's) and 2-second transaction confirmation times.
 	Security, stability and chain finality are guaranteed via novel techniques such as Double Validation, staking via smart-contracts and true randomization processes.
-
 
 !!! quote "Can you tell more about Proof of Stake Voting (PoSV)? What is it?"
     At the heart of TomoChain, the Proof-of-Stake Voting (PoSV) consensus enables TomoChain as an EVM-compatible and scalable public blockchain, on which every Ethereum smart contract can be effectively run with almost instant transaction confirmation.
 
-	PoSV features its Masternode architecture in which coin-holders deposit 50k $TOMO to become a masternode candidate and receive votes from other coin-holders.
+	PoSV features its Masternode architecture in which token holders deposit 50k $TOMO to become a masternode candidate and receive votes from other token holders.
 	The most voted masternode candidates are selected as masternodes for block creation within a period, called epoch.
 	Each masternode takes its block creation in a round-robin manner every 2-second and follows the double validation technique for security reinforcement.
 	A block is finalised if it is signed off by 3/4 masternodes.
@@ -48,7 +52,7 @@
 	Double validation strengthens Tomochain’s security, reduces fork and nothing-at-stake attacks, and makes TomoChain unique among other Proof-of-Stake-based blockchains.
 	
 !!! quote "What is an 'epoch'?"
-    An epoch is a 900-block period of 2-second block time starting from block #1 (900 blocks x 2s/block = 1800s = 30 minutes).
+    An epoch is a 900-block period of 2-second block time starting from block #1 (900 blocks x 2s/block = around 1800s or 30 minutes).
 
 !!! quote "Which scaling solutions will TomoChain implement? Will you have sharding?"
     TomoChain solutions are based on on-chain scaling built into an architecture of 150 voted masternodes with our Proof-of-stake Voting (POSV) consensus protocol.
@@ -61,29 +65,56 @@
 	New scaling techniques such as sharding, EVM parallelisation, private-chain generation, hardware integration will be evaluated before being integrated into TomoChain's masternode architecture.
 
 !!! quote "What is the current TPS? What is your targeted transaction speed and when do you think you can achieve that speed?"
-    TomoChain supports near-zero transaction fees and 2-second transaction confirmation times.
+    TomoChain supports low transaction fees (appro. 1/100 of that of Ethereum's) and 2-second transaction confirmation times.
 	The mainnet with POSV Masternodes delivers 2'000 transactions per second (TPS).
 	Once sharding is implemented by Q2 2019, we expect 20'000-30'000 TPS.
 
 	TomoChain team is continuously researching other scaling techniques to keep improving.
 
 !!! quote "What makes TomoChain different?"
-    TomoChain aims to develop its own unique ecosystem and infrastructure.
-	At its core, TomoChain proposes Proof-of-Stake Voting (PoSV), a Proof-of-Stake (PoS) based blockchain protocol with a fair voting mechanism, rigorous security guarantees and fast finality.
+    The unique point of TomoChain comes from technology, the products and the ecosystem.
 
-	TomoChain features almost zero fees, 2'000 transactions per second (TPS) —to be increased in the future when sharding is enabled—, and 2-second block-time.
-	TomoChain also offers double validation and randomization for extra security.
-	Double validation strengthens TomoChain’s security, reduces fork and nothing-at-stake attacks, and makes TomoChain unique among other Proof-of-Stake-based blockchains.
+	**Novel technology:** includes
+	
+	- Proof of Stake Voting consensus
+	- Build in governance D-app
+	- Double Validation and Randomization
+	- Sharding based on a stable masternode artichitecture
 
+	This enables TomoChain to achieve:
+	
+	- Cheap transactions: appro. 1/100 of that of Ethereum
+	- 2000 TPS to handle a robust d-app and token ecosystem; TPS will be dramatically higher once our sharding solution is enabled (20k-30k TPS)
+	- 2 second block time for fast transactions
+	- EVM-compatibility allows for interoperability with Ethereum ecosystem.
+
+	**Our unique products**
+
+	- TomoScan: Shows all blocks, transactions, finality, smart contracts, D-Apps and token information
+	- TomoMaster: Allows users to apply for a Masternode Candidate position; to vote for Masternodes and shows Masternode performance statistics
+	- TomoWallet: Securely store, send, receive TOMO and other tokens issued on TomoChain; Allows users to vote and track rewards
+	- TomoX: A secure and efficient relayer-masternode decentralized exchange protocol
+
+	**Our own ecosystem**
+
+	- TomoChain also is working vigorously on building its ecosystem and has sealed many partnerships from all fields such as agriculture, robotics, gaming, IT solution providers, advertising, pharmaceutical tracking, education and research, payment, communication, name service, food traceability, tourism etc such as TechInAsia, Kambria, Axie Infinity, Vnext, Farmatrust, TE-Food, Triip Protocol, Portal Network...
+	
 !!! quote "How does TomoChain compare with other available blockchain projects?"
+	Some of our competitors are EOS.IO, Casper FFG, Cardano, Tendermint, Lisk.
+	We are doing a series of Medium posts on this matter.
+	
+	A post named ["Blockchain comparison overview: EOS.IO, Casper FFG, Cardano, Tendermint and Tomochain"](https://medium.com/tomochain/blockchain-comparison-overview-eos-io-casper-ffg-cardano-tendermint-and-tomochain-2b0df68806b6) has been published.
+	A detailed comparison with EOS, [Tomochain vs. EOS.IO: The battle of PoSV vs. DPoS or just some coincidence of design philosophy?](https://medium.com/tomochain/tomochain-vs-eos-io-the-battle-of-posv-vs-dpos-or-just-some-coincidence-of-design-philosophy-b5f606a1e5df), has been published too.
+	A [Comparison of PoS-voting based reward engines among TomoChain, EOS and Lisk](https://medium.com/tomochain/tomochain-eos-lisk-comparison-of-pos-voting-based-reward-engine-9b3b26560392) can be found at Medium too.
+
     The world is a pretty big place, and startups often kills themself because they cannot make a desirable product, not because of the competition.
-	At the moment, besides the core Tomochain platform, we want to focus on a few quality Dapp use cases that can make a difference.
+	At the moment, besides the core TomoChain platform, we want to focus on a few quality Dapp use cases that can make a difference.
 	Quality before quantity.
 
 	Our core blockchain solution like the sharding proposal is of very high quality, and potentially better than multiple high profile attempts at scaling currently.
-	The solution is also very unique to Tomochain’s Marsternode design, which will remain our competitive product advantage for a long time.
+	The solution is also very unique to TomoChain's Marsternode design, which will remain our competitive product advantage for a long time.
 
-	There are also several other product solutions in design stage which also highly integrate with Tomochain’s overall design.
+	There are also several other product solutions in design stage which also highly integrate with Tomochain's overall design.
 	These product innovations is one of the core competencies we have that make Tomochain very unique compared to other big projects.
 	We are doing our best to solve the scalability problem, maximize the TPS and stay strong in our target market. 
 
@@ -92,8 +123,6 @@
 	On the other hand, it is too early to focus on competition as it is more important to expand the whole blockchain ecosystem rather than to compete.
 
 	TomoChain has a unique position in which it adds value to the Ethereum ecosystem by addressing scalability and governance issues while keeping the same smart-contracts and general architecture.
-
-	In terms of TPS, 1'000 or 1 million TPS are just numbers, if others can do it, then TomoChain will be able to achieve similar in a reasonable amount of time—masternodes will scale very well.
 
 !!! quote "TomoChain is EVM-compatible. What does that mean?"
     EVM means Ethereum Virtual Machine.
@@ -108,9 +137,9 @@
     Yes, any smart-contract written in Ethereum protocol can be easily ported to TomoChain.
 	This is one strength appealing to some dApp developers and some of our partners.
 	
-!!! quote "Can developers make hybrid dApps using both Ethereum and Tomochain in one single dApp?"
-    Yes, they can make an app, and deploy it to both Ethereum, and Tomochain.
-	It can be done relatively easy since Tomochain supports EVM, and share a common architecture with Ethereum.
+!!! quote "Can developers make hybrid dApps using both Ethereum and TomoChain in one single dApp?"
+    Yes, they can make an app, and deploy it to both Ethereum, and TomoChain.
+	It can be done relatively easy since TomoChain supports EVM, and share a common architecture with Ethereum.
 
 !!! quote "When is TomoChain mainnet launch?"
     TomoChain Mainnet was launched on December 14th, 2018.
@@ -131,7 +160,7 @@
 		TomoChain addresses by providing finality.
 		Once a block is signed by at least 3/4 masternodes, it is consider irreversible, meaning that any attempt to re-write the blockchain history will be rejected.
 	3. Censorship-resistance: Please [refer to this medium article](https://medium.com/tomochain/tomochain-vs-eos-io-the-battle-of-posv-vs-dpos-or-just-some-coincidence-of-design-philosophy-b5f606a1e5df) for more detailed analysis
-	4. DDoS and spamming attacks: TomoChain's transaction fee is not zero (even it is very low), attackers still require a significant amount of Tomo in order to flood the network for only a short time.
+	4. DDoS and spamming attacks: TomoChain's transaction fee is not zero (even it is very low), attackers still require a significant amount of TOMO in order to flood the network for only a short time.
 	
 ### Company
 
@@ -156,8 +185,7 @@
 		`219 Trung Kinh, Yen Hoa, Cau Giay, Hanoi, Vietnam`
 
 !!! quote "How many people are working on TomoChain team?"
-    We are around 33 people working fulltime.
-	We constantly adapt our hiring process depending on the new projects we get.
+    We are nearly 40 people working fulltime.
 	
 	Check us out on our [main website](https://tomochain.com/about-us/)!
 
@@ -198,16 +226,20 @@
 	This means that any smart-contract written in Ethereum protocol can be easily ported to TomoChain.
 
 	Any d-App written in Ethereum can be seamlessly ported to TomoChain, instantly enjoying all TomoChain advantages: almost zero-transaction fee; 2-second confirmation time; 2'000 TPS and soon 20K-30K TPS once sharding is enabled.
-
+	
+	D-app developers also have dedicated technical support from TomoChain developers.
+	
 	Besides the technical aspects, our partners will also benefit from the TomoChain community support and fundraising opportunities, thanks to TomoChain very good relationships with well-known investors.
 
 !!! quote "Why should developers build dApps on TomoChain?"
     See: [https://www.youtube.com/watch?v=8J4h2zsd_UE](https://www.youtube.com/watch?v=8J4h2zsd_UE)
 
 !!! quote "Where can I see TomoChain partnerships?"
-    You can find a list of partners willing to run dApps on TomoChain [here](https://docs.tomochain.com/general/use-cases/). This list will be updated in the future.
+    TomoChain is working vigorously on building its ecosystem and has sealed 23 partnerships from all fields such as agriculture, robotics, gaming, IT solution providers, advertising, pharmaceutical tracking, education and research, payment, communication, name service, food traceability, tourism (as of Jan 2019).
 
-	Follow our [Medium](https://medium.com/tomochain) and our official [Twitter account](https://twitter.com/TomoChainANN) for partnership announcements.
+	All partnership announcements can be found [Medium](https://medium.com/tomochain) and our official [Twitter account](https://twitter.com/TomoChainANN) for partnership announcements.
+
+	You can also find a list of partners willing to run D-apps on TomoChain [here](https://docs.tomochain.com/general/use-cases/). This list will be updated in the future.
 
 !!! quote "Where can I check the actual products, ecosystem?"
 	Please, read the Mainnet announcement on our [Medium post](https://medium.com/tomochain/tomochain-mainnet-has-officially-been-launched-25a55dd2efed).
@@ -235,16 +267,15 @@
 	You can check our [technical whitepaper](https://docs.tomochain.com/wp-and-research/technical-whitepaper/) for more details.
 
 !!! quote "Can I mine TOMO?"
-    TOMO is non-mineable like Bitcoin or other Proof Of Work (POW) cryptocurrencies.
-	TOMO is Proof Of Stake Voting (POSV), and instead of miners there are masternodes.
+    TOMO is "mineable", but instead of miners there are masternodes.
 	Masternodes are responsible for creating, verifying and finalizing the blocks created within a period, called epoch.
 	Masternodes and Stakers will receive block rewards.
 	
 !!! quote "What is TOMO circulating supply and total supply?"
-    TOMO total token supply is fixed at 100'000'000 TOMO.
+    The initial circulating supply at genesis block is 55'000'000 but the current circulating supply is increasing every epoch.
 	
-	The current circulating supply is 55'000'000 TOMO.
-
+	After 8 years, TOMO total supply is fixed at 100'000'000 TOMO.
+	
 !!! quote "How is TOMO distributed?"
     The token allocation is splitted as follows:
 	
@@ -294,16 +325,20 @@
 
 !!! quote "Is TOMO an ERC-20 token?"
     Since Mainnet, TOMO is actually a TRC20 token on TomoChain’s own blockchain.
+
+!!! quote "What is a TRC-20 token?"
+	A TRC-20 token is a token/coin developed on the TomoChain blockchain.
 	
 !!! quote "Where to store TOMO? How can I send TOMO to my wallet?"
     You can store TOMO in TomoWallet, TrustWallet, MetaMask, MyEtherWallet, Ledger and Trezor.
 
-	We recommend to store TOMO in MYETHERWALLET + TREZOR/LEDGER + METAMASK + Mist + Parity + Trust.
+	We recommend to store TOMO in TomoWallet.
 
 	Please, read more details here: [https://docs.tomochain.com/get-started/wallet/](https://docs.tomochain.com/get-started/wallet/)
 		
 !!! quote "Can I send TOMO directly from my MyEtherWallet?"
-    Wait for new MyEtherWallet release.
+    Yes. MyEtherWallet now has TomoChain in the supported network list.
+	TOMO holders then can send TOMO using MyEtherWallet.
 
 !!! quote "How to connect Metamask / MyEtherWallet with TomoChain mainnet?"
 
@@ -321,10 +356,10 @@
 ### Masternodes	
 
 !!! quote "Does TomoChain have Masternodes? How do they work?"
-    Yes, TomoChain has a maximum of 150 Masternodes with Proof of Stake Voting (POSV) consensus for near-zero transaction fee, and instant transaction confirmation.
+    Yes, TomoChain has a maximum of 150 Masternodes with Proof of Stake Voting (POSV) consensus for low transaction fee, and instant transaction confirmation.
 	Masternodes create, verify and validate new blocks in TomoChain’s platform.
 
-	- **Masternode Candidates:** Any account can deposit 50,000 TOMO using the official on-chain governance D-app to become a masternode candidate.
+	- **Masternode Candidates:** Any account can deposit 50,000 TOMO using [TomoMaster](https://master.tomochain.com/) to become a masternode candidate.
 	A candidate can resign, but the tokens will be locked for the next 30 days (1,296,000 blocks) after the resignation.
 	- **Becoming a Masternode:** A candidate becomes a masternode when he/she belongs to the top 150 most voted candidates in each epoch.
 	A Masternode can resign, but the tokens will be locked for the next 30 days after the resignation.
@@ -424,7 +459,7 @@
 	- to run TomoChain software in a machine with certain minimal hardware requirements
 	- to deposit 50’000 TOMO in a smart-contract via TomoMaster
 
-	The list of Masternode Candidates will be available on the Voting App, [TomoMaster](https://master.tomochain.com/).
+	The list of Masternode Candidates will be available on the governance DApp, [TomoMaster](https://master.tomochain.com/).
 	The next step is to be elected as one of the top 150 most voted candidates. 
 	
 !!! quote "Do I need to use my own computer to run a node?"
@@ -449,8 +484,7 @@
 	- **Amazon EC2:** C5 instance
 	- **Google Cloud Engine:** n1-highcpu-16
 
-	Setting up a masternode candidate on a weaker machine might result in poor performances.
-	Significantly impacting owner's rewards and the chain performance.
+	Setting up a masternode candidate on a weaker machine might result in poor performances, significantly impacting owner's rewards and the chain performance.
 
 	**Note:** If you are running a node in Testnet, 2CPU/8GB of RAM is sufficient.
 	
@@ -491,7 +525,7 @@
 !!! quote "How can I create a public 'coinbase address' wallet? Is it only with TomoWallet for iOS and Android? Are there other options?"
     You need to create a wallet for the masternode public address.
 	This wallet does not need to contain any TOMO, think of it as a shell address.
-	You will then stake tomo into the masternode address via your main Tomo wallet.
+	You will then stake tomo into the masternode address via your main TOMO wallet.
 
 	You can use the iOS and Android apps.
 	Also you can create wallets with Metamask, MyEtherWallet.
@@ -552,11 +586,11 @@
 
 !!! quote "What if I do not have enough TOMO for a masternode? Can I stake my coins?"
     Yes.
-	Coin-holders can stake TOMO and receive rewards.
+	Token holders can stake TOMO and receive rewards.
 
 	To stake TOMO you need to vote for masternode candidates by sending TOMO to each candidates specific voting-address using the official governance d-App: TomoMaster.`
 	The top-150 most voted candidates will become masternodes.
-	Token-holders can also un-vote candidates, but the tokens will be locked for the next 48 hours (8,640 blocks) after the un-voting.
+	Token holders can also un-vote candidates, but the tokens will be locked for the next 48 hours (8,640 blocks) after the un-voting.
 
 	Masternode token deposits, and all tokens used to vote for masternodes will enter the staking program, and earn block rewards in each epoch, plus any fees.
 	Tokens used to vote for candidates who do not become masternodes will not earn staking rewards.
@@ -578,14 +612,14 @@
 	Login to TomoMaster and click 'Vote' on a node.
 	
 !!! quote "How does TomoChain Masternode Election work (POSV)?"
-    All coin-holders can vote TOMO on any candidates via [TomoMaster](https://master.tomochain.com/), where they can find a list of all masternode candidates.
+    All token holders can vote TOMO on any candidates via [TomoMaster](https://master.tomochain.com/), where they can find a list of all masternode candidates.
 	To vote, they must deposit TOMO in a smart-contract associated with the voted candidate.
 
 	The top-150 most-voted candidates will be promoted to masternode during the next epoch and will be able to sign blocks and collect rewards.
 	All the voters (stakers) who supported the elected masternodes will receive rewards proportional to the amount of TOMO voted.
 
 !!! quote "How do I vote?"
-    Any coin-holder can vote.
+    Any token holder can vote.
 	Login to TomoMaster and then click 'Vote' on a node.
 	Then enter the amount of TOMO you want to vote (minimum is 10 TOMO).
 	You vote by depositing (staking) tokens to a smart-contract associated with a masternode candidate.
@@ -717,7 +751,7 @@
 	Then select how do you want to login: with TomoWallet, with Ledger wallet, with Metamask, TrustWallet or Private Key/Mnemonic.
 
 !!! quote "What is the 'capacity' of a Candidate/Masternode?"
-    The capacity of a candidate is the 50K TOMO initial deposit added to the total amount of TOMO voted for that candidate.
+    The capacity of a candidate is the 50K TOMO initial deposit plus the total amount of TOMO voted for that candidate.
 
 !!! quote "Which of these numbers on TomoMaster will tell us which is a good performing node vs poorly performing?"
     On TomoMaster, click on a candidate to open the candidate page.
@@ -732,7 +766,7 @@
     For each iteration of 900 blocks (called epoch), a checkpoint block is created, which implements only reward works.
 	The masternode, who takes turn in the circular and sequential order to create blocks, has to scan all of the created blocks in the epoch and count number of signatures.
 
-	It is worth noting that coin-holders who unvote before the checkpoint block will not receive any shared reward in the Staking Reward portion.
+	It is worth noting that token holders who unvote before the checkpoint block will not receive any shared reward in the Staking Reward portion.
 
 !!! quote "I want to stop running my node."
     If you don't want to run your masternode anymore, please remember to resign before shutting down the node.
@@ -741,25 +775,25 @@
 	
 !!! quote "What is TomoWallet? Where can I download it?"
     TomoWallet is the first mobile wallet for TomoChain.
-	Currently, you can store TOMO, which is main coin of TomoChain.
+	Currently, you can store TOMO, which is the native token of TomoChain.
 	Other tokens on TomoChain will be added in the future.
 
 	Users can download TomoWallet at [App Store](https://itunes.apple.com/us/app/tomo-wallet/id1436476145?mt=8) and [Play Store](https://play.google.com/store/apps/details?id=com.tomochain.wallet).
 	
-!!! quote "What token/coin does TomoWallet support?"
+!!! quote "What tokens/coins does TomoWallet support?"
     The current TomoWallet supports native TOMO on TomoChain Mainnet.
 	TomoWallet will support all tokens on TomoChain platform in the future.
 
-!!! quote "How can I create a Tomo wallet? What are the options to create a Tomo wallet?"
-    You  can create a Tomo wallet with the iOS app, the Android app, MyEtherWallet or Metamask.
+!!! quote "How can I create a TOMO wallet? What are the options to create a TOMO wallet?"
+    You can create a TOMO wallet with the iOS app, the Android app, MyEtherWallet or Metamask.
 
 !!! quote "Can we vote on TomoMaster using TomoWallet?"
     Yes, TomoWallet can be used for voting/staking on TomoMaster.
 
-!!! quote "How to Restore/Import Recovery Phrase into Tomo Wallet?"
+!!! quote "How to Restore/Import Recovery Phrase into TomoWallet?"
     Open TomoWallet, click 'Import Your Wallet', then type your recovery phrase.
 
-!!! quote "How to Restore/Import Private Key into Tomo Wallet?"
+!!! quote "How to Restore/Import Private Key into TomoWallet?"
     Open TomoWallet, click 'Import Your Wallet', then type your private key.
 	
 !!! quote "I have Private Key in my PC. How do I import into TomoWallet in a safe way?"
@@ -768,7 +802,7 @@
 !!! quote "How do I backup my wallet?"
     Go to TomoWallet, click 'Setting tab' in the top left corner, press 'backup wallet', then write down/ scan QR code of your private key/ backup phrase.
 
-!!! quote "How do I protect my Tomo Wallet app?"
+!!! quote "How do I protect my TomoWallet app?"
     TomoWallet allows you to prevent unauthorized transactions by putting a password on the app itself.
 	With this feature, you must authenticate every time you launch/ make a transaction on the TomoWallet.
 	You can enable password protection in Settings.
@@ -793,7 +827,7 @@
 	We are not able to help you recover your backup if you lose your device and your backup.
 	Please make sure you store your backup(s) in a safe place.
 
-!!! quote "Can I access cold storage wallet in 'view-only' mode with Tomo Wallet?"
+!!! quote "Can I access cold storage wallet in 'view-only' mode with TomoWallet?"
     The TrustWallet watch functionality allows users of cold storage wallets - Trezor, The TomoWallet watch functionality allows users of cold storage wallets: Ledger, KeepKey, or any other device - to access their wallet in a view-only mode.
 	By ONLY importing a PUBLIC KEY, we ensure that no action can be performed inside the wallet, meaning no asset can be transferred out of the wallet or accessed in any way.
 	That allows users to see how their crypto portfolio is performing while having their keys in a safe place.
@@ -804,7 +838,7 @@
 	- Choose 'import a wallet'
 	- Select 'import your public key' -> Paste your address -> Import
 
-!!! quote "I sent my Tomo to a wrong address. What do I do?"
+!!! quote "I sent my TOMO to a wrong address. What do I do?"
     TOMO: `m/44'/889'/0'/0`
 
 !!! quote "Can I switch from my existing wallet app like Metamask, MyEtherWallet, etc.?"
