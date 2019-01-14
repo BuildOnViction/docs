@@ -6,7 +6,7 @@ It is an essential step to study an overview of TomoChain features in term of me
 Get started! You first need to install [MetaMask Extension](https://metamask.io/) on Chrome or Brave browsers.
 Once you agree to the Metamask Terms of Use and create an account successfully, follow instructions:
 
-**Step 1:** Click MetaMask logo on the browser to open the Extension -> select `Network` -> select `Main Ethereum Network` (by default) as shown below:
+**Step 1:** Click MetaMask logo on the browser to open the Extension -> select `Network` -> select `Custom RPC` as shown below:
 
 ![metamask1](/assets/metamask1.jpg)
 
@@ -25,25 +25,6 @@ Set `Privacy Mode` On, if you want to connect Metamask with your hardware wallet
 ![metamask3](/assets/metamask3.jpg)
 
 **Step 3:** You are successfully connected to TomoChain Mainnet.
-
-## MyEtherWallet
-
-**Step 1:** From <a href="https://myetherwallet.com" target="_blank">MyEtherWallet</a> homepage, at top right corner, select `Add Custom Network / Node`
-
-![mew1](/assets/mew1.jpg)
-
-**Step 2:** Setup your Custom Node with the following information: Node name, Url, Chain ID and click `Save & Use Custom Node` (as shown below).
-
-- Node Name: `TomoChain Mainnet`
-- URL: `https://rpc.tomochain.com`
-- Port: `443`
-- ChainID: `88`
-
-![mew2](/assets/mew2.jpg)
-
-**Step 3:** Click `Save & Use Custom Node`. This should immediately connect or an error message will display.
-
-![mew3](/assets/mew3.jpg)
 
 ## TrustWallet
 
