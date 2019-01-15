@@ -267,7 +267,7 @@
 	You can check our [technical whitepaper](https://docs.tomochain.com/wp-and-research/technical-whitepaper/) for more details.
 
 !!! quote "Can I mine TOMO?"
-    TOMO is "mineable", but instead of miners there are masternodes.
+    TOMO is not `mineable` but `mintable` by masternodes.
 	Masternodes are responsible for creating, verifying and finalizing the blocks created within a period, called epoch.
 	Masternodes and Stakers will receive block rewards.
 	
@@ -324,10 +324,11 @@
 	We will announce every exchange news on our official channels on due time.
 
 !!! quote "Is TOMO an ERC-20 token?"
-    Since Mainnet, TOMO is actually a TRC20 token on TomoChain’s own blockchain.
+    Since Mainnet, TOMO has become the native coin of the TomoChain blockchain.
 
 !!! quote "What is a TRC-20 token?"
-	A TRC-20 token is a token/coin developed on the TomoChain blockchain.
+	A TRC-20 token is a token which can be issued on the TomoChain blockchain.
+	TCR-20 is similar to the ERC-20 standard in the Ethereum  blockchain.
 	
 !!! quote "Where to store TOMO? How can I send TOMO to my wallet?"
     You can store TOMO in TomoWallet, TrustWallet, MetaMask, MyEtherWallet, Ledger and Trezor.
@@ -342,12 +343,19 @@
 
 !!! quote "How to connect Metamask / MyEtherWallet with TomoChain mainnet?"
 
+    The followings are information used for configuring Metamask to connect to TomoChain Mainnet.
+    
     - RPC endpoint: `https://rpc.tomochain.com`
 	- Chain ID: `88`
 	- Symbol: `TOMO`
 	- Network Name: `TomoChain Mainnet`
 
-	You can find the info about our Mainnet or Testnet on our [Networks](https://docs.tomochain.com/general/networks/) page
+    TomoChain is now supported by MyEtherWallet.
+    All you need to do is to choose `Network TOMO` in the supported network list in MyEtherWallet.
+
+	You can find the info about our Mainnet or Testnet on our [Networks](https://docs.tomochain.com/general/networks/) page.
+	
+	Also, you can find out more detailed information about how to use different wallet types to connect to TomoChain Mainnet on [Connect your wallet](https://docs.tomochain.com/get-started/wallet/) 
 		
 !!! quote "Where can I buy TOMO? (exchanges)"
     You can trade TOMO on various exchanges.
