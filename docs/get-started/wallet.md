@@ -26,6 +26,13 @@ Set `Privacy Mode` On, if you want to connect Metamask with your hardware wallet
 
 **Step 3:** You are successfully connected to TomoChain Mainnet.
 
+## MyEtherWallet
+
+TomoChain is now supported by [MyEtherWallet](https://www.myetherwallet.com/). 
+In order to connect your MyEtherWallet wallet to TomoChain, all you need to do is to choose `Network TOMO` in the dropdown network list at top right corner.
+
+![mewtomo](/assets/mewtomo.jpg) 
+
 ## TrustWallet
 
 **Step 1:** Open [Trust Wallet](https://trustwallet.com/assets/tomochain) then go to Settings > Wallets > and tap on the plus sign in the top right corner to import a new wallet.
