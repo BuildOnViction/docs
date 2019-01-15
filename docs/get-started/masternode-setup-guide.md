@@ -191,7 +191,7 @@ Google anything out of the ordinary and try to understand or fix it.
 Reboot your VPS instace in case any of the upgraded components will only fully engage until rebooted fresh.
 
 ```shell
-shutdown -h now
+reboot
 ```
 
 ### Install Python
@@ -311,7 +311,7 @@ Once installed, add your current user to the Docker group and verify that the us
 ```shell
 sudo usermod -aG docker michael
 groups michael
-cat /etc/groups | grep docker
+cat /etc/group | grep docker
 ```
 
 Verify that Docker CE is installed correctly by running the hello-world image.
@@ -420,10 +420,15 @@ Links for more info:
 * [Old Masternode guide (testnet) Section on wallets](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58)
 
 
-## 8. Run TMN and check sync status
-FIXME Tmn start; tmn status; inspect; top; stats.tomo website; # of blocks command
-`tmn update`, `tmn --help`, etc
+## 8. Run TMN and Jumpstart chain data
+FIXME Tmn start; Etienne's Chaindata jumpstart
 
+Below, you will start `tmn` initially, to get files in place, and then **"Jumpstart"** it with a seperate set of commands. 
+Jumpstarting allows you to not have to download the large chaindata from peers.
+Getting an initial seed of the data, and going from there is considerably faster.
+However, first, lets start `tmn` for the first time.
+
+### Initial TMN start
 **IMPORTANT:** Logout and SSH back in so that the $PATH variable takes effect.
 This allows you to run `tmn` from any directory.
 
@@ -431,9 +436,7 @@ This allows you to run `tmn` from any directory.
 exit
 ```
 
-Next, you will start `tmn`.
 When you first start your full node with `tmn start`, you need to give some information.
-
 
 > **--name:** The name of your full node. It should be formatted as a slug string. Slug format allows all letters and numbers, dashes ("-") and underscores ("_"). You can name it to reflect your identity, company name, etc.  
 >  
@@ -444,7 +447,7 @@ When you first start your full node with `tmn start`, you need to give some info
 The command is structured like this:
 
 ```shell
-tmn start --name [YOUR_NODE_NAME] --net mainnet --pkey [YOUR_ADDR2_PRIVATE_KEY]
+tmn start --name [YOUR_NODE_NAME] --net mainnet --pkey [YOUR_ADDR1_PRIVATE_KEY]
 ```
 
 We used the following command for our node (copy your own **name** & **private key**):
@@ -452,6 +455,11 @@ We used the following command for our node (copy your own **name** & **private k
 ```shell
 tmn start --name Atlantis --net mainnet --pkey cf03cb58************
 ```
+
+### Jumpstart the chaindata (Optional, but very advised)
+The basic structure has been created and now we want to speed up the process by pulling in the latest chaindata.
+
+[Jumpstart instructions can be found here](https://gist.github.com/etienne-napoleone/5dac3f7654f01c05d54b5e7a114ab29d)
 
 
 ********************
@@ -466,6 +474,9 @@ On GNU/Linux:
 echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc
 *******************
 
+
+## 9. Check sync status
+FIXME tmn status; inspect; top; stats.tomo website; # of blocks command; `tmn update`, `tmn --help`, etc
 
 ## 9. Apply for Masternode Candidacy
 FIXME Explain; Assure synced; master.tomo; login; apply
