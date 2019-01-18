@@ -6,15 +6,6 @@ It is meant for beginners and first-timers.
 Security Disclaimer: Despite there being mention of some security elements in this guide, there is **no implied guarentee of security**. You alone must fully secure your server. On a VPS, you will get rogue root login attempts within minutes of setup.
 
 
-## Knowledge Requirements
- * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS), and 
- * **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
-
-   **Do not proceed if you are not confident** with the Linux command-line. 
-   Why?
-   The upkeep and troubleshooting will become more complex than this guide.
-   Some commands fail and you must know what you are doing.
-
 ## Technical Requirements / Recommendations
 The following are required items and server specifications. 
 [Click here for more details](https://docs.tomochain.com/masternode/requirements/)
@@ -27,7 +18,17 @@ The following are required items and server specifications.
    * 100+ GB for Linux operating system
    * 10GB / day of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
  * 2 Tomo Addresses (see below)
- 
+
+## Knowledge Requirements
+ * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS), and 
+ * **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
+
+   **Do not proceed if you are not confident** with the Linux command-line. 
+   Why?
+   The upkeep and troubleshooting will become more complex than this guide.
+   Some commands fail and you must know what you are doing.
+   
+   
 
 ## Introduction
 
@@ -51,6 +52,9 @@ Unlike your home or office PC, a masternode VPS serves one purpose, to securely 
 A VPS is online 24/7 and provides dedicated resources for the project’s decentralized network.
 
 ---
+<br/>
+
+
 
 ## 1. Choose your hosting provider
 Choose which VPS hosting provider you want to utilize.
@@ -67,6 +71,9 @@ You could choose elsewhere, or even your own 24/7 server.
 
 > Note on provider choice: It is encouraged for masternode operators to utilize various hosting providers so as to encourage a more decentralized network.
 We have noticed that DigitalOcean has been a very popular choice, however, if this popular provider goes down, others will get more rewards :-)
+<br/>
+
+
 
 ## 2. Start your VPS server
 **Start/Boot your VPS server instance.**  
@@ -85,9 +92,11 @@ Some locations within a hosting provider do not have this, while others will.
 Some providers allow you to set it up upon server creation.
 It is considerably more secure than passwords.
 Within 60 mins of your server being up, random hackers will be trying to login with guessed-passwords.
+<br/>
 
 
-## 3. Change passwords and accounts (as root)
+
+## 3. Change passwords and accounts (login as root)
 Login to your newly created server with SSH / Putty.  
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#20a7).
 
@@ -168,9 +177,11 @@ Success!
 When you eventually (not yet) log in as your new user, you can type `sudo` before commands to perform actions with superuser privileges.
 Remain logged in as the root user for now, as we have more initial setup to do. 
 After this, you will almost always login as your new user.
+<br/>
 
 
-## 4. Configure your VPS (as root)
+
+## 4. Configure your VPS (login as root user)
 We will now prepare the [prerequisites for tmn](https://docs.tomochain.com/get-started/run-node/).
 You need Python 3.6+ and Docker installed.
 
@@ -207,48 +218,30 @@ Check if you have installed the right Python version (must be newer than version
 python3 --version
 ```
 
-### Configure security (optional, but highly recommended)
+### System Security 
+This topic is optional, but highly recommended.
 
-> THESE SECURITY STEPS ARE NOT EXHAUSIVE.
-YOU SHOULD RESEARCH MORE.
-YOU ARE RESPONSBILE, NOT ANYONE ELSE.
-
-You will want to secure your machine with multiple levels of security. 
 Within a few minutes of the machine being up, bots and hackers attempt to login and probe it for weakness.
+Thousands of connection-attempts can be seen within a week.
+You will want to secure your machine with multiple levels of security.
 
-At a minimum, you will want to setup UFW (Uncomplicated Fire Wall) and fail2ban.
+At a minimum, you will want to consider:
+* SSH on non-standard port
+* UFW (Uncomplicated Fire Wall) (open port 30303 tcp & udp)
 
-The below commands give an example of how to set this up.
+Even more security could consider:
+* Fail2ban
+* SSH-Key login (vs password)
+* Blocking remote password auth
+* Blocking remote root SSH-access
 
-```shell
-apt install ufw
-ufw allow ssh/tcp
-ufw limit ssh/tcp
-ufw allow 30303/tcp
-ufw allow 30303/udp
-ufw logging on
-ufw enable
-ufw status
-```
+General system security is out of the scope of this guide, however, search the web on the above topics or [look at our security topics on our wiki](https://github.com/tomochain/docs/wiki/Security-of-Masternodes).
+<br/>
 
-> Port 30303 is the only port required for use by tomo.
-There is optional ports 8595 and 8596 tcp that can be used for the API, however opening the API is a security risk and only for advanced users.
 
-```shell
-apt install fail2ban
-echo -e "# Permanently ban 5+ tries\n[DEFAULT]\nbantime = -1\n\n[sshd]\nenabled = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 5" > /etc/fail2ban/jail.local
-systemctl start fail2ban
-systemctl enable fail2ban
-fail2ban-client reload
-fail2ban-client status sshd
-```
 
-> Note that the above permanently bans any shh connection trying more than 5 times; this includes yourself
-
-## 5. Setup Docker (as new user)
-Dependencies, download, install, test hello-world
-
-From now on, you will almost always want to login as your new user.
+## 5. Setup Docker (login as new user)
+From now on, you will almost always want to login as your **new user**.
 If you are logged in as root still, logout and log back in as the new user.
 You may want to consider denying remote root ssh logins.
 
@@ -337,11 +330,11 @@ Please run this, close your session and open it again.
 
 `usermod -aG docker $your_user_name`
 ********************
+<br/>
+
 
 
 ## 6. Installing TMN utility
-FIXME Pip, install, $PATH, troubleshooting
-
 `Tmn` is a simple interface created by TomoChain developers to **help you quickstart your masternode**.
 It is installed as a python package and it utilizes two docker containers once operating.
 We will follow through the steps found here: [guide to install tmn](https://docs.tomochain.com/get-started/run-node/)
@@ -384,6 +377,8 @@ TROUBLESHOOTING
 
 FIXME extra packages might need installing
 *******************
+<br/>
+
 
 
 ## 7. Create Wallet Addresses
@@ -414,19 +409,16 @@ Because most wallets do not have Tomo as a selectable network yet, you will need
 See the first link below for the guide on how to do this.
 
 Links for more info:
-* [ADVISED: SETTING UP METAMASK or MEW or TRUSTWALLET](http://bit.ly/2A6zrC7)
+* [ADVISED: SETTING UP METAMASK, MEW, or TRUSTWALLET](http://bit.ly/2A6zrC7)
 * [Using Metamask or Mobile Tomo Wallet](https://docs.tomochain.com/get-started/wallet/)
 * [Links to mobile downloads and other tomo info](https://medium.com/tomochain/tomochain-all-in-one-overview-9fce16e13b5#6b8c)
 * [Old Masternode guide (testnet) Section on wallets](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58)
+<br/>
 
 
-## 8. Run TMN and Jumpstart chaindata
-FIXME Tmn start; Etienne's Chaindata jumpstart
 
-Below, you will start `tmn` initially, to get files in place, and then **"Jumpstart"** it with a seperate set of commands. 
-Jumpstarting allows you to not have to download the large chaindata from peers.
-Getting an initial seed of the data, and going from there is considerably faster.
-However, first, lets start `tmn` for the first time.
+## 8. Run TMN
+Below, you will finally start your Tomochain node with a utility called `tmn`.
 
 ### Initial TMN start
 **IMPORTANT:** Logout and SSH back in so that the $PATH variable takes effect.
@@ -479,10 +471,14 @@ exit
 ssh michael@178.62.127.177
 ```
 *******************
+<br/>
+
 
 
 ## 9. Check sync status
 FIXME tmn status; inspect; top; stats.tomo website; # of blocks command; `tmn update`, `tmn --help`, etc
+<br/>
+
 
 
 ## 10. Jumpstart the chaindata (Optional)
@@ -495,19 +491,27 @@ To syncrhonize it from decentralized nodes piecemeal-like could take days or wee
 Instead, lets download a recent-ish image of the data, and synchronize from there.
 
 [Full Jumpstart instructions can be found here](https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync)
+<br/>
+
 
 
 ## 11. Apply for Masternode Candidacy
-FIXME Explain; Assure synced; master.tomo; login; apply
-
 This section coming soon.
+
+FIXME Explain; Assure synced; master.tomo; login; apply
+<br/>
+
+
 
 ## 12. Name your Masternode
-FIXME Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
-
 This section coming soon.
+
+FIXME Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
+<br/>
+
+
 
 ## 13. Verify initial rewards
-FIXME Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
-
 This section coming soon.
+
+FIXME Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
