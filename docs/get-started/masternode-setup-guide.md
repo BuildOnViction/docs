@@ -420,7 +420,7 @@ Links for more info:
 * [Old Masternode guide (testnet) Section on wallets](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58)
 
 
-## 8. Run TMN and Jumpstart chain data
+## 8. Run TMN and Jumpstart chaindata
 FIXME Tmn start; Etienne's Chaindata jumpstart
 
 Below, you will start `tmn` initially, to get files in place, and then **"Jumpstart"** it with a seperate set of commands. 
@@ -434,15 +434,24 @@ This allows you to run `tmn` from any directory.
 
 ```shell
 exit
+ssh michael@178.62.127.177
 ```
 
 When you first start your full node with `tmn start`, you need to give some information.
 
-> **--name:** The name of your full node. It should be formatted as a slug string. Slug format allows all letters and numbers, dashes ("-") and underscores ("_"). You can name it to reflect your identity, company name, etc.  
+> **--name:** The name of your full node. It should be formatted as a slug string.
+Slug format allows all letters and numbers, dashes ("-") and underscores ("_").
+You can name it to reflect your identity, company name, etc.  
 >  
-> **--net:** The network your full node will connect to. You can choose here to connect it to the TomoChain `mainnet` or `testnet`.  
+> **--net:** The network your full node will connect to.
+You can choose here to connect it to the TomoChain `mainnet` or `testnet`.  
 >  
-> **--pkey:** The private key of your ADDR1 wallet. A TomoChain full node uses an account to be uniquely identified and to receive transaction fees. Transaction fees are not rewards, and they are usually tiny. Important note: we advise for security measures to use a fresh new account for your masternode. This is not the account that will receive the rewards. The rewards are sent to the account that will make the 50k TOMO initial deposit.
+> **--pkey:** The private key of your ADDR1 wallet.
+A TomoChain full node uses an account to be uniquely identified and to receive transaction fees.
+Transaction fees are not rewards, and they are usually tiny.
+Important note: we advise for security measures to use a fresh new account for your masternode.
+This is not the account that will receive the rewards.
+The rewards are sent to the account that will make the 50k TOMO initial deposit.
 
 The command is structured like this:
 
@@ -456,12 +465,6 @@ We used the following command for our node (copy your own **name** & **private k
 tmn start --name Atlantis --net mainnet --pkey cf03cb58************
 ```
 
-### Jumpstart the chaindata (Optional, but very advised)
-The basic structure has been created and now we want to speed up the process by pulling in the latest chaindata.
-
-[Jumpstart instructions can be found here](https://gist.github.com/etienne-napoleone/5dac3f7654f01c05d54b5e7a114ab29d)
-
-
 ********************
 TROUBLESHOOTING
 
@@ -470,19 +473,41 @@ TROUBLESHOOTING
 It might happen that your PATH is not set by default to include the default user binary directory. You can add it by adding it to your shell $PATH:
 
 On GNU/Linux:
-
+```shell
 echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc
+exit
+ssh michael@178.62.127.177
+```
 *******************
 
 
 ## 9. Check sync status
 FIXME tmn status; inspect; top; stats.tomo website; # of blocks command; `tmn update`, `tmn --help`, etc
 
-## 9. Apply for Masternode Candidacy
+
+## 10. Jumpstart the chaindata (Optional)
+The basic structure has been created, blocks have started synchronizing, and now we want to speed up the process by pulling in the latest chaindata.
+
+> Chaindata is where the entire history of tomo's blockchain records are stored.
+All coin transactions, all smart contracts, all operations.
+This takes up a _lot_ of space.
+To syncrhonize it from decentralized nodes piecemeal-like could take days or weeks.
+Instead, lets download a recent-ish image of the data, and synchronize from there.
+
+[Full Jumpstart instructions can be found here](https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync)
+
+
+## 11. Apply for Masternode Candidacy
 FIXME Explain; Assure synced; master.tomo; login; apply
 
-## 10. Name your Masternode
+This section coming soon.
+
+## 12. Name your Masternode
 FIXME Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
 
-## 11. Verify initial rewards
+This section coming soon.
+
+## 13. Verify initial rewards
 FIXME Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
+
+This section coming soon.
