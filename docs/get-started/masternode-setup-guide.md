@@ -178,6 +178,7 @@ When you eventually (not yet) log in as your new user, you can type `sudo` befor
 Remain logged in as the root user for now, as we have more initial setup to do. 
 After this, you will almost always login as your new user.
 <br/>
+<br/>
 
 
 
@@ -236,6 +237,7 @@ Even more security could consider:
 * Blocking remote root SSH-access
 
 General system security is out of the scope of this guide, however, search the web on the above topics or [look at our security topics on our wiki](https://github.com/tomochain/docs/wiki/Security-of-Masternodes).
+<br/>
 <br/>
 
 
@@ -472,7 +474,6 @@ ssh michael@178.62.127.177
 ```
 *******************
 <br/>
-
 
 
 ## 9. Check sync status
