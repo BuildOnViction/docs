@@ -55,6 +55,7 @@ nav:
       - FAQ: general/faq.md
       - About: general/about.md
     - Get started:
+      - Overview: get-started/overview.md
       - 1. Connect your wallet: get-started/wallet.md
       - 2. Voting: get-started/voting.md
       - 3. Run a node in testnet: get-started/run-node.md

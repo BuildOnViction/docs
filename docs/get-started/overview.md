@@ -44,7 +44,11 @@ Decentralized exchanges called relayers built following the TomoX
 standard will all interact with TomoX.
 
 # How to read this documentation site
+The documentation site is designed to facilitate readers 
+in understand what are written on the site.
 
-* For voters:
-* For masternode owners:
+* For voters: Voters who mainly vote for masternodes to receive rewards are 
+encouraged to our tutorials on [how to connect wallets to TomoChain](/get-started/wallet) and [how to vote](/get-started/voting/).
+
+* For masternode owners: 
 * For developers:
