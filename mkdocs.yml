@@ -55,11 +55,14 @@ nav:
       - FAQ: general/faq.md
       - About: general/about.md
     - Get started:
-      - Overview: get-started/overview.md
-      - 1. Connect your wallet: get-started/wallet.md
-      - 2. Voting: get-started/voting.md
-      - 3. Run a node in testnet: get-started/run-node.md
-      - 4. Apply your node: get-started/apply-node.md
+      - Overview:
+        - Products overview: get-started/productoverview.md
+        - How to read: get-started/how_to_read.md
+      - Beginners Tutorials:
+        - 1. Connect your wallet: get-started/wallet.md
+        - 2. Voting: get-started/voting.md
+        - 3. Run a node in testnet: get-started/run-node.md
+        - 4. Apply your node: get-started/apply-node.md
     # - TomoChain client:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
@@ -84,5 +87,7 @@ nav:
       - Technical whitepaper: wp-and-research/technical-whitepaper.md
       - Sharding design paper: wp-and-research/sharding-paper.md
       - Economics paper: wp-and-research/economics-paper.md
-
+    - Advance:
+        - DApp deployment: advance/dappdeploytuto.md
+        - TomoChain private testnet setup: advance/tutoprivatenet.md
 copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
