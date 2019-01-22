@@ -782,9 +782,9 @@
 ### TomoWallet
 	
 !!! quote "What is TomoWallet? Where can I download it?"
-    TomoWallet is the first mobile wallet for TomoChain.
-	Currently, you can store TOMO, which is the native token of TomoChain.
-	Other tokens on TomoChain will be added in the future.
+    Tomo Wallet is the official mobile wallet for TomoChain, 
+    aiming to store the TOMO native coin and tokens issued on TomoChain. 
+    Tomo Wallet also allows users to vote for masternodes and track rewards.
 
 	Users can download TomoWallet at [App Store](https://itunes.apple.com/us/app/tomo-wallet/id1436476145?mt=8) and [Play Store](https://play.google.com/store/apps/details?id=com.tomochain.wallet).
 	
