@@ -10,7 +10,7 @@ Security Disclaimer: Despite there being mention of some security elements in th
 The following are required items and server specifications. 
 [Click here for more details](https://docs.tomochain.com/masternode/requirements/)
 
- * 50,000 Tomo deposit
+ * 50,000 TOMO deposit
  * Server (cloud-VPS or your-own)
    * 16xCPU cores (CPU-optimized aka high-Ghz)
    * 32GB RAM
