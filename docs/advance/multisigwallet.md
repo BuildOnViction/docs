@@ -1,0 +1,1 @@
+This shows how to deploy a multisignature wallet on TomoChain.
