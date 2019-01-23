@@ -311,7 +311,7 @@ cat /etc/group | grep docker
 Verify that Docker CE is installed correctly by running the hello-world image.
 
 ```shell
-sudo docker run hello-world
+docker run hello-world
 ```
 
 This command downloads a test image and runs it in a container.
