@@ -12,7 +12,7 @@ The following are required items and server specifications.
 
  * 50,000 TOMO deposit
  * Server (cloud-VPS or your-own)
-   * 16xCPU cores (CPU-optimized aka high-Ghz)
+   * 16 vCPU cores (Prefer higher clock speed. Usually found on "CPU optimized" cloud providers' servers)
    * 32GB RAM
  * Storage (Disk Space)
    * 100+ GB for Linux operating system
