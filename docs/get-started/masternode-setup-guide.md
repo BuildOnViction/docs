@@ -488,7 +488,7 @@ The basic structure has been created, blocks have started synchronizing, and now
 All coin transactions, all smart contracts, all operations.
 This takes up a _lot_ of space.
 To syncrhonize it from decentralized nodes piecemeal-like could take days or weeks.
-Instead, lets download a recent-ish image of the data, and synchronize from there.
+Instead, lets download the latest image of the data, and synchronize from there.
 
 [Full Jumpstart instructions can be found here](https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync)
 <br/>
