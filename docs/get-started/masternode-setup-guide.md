@@ -16,7 +16,7 @@ The following are required items and server specifications.
    * 32GB RAM
  * Storage (Disk Space)
    * 10GB / day of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
- * 2 Tomo Addresses (see below)
+ * 2 TomoChain accounts
 
 ## Knowledge Requirements
  * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS), and 
