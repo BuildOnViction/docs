@@ -1,3 +1,12 @@
+## TomoWallet
+
+Download TomoWallet from [Apple Store](https://itunes.apple.com/vn/app/tomo-wallet/id1436476145) or [Google Play](https://play.google.com/store/apps/details?id=com.tomochain.wallet).
+You can create a new wallet, import an existing wallet, vote for Masternodes and transfer/receive TOMO back and forth.
+
+*Note: Under Settings you can Choose Network: TomoChain (Mainnet) or TomoChain DevNet (Testnet).*
+
+![tomowallet1](/assets/tomowallet1.jpg)
+
 ## Metamask
 
 TomoChain will guide you how to connect MetaMask to TomoChain Mainnet.
@@ -47,12 +56,3 @@ In order to connect your MyEtherWallet wallet to TomoChain, all you need to do i
 Tap one last time on `Import` to complete the recovery.
 
 ![trustwallet3](/assets/trustwallet3.jpg)
-
-## TomoWallet
-
-Download TomoWallet from [Apple Store](https://itunes.apple.com/vn/app/tomo-wallet/id1436476145) or [Google Play](https://play.google.com/store/apps/details?id=com.tomochain.wallet).
-You can create a new wallet, import an existing wallet, vote for Masternodes and transfer/receive TOMO back and forth.
-
-*Note: Under Settings you can Choose Network: TomoChain (Mainnet) or TomoChain DevNet (Testnet).*
-
-![tomowallet1](/assets/tomowallet1.jpg)
