@@ -19,7 +19,7 @@ The following are required items and server specifications.
  * 2 TomoChain accounts
 
 ## Knowledge Requirements
- * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS), and 
+ * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS)
  * **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
 
    **Do not proceed if you are not confident** with the Linux command-line. 
