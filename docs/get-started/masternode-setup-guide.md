@@ -15,7 +15,6 @@ The following are required items and server specifications.
    * 16 vCPU cores (Prefer higher clock speed. Usually found on "CPU optimized" cloud providers' servers)
    * 32GB RAM
  * Storage (Disk Space)
-   * 100+ GB for Linux operating system
    * 10GB / day of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
  * 2 Tomo Addresses (see below)
 
