@@ -329,7 +329,7 @@ error: could not access the docker daemon
 If you have installed Docker, and get this error, you probably forgot to add your user to the docker group.
 Please run this, close your session and open it again.
 
-`usermod -aG docker $your_user_name`
+`usermod -aG docker $(whoami)`
 ********************
 <br/>
 
