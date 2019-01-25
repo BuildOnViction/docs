@@ -3,7 +3,9 @@
 This is a procedural step-by-step guide to setting up your first Tomochain Masternode using the `tmn` tool.
 It is meant for beginners and first-timers.
 
-Security Disclaimer: Despite there being mention of some security elements in this guide, there is **no implied guarentee of security**. You alone must fully secure your server. On a VPS, you will get rogue root login attempts within minutes of setup.
+Security Disclaimer:
+Despite there being mention of some security elements in this guide, there is **no implied guarantee of security**.
+You alone must fully secure your server.
 
 
 ## Technical Requirements / Recommendations
