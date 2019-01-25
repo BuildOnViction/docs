@@ -154,28 +154,14 @@ usermod -aG sudo michael
 
 > -a stands for Append and -G is Group; sudo is the groupname you are adding to your user
 
-### Assure the user received sudo
-Lets check to make sure that the usermod command worked.
+You can check to make sure that the usermod command worked:
 
 ```shell
 cat /etc/group | grep sudo
-```
-
-> cat shows the text contained in the file /etc/group; | (pipe) sends that text to grep, which returns only lines with the text "sudo" in them.
-Otherwise, the files contents are long and full of groups and users
-
-Assure that you get a response such as `sudo:x:27:michael`.
-This shows your new user (amongst other users) in the sudo group. 
-
-To double check the sudo abilities of your new user, run this command:
-
-```shell
 groups michael
 ```
 
-Assure that you get a response such as `michael : michael sudo` from the second command. 
-This shows that michael is part of multiple groups, one being named the same as their username and the other being sudo.
-Success!
+Assure that you get a response such as `sudo:x:27:michael` from first command and `michael : michael sudo` from the second command. 
 
 When you eventually (not yet) log in as your new user, you can type `sudo` before commands to perform actions with superuser privileges.
 Remain logged in as the root user for now, as we have more initial setup to do. 
