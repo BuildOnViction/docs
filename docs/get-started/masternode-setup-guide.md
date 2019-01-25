@@ -50,7 +50,7 @@ They are paid servers hosted on a cloud-hosting-provider.
 Each VPS runs an independent installation of an operating system (OS), Linux or Windows, and typically provides root access to the OS for advanced management and control.
 
 ### Why is a VPS highly recommended for masternodes?
-A VPS is recommended (and often required) for masternode setups, as you will need a dedicated static IP and 99.9% uptime to provide a stable and efficient node for the cryptocurrency’s network.
+A VPS is recommended (and often required) for masternode setups, as you will need a dedicated static IP and 99.9% uptime to provide a stable and efficient node for the network.
 Unlike your home or office PC, a masternode VPS serves one purpose, to securely and efficiently run a masternode.
 A VPS is online 24/7 and provides dedicated resources for the project’s decentralized network.
 
@@ -65,15 +65,17 @@ Choose which VPS hosting provider you want to utilize.
 The following providers are **sample** VPS providers.
 You could choose elsewhere, or even your own 24/7 server.
 
- * [Vultr (Beginner friendly)](https://www.vultr.com/)
- * [DigitalOcean (Popular)](https://www.digitalocean.com/)
+
  * [AWS (Amazon)](https://aws.amazon.com/)
- * [OVH (Cheap)](https://www.ovh.com)
+ * [DigitalOcean](https://www.digitalocean.com/)
  * [GCE (Google)](https://cloud.google.com/compute/)
- * [Linode (Linux geek crowd)](https://www.linode.com/)
+ * [Linode](https://www.linode.com/)
+ * [OVH](https://www.ovh.com)
+ * [Vultr](https://www.vultr.com/)
+
 
 > Note on provider choice: It is encouraged for masternode operators to utilize various hosting providers so as to encourage a more decentralized network.
-We have noticed that DigitalOcean has been a very popular choice, however, if this popular provider goes down, others will get more rewards :-)
+It is in your best interest because if any one popular provider goes down, others will get more rewards.
 <br/>
 
 
@@ -81,7 +83,7 @@ We have noticed that DigitalOcean has been a very popular choice, however, if th
 ## 2. Start your VPS server
 **Start/Boot your VPS server instance.**  
 Choose **Ubuntu 18.04**.
-This is an LTS version (Long Term Support).
+This is an LTS version ([Long Term Support](https://wiki.ubuntu.com/LTS)).
 LTS versions are more stable and have seen less errors when installing Docker and Python.
 You must use Ubuntu 18.04 to seek support from the wider community or Tomochain.
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#6122).
@@ -91,10 +93,8 @@ Block Storage is pay-as-you-go disk space that you can expand in the future.
 You may not need it now, but you will in the future.
 Some locations within a hosting provider do not have this, while others will.
 
-> SSH-Key login: Seriously consider utilizing a **SSH-Key login** over passwords.
+> SSH-Key login: Consider utilizing a **SSH-Key login** over passwords.
 Some providers allow you to set it up upon server creation.
-It is considerably more secure than passwords.
-Within 60 mins of your server being up, random hackers will be trying to login with guessed-passwords.
 <br/>
 
 
