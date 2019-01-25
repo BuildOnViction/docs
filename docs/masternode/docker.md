@@ -2,7 +2,7 @@ Alternatively to using our simple tool `tmn`, people or companies with existing 
 
 To achieve that, you just need to run our `tomochain/node` docker image.
 
-This image is running the [TomoChain go client](https://github.com/tomochain/tomochain) with some automation added on top.
+This image runs the [TomoChain go client](https://github.com/tomochain/tomochain) with some automation added on top.
 
 ## Tags
 
