@@ -82,7 +82,7 @@ nav:
       - Docker: masternode/docker.md
       - Applying: masternode/applying.md
       - Running: get-started/masternode-setup-guide.md
-      - Running TomoChain without tmn: advance/tomonative.md
+      - Running TomoChain without tmn: developers/tomonative.md
   #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
     - Whitepapers and research:
@@ -91,12 +91,12 @@ nav:
       - Economics paper: wp-and-research/economics-paper.md
     - For developers:
         - DApps on TomoChain:
-           - Deploy DApp on TomoChain: advance/dappdeploytuto.md
-           - Deploy an ICO smart contract: advance/icosmartcontract.md
-           - Using multisignature wallet: advance/multisigwallet.md
+           - Deploy DApp on TomoChain: developers/dappdeploytuto.md
+           - Deploy an ICO smart contract: developers/icosmartcontract.md
+           - Using multisignature wallet: developers/multisigwallet.md
         - Working with TomoChain:
-           - TomoChain private testnet setup: advance/tutoprivatenet.md
-           - Useful manual CLI commands: advance/clicommands.md
-           - Block header specification: advance/blockheader.md
-           - Transaction types: advance/txtypes.md
+           - TomoChain private testnet setup: developers/tutoprivatenet.md
+           - Useful manual CLI commands: developers/clicommands.md
+           - Block header specification: developers/blockheader.md
+           - Transaction types: developers/txtypes.md
 copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
