@@ -99,7 +99,7 @@ Some providers allow you to set it up upon server creation.
 
 
 
-## 3. Change passwords and accounts (login as root)
+## 3. Change passwords and accounts (logged in as root user)
 Login to your newly created server with SSH / Putty.  
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#20a7).
 
@@ -171,7 +171,7 @@ After this, you will almost always login as your new user.
 
 
 
-## 4. Configure your VPS (login as root user)
+## 4. Configure your VPS (logged in as root user)
 We will now prepare the [prerequisites for tmn](https://docs.tomochain.com/get-started/run-node/).
 You need Python 3.6+ and Docker installed.
 
@@ -231,7 +231,7 @@ General system security is out of the scope of this guide, however, search the w
 
 
 
-## 5. Setup Docker (login as new user)
+## 5. Setup Docker (logged in as new user)
 From now on, you will almost always want to login as your **new user**.
 If you are logged in as root still, logout and log back in as the new user.
 You may want to consider denying remote root ssh logins.
@@ -350,14 +350,14 @@ Check that `tmn` has been correctly installed, use the following command to show
 pip3 show tmn
 
 Name: tmn
-Version: 0.2.5
+Version: 0.5
 Summary: Quickstart your masternode
 Home-page: https://tomochain.com
 Author: Etienne Napoleone
 Author-email: etienne@tomochain.com
 License: GPL-3.0+
-Location: /root/.local/lib/python3.6/site-packages
-Requires: clint, pastel, python-slugify, docker, click
+Location: /home/michael/.local/lib/python3.6/site-packages
+Requires: python-slugify, click, clint, pastel, docker
 ```
 
 The next step will be to actually **START TMN**, however we cannot do this until we have two wallet addresses.
