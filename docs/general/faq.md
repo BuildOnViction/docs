@@ -52,7 +52,7 @@
 	Double validation strengthens Tomochain’s security, reduces fork and nothing-at-stake attacks, and makes TomoChain unique among other Proof-of-Stake-based blockchains.
 	
 !!! quote "What is an 'epoch'?"
-    An epoch is a 900-block period of 2-second block time starting from block #1 (900 blocks x 2s/block = around 1800s or 30 minutes).
+    An epoch is a 900-block period of 2-second block time starting from block #1 (900 blocks x 2s/block = around 1800s or ~30 minutes).
 
 !!! quote "Which scaling solutions will TomoChain implement? Will you have sharding?"
     TomoChain solutions are based on on-chain scaling built into an architecture of 150 voted masternodes with our Proof-of-stake Voting (POSV) consensus protocol.
@@ -103,6 +103,7 @@
 	Some of our competitors are EOS.IO, Casper FFG, Cardano, Tendermint, Lisk.
 	We are doing a series of Medium posts on this matter.
 
+	Some posts have been published, such as ["Blockchain comparison overview: EOS.IO, Casper FFG, Cardano, Tendermint and Tomochain"](https://medium.com/tomochain/blockchain-comparison-overview-eos-io-casper-ffg-cardano-tendermint-and-tomochain-2b0df68806b6),
 	a detailed comparison with EOS [Tomochain vs. EOS.IO: The battle of PoSV vs. DPoS or just some coincidence of design philosophy?](https://medium.com/tomochain/tomochain-vs-eos-io-the-battle-of-posv-vs-dpos-or-just-some-coincidence-of-design-philosophy-b5f606a1e5df),
 	and a [Comparison of PoS-voting based reward engines among TomoChain, EOS and Lisk](https://medium.com/tomochain/tomochain-eos-lisk-comparison-of-pos-voting-based-reward-engine-9b3b26560392).
 
@@ -160,6 +161,12 @@
 		Once a block is signed by at least 3/4 masternodes, it is consider irreversible, meaning that any attempt to re-write the blockchain history will be rejected.
 	3. Censorship-resistance: Please [refer to this medium article](https://medium.com/tomochain/tomochain-vs-eos-io-the-battle-of-posv-vs-dpos-or-just-some-coincidence-of-design-philosophy-b5f606a1e5df) for more detailed analysis
 	4. DDoS and spamming attacks: TomoChain's transaction fee is not zero (even it is very low), attackers still require a significant amount of TOMO in order to flood the network for only a short time.
+
+!!! quote "How does TomoChain defend against spamming attacks?"
+    TomoChain has different measures to defend against spamming attacks.
+	
+	For instance, increasing transaction fees for smart contract creation is one of them.
+	The min is 10 TOMO. Otherwise an error of smart contract creation cost is under allowance may show up.
 	
 ### Company
 
@@ -408,6 +415,7 @@
 	An epoch is a 900-block period of 2-second block time (~30 minutes). 
 
 !!! quote "How can I check my rewards?"
+    You can check your masternode/staking rewards using TomoWallet.
 	Alternatively you can use TomoMaster or TomoScan.
 
 !!! quote "How much rewards will Masternodes receive?"
@@ -772,7 +780,7 @@
 	Scroll down to 'Masternode Rewards'.
 	You should look at 'Sign number' under Masternode Rewards to determine a good node or not.
 	
-	1 epoch has 900 blocks, a good masternode will verify all blocks in that epoch, meaning that the masternode will create around 900 sign transactions.
+	Masternodes will sign a maximum of 60 blocks per epoch. A good masternode will create around 60 sign transactions in that epoch.
 	We also calculate the reward based on sign transactions number.
 
 
