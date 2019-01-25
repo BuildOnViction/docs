@@ -33,13 +33,13 @@
 	TomoChain can currently process 2'000-5'000 transactions per second (TPS) and once sharding is enabled, TomoChain is expected to reach 20'000-30'000 TPS.
 
 !!! quote "How does TomoChain work? What is the architecture and consensus used?"
-    TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support low fees (appro. 1/100 of that of Ethereum's) and 2-second transaction confirmation times.
+    TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (POSV) consensus that can support low fees (approx. 1/100 of that of Ethereum's) and 2-second transaction confirmation times.
 	Security, stability and chain finality are guaranteed via novel techniques such as Double Validation, staking via smart-contracts and true randomization processes.
 
 !!! quote "Can you tell more about Proof of Stake Voting (PoSV)? What is it?"
     At the heart of TomoChain, the Proof-of-Stake Voting (PoSV) consensus enables TomoChain as an EVM-compatible and scalable public blockchain, on which every Ethereum smart contract can be effectively run with almost instant transaction confirmation.
 
-	PoSV features its Masternode architecture in which token holders deposit 50k $TOMO to become a masternode candidate and receive votes from other token holders.
+	PoSV features its Masternode architecture in which token holders deposit 50k TOMO to become a masternode candidate and receive votes from other token holders.
 	The most voted masternode candidates are selected as masternodes for block creation within a period, called epoch.
 	Each masternode takes its block creation in a round-robin manner every 2-second and follows the double validation technique for security reinforcement.
 	A block is finalised if it is signed off by 3/4 masternodes.
@@ -65,7 +65,7 @@
 	New scaling techniques such as sharding, EVM parallelisation, private-chain generation, hardware integration will be evaluated before being integrated into TomoChain's masternode architecture.
 
 !!! quote "What is the current TPS? What is your targeted transaction speed and when do you think you can achieve that speed?"
-    TomoChain supports low transaction fees (appro. 1/100 of that of Ethereum's) and 2-second transaction confirmation times.
+    TomoChain supports low transaction fees (approx. 1/100 of that of Ethereum's) and 2-second transaction confirmation times.
 	The mainnet with POSV Masternodes delivers 2'000 transactions per second (TPS).
 	Once sharding is implemented by Q2 2019, we expect 20'000-30'000 TPS.
 
@@ -83,7 +83,7 @@
 
 	This enables TomoChain to achieve:
 	
-	- Cheap transactions: appro. 1/100 of that of Ethereum
+	- Cheap transactions: approx. 1/100 of that of Ethereum
 	- 2000 TPS to handle a robust d-app and token ecosystem; TPS will be dramatically higher once our sharding solution is enabled (20k-30k TPS)
 	- 2 second block time for fast transactions
 	- EVM-compatibility allows for interoperability with Ethereum ecosystem.
@@ -102,12 +102,11 @@
 !!! quote "How does TomoChain compare with other available blockchain projects?"
 	Some of our competitors are EOS.IO, Casper FFG, Cardano, Tendermint, Lisk.
 	We are doing a series of Medium posts on this matter.
-	
-	A post named ["Blockchain comparison overview: EOS.IO, Casper FFG, Cardano, Tendermint and Tomochain"](https://medium.com/tomochain/blockchain-comparison-overview-eos-io-casper-ffg-cardano-tendermint-and-tomochain-2b0df68806b6) has been published.
-	A detailed comparison with EOS, [Tomochain vs. EOS.IO: The battle of PoSV vs. DPoS or just some coincidence of design philosophy?](https://medium.com/tomochain/tomochain-vs-eos-io-the-battle-of-posv-vs-dpos-or-just-some-coincidence-of-design-philosophy-b5f606a1e5df), has been published too.
-	A [Comparison of PoS-voting based reward engines among TomoChain, EOS and Lisk](https://medium.com/tomochain/tomochain-eos-lisk-comparison-of-pos-voting-based-reward-engine-9b3b26560392) can be found at Medium too.
 
-    The world is a pretty big place, and startups often kills themself because they cannot make a desirable product, not because of the competition.
+	a detailed comparison with EOS [Tomochain vs. EOS.IO: The battle of PoSV vs. DPoS or just some coincidence of design philosophy?](https://medium.com/tomochain/tomochain-vs-eos-io-the-battle-of-posv-vs-dpos-or-just-some-coincidence-of-design-philosophy-b5f606a1e5df),
+	and a [Comparison of PoS-voting based reward engines among TomoChain, EOS and Lisk](https://medium.com/tomochain/tomochain-eos-lisk-comparison-of-pos-voting-based-reward-engine-9b3b26560392).
+
+    The world is a pretty big place, and startups often kill themselves because they cannot make a desirable product, not because of the competition.
 	At the moment, besides the core TomoChain platform, we want to focus on a few quality Dapp use cases that can make a difference.
 	Quality before quantity.
 
@@ -408,6 +407,9 @@
     Masternode operators and stakers will receive rewards every epoch.
 	An epoch is a 900-block period of 2-second block time (~30 minutes). 
 
+!!! quote "How can I check my rewards?"
+	Alternatively you can use TomoMaster or TomoScan.
+
 !!! quote "How much rewards will Masternodes receive?"
     Each epoch consists of 900 blocks, which will reward a total of 250 TOMO in the first two years.
 	This amount of 250 TOMO will be divided to all of the Masternodes proportionally to the number of signatures they sign during the epoch.
@@ -450,7 +452,8 @@
 	
 	- `By a Masternode = 11,680 Tomo`
 	- `By a Voter with 1K Tomo staked = 109.5 Tomo (10.95% annually)`
-	- `Total reward for a Masternode with a 50K Tomo deposit: 17,155 Tomo (34.31% annually)`
+	- `By a Voter with 50K Tomo staked = 5,475 Tomo`	
+	- `Total reward for a Masternode with a 50K Tomo deposit: 11,680 + 5,475 = 17,155 Tomo (34.31% annually)`
 
 ### Masternode Candidate
 
@@ -577,6 +580,9 @@
 	A Slashed node will be 'kicked out' for the next 4 epochs.
 	At the 5th epoch after being slashed, the slashed masternode can go back to the candidate list.
 
+!!! quote "How do I update my Masternode to the newest version?"
+    Run this command: `pip3 install -U tmn && tmn update && tmn start`
+	
 !!! quote "How many nodes I am allowed to run?"
     As many as you can.
 
@@ -587,7 +593,7 @@
 
 !!! quote "Can I close the node entirely, then start a new one with a totally separate coinbase address without being penalized?"
     No.
-	Your old node will be penalized (50K initial deposit 30-days lockup) and your new node has to apply again.
+	Your old node will be penalized (50K initial deposit 30-day lockup) and your new node has to apply again.
 	
 !!! quote "Is it possible to move a masternode later, like backup and start it from another IP address?"
     Yes.
@@ -598,7 +604,7 @@
 
 	To stake TOMO you need to vote for masternode candidates by sending TOMO to each candidates specific voting-address using the official governance d-App: TomoMaster.`
 	The top-150 most voted candidates will become masternodes.
-	Token holders can also un-vote candidates, but the tokens will be locked for the next 48 hours (8,640 blocks) after the un-voting.
+	Token holders can also un-vote candidates, but the tokens will be locked for the next 96 epochs / 8,640 blocks (approx. 48 hours) after the un-voting.
 
 	Masternode token deposits, and all tokens used to vote for masternodes will enter the staking program, and earn block rewards in each epoch, plus any fees.
 	Tokens used to vote for candidates who do not become masternodes will not earn staking rewards.
@@ -629,13 +635,14 @@
 !!! quote "How do I vote?"
     Any token holder can vote.
 	Login to TomoMaster and then click 'Vote' on a node.
-	Then enter the amount of TOMO you want to vote (minimum is 10 TOMO).
+	Then enter the amount of TOMO you want to vote (minimum is 100 TOMO).
 	You vote by depositing (staking) tokens to a smart-contract associated with a masternode candidate.
 
 	There are many ways to vote in TomoMaster:
 	
 	- Voting from TomoWallet.
 	- Voting from Ledger wallet
+	- Voting from Trezor wallet
 	- Voting via MetaMask (can be connected to your hardware wallets).
 	- Voting from TrustWallet
 	- Voting with your wallet's Private Key or MNEMONIC.
@@ -652,7 +659,7 @@
 	
 	Change the HD path to `m/44'/60'/0'`
 	
-	You should see your tomo balance.
+	You should see your TOMO balance.
 
 	To see a list of nodes click on the TomoMaster homepage button - top left corner.
 	Next to each node should be a 'Vote' button.
@@ -660,14 +667,13 @@
 
 !!! quote "Can I stake for multiple masternodes via Ledger?"
     Yes, you can.
+	
+!!! quote "Ledger not working?"
+    Upgrade your Ledger to the newest firmware.
 
 !!! quote "Can I use Trezor to vote for masternodes?"
-    TomoMaster doesn't directly support Trezor yet.
-	So it depends on Metamask.
-
-!!! quote "Can I connect Trezor to Metamask; after that unlock TomoMaster with Metamask?"
-    This is not supported yet.
-
+    Yes. TomoMaster supports Trezor now.
+	
 !!! quote "What criteria must be considered when voting? Which masternode candidate should I vote for?"
     The most important criteria to maximize voter’s profit, the main points you should consider when voting, are the following:
 
@@ -684,11 +690,11 @@
 	Example: If you have 1'000 TOMO you can vote 500 TOMO for candidate A, 450 TOMO for candidate B, and 50 TOMO for candidate C.
 
 !!! quote "What is the minimum amount to Stake?"
-    The minimum amount to stake is 10 TOMO.
+    The minimum amount to stake is 100 TOMO.
 	
 !!! quote "Which hardware-wallet can I use to vote?"
     You are able to use hardware wallets (Ledger, Trezor) with MyEtherWallet or Metamask.
-	You can also directly connect to the TomoChain Mainnet with Ledger and vote on [TomoMaster](https://master.tomochain.com/).
+	You can also directly connect to the TomoChain Mainnet with Ledger/Trezor and vote on [TomoMaster](https://master.tomochain.com/).
 
 !!! quote "Is it possible to re-invest the TOMO earned and use it to continue voting?"
     Yes.
@@ -702,11 +708,11 @@
 !!! quote "How do I UnVote?"
     If you do not want to support a masternode you voted for, you can unvote it by clicking the ‘Unvote’ button on the masternode's page and enter the amount of TOMO you wish to unvote.
 
-	After unvoting, your TOMO are still locked in the smart contract for 48 hours (96 epochs) before you are able to withdraw.
+	After unvoting, your TOMO are still locked in the smart contract for 96 epochs (approx. 48 hours) before you are able to withdraw.
 	When the lockup period is finished you need to click the ‘Withdraw’ button and the coins will appear again on your wallet.
 
 !!! quote "How to withdraw after unvoting?"
-    After unvoting, you need to wait until your TOMO is unlocked from the smart contract (96 epochs or 48 hours).
+    After unvoting, you need to wait until your TOMO is unlocked from the smart contract (96 epochs, approx. 48 hours).
 	Then you can go to TomoMaster and click the 'Withdraw' button in your account page (the three vertical dots on the top-right) and choose which withdrawal you want to receive back your TOMO.
 
 	Note that you might see multiple withdrawals on your account page if you made multiple unvotes previously.
@@ -756,7 +762,7 @@
 !!! quote "How do I login on TomoMaster?"
     Go to TomoMaster.
 	On the top-right corner click 'Login'.
-	Then select how do you want to login: with TomoWallet, with Ledger wallet, with Metamask, TrustWallet or Private Key/Mnemonic.
+	Then select how do you want to login: with TomoWallet, with Ledger, with Trezor, with Metamask, TrustWallet or Private Key/Mnemonic.
 
 !!! quote "What is the 'capacity' of a Candidate/Masternode?"
     The capacity of a candidate is the 50K TOMO initial deposit plus the total amount of TOMO voted for that candidate.
