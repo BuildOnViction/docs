@@ -1,17 +1,36 @@
-DUMMY CONTENT COPIED OVER FROM OTHER FILE.
-DELETE ALL OF BELOW AND START NEW.
+# TomoWallet
 
-Here are the pages and features available on TomoMaster.
+TomoWallet is the official mobile wallet for Tomochain, available for Android and iOS.
 
-## [Home](https://master.testnet.tomochain.com/)
-### Network Status
-On TomoMaster, this area shows you what the current block is, the block time, how many blocks are in each epoch, and the next checkpoint (end of epoch).
+## [Android Download](https://play.google.com/store/apps/details?id=com.tomochain.wallet)
+## [iOS Download](https://itunes.apple.com/us/app/tomo-wallet/id1436476145?mt=8)
 
+# Create new wallet
 
-### Candidates List
-The candidates list includes everyone who has deposited enough tokens to run a masternode as well as those who resigned running a masternode.
-A candidate is required to be one of the top 150 most voted masternode candidates on this list to become a masternode earning rewards.
-Voters can use this list to help choose which masternode candidate(s) they would like to stake their tokens for.
+You can create a new wallet, if you click on "CREATE NEW WALLET" after launching the App. 
+You will receive a recovery passphrase consisting of 12 words to restore your wallet in case you lose your password.
+To protect your wallet you should click on "Settings" > "Create passcode" so all transfers from your wallet will need to be confirmed with a passcode.
 
-!!! tip
-    Voting for the top voted masternod
+# Import wallet
+
+By clicking on "IMPORT YOUR WALLET" after launching the App, you can choose to import your wallet either with your private key or your recovery passphrase. There is also a "view only" mode, where you just have to enter your adress. You can monitor, but not send any transactions in this mode.
+
+# Receive TOMO
+
+By clicking on "Adress" you can either receive TOMO by sharing your adress or your QR-code. It's also possible to create a QR-code that requests a certain amount.
+
+# Send Tomo
+
+By clicking on "Send" you can either send TOMO by scanning a QR-code or entering a recipient adress manually.
+
+# Vote for masternodes
+
+TomoWallet has an integrated voting function, that enables stakeholders to vote without having to login to the masternode platform.
+## [Voting tutorial](https://medium.com/tomochain/how-to-vote-for-tomochain-masternodes-using-tomowallet-1ddc3457907f)
+
+# Track rewards
+
+Voters and masternodes can track their rewards from staking dicrectly in the App.
+
+![Rewards](https://raw.githubusercontent.com/tomochain/docs/0917f207c472a4f301dfb5ccc5eb74036c666766/docs/assets/Rewards.png)
+      
