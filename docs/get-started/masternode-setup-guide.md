@@ -32,12 +32,13 @@ The following are required items and server specifications.
    Some commands fail and you must know what you are doing.
 
 
-## Command-line-only-version (ADVANCED users)
+### For Advanced users, go here (Command-line-only-version)
 For advanced users or repeat-offenders, [see this super-short command-line-only version](#commands-only-advanced-users) of the lengthy guide below.
 If you have done this before or know what you are doing, you might more-easily follow these linux commands instead of having to read through the below lengthy prose.
 
 > Note: You will *MISS* many tips and tricks found in the detailed instructions.
 
+### Beginner/Intermediate users, keep reading...
 
 ---
 
