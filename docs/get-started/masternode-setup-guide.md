@@ -211,17 +211,17 @@ python3 --version
 ### System Security 
 This topic is optional, but highly recommended.
 
-Within a few minutes of the machine being up, bots and hackers attempt to login and probe it for weakness.
-Thousands of connection-attempts can be seen within a week.
+Oftentimes, within a few minutes of VPS machines being up, you can see bots and hackers attempt to login and probe boxes for weakness.
+If the default SSH port is used, you could see thousands of connection-attempts within a week.
 You will want to secure your machine with multiple levels of security.
 
 At a minimum, you will want to consider:
-* SSH on non-standard port
-* UFW (Uncomplicated Fire Wall) (open port 30303 tcp & udp)
+* SSHD on non-standard port
+* UFW (Uncomplicated Fire Wall) (open port 30303 tcp & udp, and above non-standard SSH)
 
-Even more security could consider:
+Other security options you could consider:
+* SSH key-based login (vs password)
 * Fail2ban
-* SSH-Key login (vs password)
 * Blocking remote password auth
 * Blocking remote root SSH-access
 
@@ -373,30 +373,33 @@ FIXME extra packages might need installing
 
 
 ## 7. Create Wallet Addresses
-Before being able to proceed further, you will need **two** seperate Tomo addresses to operate a masternode.
-One is like an ID/placeholder/dummy for the Masternode, and the other is where the 50,000 TOMO (50k) is staked from.
+Before being able to proceed further, you will need **two** seperate Tomo wallet addresses to operate a masternode.
+One helps to operate the masternode day-to-day, and the other is where the 50,000 TOMO (50k) is staked from.
+The genius of this is that the wallet where the 50k will pass through (and where rewards will eventually come into) is never stored or seen by the VPS server.
+This is a security strategy that keeps your coins safe.
 
-* **ADDR1 - MN Address** - ID/placeholder/dummy - No coins need to be in this wallet; it can remain empty
-* **ADDR2 - Deposit**    - 50k Holder           - Put your staked coins here; later the 50k will go into a smart contract; rewards will show here
+* WALLET1 - Operating Wallet - used for operating the masternode, including signing blocks.
+It effectively acts as a unique identifier of  your masternode. No coins need to be inserted in this wallet; it can remain empty.
+* WALLET2 - Deposit Wallet   - your 50k of staked coins need to be placed here; later, the 50k will go into a smart contract; eventually, masternode rewards will show here.
 
 You will need both the **Public Key** and **Private Key** for both addresses.
 It is advise that you store all of this information somewhere safe, yet accessible.
 You may need to utilize this information during continued operations of your masternode.
-Password manager apps like LastPass and 1Password are your friend.
+Password manager apps like KeePass/KeePassXC, LastPass, or 1Password are your friend.
 Your private key is your money.
 Give it to no one.
 
-> ADDR1 Suggestions:  
+> WALLET1 Suggestions:  
 If setting up a single masternode, you can use a mobile wallet.
 Binances `Trust Wallet` and Tomochains `Tomo Wallet` app are best.
 Alternatives are Metamask and MEW (MyEtherWallet), in that order.
-You can use Ledger Hardware Wallet, however the added security on ADDR1 isnt as necessary.
+You can use Ledger Hardware Wallet, however the added security on WALLET1 isn't as necessary.
 
-> ADDR2 Suggestions:  
-Preferred to use Ledger / Hardware Wallet in combo with Metamask because 50k will be here.
-Assure to use an address you dont have history on eth chain with - otherwise other will be able to see your investment history.
+> WALLET2 Suggestions:  
+Preferred to use Ledger / Hardware Wallet in combo with Metamask because 50k and rewards will be handled here.
+Assure to use an address you do not have history on eth chain with - otherwise others will be able to see your unrelated investment history.
 
-Because most wallets do not have Tomo as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
+Because most wallet apps do not have Tomo mainnet as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
 See the first link below for the guide on how to do this.
 
 Links for more info:
@@ -429,7 +432,7 @@ You can name it to reflect your identity, company name, etc.
 > **--net:** The network your full node will connect to.
 You can choose here to connect it to the TomoChain `mainnet` or `testnet`.  
 >  
-> **--pkey:** The private key of your ADDR1 wallet.
+> **--pkey:** The private key of your WALLET1 wallet (non 50k).
 A TomoChain full node uses an account to be uniquely identified and to receive transaction fees.
 Transaction fees are not rewards, and they are usually tiny.
 Important note: we advise for security measures to use a fresh new account for your masternode.
@@ -439,7 +442,7 @@ The rewards are sent to the account that will make the 50k TOMO initial deposit.
 The command is structured like this:
 
 ```shell
-tmn start --name [YOUR_NODE_NAME] --net mainnet --pkey [YOUR_ADDR1_PRIVATE_KEY]
+tmn start --name [YOUR_NODE_NAME] --net mainnet --pkey [YOUR_WALLET1_PRIVATE_KEY]
 ```
 
 We used the following command for our node (copy your own **name** & **private key**):
