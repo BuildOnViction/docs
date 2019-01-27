@@ -30,8 +30,17 @@ The following are required items and server specifications.
    Why?
    The upkeep and troubleshooting will become more complex than this guide.
    Some commands fail and you must know what you are doing.
-   
-   
+
+
+## Command-line-only-version (ADVANCED users)
+For advanced users or repeat-offenders, [see this super-short command-line-only version](#commands-only-advanced-users) of the lengthy guide below.
+If you have done this before or know what you are doing, you might more-easily follow these linux commands instead of having to read through the below lengthy prose.
+
+> Note: You will *MISS* many tips and tricks found in the detailed instructions.
+
+
+---
+
 
 ## Introduction
 
@@ -503,7 +512,7 @@ source $HOME/.bashrc
 ## 9. Check sync status
 This section coming soon.
 
-Contents to come: `tmn status`; `tmn inspect`; `top` command; stats.tomochain.com website; # of blocks command; `tmn update`, `tmn --help`, etc
+Contents to come: `tmn status`; `tmn inspect`; `top` command; https://stats.tomochain.com/ website; # of blocks command; `tmn update`, `tmn --help`, etc
 <br/>
 
 
@@ -543,3 +552,51 @@ Contents to come: https://master.tomochain.com/ ; login as 50k wallet; find your
 This section coming soon.
 
 Contents to come: https://master.tomochain.com/ ; https://scan.tomochain.com/ ; explain infra vs stake reward; link to economics
+
+
+
+---
+
+# APPENDIX
+
+## Commands-only (ADVANCED users)
+If you have done this before or know what you are doing, you can follow these linux commands.
+
+> Note: You will *MISS* many tips and tricks in the detailed instructions.
+
+```shell
+ssh root@178.62.127.177
+passwd
+
+adduser michael; usermod -aG sudo michael
+groups michael
+
+apt update; apt upgrade; reboot
+
+apt install python3
+apt install python3-pip
+python3 --version
+
+ssh michael@178.62.127.177
+sudo apt update; sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update; sudo apt install docker-ce
+sudo usermod -aG docker michael; groups michael
+docker run hello-world
+
+pip3 install --user tmn
+pip3 install -U tmn
+pip3 show tmn
+
+# Create Wallet Addresses
+
+# logoff SSH and back in to set $PATH variable
+tmn start --name Atlantis --net mainnet --pkey cf03cb58************
+tmn status; tmn inspect; tmn --help
+
+# Enact Jumpstart: https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync
+```
+
+---
