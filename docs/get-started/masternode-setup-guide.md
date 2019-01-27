@@ -372,7 +372,6 @@ If you get any of the errors below, you are in need of particular packages to be
 ```
 ERROR:
 ModuleNotFoundError: No module named ‘setuptools’
-
 SOLUTION:
 sudo apt-get install python3-setuptools
 ```
@@ -380,7 +379,6 @@ sudo apt-get install python3-setuptools
 ```
 ERROR:
 Failed building wheel for <package>
-
 SOLUTION:
 pip3 install wheel
 ```
@@ -388,7 +386,6 @@ pip3 install wheel
 ```
 ERROR:
 error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
-
 SOLUTION:
 sudo apt install build-essential
 ```
@@ -396,7 +393,6 @@ sudo apt install build-essential
 ```
 ERROR:
 fatal error: Python.h: No such file or directory
-
 SOLUTION:
 sudo apt install python3-dev
 ```
@@ -507,7 +503,7 @@ source $HOME/.bashrc
 ## 9. Check sync status
 This section coming soon.
 
-Contents: `tmn status`; `tmn inspect`; `top` command; stats.tomochain.com website; # of blocks command; `tmn update`, `tmn --help`, etc
+Contents to come: `tmn status`; `tmn inspect`; `top` command; stats.tomochain.com website; # of blocks command; `tmn update`, `tmn --help`, etc
 <br/>
 
 
@@ -530,7 +526,7 @@ Instead, lets download the latest image of the data, and synchronize from there.
 This section coming soon.
 [For now, see here](https://docs.tomochain.com/get-started/apply-node/)
 
-Contents: Explain; Assure synced; master.tomo; login; apply
+Contents to come: Explain; Assure synced; master.tomo; login; apply
 <br/>
 
 
@@ -538,7 +534,7 @@ Contents: Explain; Assure synced; master.tomo; login; apply
 ## 12. Name your Masternode
 This section coming soon.
 
-Contents: https://master.tomochain.com/ ; login as 50k wallet; find your MN; edit; enter name; sign data
+Contents to come: https://master.tomochain.com/ ; login as 50k wallet; find your MN; edit; enter name; sign data
 <br/>
 
 
@@ -546,4 +542,4 @@ Contents: https://master.tomochain.com/ ; login as 50k wallet; find your MN; edi
 ## 13. Verify initial rewards
 This section coming soon.
 
-Contents: https://master.tomochain.com/ ; https://scan.tomochain.com/ ; explain infra vs stake reward; link to economics
+Contents to come: https://master.tomochain.com/ ; https://scan.tomochain.com/ ; explain infra vs stake reward; link to economics
