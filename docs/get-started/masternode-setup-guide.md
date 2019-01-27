@@ -20,7 +20,7 @@ The following are required items and server specifications.
    * 300 GB of storage for the base chaindata
    * 8 GB / day after 1/23/19 of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
    * Note: These numbers may decrease with ongoing optimisations to the code base.
- * 2 TomoChain accounts (addresses) - [see details below](#7-create-wallet-addresses)
+ * 2 TomoChain wallets (addresses) - [see details below](#7-create-wallet-addresses)
 
 ## Knowledge Requirements
  * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS)
@@ -342,9 +342,9 @@ pip3 install --user tmn
 pip3 install -U tmn
 ```
 
-> Watch out for WARNINGs or ERRORs and troubleshoot.
+> Watch out for WARNINGs or ERRORs and troubleshoot (see end of this section).
 
-Check that `tmn` has been correctly installed, use the following command to show some tmn info:
+To check that `tmn` has been correctly installed, use the following command to show some tmn info:
 
 ```shell
 pip3 show tmn
@@ -366,7 +366,41 @@ See the next section for this.
 ********************
 TROUBLESHOOTING
 
-FIXME extra packages might need installing
+Occasionally a VPS image will not come installed with all of the software packages needed to install what we need.
+If you get any of the errors below, you are in need of particular packages to be installed.
+
+```
+ERROR:
+ModuleNotFoundError: No module named ‘setuptools’
+
+SOLUTION:
+sudo apt-get install python3-setuptools
+```
+
+```
+ERROR:
+Failed building wheel for <package>
+
+SOLUTION:
+pip3 install wheel
+```
+
+```
+ERROR:
+error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+
+SOLUTION:
+sudo apt install build-essential
+```
+
+```
+ERROR:
+fatal error: Python.h: No such file or directory
+
+SOLUTION:
+sudo apt install python3-dev
+```
+
 *******************
 <br/>
 
@@ -379,7 +413,7 @@ The genius of this is that the wallet where the 50k will pass through (and where
 This is a security strategy that keeps your coins safe.
 
 * WALLET1 - Operating Wallet - used for operating the masternode, including signing blocks.
-It effectively acts as a unique identifier of  your masternode. No coins need to be inserted in this wallet; it can remain empty.
+It effectively acts as a unique identifier of your masternode. No coins need to be inserted in this wallet; It's even advised to be empty, so in case of breach, no funds are exposed.
 * WALLET2 - Deposit Wallet   - your 50k of staked coins need to be placed here; later, the 50k will go into a smart contract; eventually, masternode rewards will show here.
 
 You will need both the **Public Key** and **Private Key** for both addresses.
@@ -396,7 +430,7 @@ Alternatives are Metamask and MEW (MyEtherWallet), in that order.
 You can use Ledger Hardware Wallet, however the added security on WALLET1 isn't as necessary.
 
 > WALLET2 Suggestions:  
-Preferred to use Ledger / Hardware Wallet in combo with Metamask because 50k and rewards will be handled here.
+Preferred to use Ledger / Hardware Wallet (if possible) in combo with Metamask because 50k and rewards will be handled here.
 Assure to use an address you do not have history on eth chain with - otherwise others will be able to see your unrelated investment history.
 
 Because most wallet apps do not have Tomo mainnet as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
@@ -425,19 +459,21 @@ ssh michael@178.62.127.177
 
 When you first start your full node with `tmn start`, you need to give some information.
 
-> **--name:** The name of your full node. It should be formatted as a slug string.
-Slug format allows all letters and numbers, dashes ("-") and underscores ("_").
+> **--name:** The name of your full node.
+Your input will be converted to a "slugified" name. 
+Slug format allows all letters and numbers, dashes ("-") and underscores ("_"). 
+Ex: `MyMaStErNode#24 cool` -> `mymasternode24-cool`. 
 You can name it to reflect your identity, company name, etc.  
 >  
 > **--net:** The network your full node will connect to.
 You can choose here to connect it to the TomoChain `mainnet` or `testnet`.  
 >  
 > **--pkey:** The private key of your WALLET1 wallet (non 50k).
-A TomoChain full node uses an account to be uniquely identified and to receive transaction fees.
+A TomoChain full node uses a wallet address to be uniquely identified and to receive transaction fees.
 Transaction fees are not rewards, and they are usually tiny.
-Important note: we advise for security measures to use a fresh new account for your masternode.
-This is not the account that will receive the rewards.
-The rewards are sent to the account that will make the 50k TOMO initial deposit.
+Important note: we advise for security measures to use a fresh new wallet for your masternode.
+This is not the wallet that will receive the rewards.
+The rewards are sent to the wallet that will make the 50k TOMO initial deposit.
 
 The command is structured like this:
 
@@ -461,15 +497,17 @@ It might happen that your PATH is not set by default to include the default user
 On GNU/Linux:
 ```shell
 echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc
-exit
-ssh michael@178.62.127.177
+source $HOME/.bashrc
 ```
 *******************
 <br/>
 
 
+
 ## 9. Check sync status
-FIXME tmn status; inspect; top; stats.tomo website; # of blocks command; `tmn update`, `tmn --help`, etc
+This section coming soon.
+
+Contents: `tmn status`; `tmn inspect`; `top` command; stats.tomochain.com website; # of blocks command; `tmn update`, `tmn --help`, etc
 <br/>
 
 
@@ -490,8 +528,9 @@ Instead, lets download the latest image of the data, and synchronize from there.
 
 ## 11. Apply for Masternode Candidacy
 This section coming soon.
+[For now, see here](https://docs.tomochain.com/get-started/apply-node/)
 
-FIXME Explain; Assure synced; master.tomo; login; apply
+Contents: Explain; Assure synced; master.tomo; login; apply
 <br/>
 
 
@@ -499,7 +538,7 @@ FIXME Explain; Assure synced; master.tomo; login; apply
 ## 12. Name your Masternode
 This section coming soon.
 
-FIXME Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
+Contents: https://master.tomochain.com/ ; login as 50k wallet; find your MN; edit; enter name; sign data
 <br/>
 
 
@@ -507,4 +546,4 @@ FIXME Master.tomo; login as 50k address; find your MN; edit; enter name; sign da
 ## 13. Verify initial rewards
 This section coming soon.
 
-FIXME Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
+Contents: https://master.tomochain.com/ ; https://scan.tomochain.com/ ; explain infra vs stake reward; link to economics
