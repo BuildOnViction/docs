@@ -1,7 +1,7 @@
 # Tomochain Masternode Setup Guide
 
 This is a procedural step-by-step guide to setting up your first Tomochain Masternode using the `tmn` tool.
-It is meant for beginners and first-timers.
+It is meant for first-time and intermediate-level masternode operators.
 
 Security Disclaimer:
 Despite there being mention of some security elements in this guide, there is **no implied guarantee of security**.
