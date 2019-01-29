@@ -72,7 +72,9 @@ nav:
     - TomoScan:
       - Features: tomoscan/features.md
     #   - Contributing: misc/wip.md
-    # - TomoWallet:
+    - TomoWallet:
+      - Features: tomowallet/features.md
+      - How to vote: tomowallet/voting.md
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
     - Masternode:
