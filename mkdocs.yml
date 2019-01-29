@@ -55,10 +55,14 @@ nav:
       - FAQ: general/faq.md
       - About: general/about.md
     - Get started:
-      - 1. Connect your wallet: get-started/wallet.md
-      - 2. Voting: get-started/voting.md
-      - 3. Run a node in testnet: get-started/run-node.md
-      - 4. Apply your node: get-started/apply-node.md
+      - Overview:
+        - Products overview: get-started/productoverview.md
+        - How to read: get-started/how_to_read.md
+      - Beginners Tutorials:
+        - Connect your wallet: get-started/wallet.md
+        - Voting: get-started/voting.md
+        - Run a full node in testnet: get-started/run-node.md
+        - Apply your node: get-started/apply-node.md
     # - TomoChain client:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
@@ -75,15 +79,26 @@ nav:
     #   - Contributing: misc/wip.md
     - Masternode:
     #   - Run a masternode:
-      - Requirements: masternode/requirements.md
-      - Tmn: masternode/tmn.md
-      - Docker: masternode/docker.md
-      - Applying: masternode/applying.md
-    #   - Contributing: misc/wip.md
+      #- Requirements: masternode/requirements.md
+      #- Tmn: masternode/tmn.md
+      #- Docker: masternode/docker.md
+      #- Applying: masternode/applying.md
+      - Masternode detailed guide: masternode/masternode-setup-guide.md
+      - Running TomoChain without tmn: masternode/tomonative.md
+  #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
     - Whitepapers and research:
       - Technical whitepaper: wp-and-research/technical-whitepaper.md
       - Sharding design paper: wp-and-research/sharding-paper.md
       - Economics paper: wp-and-research/economics-paper.md
-
+    - Developers guide:
+        - DApps on TomoChain:
+           - Deploy DApp on TomoChain: developers/dappdeploytuto.md
+           - Deploy an ICO smart contract: developers/icosmartcontract.md
+           - Using multisignature wallet: developers/multisigwallet.md
+        - Working with TomoChain:
+           - TomoChain private testnet setup: developers/tutoprivatenet.md
+           - Useful manual CLI commands: developers/clicommands.md
+           - Block header specification: developers/blockheader.md
+           - Transaction types: developers/txtypes.md
 copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
