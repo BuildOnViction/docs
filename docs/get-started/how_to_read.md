@@ -16,9 +16,10 @@ in order to stably maintain the network.
 A financial requirement of 50k TOMO is also needed to [apply](/masternode/applying/) 
 to become a masternode candidate.
 For this, masternode owners are highly recommended to carefully read our dedicated guide
-to running a masternode, 
+to [running a masternode](/masternode/masternode-setup-guide/), 
 using [tmn](/masternode/tmn/) and [Docker](/masternode/docker/).
 Also, masternode owners can follow our [tutorial](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1) on TomoChain medium page.
+
 
 * For developers: We highly encourage developers to contribute to the development of 
 TomoChain ecosystem growth.

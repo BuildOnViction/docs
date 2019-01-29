@@ -59,10 +59,10 @@ nav:
         - Products overview: get-started/productoverview.md
         - How to read: get-started/how_to_read.md
       - Beginners Tutorials:
-        - 1. Connect your wallet: get-started/wallet.md
-        - 2. Voting: get-started/voting.md
-        - 3. Run a full node in testnet: get-started/run-node.md
-        - 4. Apply your node: get-started/apply-node.md
+        - Connect your wallet: get-started/wallet.md
+        - Voting: get-started/voting.md
+        - Run a full node in testnet: get-started/run-node.md
+        - Apply your node: get-started/apply-node.md
     # - TomoChain client:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
@@ -79,11 +79,11 @@ nav:
     #   - Contributing: misc/wip.md
     - Masternode:
     #   - Run a masternode:
-      - Requirements: masternode/requirements.md
-      - Tmn: masternode/tmn.md
-      - Docker: masternode/docker.md
-      - Applying: masternode/applying.md
-      - Running: get-started/masternode-setup-guide.md
+      #- Requirements: masternode/requirements.md
+      #- Tmn: masternode/tmn.md
+      #- Docker: masternode/docker.md
+      #- Applying: masternode/applying.md
+      - Masternode detailed guide: masternode/masternode-setup-guide.md
       - Running TomoChain without tmn: masternode/tomonative.md
   #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
