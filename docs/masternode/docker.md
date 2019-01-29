@@ -1,22 +1,17 @@
 Alternatively to using our simple tool `tmn`, people or companies with existing infrastructure might want to directly run our docker images for more flexibility.
 
-To achieve that, two containers are needed:
+To achieve that, you just need to run our `tomochain/node` docker image.
 
-1. tomochain/node - The container who run the TomoChain client
-2. tomochain/telegraf - The container who send the performance metrics to be displayed on TomoMaster
+This image runs the [TomoChain go client](https://github.com/tomochain/tomochain) with some automation added on top.
 
-## `tomochain/node`
-
-This image is running the [TomoChain go client](https://github.com/tomochain/tomochain).
-
-### Tags
+## Tags
 
 | Environment | Tag        |
 | ----------- | ---------- |
 | Testnet     | `:testnet` |
 | Mainnet     | `:stable`  |
 
-### Environment variables
+## Environment variables
 
 | Variable        | Required | Default         | Example                                    | Description                                                                                                      |
 | --------------- | -------- | --------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
@@ -31,7 +26,7 @@ This image is running the [TomoChain go client](https://github.com/tomochain/tom
 | `NETSTATS_PORT` | False    | 3000            | `443`                                      | The port used by the stats website (usually 443)                                                                |
 | `ANNOUNCE_TXS`  | False    | None            | `True`                                     | Enable reporting transactions via RPC/WS                                                                        |
 
-### Ports
+## Ports
 
 | Exposed | Protocol | Description               |
 | ------- | --------- | ------------------------- |
@@ -40,14 +35,14 @@ This image is running the [TomoChain go client](https://github.com/tomochain/tom
 | `8545`  | tcp       | Blockchain RPC            |
 | `8546`  | tcp       | Blockchain WS             |
 
-### Filesystem
+## Filesystem
 
 | Path                  | Content   |
 | --------------------- | --------- |
 | `/tomochain/data`     | Chaindata |
 | `/tomochain/keystore` | Accounts  |
 
-### Examples
+## Examples
 `docker run`
 
 ```bash
@@ -83,70 +78,4 @@ services:
       - 30303:30303/udp
     volumes:
       - chaindata:/tomochain/data
-```
-
-## `tomochain/telegraf`
-
-!!! warning
-    Please set the container hostname to the node coinbase address without the heading 0x and all lowercase.
-
-### Tags
-
-| Environment | Tag        |
-| ----------- | ---------- |
-| Testnet     | `:testnet` |
-| Mainnet     | `:stable`  |
-
-### Environment variables
-
-| Variable           | Required | Default         | Example                         | Description                                                                                                          |
-| ------------------ | -------- | --------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `METRICS_ENDPOINT` | True     | None            | `https://metrics.tomochain.com` | The address of the metrics endpoint you want to use. Find them [here](https://docs.tomochain.com/general/networks/) |                                                                               |
-| `HOST_SYS`         | True     | /rootfs/sys     | `/rootfs/sys`                   | The sys repertory bind to host                                                                                      |
-| `HOST_PROC`        | True     | /rootfs/proc    | `/rootfs/proc`                  | The proc repertory bind to host                                                                                     |
-| `HOST_ETC`         | True     | /rootfs/etc     | `/rootfs/etc`                   | The etc repertory bind to host                                                                                      |
-
-### Volumes
-
-| Path           | Content             |
-| -------------- | ------------------- |
-| `HOST_SYS`     | Host sys repertory  |
-| `HOST_PROC`    | Host proc repertory |
-| `HOST_ETC`     | Host etc repertory  |
-
-### Filesystem
-
-| Path                   | Content                 |
-| ---------------------- | ----------------------- |
-| `/var/run/docker.sock` | Bind the docker socket  |
-
-### Examples
-`docker run`
-
-```bash
-docker run -d --name metrics \
-  --hostname $HOSTNAME \
-  -e METRICS_ENDPOINT=$METRICS_ENDPOINT \
-  -v HOST_SYS:/rootfs/sys \
-  -v HOST_PROC:/rootfs/proc \
-  -v HOST_ETC:/rootfs/etc \
-  -v /var/run/docker.sock:/var/run/docker.sock:ro \
-  tomochain/telegraf:stable
-```
-
-`docker-compose.yml`
-
-```yml
-version: "3.4"
-services:
-  metrics:
-    image: tomochain/telegraf:stable
-    hostname: $HOSTNAME
-    environment:
-      METRICS_ENDPOINT: $METRICS_ENDPOINT
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /sys:/rootfs/sys:ro
-      - /proc:/rootfs/proc:ro
-      - /etc:/rootfs/etc:ro
 ```

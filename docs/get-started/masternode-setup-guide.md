@@ -1,34 +1,47 @@
 # Tomochain Masternode Setup Guide
 
 This is a procedural step-by-step guide to setting up your first Tomochain Masternode using the `tmn` tool.
-It is meant for beginners and first-timers.
+It is meant for first-time and intermediate-level masternode operators.
 
-Security Disclaimer: Despite there being mention of some security elements in this guide, there is **no implied guarentee of security**. You alone must fully secure your server. On a VPS, you will get rogue root login attempts within minutes of setup.
+Security Disclaimer:
+Despite there being mention of some security elements in this guide, there is **no implied guarantee of security**.
+You alone must fully secure your server.
 
 
 ## Technical Requirements / Recommendations
 The following are required items and server specifications. 
 [Click here for more details](https://docs.tomochain.com/masternode/requirements/)
 
- * 50,000 Tomo deposit
+ * 50,000 TOMO deposit
  * Server (cloud-VPS or your-own)
-   * 16xCPU cores (CPU-optimized aka high-Ghz)
+   * 16 vCPU cores (Prefer higher clock speed. Usually found on "CPU optimized" cloud providers' servers)
    * 32GB RAM
  * Storage (Disk Space)
-   * 100+ GB for Linux operating system
-   * 10GB / day of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
- * 2 Tomo Addresses (see below)
+   * 300 GB of storage for the base chaindata
+   * 8 GB / day after 1/23/19 of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
+   * Note: These numbers may decrease with ongoing optimisations to the code base.
+ * 2 TomoChain wallets (addresses) - [see details below](#7-create-wallet-addresses)
 
 ## Knowledge Requirements
- * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS), and 
+ * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS)
  * **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
 
    **Do not proceed if you are not confident** with the Linux command-line. 
    Why?
    The upkeep and troubleshooting will become more complex than this guide.
    Some commands fail and you must know what you are doing.
-   
-   
+
+
+### For Advanced users, go here (Command-line-only-version)
+For advanced users or repeat-offenders, [see this super-short command-line-only version](#commands-only-advanced-users) of the lengthy guide below.
+If you have done this before or know what you are doing, you might more-easily follow these linux commands instead of having to read through the below lengthy prose.
+
+> Note: You will *MISS* many tips and tricks found in the detailed instructions.
+
+### Beginner/Intermediate users, keep reading...
+
+---
+
 
 ## Introduction
 
@@ -47,7 +60,7 @@ They are paid servers hosted on a cloud-hosting-provider.
 Each VPS runs an independent installation of an operating system (OS), Linux or Windows, and typically provides root access to the OS for advanced management and control.
 
 ### Why is a VPS highly recommended for masternodes?
-A VPS is recommended (and often required) for masternode setups, as you will need a dedicated static IP and 99.9% uptime to provide a stable and efficient node for the cryptocurrency’s network.
+A VPS is recommended (and often required) for masternode setups, as you will need a dedicated static IP and 99.9% uptime to provide a stable and efficient node for the network.
 Unlike your home or office PC, a masternode VPS serves one purpose, to securely and efficiently run a masternode.
 A VPS is online 24/7 and provides dedicated resources for the project’s decentralized network.
 
@@ -62,15 +75,17 @@ Choose which VPS hosting provider you want to utilize.
 The following providers are **sample** VPS providers.
 You could choose elsewhere, or even your own 24/7 server.
 
- * [Vultr (Beginner friendly)](https://www.vultr.com/)
- * [DigitalOcean (Popular)](https://www.digitalocean.com/)
+
  * [AWS (Amazon)](https://aws.amazon.com/)
- * [OVH (Cheap)](https://www.ovh.com)
+ * [DigitalOcean](https://www.digitalocean.com/)
  * [GCE (Google)](https://cloud.google.com/compute/)
- * [Linode (Linux geek crowd)](https://www.linode.com/)
+ * [Linode](https://www.linode.com/)
+ * [OVH](https://www.ovh.com)
+ * [Vultr](https://www.vultr.com/)
+
 
 > Note on provider choice: It is encouraged for masternode operators to utilize various hosting providers so as to encourage a more decentralized network.
-We have noticed that DigitalOcean has been a very popular choice, however, if this popular provider goes down, others will get more rewards :-)
+It is in your best interest because if any one popular provider goes down, others will get more rewards.
 <br/>
 
 
@@ -78,7 +93,7 @@ We have noticed that DigitalOcean has been a very popular choice, however, if th
 ## 2. Start your VPS server
 **Start/Boot your VPS server instance.**  
 Choose **Ubuntu 18.04**.
-This is an LTS version (Long Term Support).
+This is an LTS version ([Long Term Support](https://wiki.ubuntu.com/LTS)).
 LTS versions are more stable and have seen less errors when installing Docker and Python.
 You must use Ubuntu 18.04 to seek support from the wider community or Tomochain.
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#6122).
@@ -88,15 +103,13 @@ Block Storage is pay-as-you-go disk space that you can expand in the future.
 You may not need it now, but you will in the future.
 Some locations within a hosting provider do not have this, while others will.
 
-> SSH-Key login: Seriously consider utilizing a **SSH-Key login** over passwords.
+> SSH-Key login: Consider utilizing a **SSH-Key login** over passwords.
 Some providers allow you to set it up upon server creation.
-It is considerably more secure than passwords.
-Within 60 mins of your server being up, random hackers will be trying to login with guessed-passwords.
 <br/>
 
 
 
-## 3. Change passwords and accounts (login as root)
+## 3. Change passwords and accounts (logged in as root user)
 Login to your newly created server with SSH / Putty.  
 If you need help with this, [see this example](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#20a7).
 
@@ -151,28 +164,14 @@ usermod -aG sudo michael
 
 > -a stands for Append and -G is Group; sudo is the groupname you are adding to your user
 
-### Assure the user received sudo
-Lets check to make sure that the usermod command worked.
+You can check to make sure that the usermod command worked:
 
 ```shell
 cat /etc/group | grep sudo
-```
-
-> cat shows the text contained in the file /etc/group; | (pipe) sends that text to grep, which returns only lines with the text "sudo" in them.
-Otherwise, the files contents are long and full of groups and users
-
-Assure that you get a response such as `sudo:x:27:michael`.
-This shows your new user (amongst other users) in the sudo group. 
-
-To double check the sudo abilities of your new user, run this command:
-
-```shell
 groups michael
 ```
 
-Assure that you get a response such as `michael : michael sudo` from the second command. 
-This shows that michael is part of multiple groups, one being named the same as their username and the other being sudo.
-Success!
+Assure that you get a response such as `sudo:x:27:michael` from first command and `michael : michael sudo` from the second command. 
 
 When you eventually (not yet) log in as your new user, you can type `sudo` before commands to perform actions with superuser privileges.
 Remain logged in as the root user for now, as we have more initial setup to do. 
@@ -182,7 +181,7 @@ After this, you will almost always login as your new user.
 
 
 
-## 4. Configure your VPS (login as root user)
+## 4. Configure your VPS (logged in as root user)
 We will now prepare the [prerequisites for tmn](https://docs.tomochain.com/get-started/run-node/).
 You need Python 3.6+ and Docker installed.
 
@@ -222,17 +221,17 @@ python3 --version
 ### System Security 
 This topic is optional, but highly recommended.
 
-Within a few minutes of the machine being up, bots and hackers attempt to login and probe it for weakness.
-Thousands of connection-attempts can be seen within a week.
+Oftentimes, within a few minutes of VPS machines being up, you can see bots and hackers attempt to login and probe boxes for weakness.
+If the default SSH port is used, you could see thousands of connection-attempts within a week.
 You will want to secure your machine with multiple levels of security.
 
 At a minimum, you will want to consider:
-* SSH on non-standard port
-* UFW (Uncomplicated Fire Wall) (open port 30303 tcp & udp)
+* SSHD on non-standard port
+* UFW (Uncomplicated Fire Wall) (open port 30303 tcp & udp, and above non-standard SSH)
 
-Even more security could consider:
+Other security options you could consider:
+* SSH key-based login (vs password)
 * Fail2ban
-* SSH-Key login (vs password)
 * Blocking remote password auth
 * Blocking remote root SSH-access
 
@@ -242,7 +241,7 @@ General system security is out of the scope of this guide, however, search the w
 
 
 
-## 5. Setup Docker (login as new user)
+## 5. Setup Docker (logged in as new user)
 From now on, you will almost always want to login as your **new user**.
 If you are logged in as root still, logout and log back in as the new user.
 You may want to consider denying remote root ssh logins.
@@ -312,7 +311,7 @@ cat /etc/group | grep docker
 Verify that Docker CE is installed correctly by running the hello-world image.
 
 ```shell
-sudo docker run hello-world
+docker run hello-world
 ```
 
 This command downloads a test image and runs it in a container.
@@ -330,7 +329,7 @@ error: could not access the docker daemon
 If you have installed Docker, and get this error, you probably forgot to add your user to the docker group.
 Please run this, close your session and open it again.
 
-`usermod -aG docker $your_user_name`
+`usermod -aG docker $(whoami)`
 ********************
 <br/>
 
@@ -353,22 +352,22 @@ pip3 install --user tmn
 pip3 install -U tmn
 ```
 
-> Watch out for WARNINGs or ERRORs and troubleshoot.
+> Watch out for WARNINGs or ERRORs and troubleshoot (see end of this section).
 
-Check that `tmn` has been correctly installed, use the following command to show some tmn info:
+To check that `tmn` has been correctly installed, use the following command to show some tmn info:
 
 ```shell
 pip3 show tmn
 
 Name: tmn
-Version: 0.2.5
+Version: 0.5
 Summary: Quickstart your masternode
 Home-page: https://tomochain.com
 Author: Etienne Napoleone
 Author-email: etienne@tomochain.com
 License: GPL-3.0+
-Location: /root/.local/lib/python3.6/site-packages
-Requires: clint, pastel, python-slugify, docker, click
+Location: /home/michael/.local/lib/python3.6/site-packages
+Requires: python-slugify, click, clint, pastel, docker
 ```
 
 The next step will be to actually **START TMN**, however we cannot do this until we have two wallet addresses.
@@ -377,37 +376,70 @@ See the next section for this.
 ********************
 TROUBLESHOOTING
 
-FIXME extra packages might need installing
+Occasionally a VPS image will not come installed with all of the software packages needed to install what we need.
+If you get any of the errors below, you are in need of particular packages to be installed.
+
+```
+ERROR:
+ModuleNotFoundError: No module named ‘setuptools’
+SOLUTION:
+sudo apt-get install python3-setuptools
+```
+
+```
+ERROR:
+Failed building wheel for <package>
+SOLUTION:
+pip3 install wheel
+```
+
+```
+ERROR:
+error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+SOLUTION:
+sudo apt install build-essential
+```
+
+```
+ERROR:
+fatal error: Python.h: No such file or directory
+SOLUTION:
+sudo apt install python3-dev
+```
+
 *******************
 <br/>
 
 
 
 ## 7. Create Wallet Addresses
-Before being able to proceed further, you will need **two** seperate Tomo addresses to operate a masternode.
-One is like an ID/placeholder/dummy for the Masternode, and the other is where the 50,000 TOMO (50k) is staked from.
+Before being able to proceed further, you will need **two** seperate Tomo wallet addresses to operate a masternode.
+One helps to operate the masternode day-to-day, and the other is where the 50,000 TOMO (50k) is staked from.
+The genius of this is that the wallet where the 50k will pass through (and where rewards will eventually come into) is never stored or seen by the VPS server.
+This is a security strategy that keeps your coins safe.
 
-* **ADDR1 - MN Address** - ID/placeholder/dummy - No coins need to be in this wallet; it can remain empty
-* **ADDR2 - Deposit**    - 50k Holder           - Put your staked coins here; later the 50k will go into a smart contract; rewards will show here
+* WALLET1 - Operating Wallet - used for operating the masternode, including signing blocks.
+It effectively acts as a unique identifier of your masternode. No coins need to be inserted in this wallet; It's even advised to be empty, so in case of breach, no funds are exposed.
+* WALLET2 - Deposit Wallet   - your 50k of staked coins need to be placed here; later, the 50k will go into a smart contract; eventually, masternode rewards will show here.
 
 You will need both the **Public Key** and **Private Key** for both addresses.
 It is advise that you store all of this information somewhere safe, yet accessible.
 You may need to utilize this information during continued operations of your masternode.
-Password manager apps like LastPass and 1Password are your friend.
+Password manager apps like KeePass/KeePassXC, LastPass, or 1Password are your friend.
 Your private key is your money.
 Give it to no one.
 
-> ADDR1 Suggestions:  
+> WALLET1 Suggestions:  
 If setting up a single masternode, you can use a mobile wallet.
 Binances `Trust Wallet` and Tomochains `Tomo Wallet` app are best.
 Alternatives are Metamask and MEW (MyEtherWallet), in that order.
-You can use Ledger Hardware Wallet, however the added security on ADDR1 isnt as necessary.
+You can use Ledger Hardware Wallet, however the added security on WALLET1 isn't as necessary.
 
-> ADDR2 Suggestions:  
-Preferred to use Ledger / Hardware Wallet in combo with Metamask because 50k will be here.
-Assure to use an address you dont have history on eth chain with - otherwise other will be able to see your investment history.
+> WALLET2 Suggestions:  
+Preferred to use Ledger / Hardware Wallet (if possible) in combo with Metamask because 50k and rewards will be handled here.
+Assure to use an address you do not have history on eth chain with - otherwise others will be able to see your unrelated investment history.
 
-Because most wallets do not have Tomo as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
+Because most wallet apps do not have Tomo mainnet as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
 See the first link below for the guide on how to do this.
 
 Links for more info:
@@ -433,24 +465,26 @@ ssh michael@178.62.127.177
 
 When you first start your full node with `tmn start`, you need to give some information.
 
-> **--name:** The name of your full node. It should be formatted as a slug string.
-Slug format allows all letters and numbers, dashes ("-") and underscores ("_").
+> **--name:** The name of your full node.
+Your input will be converted to a "slugified" name. 
+Slug format allows all letters and numbers, dashes ("-") and underscores ("_"). 
+Ex: `MyMaStErNode#24 cool` -> `mymasternode24-cool`. 
 You can name it to reflect your identity, company name, etc.  
 >  
 > **--net:** The network your full node will connect to.
 You can choose here to connect it to the TomoChain `mainnet` or `testnet`.  
 >  
-> **--pkey:** The private key of your ADDR1 wallet.
-A TomoChain full node uses an account to be uniquely identified and to receive transaction fees.
+> **--pkey:** The private key of your WALLET1 wallet (non 50k).
+A TomoChain full node uses a wallet address to be uniquely identified and to receive transaction fees.
 Transaction fees are not rewards, and they are usually tiny.
-Important note: we advise for security measures to use a fresh new account for your masternode.
-This is not the account that will receive the rewards.
-The rewards are sent to the account that will make the 50k TOMO initial deposit.
+Important note: we advise for security measures to use a fresh new wallet for your masternode.
+This is not the wallet that will receive the rewards.
+The rewards are sent to the wallet that will make the 50k TOMO initial deposit.
 
 The command is structured like this:
 
 ```shell
-tmn start --name [YOUR_NODE_NAME] --net mainnet --pkey [YOUR_ADDR1_PRIVATE_KEY]
+tmn start --name [YOUR_NODE_NAME] --net mainnet --pkey [YOUR_WALLET1_PRIVATE_KEY]
 ```
 
 We used the following command for our node (copy your own **name** & **private key**):
@@ -469,15 +503,17 @@ It might happen that your PATH is not set by default to include the default user
 On GNU/Linux:
 ```shell
 echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc
-exit
-ssh michael@178.62.127.177
+source $HOME/.bashrc
 ```
 *******************
 <br/>
 
 
+
 ## 9. Check sync status
-FIXME tmn status; inspect; top; stats.tomo website; # of blocks command; `tmn update`, `tmn --help`, etc
+This section coming soon.
+
+Contents to come: `tmn status`; `tmn inspect`; `top` command; https://stats.tomochain.com/ website; # of blocks command; `tmn update`, `tmn --help`, etc
 <br/>
 
 
@@ -489,7 +525,7 @@ The basic structure has been created, blocks have started synchronizing, and now
 All coin transactions, all smart contracts, all operations.
 This takes up a _lot_ of space.
 To syncrhonize it from decentralized nodes piecemeal-like could take days or weeks.
-Instead, lets download a recent-ish image of the data, and synchronize from there.
+Instead, lets download the latest image of the data, and synchronize from there.
 
 [Full Jumpstart instructions can be found here](https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync)
 <br/>
@@ -498,8 +534,9 @@ Instead, lets download a recent-ish image of the data, and synchronize from ther
 
 ## 11. Apply for Masternode Candidacy
 This section coming soon.
+[For now, see here](https://docs.tomochain.com/get-started/apply-node/)
 
-FIXME Explain; Assure synced; master.tomo; login; apply
+Contents to come: Explain; Assure synced; master.tomo; login; apply
 <br/>
 
 
@@ -507,7 +544,7 @@ FIXME Explain; Assure synced; master.tomo; login; apply
 ## 12. Name your Masternode
 This section coming soon.
 
-FIXME Master.tomo; login as 50k address; find your MN; edit; enter name; sign data
+Contents to come: https://master.tomochain.com/ ; login as 50k wallet; find your MN; edit; enter name; sign data
 <br/>
 
 
@@ -515,4 +552,52 @@ FIXME Master.tomo; login as 50k address; find your MN; edit; enter name; sign da
 ## 13. Verify initial rewards
 This section coming soon.
 
-FIXME Master.tomo; scan.tomo; explain infra vs stake reward; link to economics
+Contents to come: https://master.tomochain.com/ ; https://scan.tomochain.com/ ; explain infra vs stake reward; link to economics
+
+
+
+---
+
+# APPENDIX
+
+## Commands-only (ADVANCED users)
+If you have done this before or know what you are doing, you can follow these linux commands.
+
+> Note: You will *MISS* many tips and tricks in the detailed instructions.
+
+```shell
+ssh root@178.62.127.177
+passwd
+
+adduser michael; usermod -aG sudo michael
+groups michael
+
+apt update; apt upgrade; reboot
+
+apt install python3
+apt install python3-pip
+python3 --version
+
+ssh michael@178.62.127.177
+sudo apt update; sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update; sudo apt install docker-ce
+sudo usermod -aG docker michael; groups michael
+docker run hello-world
+
+pip3 install --user tmn
+pip3 install -U tmn
+pip3 show tmn
+
+# Create Wallet Addresses
+
+# logoff SSH and back in to set $PATH variable
+tmn start --name Atlantis --net mainnet --pkey cf03cb58************
+tmn status; tmn inspect; tmn --help
+
+# Enact Jumpstart: https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync
+```
+
+---
