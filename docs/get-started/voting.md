@@ -49,7 +49,7 @@ Once configured, you can vote for masternodes by clicking on the `Vote` button.
 
 ![Vote](/assets/vote.jpg)
 
-At least 10 TOMO is required per vote. After clicking submit, your TOMO will be sent to the voting smart contract and locked there.
+At least 100 TOMO is required per vote. After clicking submit, your TOMO will be sent to the voting smart contract and locked there.
 
 ## Reward
 Every epoch (~30 minutes), you will automatically receive rewards for each masternode you voted for.
