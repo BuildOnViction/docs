@@ -2,8 +2,8 @@
 
 TomoWallet is the official mobile wallet for Tomochain, available for Android and iOS.
 
-## [Android Download](https://play.google.com/store/apps/details?id=com.tomochain.wallet)
-## [iOS Download](https://itunes.apple.com/us/app/tomo-wallet/id1436476145?mt=8)
+### [Android Download](https://play.google.com/store/apps/details?id=com.tomochain.wallet)
+### [iOS Download](https://itunes.apple.com/us/app/tomo-wallet/id1436476145?mt=8)
 
 # Create new wallet
 
@@ -25,12 +25,14 @@ By clicking on "Send" you can either send TOMO by scanning a QR-code or entering
 
 # Vote for masternodes
 
-TomoWallet has an integrated voting function, that enables stakeholders to vote without having to login to the masternode platform.
-## [Voting tutorial](https://medium.com/tomochain/how-to-vote-for-tomochain-masternodes-using-tomowallet-1ddc3457907f)
+TomoWallet has an integrated voting function, that enables 
+stakeholders to vote without having to login to the masternode platform.
+Token holders are recommended to read this [Voting tutorial](/tomowallet/voting/) for how to vote 
+for masterrnodes using TomoWallet.
 
 # Track rewards
 
 Voters and masternodes can track their rewards from staking dicrectly in the App.
 
-![Rewards](https://raw.githubusercontent.com/tomochain/docs/0917f207c472a4f301dfb5ccc5eb74036c666766/docs/assets/Rewards.png)
+![Rewards](/assets/Rewards.png)
       
