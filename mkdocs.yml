@@ -80,8 +80,8 @@ nav:
     - Masternode:
     #   - Run a masternode:
       #- Requirements: masternode/requirements.md
-      #- Tmn: masternode/tmn.md
-      #- Docker: masternode/docker.md
+      - Tmn: masternode/tmn.md
+      - Using TomoChain Docker image: masternode/docker.md
       #- Applying: masternode/applying.md
       - Masternode detailed guide: masternode/masternode-setup-guide.md
       - Running TomoChain without tmn: masternode/tomonative.md
