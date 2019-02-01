@@ -217,7 +217,10 @@ python3 --version
 ```
 
 ### System Security 
-This topic is optional, but highly recommended. If the default SSH port is not changed, you could see nefarious connection-attempts in a short time-period.
+This topic is optional, but highly recommended.
+If the default SSH port is not changed, you could see nefarious connection-attempts in a short time-period.
+
+[Look at our wiki security doc for more details](https://github.com/tomochain/docs/wiki/Security-of-Masternodes)
 
 At a minimum, you will want to consider:
 
@@ -230,8 +233,6 @@ Other security options you could consider:
 * Fail2ban
 * Blocking remote password auth
 * Blocking remote root SSH-access
-
-Search the web on the above topics or [look at our wiki security doc](https://github.com/tomochain/docs/wiki/Security-of-Masternodes).
 <br/>
 <br/>
 
@@ -445,13 +446,15 @@ Give it to no one.
 Because most wallet apps do not have Tomo mainnet as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
 See the first link below for the guide on how to do this.
 
-Links for more info:
+How to Set Up a Wallet:
 
-* [ADVISED: SETTING UP METAMASK, MEW, or TRUSTWALLET](http://bit.ly/2A6zrC7)
+* [Setting Up MyEtherWallet, Metamask, or Binance TrustWallet](http://bit.ly/2A6zrC7)
+
+More info:
+
 * [Using Metamask or Mobile Tomo Wallet](https://docs.tomochain.com/get-started/wallet/)
 * [Links to mobile downloads and other tomo info](https://medium.com/tomochain/tomochain-all-in-one-overview-9fce16e13b5#6b8c)
 * [Old Masternode guide (testnet) Section on wallets](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58)
-
 <br/>
 
 
@@ -524,6 +527,9 @@ Contents to come: `tmn status`; `tmn inspect`; `top` command; https://stats.tomo
 
 
 ## 10. Jumpstart the chaindata (Optional)
+
+[Full Jumpstart instructions can be found here](https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync)
+
 The basic structure has been created, blocks have started synchronizing, and now we want to speed up the process by pulling in the latest chaindata.
 
 > Chaindata is where the entire history of tomo's blockchain records are stored.
@@ -532,7 +538,6 @@ This takes up a _lot_ of space.
 To syncrhonize it from decentralized nodes piecemeal-like could take days or weeks.
 Instead, lets download the latest image of the data, and synchronize from there.
 
-[Full Jumpstart instructions can be found here](https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync)
 <br/>
 
 
