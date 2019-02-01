@@ -12,19 +12,19 @@ You alone must fully secure your server.
 The following are required items and server specifications. 
 [Click here for more details](https://docs.tomochain.com/masternode/requirements/)
 
- * 50,000 TOMO deposit
- * Server (cloud-VPS or your-own)
-   * 16 vCPU cores (Prefer higher clock speed. Usually found on "CPU optimized" cloud providers' servers)
-   * 32GB RAM
- * Storage (Disk Space)
-   * 300 GB of storage for the base chaindata
-   * 8 GB / day after 1/23/19 of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
-   * Note: These numbers may decrease with ongoing optimisations to the code base.
- * 2 TomoChain wallets (addresses) - [see details below](#7-create-wallet-addresses)
+* 50,000 TOMO deposit
+* Server (cloud-VPS or your-own)
+    * 16 vCPU cores (Prefer higher clock speed. Usually found on "CPU optimized" cloud providers' servers)
+    * 32GB RAM
+* Storage (Disk Space)
+    * 310 GB of storage for the base chaindata
+    * ~1 GB / day after 1/23/19 of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
+    * Note: These numbers may decrease with ongoing optimisations to the code base.
+* 2 TomoChain wallets (addresses) - [see details below](#7-create-wallet-addresses)
 
 ## Knowledge Requirements
- * **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS)
- * **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
+* **VPS Setup** - You are able to setup your own cloud-hosted virtual private server (VPS)
+* **Linux familiarity** - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.
 
    **Do not proceed if you are not confident** with the Linux command-line. 
    Why?
@@ -40,7 +40,7 @@ If you have done this before or know what you are doing, you might more-easily f
 
 ### Beginner/Intermediate users, keep reading...
 
----
+--- 
 
 
 ## Introduction
@@ -75,14 +75,12 @@ Choose which VPS hosting provider you want to utilize.
 The following providers are **sample** VPS providers.
 You could choose elsewhere, or even your own 24/7 server.
 
-
- * [AWS (Amazon)](https://aws.amazon.com/)
- * [DigitalOcean](https://www.digitalocean.com/)
- * [GCE (Google)](https://cloud.google.com/compute/)
- * [Linode](https://www.linode.com/)
- * [OVH](https://www.ovh.com)
- * [Vultr](https://www.vultr.com/)
-
+* [AWS (Amazon)](https://aws.amazon.com/)
+* [DigitalOcean](https://www.digitalocean.com/)
+* [GCE (Google)](https://cloud.google.com/compute/)
+* [Linode](https://www.linode.com/)
+* [OVH](https://www.ovh.com)
+* [Vultr](https://www.vultr.com/)
 
 > Note on provider choice: It is encouraged for masternode operators to utilize various hosting providers so as to encourage a more decentralized network.
 It is in your best interest because if any one popular provider goes down, others will get more rewards.
@@ -181,7 +179,7 @@ After this, you will almost always login as your new user.
 
 
 
-## 4. Configure your VPS (logged in as root user)
+## 4. Configure your VPS (remain logged in as root user)
 We will now prepare the [prerequisites for tmn](https://docs.tomochain.com/get-started/run-node/).
 You need Python 3.6+ and Docker installed.
 
@@ -219,23 +217,21 @@ python3 --version
 ```
 
 ### System Security 
-This topic is optional, but highly recommended.
-
-Oftentimes, within a few minutes of VPS machines being up, you can see bots and hackers attempt to login and probe boxes for weakness.
-If the default SSH port is used, you could see thousands of connection-attempts within a week.
-You will want to secure your machine with multiple levels of security.
+This topic is optional, but highly recommended. If the default SSH port is not changed, you could see nefarious connection-attempts in a short time-period.
 
 At a minimum, you will want to consider:
+
 * SSHD on non-standard port
 * UFW (Uncomplicated Fire Wall) (open port 30303 tcp & udp, and above non-standard SSH)
 
 Other security options you could consider:
+
 * SSH key-based login (vs password)
 * Fail2ban
 * Blocking remote password auth
 * Blocking remote root SSH-access
 
-General system security is out of the scope of this guide, however, search the web on the above topics or [look at our security topics on our wiki](https://github.com/tomochain/docs/wiki/Security-of-Masternodes).
+Search the web on the above topics or [look at our wiki security doc](https://github.com/tomochain/docs/wiki/Security-of-Masternodes).
 <br/>
 <br/>
 
@@ -308,17 +304,20 @@ groups michael
 cat /etc/group | grep docker
 ```
 
+### Assure Docker is working
 Verify that Docker CE is installed correctly by running the hello-world image.
+This command downloads a test image and runs it in a container.
+When the container runs, it prints an informational message and exits.
+The second command shows more detailed docker information.
 
 ```shell
 docker run hello-world
+sudo systemctl status docker  # hit 'q' to exit
 ```
 
-This command downloads a test image and runs it in a container.
-When the container runs, it prints an informational message and exits.
 **Docker CE is installed and running.**
 
-Congratulations! You have already installed Python and Docker.
+Congratulations! You have installed Python and Docker.
 You have the prerequisites ready to run TomoChain’s tmn.
 
 ********************
@@ -418,9 +417,13 @@ One helps to operate the masternode day-to-day, and the other is where the 50,00
 The genius of this is that the wallet where the 50k will pass through (and where rewards will eventually come into) is never stored or seen by the VPS server.
 This is a security strategy that keeps your coins safe.
 
-* WALLET1 - Operating Wallet - used for operating the masternode, including signing blocks.
-It effectively acts as a unique identifier of your masternode. No coins need to be inserted in this wallet; It's even advised to be empty, so in case of breach, no funds are exposed.
-* WALLET2 - Deposit Wallet   - your 50k of staked coins need to be placed here; later, the 50k will go into a smart contract; eventually, masternode rewards will show here.
+> WALLET1 - Operating Wallet:
+Used for operating the masternode, including signing blocks.
+It effectively acts as a unique identifier of your masternode.
+No coins need to be inserted in this wallet; It's even advised to be empty, so in case of breach, no funds are exposed.
+
+> WALLET2 - Deposit Wallet:
+Your 50k of staked coins need to be placed here; later, the 50k will go into a smart contract; eventually, masternode rewards will show here.
 
 You will need both the **Public Key** and **Private Key** for both addresses.
 It is advise that you store all of this information somewhere safe, yet accessible.
@@ -429,24 +432,26 @@ Password manager apps like KeePass/KeePassXC, LastPass, or 1Password are your fr
 Your private key is your money.
 Give it to no one.
 
-> WALLET1 Suggestions:  
-If setting up a single masternode, you can use a mobile wallet.
-Binances `Trust Wallet` and Tomochains `Tomo Wallet` app are best.
-Alternatives are Metamask and MEW (MyEtherWallet), in that order.
-You can use Ledger Hardware Wallet, however the added security on WALLET1 isn't as necessary.
+* WALLET1 Suggestions - 
+  If setting up a single masternode, you can use a mobile wallet.
+  Binances `Trust Wallet` and Tomochains `Tomo Wallet` apps are best.
+  Alternatives are Metamask and MEW (MyEtherWallet), in that order.
+  You can use Ledger Hardware Wallet, however the added security on WALLET1 isn't as necessary.
 
-> WALLET2 Suggestions:  
-Preferred to use Ledger / Hardware Wallet (if possible) in combo with Metamask because 50k and rewards will be handled here.
-Assure to use an address you do not have history on eth chain with - otherwise others will be able to see your unrelated investment history.
+* WALLET2 Suggestions - 
+  Preferred to use Ledger / Hardware Wallet (if possible) in combo with Metamask because 50k and rewards will be handled here.
+  Assure to use an address you do not have history on eth chain with - otherwise others will be able to see your unrelated investment history.
 
 Because most wallet apps do not have Tomo mainnet as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
 See the first link below for the guide on how to do this.
 
 Links for more info:
+
 * [ADVISED: SETTING UP METAMASK, MEW, or TRUSTWALLET](http://bit.ly/2A6zrC7)
 * [Using Metamask or Mobile Tomo Wallet](https://docs.tomochain.com/get-started/wallet/)
 * [Links to mobile downloads and other tomo info](https://medium.com/tomochain/tomochain-all-in-one-overview-9fce16e13b5#6b8c)
 * [Old Masternode guide (testnet) Section on wallets](https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58)
+
 <br/>
 
 
