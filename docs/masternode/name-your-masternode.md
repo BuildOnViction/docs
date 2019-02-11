@@ -14,46 +14,50 @@ By signing the changes, you are cryptographically proving that this is actually 
     If you originally setup your masternode with a Ledger or MyEtherWallet or MetaMask, you do this on a computer browser.
     If you originally used a mobile wallet such as Tomochains Tomo Wallet or Binances Trust Wallet app, you will visit this webpage inside those apps.
 
-2. Click the **GEAR** icon in the upper right corner
+2. Login with your wallet
 
-3. Click the dropdown to select which Wallet type you are using
+    a. Click the **GEAR** icon in the upper right corner
 
-    For Ledger, you will need to enter the Derivation Path of `m/44'/60'/0'` and on the actual ledger, you are using `Ethereum` app with setting `Browser Support: Yes`.
+    b. Click the dropdown to select which Wallet type you are using
 
-    `Network provider was changed successfully` will temporarily popup on the same webpage if you succeed.
-    `Account Information` section will now show the Address for this wallet.
+      For Ledger, you will need to enter the Derivation Path of `m/44'/60'/0'` and on the actual ledger, you are using `Ethereum` app with setting `Browser Support: Yes`.
 
-4. Click the Address shown
+      `Network provider was changed successfully` will temporarily popup on the same webpage if you succeed.
+      `Account Information` section will now show the Address for this wallet.
 
-    This should be the Address of your masternodes WALLET2 Deposit Wallet where you originally posted your 50k.
-    This will take you to an intermediate page showing your address as if it were a voter.
+3. Navigate to your Masternode
+
+    a. Click the Address shown
+
+      This should be the Address of your masternodes WALLET2 Deposit Wallet where you originally posted your 50k.
+      This will take you to an intermediate page showing your address as if it were a voter.
     
-5. Click the Address under `Candidates` section
+    b. Click the Address under `Candidates` section
 
-    This should be the Address of your masternodes WALLET1 Operating Wallet which uniquely identifies your masternode.
-    This will take you to your masternodes home page... where voters vote on you and find information such as your past rewards, status, and masternode information.
+      This should be the Address of your masternodes WALLET1 Operating Wallet which uniquely identifies your masternode.
+      This will take you to your masternodes home page... where voters vote on you and find information such as your past rewards, status, and masternode information.
 
-6. Click the **EDIT** icon next to your masternodes name
+4. Click the **EDIT** icon next to your masternodes name
 
     This icon looks like a paper and pencil.
     The icon will not appear if you are not the owner or are not logged into the wallet.
 
-7. Alter your Name, Hardware, Data Center, and Location
+5. Alter your Name, Hardware, Data Center, and Location
 
     There are no requirements here.
     The information is for voters.
     Click `Next` and then `Submit` once done.
     
-8. Sign the transaction
+6. Sign the transaction
 
     Use your wallet to sign the transaction.
     This proves that you are who you say you are.
     With Ledger, you will need to click it physically to confirm.
     Mobile apps will have a popup where you confirm.
     
-    `Candidate information updated successfully' will temporarily popup if successful.
+    `Candidate information updated successfully` will temporarily popup if successful.
     
-9. Check main page of https://master.tomochain.com/ ! Done!
+7. Check main page of https://master.tomochain.com/ ! Done!
 
     Changes you made should now be visible here.
     Note that the name does **not** change on the stats.tomochain.com website.
