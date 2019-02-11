@@ -84,6 +84,7 @@ nav:
         - Tmn: masternode/tmn.md
         - Docker: masternode/docker.md
         - Binary: masternode/tomonative.md
+      - Applying for Masternode Candidacy: masternode/applying.md
   #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
     - Whitepapers and research:
