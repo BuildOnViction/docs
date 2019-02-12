@@ -80,7 +80,7 @@ nav:
     - Masternode:
       - Requirements: masternode/requirements.md
       - Detailed guide: masternode/masternode-setup-guide.md
-      - Running with:
+      - Running a node with:
         - Tmn: masternode/tmn.md
         - Docker: masternode/docker.md
         - Binary: masternode/tomonative.md
