@@ -78,13 +78,13 @@ nav:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
     - Masternode:
-    #   - Run a masternode:
-      #- Requirements: masternode/requirements.md
-      - Tmn: masternode/tmn.md
-      - Using TomoChain Docker image: masternode/docker.md
-      #- Applying: masternode/applying.md
-      - Masternode detailed guide: masternode/masternode-setup-guide.md
-      - Running TomoChain without tmn: masternode/tomonative.md
+      - Requirements: masternode/requirements.md
+      - Detailed guide: masternode/masternode-setup-guide.md
+      - Running a node with:
+        - Tmn: masternode/tmn.md
+        - Docker: masternode/docker.md
+        - Binary: masternode/tomonative.md
+      - Applying for Masternode Candidacy: masternode/applying.md
   #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
     - Whitepapers and research:
