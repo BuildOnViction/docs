@@ -13,6 +13,8 @@ TomoChain, a independent public blockchain, the most efficient platform for the 
 - Block finality: `>75%`
 - Consensus nodes: up to 150 (masternodes)
 - Genesis block date: `December 14th, 2018`
+- Transaction fee: gas price 0.25 Gwei
+- Smart contract creation fee: gas price 10000 Gwei, gas limit >= 1000000
 
 ### Usefull links
 
