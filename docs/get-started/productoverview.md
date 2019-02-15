@@ -38,7 +38,7 @@ and to show masternode performance statistics.
 aiming to store the TOMO native coin and tokens issued on TomoChain. 
 Tomo Wallet also allows users to vote for masternodes and track rewards.
 
-* **TomoX**: TomoX is a decentralize d cryptocurrency exchange directly 
+* **TomoX**: TomoX is a decentralized cryptocurrency exchange directly 
 integrated into the core layer of the TomoChain blockchain. 
 Decentralized exchanges called relayers built following the TomoX 
 standard will all interact with TomoX.
