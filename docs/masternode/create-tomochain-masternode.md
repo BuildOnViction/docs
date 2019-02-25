@@ -1,5 +1,3 @@
-# create-tomochain-masternode
-
 This tool aims to help beginner/intermediate masternode owners.
 It acts as a terminal wizard which helps the user generate a working configuration for docker-compose to run the node.
 
