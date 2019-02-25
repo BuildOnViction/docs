@@ -1,10 +1,11 @@
-We created this tool to help beginner to intermediate masternode owners.
-It acts like a terminal wizard which helps you generate a working configuration for docker-compose to run your masternode.
+# create-tomochain-masternode
 
-It includes the following features:
+This tool aims to help beginner/intermediate masternode owners.
+It acts as a terminal wizard which helps the user generate a working configuration for docker-compose to run the node.
 
-- working out of the box docker-compose configuration
-- auto-restart your node on failure
+Using create-tomochain-masternode and docker-compose offers you benefits like:
+- working "out of the box" docker-compose configuration
+- auto-restarting your node on failure
 - flexible configuration (storage, logging, ports)
 
 ## Prerequisites
@@ -19,7 +20,7 @@ To install Docker, first update the apt package index.
 sudo apt update
 ```
 
-Then Install packages to allow apt to use a repository over HTTPS.
+Then install packages to allow apt to use a repository over HTTPS.
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
@@ -39,7 +40,7 @@ Set up the stable Docker repository.
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
 
-Update the apt package index. Then install the latest version of Docker CE.
+Update the apt package index, then install the latest version of Docker CE.
 ```
 sudo apt update
 
@@ -79,7 +80,7 @@ Optional: install bash completion.
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.23.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 ```
 
-Verify that docker-compose is installed correctly by running the version command.
+Verify that docker-compose is correctly installed by running the version command.
 ```
 docker-compose version
 ```
@@ -132,7 +133,7 @@ Follow the wizard by replying to the following questions:
 - **Expose WebSocket**:
   If you want to expose or not port `8546`.
   It is the WebSocket api to your node.
-  It should be only exposed if you have a specific reason to access the TomoChain Protocol via WebSocket.
+  It should only be exposed if you have a specific reason to access the TomoChain Protocol via WebSocket.
   The masternode owner is responsible of proxing and securing the WebSocket api as it should not be directly exposed to the internet.
 
 - **Logging level**:
@@ -150,7 +151,7 @@ Once finished, you will get a folder named after your masternode (in our case "m
   Which tells docker-compose how and which container run for your node.
   Your specific configuration will be read from the `.env` file.
 
-Now that we generated the correct initial configuration for docker-compose, we just need to start our node.
+Now that we have generated the correct initial configuration for docker-compose, we just need to start our node.
 
 ```bash
 docker-compose up -d
