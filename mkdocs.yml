@@ -81,6 +81,7 @@ nav:
       - Requirements: masternode/requirements.md
       - Detailed guide: masternode/masternode-setup-guide.md
       - Running a node with:
+        - Create-tomochain-masternode: masternode/create-tomochain-masternode.md
         - Tmn: masternode/tmn.md
         - Docker: masternode/docker.md
         - Binary: masternode/tomonative.md
