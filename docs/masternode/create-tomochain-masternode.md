@@ -2,6 +2,7 @@ This tool aims to help beginner/intermediate masternode owners.
 It acts as a terminal wizard which helps the user generate a working configuration for docker-compose to run the node.
 
 Using create-tomochain-masternode and docker-compose offers you benefits like:
+
 - working "out of the box" docker-compose configuration
 - auto-restarting your node on failure
 - flexible configuration (storage, logging, ports)
