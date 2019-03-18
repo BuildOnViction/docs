@@ -122,6 +122,9 @@ Follow the wizard by replying to the following questions:
 
 - **Chaindata**:
   The name of the docker volume that will be used or the path to the directory to mount, depending on your answer to the last question.
+  
+- **The volume already exists**:
+  If you selected "docker volume", this will determine if the volume already exists or if it needs to be created.
 
 - **Expose RPC**:
   If you want to expose or not port `8545`.
