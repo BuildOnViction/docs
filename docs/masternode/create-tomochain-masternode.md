@@ -122,6 +122,9 @@ Follow the wizard by replying to the following questions:
 
 - **Chaindata**:
   The name of the docker volume that will be used or the path to the directory to mount, depending on your answer to the last question.
+  
+- **The volume already exists**:
+  If you selected "docker volume", this will determine if the volume already exists or if it needs to be created.
 
 - **Expose RPC**:
   If you want to expose or not port `8545`.
@@ -164,7 +167,9 @@ docker-compose ps
 
 For more docker-compose commands, use `docker-compose --help` or refer to their [documentation](https://docs.docker.com/compose/reference/overview/).
 
-## `tmn` equivalence
+## Migrating from `tmn`
+
+You can find a guide on migrating from `tmn` in the [wiki](https://github.com/tomochain/docs/wiki/Migrate-from-tmn-to-docker-compose-with-create-tomochain-masternode).
 
 For the long time masternode runners who started with our older tool, `tmn`, here are the commands to achieve the same actions.
 
