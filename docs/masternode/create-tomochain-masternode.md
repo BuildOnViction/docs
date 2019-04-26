@@ -21,7 +21,7 @@ sudo apt update
 
 Then install packages to allow apt to use a repository over HTTPS.
 ```
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install apt-transport-https ca-certificates curl software-properties-common dirmngr gnupg
 ```
 
 Add Docker’s official GPG key.
@@ -48,7 +48,7 @@ sudo apt install docker-ce
 
 Once installed, add your current user to the Docker group.
 ```
-usermod -aG docker $(whoami)
+sudo usermod -aG docker $(whoami)
 ```
 !!! warning
     You need to relog into your account for this to take effect.
@@ -95,7 +95,7 @@ chmod +x create-tomochain-masternode
 
 Move it in your path.
 ```
-mv create-tomochain-masternode /usr/local/bin/
+sudo mv create-tomochain-masternode /usr/local/bin/
 ```
 ## Usage
 
@@ -121,7 +121,7 @@ Follow the wizard by replying to the following questions:
   Either `docker volume` if you want to use the default docker volume location, or `host directory` if you want to define specific location on your filesystem (usefull when extending storage).
 
 - **Chaindata**:
-  The name of the docker volume that will be used or the path to the directory to mount, depending on your answer to the last question.
+  The name of the docker volume that will be used or the path to the directory coontaining the chaindata, depending on your answer to the last question.
   
 - **The volume already exists**:
   If you selected "docker volume", this will determine if the volume already exists or if it needs to be created.
