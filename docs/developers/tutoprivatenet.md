@@ -64,6 +64,13 @@ source code to use in a private or consortium environment.
     ```
     puppeth
     ```
+    ![Private chain name](https://user-images.githubusercontent.com/17243442/57121919-bcbbd000-6da4-11e9-8a0e-dea3a15f3fc1.png)
+    ![POSV configurations](https://user-images.githubusercontent.com/17243442/57122012-2f2cb000-6da5-11e9-8b1e-7fc1c034226a.png)
+    ![MultiSig wallet setting](https://user-images.githubusercontent.com/17243442/57122031-453a7080-6da5-11e9-92d6-49fba3a4c1ea.png)
+    ![Initial funds](https://user-images.githubusercontent.com/17243442/57122062-7024c480-6da5-11e9-98f1-4ce90b2941d6.png)
+    ![Export genesis file](https://user-images.githubusercontent.com/17243442/57122075-82066780-6da5-11e9-89b2-e0369ec528f5.png)
+
+
     - `Control + C` to exit
 
 - Init your private chain with above genesis block
@@ -148,6 +155,8 @@ source code to use in a private or consortium environment.
     - Verify Checkpoints
     
     Wait about 30 minutes to see if your chain passes the first checkpoint
+    ![Console log at checkpoint](https://user-images.githubusercontent.com/17243442/57122084-93e80a80-6da5-11e9-81cf-598693bd2779.png)
+
     ```
     tomo attach tomo attach http://0.0.0.0:1545
     ```
