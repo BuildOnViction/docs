@@ -1,4 +1,4 @@
-TomoChain Request for Comment: TRC21 Token Standard 
+# TomoChain Request for Comment: TRC21 Token Standard 
 
 | Standard Name | TRC21             |
 |---------------|--------------------|
@@ -6,21 +6,21 @@ TomoChain Request for Comment: TRC21 Token Standard
 | Category      | Token Standard     |
 | Created       | 2019-05-17         |
 
-# Simple Summary
+## Simple Summary
 
 A standard interface for tokens that allows token holders to pay transaction fees by the token itself.
 
-# Abstract
+## Abstract
 The following standard allows for the implementation of a standard Application Programmable Interface (API) for tokens within TomoChain smart contracts. 
 Tokens issued on TomoChain following this standard allows token holders to pay fee for transactions 
 to the token contract in terms of the token itself.
 
-# Motivation
+## Motivation
 A standard token interface that extends TRC-20 standard in order to allow 
 holders of a token issued following this standard to make transactions without the need of 
 holding TOMO in the wallet for paying transaction fees.
 
-# TRC21 Specification
+## TRC21 Specification
 
 ```solidity
 /**
@@ -49,7 +49,7 @@ interface ITRC21 {
 }
 ```
 
-## TRC21 API specification
+### TRC21 API specification
 
 - `totalSupply`: Returns the token total supply.
 
@@ -117,7 +117,7 @@ function transferFrom(address from, address to, uint256 value) external returns 
 Transfers `value` amount of tokens from address `from` to address `to`.
 The function must fire the ```Transfer``` and ```Fee``` event.
 
-## TRC21 Event specification
+### TRC21 Event specification
 
 - `Transfer`
 
@@ -144,7 +144,7 @@ event Fee(address indexed from, address indexed to, address indexed issuer, uint
 This event MUST be emitted when tokens are transferred in functions `transfer` and `transferFrom` in order for clients/DApp/third-party wallets to notify 
 its users about the paid transaction fee in terms of token.
 
-## Implementation
+### Implementation
 
 The following implements the basis of the standard. 
 For any implementation of the TRC21 standard, the following contract fields must be defined at the beginning of the contract.
@@ -330,7 +330,7 @@ contract TRC21 is ITRC21 {
 }
 ```
 
-## TRC21 Token example
+### TRC21 Token example
 
 The following shows an example of a TRC21 token which inherits from the TRC21 implementation.
 Token name, symbol, and decimals are also defined.
