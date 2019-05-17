@@ -1,6 +1,6 @@
-TomoChain Request for Comment: TRC-21 Token Standard 
+TomoChain Request for Comment: TRC21 Token Standard 
 
-| Standard Name | TRC-21             |
+| Standard Name | TRC21             |
 |---------------|--------------------|
 | Author        | TomoChain R&D Team |
 | Category      | Token Standard     |
@@ -20,7 +20,7 @@ A standard token interface that extends TRC-20 standard in order to allow
 holders of a token issued following this standard to make transactions without the need of 
 holding TOMO in the wallet for paying transaction fees.
 
-# TRC-21 Specification
+# TRC21 Specification
 
 ```solidity
 /**
