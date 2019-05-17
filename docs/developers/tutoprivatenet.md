@@ -4,6 +4,8 @@ so that one can learn to contribute to the development of TomoChain.
 The tutorial is alo a first step for any developer who wants to customize TomoChain's 
 source code to use in a private or consortium environment.
 
+The following will walk you step-by-step to setup a TomoChain private net with three masternodes.
+
 ## Install Golang
   - Reference: https://golang.org/doc/install
   - Set environment variables
@@ -13,7 +15,7 @@ source code to use in a private or consortium environment.
    ```
     
 ## Prepare tomo client software
-   - cd $GOPATH/src/github.com/ethereum/go-ethereum
+   - ```cd $GOPATH/src/github.com/ethereum/go-ethereum```
    - Download source code and build
    ```
     git init
@@ -21,22 +23,22 @@ source code to use in a private or consortium environment.
     git pull origin master
     make all
    ```
-   - Create shortcuts
+   - Create shortcuts/alias for easier access
    ```
     alias tomo=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/tomo
     alias bootnode=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/bootnode
     alias puppeth=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/puppeth
    ```   
         
-## Setup datadir for 3 nodes
+## Setup chain data folders `datadir` and corresponding `keystore` folders for 3 masternodes
    ```
     mkdir $HOME/tomochain
     mkdir $HOME/tomochain/nodes
     mkdir $HOME/tomochain/nodes/1 $HOME/tomochain/nodes/2 $HOME/tomochain/nodes/3 
     mkdir $HOME/tomochain/keystore/1 $HOME/tomochain/keystore/2 $HOME/tomochain/keystore/3
    ```
-## Init / Import accounts
-   - Init new accounts. If you have existing accounts, please ignore this step and go to `Import Accounts`
+## Initialize / Import accounts for the masternodes's keystore 
+   - Initialize new accounts: If you have existing accounts and prefer importing them, please ignore this step and go to `Import Accounts`
    ```
     tomo account new \
       --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT] \
@@ -54,12 +56,13 @@ source code to use in a private or consortium environment.
    - Import accounts
    ```
     tomo  account import [PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT] \
-    --keystore $HOME/tomochain/keystore \
+    --keystore $HOME/tomochain/keystore/1 \
     --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT]
    ```
+   Repeat this step to import two more private keys for our three masternodes.
     
-## Customize genesis block
-   - Run puppeth command and answer questions about your private chain
+## Customize genesis block by using the `puppeth` tool
+   - Run puppeth command and answer questions about your private chain as follows:
    ```
     puppeth
    ```
@@ -71,7 +74,7 @@ source code to use in a private or consortium environment.
 
    - `Control + C` to exit
 
-## Init your private chain with above genesis block
+## Initialize your private chain with above genesis block
    ```
     tomo --datadir $HOME/tomochain/nodes/1 init [PATH/TO/GENESIS_FILE]
     tomo --datadir $HOME/tomochain/nodes/2 init [PATH/TO/GENESIS_FILE]
@@ -79,7 +82,7 @@ source code to use in a private or consortium environment.
    ```
     
 ## Setup bootnode
-   - Init bootnode key
+   - Initialize bootnode key
    ```
     echo ed5391645b54f2df01177c3975c7a9a0902e281b6b6dc0fa0a6999fb2ea0e147 > bootnode.key
    ```
@@ -89,7 +92,7 @@ source code to use in a private or consortium environment.
    ```
     
 ## Start masternodes
-   - Node1
+   - Start masternode 1
    ```
     tomo  --syncmode "full" \
         --datadir $HOME/tomochain/nodes/1 --networkid [YOUR_NETWORK_ID] --port 10303 \
@@ -103,7 +106,7 @@ source code to use in a private or consortium environment.
         --bootnodes "enode://5f260dc416222d49c273ee2ab43b4d7f1f6e6ee8b7afef3504f5c9151d5bf3499f9ff598ad17caa58553568a51ddbc73340d03dba5304956126adc11ebd3dfd5@127.0.0.1:30301" \
         console
    ```
-   - Node2
+   - Start masternode 2
    ```
         tomo  --syncmode "full" \
             --datadir $HOME/tomochain/nodes/2 --networkid [YOUR_NETWORK_ID] --port 20303 \
@@ -117,7 +120,7 @@ source code to use in a private or consortium environment.
             --bootnodes "enode://5f260dc416222d49c273ee2ab43b4d7f1f6e6ee8b7afef3504f5c9151d5bf3499f9ff598ad17caa58553568a51ddbc73340d03dba5304956126adc11ebd3dfd5@127.0.0.1:30301" \
             console
    ```
-   - Node 3
+   - Start masternode 3
    ```
         tomo  --syncmode "full" \
             --datadir $HOME/tomochain/nodes/3 --networkid [YOUR_NETWORK_ID] --port 30303 \
