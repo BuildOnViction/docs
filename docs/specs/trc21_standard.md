@@ -20,7 +20,7 @@ A standard token interface that extends TRC-20 standard in order to allow
 holders of a token issued following this standard to make transactions without the need of 
 holding TOMO in the wallet for paying transaction fees.
 
-TRC-21 Specification
+# TRC-21 Specification
 
 ```solidity
 /**
