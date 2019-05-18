@@ -64,12 +64,39 @@ The following will walk you step-by-step to setup a TomoChain private net with t
 ## Customize genesis block by using the `puppeth` tool
    - Run puppeth command and answer questions about your private chain as follows:
    ```
-    puppeth
+   puppeth
+   ```
+   - Set chain name
+   ```
+     > localtomo
    ```
    ![Private chain name](https://user-images.githubusercontent.com/17243442/57121919-bcbbd000-6da4-11e9-8a0e-dea3a15f3fc1.png)
+   
+   - Enter 2 to configure new genesis
+   - Enter 3 to select `POSV` consensus
+   - Set blocktime (default 2 seconds)
+   - Set reward of each epoch
+   - Set addresses to be initial masternodes
+   - Set number of blocks of each epoch (default 900)
+   - Set gap (How many blocks before checkoint need prepare new masternodes set ?)
+   `suggestedGap = 5`
+   - Enter foundation address which you hold private key
+   
    ![POSV configurations](https://user-images.githubusercontent.com/17243442/57122012-2f2cb000-6da5-11e9-8b1e-7fc1c034226a.png)
+   
+   - Enter accounts which you control private keys to unlock MultiSig wallet
+   
    ![MultiSig wallet setting](https://user-images.githubusercontent.com/17243442/57122031-453a7080-6da5-11e9-92d6-49fba3a4c1ea.png)
+   
+   - Enter swap wallet address for fund 55 million TOMO
+   
    ![Initial funds](https://user-images.githubusercontent.com/17243442/57122062-7024c480-6da5-11e9-98f1-4ce90b2941d6.png)
+   
+   - Export genesis file
+        - Select `2. Manage existing genesis`
+        - Select `2. Export genesis configuration`
+        - Enter genesis filename
+         
    ![Export genesis file](https://user-images.githubusercontent.com/17243442/57122075-82066780-6da5-11e9-89b2-e0369ec528f5.png)
 
    - `Control + C` to exit
@@ -84,13 +111,15 @@ The following will walk you step-by-step to setup a TomoChain private net with t
 ## Setup bootnode
    - Initialize bootnode key
    ```
-    echo ed5391645b54f2df01177c3975c7a9a0902e281b6b6dc0fa0a6999fb2ea0e147 > bootnode.key
+    bootnode -genkey bootnode.key
    ```
-   - Start bootnode
+   - Start bootnode and copy bootnode information
    ```
     bootnode -nodekey ./bootnode.key
    ```
-    
+   `enode://7e59324b1e54f8c282719465eb96786fb3a04a0265deee2cdb0f62e912337ca6f118d0c91f7ebfae6f5c17825205279249cf7ff65ae54d0a1a8908ef16f80f63@[::]:30301`
+  ![Start bootnode](https://user-images.githubusercontent.com/17243442/57963757-9b85e280-7953-11e9-87ab-021a3cf5d8f8.png)
+
 ## Start masternodes
    - Start masternode 1
    ```
@@ -103,7 +132,7 @@ The following will walk you step-by-step to setup a TomoChain private net with t
         --ws --wsaddr 0.0.0.0 --wsport 1546 --wsorigins "*" --unlock "[ADDRESS_MASTERNODE_1]" \
         --identity "NODE1" \
         --mine --gasprice 2500 \
-        --bootnodes "enode://5f260dc416222d49c273ee2ab43b4d7f1f6e6ee8b7afef3504f5c9151d5bf3499f9ff598ad17caa58553568a51ddbc73340d03dba5304956126adc11ebd3dfd5@127.0.0.1:30301" \
+        --bootnodes [YOUR_BOOTNODE_INFORMATION] \
         console
    ```
    - Start masternode 2
@@ -117,7 +146,7 @@ The following will walk you step-by-step to setup a TomoChain private net with t
             --ws --wsaddr 0.0.0.0 --wsport 2546 --wsorigins "*" --unlock "[ADDRESS_MASTERNODE_2]" \
             --identity "NODE2" \
             --mine --gasprice 2500 \
-            --bootnodes "enode://5f260dc416222d49c273ee2ab43b4d7f1f6e6ee8b7afef3504f5c9151d5bf3499f9ff598ad17caa58553568a51ddbc73340d03dba5304956126adc11ebd3dfd5@127.0.0.1:30301" \
+            --bootnodes [YOUR_BOOTNODE_INFORMATION] \
             console
    ```
    - Start masternode 3
@@ -131,9 +160,32 @@ The following will walk you step-by-step to setup a TomoChain private net with t
             --ws --wsaddr 0.0.0.0 --wsport 3546 --wsorigins "*" --unlock "[ADDRESS_MASTERNODE_3]" \
             --identity "NODE3" \
             --mine --gasprice 2500 \
-            --bootnodes "enode://5f260dc416222d49c273ee2ab43b4d7f1f6e6ee8b7afef3504f5c9151d5bf3499f9ff598ad17caa58553568a51ddbc73340d03dba5304956126adc11ebd3dfd5@127.0.0.1:30301" \
+            --bootnodes [YOUR_BOOTNODE_INFORMATION] \
             console
    ```
+   - Some explanations on the flags
+   ```
+           --verbosity: log level from 1 to 5. Here we're using 4 for debug messages
+           --datadir: path to your data directory created above.
+           --keystore: path to your account's keystore created above.
+           --identity: your full-node's name.
+           --password: your account's password.
+           --networkid: our testnet network ID.
+           --port: your full-node's listening port (default to 30303)
+           --rpc, --rpccorsdomain, --rpcaddr, --rpcport, --rpcvhosts: your full-node will accept RPC requests at 8545 TCP.
+           --ws, --wsaddr, --wsport, --wsorigins: your full-node will accept Websocket requests at 8546 TCP.
+           --mine: your full-node wants to register to be a candidate for masternode selection.
+           --gasprice: Minimal gas price to accept for mining a transaction.
+           --targetgaslimit: Target gas limit sets the artificial target gas floor for the blocks to mine (default: 4712388)
+           --bootnode: bootnode information to help to discover other nodes in the network
+           --gcmode: blockchain garbage collection mode ("full", "archive")
+           --synmode: blockchain sync mode ("fast", "full", or "light". More detail: https://github.com/tomochain/tomochain/blob/master/eth/downloader/modes.go#L24)
+   ```
+   To see all flags usage
+   ```
+      tomo --help
+   ```
+
 
 ## Check your private chain
   - Connect ipc
