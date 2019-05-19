@@ -1,6 +1,6 @@
 ## Prerequisites
 
-- Have a wallet connected to the Testnet (See [chapter 1](/get-started/wallet))
+- Have a wallet connected to the Testnet (See [this tutorial](/get-started/wallet))
 
 ## Introduction
 
