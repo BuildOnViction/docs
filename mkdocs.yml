@@ -90,6 +90,8 @@ nav:
       - Technical whitepaper: wp-and-research/technical-whitepaper.md
       - Sharding design paper: wp-and-research/sharding-paper.md
       - Economics paper: wp-and-research/economics-paper.md
+      - Standard & Specification:
+          - TRC21 Specification: wp-and-research/specs/trc21_standard.md
     - Developers guide:
         - DApps on TomoChain:
            - Deploy DApp on TomoChain: developers/dappdeploytuto.md
