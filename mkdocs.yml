@@ -9,6 +9,13 @@ theme:
   feature:
     tabs: true
 
+plugins:
+  - redirects
+
+redirects:
+  'tomoscan/features': 'products/tomoscan/features'
+  'tomomaster/features': 'products/tomomaster/features'
+
 markdown_extensions:
   - admonition
   - mdx_math:

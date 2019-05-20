@@ -1,3 +1,4 @@
 mkdocs==1.0.4
 mkdocs-material==3.0.4
 python-markdown-math==0.5
+mkdocs-redirects==0.0.4
