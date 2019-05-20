@@ -13,8 +13,8 @@ plugins:
   - redirects
 
 redirects:
-  'tomoscan/features': 'products/tomoscan/features'
-  'tomomaster/features': 'products/tomomaster/features'
+  'tomoscan/features/index': 'products/tomoscan/features/index'
+  'tomomaster/features/index': 'products/tomomaster/features/index'
 
 markdown_extensions:
   - admonition
