@@ -99,7 +99,7 @@ If this function is called again it overwrites the current allowance with `_valu
 This function also calls `estimateFee` with input parameter as 0 in order to compute the transaction fee
 in terms of tokens that the transaction sender must pay to the token issuer.
 
-- allowance`
+- `allowance`
 
 ```solidity
 function allowance(address owner, address spender) external view returns (uint256);
