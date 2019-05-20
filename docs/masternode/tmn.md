@@ -5,10 +5,12 @@ Spin up a machine in your favorite cloud and get your masternode running in a fe
 
 ## Prerequisites
 
-Python >= 3.5 and Docker are required.
-
-- [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.5
+- [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.6
 - [Docker CE](https://docs.docker.com/install/)
+
+!!! warning 
+    We recommand to run your masternode on Ubuntu 18.04 LTS.
+    This version have python 3.6 and has been reported as working out of the box.
 
 ### Installation of Python
 
@@ -109,13 +111,20 @@ You can choose here to connect it to the TomoChain Testnet or Mainnet (once laun
 A TomoChain full node uses an account to be uniquely identified and to receive transaction fee.
 
 !!! note "Important note:"
-	We advise for security measures to use a fresh new account for your masternode.
-	This is not the account who will receive the rewards.
-	The rewards are sent to the account who will make the 50k TOMO initial deposit.
+    We advise for security measures to use a fresh new account for your masternode.
+    This is not the account who will receive the rewards.
+    The rewards are sent to the account who will make the 50k TOMO initial deposit.
+
+`--api`: Expose RPC and websocket on ports `8545` and `8546`.
+
+!!! note "Important note:"
+    Those ports should not be accessible directly from the internet.
+    Please setup firewalling accordingly if you need to access them localy.
+    Use a reverse proxy if you want to expose them to the outside.
 
 It could look like this:
 ```
-tmn start --name [YOUR_NODE_NAME] --net testnet --pkey [YOUR_COINBASE_PRIVATE_KEY]
+tmn start --name [YOUR_NODE_NAME] --net testnet --pkey [YOUR_COINBASE_PRIVATE_KEY] --api
 ```
 
 Once started, you should see your node on the [stats page](https://stats.testnet.tomochain.com)!
@@ -157,6 +166,11 @@ Replace `[VERSION]` by your version of python (3.5, 3.6, 3.7)
 echo 'export PATH=$PATH:$HOME/Library/Python/[VERSION]/bin' >> $HOME/.bashrc
 ```
 
+Then reload your environment:
+```
+source ~/.bashrc
+```
+
 ### error: could not access the docker daemon
 
 If you have installed Docker, you probably forgot to add your user to the docker group.
@@ -164,4 +178,24 @@ Please run this, close your session and open it again.
 
 ```
 usermod -aG docker $your_user_name
+```
+
+### pip3 install fails due to not being able to build some package
+
+Your OS might not come with build tools preinstalled.
+
+For ubuntu, you can solve that by running:
+
+```
+sudo apt install build-essential python3-dev python3-wheel
+```
+
+### pip3 install fails due to "No Module named Setuptools"
+
+Your OS might not come with setuptools preinstalled.
+
+For ubuntu, you can solve that by running:
+
+```
+sudo apt install python3-setuptools
 ```

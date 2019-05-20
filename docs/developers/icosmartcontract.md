@@ -1,0 +1,1 @@
+For developers who are interested in building and deploying an ICO smart contract on TomoChain, please refer to [this article](https://medium.com/tomochain/how-to-deploy-an-ico-smart-contract-on-tomochain-782142d95538) for a detailed guideline.
