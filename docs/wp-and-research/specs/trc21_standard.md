@@ -32,6 +32,8 @@ interface ITRC21 {
 	function balanceOf(address who) external view returns (uint256);
 
 	function estimateFee(uint256 value) external view returns (uint256);
+	
+	function issuer() external view returns (address);
 
 	function allowance(address owner, address spender) external view returns (uint256);
 
@@ -75,6 +77,18 @@ The way fees are computed is not standardized.
 Token issuers can fully customize the implementation of the function.
  
 This function will also be called by user wallets to evaluate fees the user must be paying.
+
+- `issuer`: Returns the address of the token issuer.  
+
+```solidity
+function issuer() external view returns (address);
+```
+
+The method returns the address of the token issuer. 
+The is to ensure that only the issuer has the right to apply to the TomoZ protocol for paying fees of token-holder transactions to 
+the token contract in terms of the token itself.
+The method will be called by the TomoZ protocol source code to verify that no one else is able to apply
+the token to the TomoZ protocol, except the issuer.
 
 - ```transfer```: 
 Transfers ```_value``` amount of tokens to address ```_to```, and MUST fire the ```Transfer``` and ```Fee``` event. 
