@@ -100,6 +100,7 @@ nav:
       - Standard & Specification:
           - TRC21 Specification: wp-and-research/specs/trc21_standard.md
     - Developers guide:
+        - API Documentation: https://apidocs.tomochain.com
         - DApps on TomoChain:
            - Deploy DApp on TomoChain: developers/dappdeploytuto.md
            - Deploy an ICO smart contract: developers/icosmartcontract.md
