@@ -58,7 +58,7 @@ web3.eth.getBalance("0x407d73d8a49eeb85d32cf465507dd71d507100c1").then(console.l
 ```
 
 ## Create transaction
-Sends transction to the network. You need to unlock wallet before using this function.
+Sends transaction to the network. You need to unlock wallet before using this function.
 ```javascript
 web3.eth.sendTransaction(transactionObject [, callback])
 ```
