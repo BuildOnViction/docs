@@ -100,6 +100,7 @@ nav:
       - Standard & Specification:
           - TRC21 Specification: wp-and-research/specs/trc21_standard.md
     - Developers guide:
+        - Exchange/Wallet integrations: developers/integrations.md
         - Working with TomoChain:
            - TomoChain private testnet setup: developers/tutoprivatenet.md
            - Useful manual CLI commands: developers/clicommands.md
