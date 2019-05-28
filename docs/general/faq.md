@@ -785,7 +785,8 @@ The capacity of a candidate is the 50K TOMO initial deposit plus the total amoun
 #### Which of these numbers on TomoMaster will tell us which is a good performing node vs poorly performing?
 On TomoMaster, click on a candidate to open the candidate page.
 Scroll down to 'Masternode Rewards'.
-You should look at 'Sign number' under Masternode Rewards to determine a good node or not.
+You should look at 'Sign number', 'Slashing history' under Masternode Rewards to determine a good node or not.
+
 
 Masternodes will sign a maximum of 60 blocks per epoch.
 A good masternode will create around 60 sign transactions in that epoch.
