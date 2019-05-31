@@ -17,8 +17,8 @@ The following are required items and server specifications.
     * 16 vCPU cores (Prefer higher clock speed. Usually found on "CPU optimized" cloud providers' servers)
     * 32GB RAM
 * Storage (Disk Space)
-    * 310 GB of storage for the base chaindata
-    * ~1.3 GB / day after 1/23/19 of increasing data storage space (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
+    * 100 GB of storage for the base chaindata
+    * ~1 GB of weekly data storage space increase (reccomend SSD-based Block Storage; low-latency, not NAS speeds)
     * Note: These numbers may decrease with ongoing optimisations to the code base.
 * 2 TomoChain wallets (addresses) - [see details below](#7-create-wallet-addresses)
 
