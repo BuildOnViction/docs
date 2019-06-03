@@ -1,39 +1,40 @@
 Masternodes and stakers is stored and governared in [TomoChain Validator smart contract](https://scan.tomochain.com/address/0x0000000000000000000000000000000000000088):
+
 - Smart Contract Code: [TomoChain Validator](https://github.com/tomochain/tomomaster/blob/master/contracts/TomoValidator.sol)
 - Smart Contract ABI: [TomoValidatorAbi.json](https://raw.githubusercontent.com/tomochain/tomomaster/master/abis/TomoValidatorAbi.json)
 
 TomoChain Validator Smart Contract Interface:
 ```javascript
 // apply a new masternode candidate
-function propose(address _candidate) external payable
+function propose(address _candidate) external payable;
 
 // Deposit to stake/vote for a candidate
-function vote(address _candidate) external payable
+function vote(address _candidate) external payable;
 
 // Unstake/unvote for a candidate
-function unvote(address _candidate, uint256 _cap) public
+function unvote(address _candidate, uint256 _cap) public;
 
 // Resign a candidate
-function resign(address _candidate) public
+function resign(address _candidate) public;
 
 // Withdraw after unvote, resign
-function withdraw(uint256 _blockNumber, uint _index) public
+function withdraw(uint256 _blockNumber, uint _index) public;
 
-function getCandidates() public view returns(address[])
+function getCandidates() public view returns(address[]);
 
-function getCandidateCap(address _candidate) public view returns(uint256)
+function getCandidateCap(address _candidate) public view returns(uint256);
 
-function getCandidateOwner(address _candidate) public view returns(address)
+function getCandidateOwner(address _candidate) public view returns(address);
 
-function getVoterCap(address _candidate, address _voter) public view returns(uint256)
+function getVoterCap(address _candidate, address _voter) public view returns(uint256);
 
-function getVoters(address _candidate) public view returns(address[])
+function getVoters(address _candidate) public view returns(address[]);
 
-function isCandidate(address _candidate) public view returns(bool)
+function isCandidate(address _candidate) public view returns(bool);
 
-function getWithdrawBlockNumbers() public view returns(uint256[])
+function getWithdrawBlockNumbers() public view returns(uint256[]);
 
-function getWithdrawCap(uint256 _blockNumber) public view returns(uint256)
+function getWithdrawCap(uint256 _blockNumber) public view returns(uint256);
 
 ```
 
