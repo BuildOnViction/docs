@@ -125,7 +125,9 @@ Promise returns Object - A transaction receipt object, or null when no receipt w
 - `logs` - `Array`: Array of log objects, which this transaction generated.
 
 ## Irreversible blocks
-In normal case, you can wait for 60 confirmations, then checking block finality via `eth_getBlockFinalityByNumber` or `eth_getBlockFinalityByHash` API (https://apidocs.tomochain.com/#eth_getblockfinalitybynumber)
+In normal case, you can wait for 60 confirmations, then checking block finality via `eth_getBlockFinalityByNumber` or `eth_getBlockFinalityByHash` API:
+- [eth_getBlockFinalityByNumber](https://apidocs.tomochain.com/#eth_getblockfinalitybynumber)
+- [eth_getBlockFinalityByHash](https://apidocs.tomochain.com/#eth_getblockFinalitybyhash)
 
 If `result` > 75, it means block finality and Irreversible.
 
