@@ -100,6 +100,37 @@ web3.eth.sendTransaction({
 
 ```
 
+## Sign data
+After unlock a wallet, you can sign the data
+```
+web3.eth.sign(dataToSign, address [, callback])
+```
+#### Parameters
+1. `String` - Data to sign. If String it will be converted using web3.utils.utf8ToHex.
+2. `String|Number` - Address to sign data with. Or an address or index of a local wallet in web3.eth.accounts.wallet.
+3. `Function` - (optional) Optional callback, returns an error object as first parameter and the result as second.
+
+#### Example
+```javascript
+const Web3 = require('web3')
+
+// Connect to TomoChain nodes
+const provider = new Web3.providers.HttpProvider('https://rpc.tomochain.com')
+const web3 = new Web3(provider)
+
+// Unlock wallet by private key
+const account = web3.eth.accounts.privateKeyToAccount(pkey)
+let coinbase = account.address
+web3.eth.accounts.wallet.add(account)
+web.eth.defaultAccount = coinbase
+
+// Make a transaction using the promise
+web3.eth.sign('testdata').then(function(result){
+    console.log(result)
+});
+
+```
+
 ## Check transaction status
 ```javascript
 web3.eth.getTransactionReceipt(hash [, callback])
@@ -126,6 +157,7 @@ Promise returns Object - A transaction receipt object, or null when no receipt w
 
 ## Irreversible blocks
 In normal case, you can wait for 60 confirmations, then checking block finality via `eth_getBlockFinalityByNumber` or `eth_getBlockFinalityByHash` API:
+
 - [eth_getBlockFinalityByNumber](https://apidocs.tomochain.com/#eth_getblockfinalitybynumber)
 - [eth_getBlockFinalityByHash](https://apidocs.tomochain.com/#eth_getblockFinalitybyhash)
 
