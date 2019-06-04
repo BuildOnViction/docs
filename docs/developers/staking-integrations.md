@@ -160,14 +160,25 @@ validator.methods.resign(coinbase).call({
 ## Withdraw TOMO
 You need to wait for 48 epochs (if unvote), 30 days (if resign) to unlock your TOMO staked
 
-
+#### Example
 ```javascript
-validator.methods.withdraw(blocknumber, index).call({
-    from : owner,
-    gas: 2000000,
-    gasPrice: 250000000
-})
-.then((result) => {
+// get highest block number
+web3.eth.getBlockNumber().then(blockNumber => {
+    return validator.methods.getWithdrawBlockNumbers().call({
+        from: owner
+    }).then(result => result, blockNumber)
+}).then(result, blockNumber => {
+    let map = result.map(it, idx => {
+        if (parseInt(it) < blockNumber) {
+            return validator.methods.withdraw(it, idx).call({
+                from : owner,
+                gas: 2000000,
+                gasPrice: 250000000
+            })
+        }
+    })
+    return Promise.all(map)
+}).then((result) => {
     console.log(result)
 }).catch(e => console.log(e))
 ```
