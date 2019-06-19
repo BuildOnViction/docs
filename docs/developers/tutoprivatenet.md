@@ -310,8 +310,10 @@ The following will walk you step-by-step to setup a TomoChain private net with t
         Wait about 30 minutes to see if your chain passes the first checkpoint
    ![Console log at checkpoint](https://user-images.githubusercontent.com/17243442/57122084-93e80a80-6da5-11e9-81cf-598693bd2779.png)
 
-    tomo attach tomo attach http://0.0.0.0:1545
-   
+```
+    tomo attach http://0.0.0.0:1545
+```
+
 ```
     eth.getBlock(900)
 ```
