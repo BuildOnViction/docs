@@ -84,13 +84,12 @@ tomo account new \
 ```
     
 #### Import accounts
-   ```bash
-        tomo  account import [PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT] \
-    
+
+```bash
+    tomo  account import [PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT] \    
         --keystore $KEYSTORE_DIR \
-    
         --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT]
-   ```
+```
 
 #### List all available accounts in keystore folder
 
