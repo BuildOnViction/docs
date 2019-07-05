@@ -1,5 +1,5 @@
 site_name: TomoChain Documentation
-site_description: The most efficient platform for token economy
+site_description: TomoChain aims to be a public EVM-compatible blockchain with the following advantages as low transaction fee, fast confirmation time, double validation.
 
 theme:
   name: 'material'
