@@ -59,11 +59,10 @@ $GENESIS_PATH : location of genesis file you would like to put
 ## Create datadir
    - create a folder to store tomochain data on your machine
 
-   ```bash
-        export DATA_DIR=/path/to/your/data/folder
-        
-        mkdir -p $DATA_DIR/tomo
-   ```
+```
+    export DATA_DIR=/path/to/your/data/folder
+    mkdir -p $DATA_DIR/tomo
+```
 ## Initialize the chain from genesis
 
 ```bash
@@ -78,23 +77,19 @@ If you already had an existing account, import it. Otherwise, please initialize 
 ```
 
 #### Initialize new accounts
-   ```bash
-        
-        tomo account new \
-        
-          --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT] \
-        
-          --keystore $KEYSTORE_DIR
-   ```
+```
+tomo account new \
+    --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT] \
+    --keystore $KEYSTORE_DIR
+```
     
 #### Import accounts
-   ```bash
-        tomo  account import [PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT] \
-    
+
+```bash
+    tomo  account import [PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT] \    
         --keystore $KEYSTORE_DIR \
-    
         --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT]
-   ```
+```
 
 #### List all available accounts in keystore folder
 
