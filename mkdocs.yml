@@ -80,6 +80,9 @@ nav:
       - TomoWallet:
         - Features: products/tomowallet/features.md
         - Voting with TomoWallet: products/tomowallet/voting.md
+      - TomoBridge:
+        - FAQ: products/tomobridge/faq.md
+      - TomoIssuer: products/tomoissuer/index.md
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
     - Masternode:
