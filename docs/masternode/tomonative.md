@@ -111,30 +111,28 @@ tomo account new \
 #### Let's start a node
 ```bash
 tomo  --syncmode "full" \
-    
     --datadir $DATA_DIR --networkid $NETWORK_ID --port 30303 \
-    
     --keystore $KEYSTORE_DIR --password $PASSWORD \
-    
-    --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
-    
-    --rpcapi "db,eth,net,web3,personal,debug" \
-    
-    --gcmode "archive" \
-    
-    --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "$YOUR_COINBASE_ADDRESS" \
-    
     --identity $IDENTITY \
-    
-    --mine --gasprice 2500 \
-    
+    --mine --gasprice 250000000 \
     --bootnodes $BOOTNODES \
-    
     --ethstats $IDENTITY:$WS_SECRET@$NETSTATS_HOST:$NETSTATS_PORT
-    
-    console
 ```
 
+If you are a dapp developer, you should open RPC and WS apis:
+```bash
+tomo  --syncmode "full" \
+    --datadir $DATA_DIR --networkid $NETWORK_ID --port 30303 \
+    --keystore $KEYSTORE_DIR --password $PASSWORD \
+    --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
+    --rpcapi "db,eth,net,web3,personal,debug" \
+    --gcmode "archive" \
+    --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "$YOUR_COINBASE_ADDRESS" \
+    --identity $IDENTITY \
+    --mine --gasprice 250000000 \
+    --bootnodes $BOOTNODES \
+    --ethstats $IDENTITY:$WS_SECRET@$NETSTATS_HOST:$NETSTATS_PORT
+```
 
 #### Some explanations on the flags
    
@@ -172,6 +170,8 @@ tomo  --syncmode "full" \
 --ethstats: send data to stats website
 
 --tomo-testnet: required when the networkid is testnet(89)
+
+--store-reward: store reward report
 ```
 To see all flags usage
    
