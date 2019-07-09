@@ -3,77 +3,77 @@ mainnet without the need of using Docker and `tmn`.
 
 
 ## Install Golang
-  - Reference: https://golang.org/doc/install
-  - Set environment variables
+- Reference: https://golang.org/doc/install
+- Set environment variables
   
 ```bash
-    export GOROOT=$HOME/usr/local/go
-    
-    export GOPATH=$HOME/go
+export GOROOT=$HOME/usr/local/go
+
+export GOPATH=$HOME/go
 ```
     
 ## Prepare tomo client software
 #### Build from source code
-   ```bash
-   cd $GOPATH/src/github.com/ethereum/go-ethereum
-   ```
-   - Download source code and build
-
 ```bash
-    git init
-    
-    git remote add git@github.com:tomochain/tomochain.git
-    
-    git pull origin master
-    
-    make all
+cd $GOPATH/src/github.com/ethereum/go-ethereum
 ```
-   - Binary file should be generated in build folder `$GOPATH/src/github.com/ethereum/go-ethereum/build/bin`
+- Download source code and build
 
 ```bash
-    alias tomo=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/tomo
+git init
+
+git remote add git@github.com:tomochain/tomochain.git
+
+git pull origin master
+
+make all
+```
+- Binary file should be generated in build folder `$GOPATH/src/github.com/ethereum/go-ethereum/build/bin`
+
+```bash
+alias tomo=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/tomo
 ```
 
 #### Use binary
-   - Download tomo binary from our [releases page](https://github.com/tomochain/tomochain/releases)
+- Download tomo binary from our [releases page](https://github.com/tomochain/tomochain/releases)
 
 ```bash
-    alias tomo=path/to/tomo/binary
+alias tomo=path/to/tomo/binary
 ```
 
 ## Download genesis block
 $GENESIS_PATH : location of genesis file you would like to put
 ```bash
-    export GENESIS_PATH=path/to/genesis.json
+export GENESIS_PATH=path/to/genesis.json
 ```
-   - Testnet
-   ```bash
-        curl -L https://raw.githubusercontent.com/tomochain/tomochain/master/genesis/testnet.json -o $GENESIS_PATH
-   ```
+- Testnet
+```bash
+    curl -L https://raw.githubusercontent.com/tomochain/tomochain/master/genesis/testnet.json -o $GENESIS_PATH
+```
 
-   - Mainnet
-   ```bash
-        curl -L https://raw.githubusercontent.com/tomochain/tomochain/master/genesis/mainnet.json -o $GENESIS_PATH
-   ```
+- Mainnet
+```bash
+curl -L https://raw.githubusercontent.com/tomochain/tomochain/master/genesis/mainnet.json -o $GENESIS_PATH
+```
 
 ## Create datadir
-   - create a folder to store tomochain data on your machine
+- create a folder to store tomochain data on your machine
 
 ```
-    export DATA_DIR=/path/to/your/data/folder
-    mkdir -p $DATA_DIR/tomo
+export DATA_DIR=/path/to/your/data/folder
+mkdir -p $DATA_DIR/tomo
 ```
 ## Initialize the chain from genesis
 
 ```bash
-    tomo init $GENESIS_PATH --datadir $DATA_DIR
+tomo init $GENESIS_PATH --datadir $DATA_DIR
 ```
 
 ## Initialize / Import accounts for the nodes's keystore
 If you already had an existing account, import it. Otherwise, please initialize new accounts 
 
 ```bash
-    export KEYSTORE_DIR=path/to/keystore
+export KEYSTORE_DIR=path/to/keystore
 ```
 
 #### Initialize new accounts
@@ -99,40 +99,40 @@ tomo account new \
 
 ## Start a node
 #### Environment variables
-   - $IDENTITY: the name of your node
-   - $PASSWORD: the password file to unlock your account
-   - $YOUR_COINBASE_ADDRESS: address of your account which generated in the previous step
-   - $NETWORK_ID: the networkId. Mainnet: 88. Testnet: 89
-   - $BOOTNODES: The comma separated list of bootnodes. Find them [here](https://docs.tomochain.com/general/networks/)
-   - $WS_SECRET: The password to send data to the stats website. Find them [here](https://docs.tomochain.com/general/networks/)
-   - $NETSTATS_HOST: The stats website to report to, regarding to your environment. Find them [here](https://docs.tomochain.com/general/networks/)
-   - $NETSTATS_PORT: The port used by the stats website (usually 443)
+- $IDENTITY: the name of your node
+- $PASSWORD: the password file to unlock your account
+- $YOUR_COINBASE_ADDRESS: address of your account which generated in the previous step
+- $NETWORK_ID: the networkId. Mainnet: 88. Testnet: 89
+- $BOOTNODES: The comma separated list of bootnodes. Find them [here](https://docs.tomochain.com/general/networks/)
+- $WS_SECRET: The password to send data to the stats website. Find them [here](https://docs.tomochain.com/general/networks/)
+- $NETSTATS_HOST: The stats website to report to, regarding to your environment. Find them [here](https://docs.tomochain.com/general/networks/)
+- $NETSTATS_PORT: The port used by the stats website (usually 443)
     
 #### Let's start a node
 ```bash
-    tomo  --syncmode "full" \
-        
-        --datadir $DATA_DIR --networkid $NETWORK_ID --port 30303 \
-        
-        --keystore $KEYSTORE_DIR --password $PASSWORD \
-        
-        --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
-        
-        --rpcapi "db,eth,net,web3,personal,debug" \
-        
-        --gcmode "archive" \
-        
-        --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "$YOUR_COINBASE_ADDRESS" \
-        
-        --identity $IDENTITY \
-        
-        --mine --gasprice 2500 \
-        
-        --bootnodes $BOOTNODES \
-        
-        --ethstats $IDENTITY:$WS_SECRET@$NETSTATS_HOST:$NETSTATS_PORT
-        
-        console
+tomo  --syncmode "full" \
+    
+    --datadir $DATA_DIR --networkid $NETWORK_ID --port 30303 \
+    
+    --keystore $KEYSTORE_DIR --password $PASSWORD \
+    
+    --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
+    
+    --rpcapi "db,eth,net,web3,personal,debug" \
+    
+    --gcmode "archive" \
+    
+    --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "$YOUR_COINBASE_ADDRESS" \
+    
+    --identity $IDENTITY \
+    
+    --mine --gasprice 2500 \
+    
+    --bootnodes $BOOTNODES \
+    
+    --ethstats $IDENTITY:$WS_SECRET@$NETSTATS_HOST:$NETSTATS_PORT
+    
+    console
 ```
 
 
@@ -173,12 +173,12 @@ tomo account new \
 
 --tomo-testnet: required when the networkid is testnet(89)
 ```
-   To see all flags usage
+To see all flags usage
    
 ```bash
-      tomo --help
+tomo --help
 ```
 
 ## See your node on stats page
-   - Testnet: https://stats.testnet.tomochain.com
-   - Mainnet: http://stats.tomochain.com
+- Testnet: https://stats.testnet.tomochain.com
+- Mainnet: http://stats.tomochain.com
