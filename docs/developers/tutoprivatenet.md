@@ -111,8 +111,13 @@ The following will walk you step-by-step to setup a TomoChain private net with t
    - Set blocktime (default 2 seconds)
    - Set reward of each epoch
    - Set addresses to be initial masternodes
-   - Set number of blocks of each epoch (default 900)
-   - Set gap (How many blocks before checkoint need prepare new masternodes set ?)
+   - Set number of blocks of each epoch (default 900). If you would like to customize epoch number, please update code here
+   `common/constants.go:14`
+   ```
+        EpocBlockRandomize         = 900
+   ```
+   
+   - Set gap (How many blocks before checkpoint need prepare new masternodes set ?)
    `suggestedGap = 5`
    - Enter foundation address which you hold private key
    
