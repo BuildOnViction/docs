@@ -82,7 +82,10 @@ nav:
         - Voting with TomoWallet: products/tomowallet/voting.md
       - TomoBridge:
         - FAQ: products/tomobridge/faq.md
-      - TomoIssuer: products/tomoissuer/index.md
+      - TomoIssuer:
+        - Overview: products/tomoissuer/index.md
+        - Term Of Condition: products/tomoissuer/termofcondition.md
+        - Policy Privacy: products/tomoissuer/policyprivacy.md
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
     - Masternode:
