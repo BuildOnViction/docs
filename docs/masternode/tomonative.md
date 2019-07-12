@@ -8,28 +8,35 @@ mainnet without the need of using Docker and `tmn`.
   
 ```bash
 export GOROOT=$HOME/usr/local/go
-
 export GOPATH=$HOME/go
 ```
     
 ## Prepare tomo client software
 #### Build from source code
+Create new directory for the project
 ```bash
-cd $GOPATH/src/github.com/ethereum/go-ethereum
+mkdir -p $GOPATH/src/github.com/ethereum/
+cd $GOPATH/src/github.com/ethereum/
 ```
+
 - Download source code and build
-
 ```bash
-git init
+git clone git@github.com:tomochain/tomochain.git go-ethereum
+cd go-ethereum
+```
 
-git remote add git@github.com:tomochain/tomochain.git
+- Checkout the latest version (e.g v1.4.1)
+```
+git pull origin --tags
+git checkout v1.4.1
+```
 
-git pull origin master
-
+- Build the project
+```
 make all
 ```
-- Binary file should be generated in build folder `$GOPATH/src/github.com/ethereum/go-ethereum/build/bin`
 
+- Binary file should be generated in build folder `$GOPATH/src/github.com/ethereum/go-ethereum/build/bin`
 ```bash
 alias tomo=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/tomo
 ```

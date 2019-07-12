@@ -16,7 +16,7 @@ Furthermore, more highly innovative products and technologies will be intensivel
 developed and researched to make TomoChain become an ideal platform for blockchain 
 games, open finance, and enterprise-oriented applications.   
 
-![overview](/assets/overview.png)
+![overview](/assets/infographic.jpg)
 
 * **TomoChain**: TomoChain is the backbone public blockchain of TomoChain's product map.
 
