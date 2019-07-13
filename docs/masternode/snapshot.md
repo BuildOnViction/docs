@@ -42,3 +42,9 @@ docker-compose start
 # keeping it might be a good idea if you get stuck further before a new snapshot is released
 rm /tmp/20190617.tar
 ```
+
+**Tip: extract the data in backgroud**
+In case you can not wait for the extraction finish, you can run it in the background
+```
+nohup tar xvC /var/lib/docker/volumes/NAME_OF_YOUR_VOLUME/_data/data/tomo/ -f 20190617.tar &
+```
