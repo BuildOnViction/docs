@@ -25,7 +25,7 @@ Those servers would be a good starting point:
 Setting up a masternode candidate on a weaker machine might result in poor performances.
 Significantly impacting owner's rewards and the chain performance.
 
-If you have other production grade environment than cloud provider at your disposal, please come chat with us on our [Gitter](https://gitter.im/tomochain).
+If you have other production grade environment than cloud provider at your disposal, please come chat with us on our [Telegram](https://t.me/caelumofficial).
 
 !!! info Performances
     A masternode have a certain amount of tasks to process (validations, block creations, etc.) over time.

@@ -1,24 +1,16 @@
 Once your full node is up and running, you need to apply it to make him eligible as a masternode.
 
-## Getting sufficient TOMO
-As 50'000 TOMO are required to apply, the first thing to do is to fill out the following [form](https://docs.google.com/forms/d/183UxYRET9I183L7lFHCredjaTd9oj4kmf4UdH7eLNNs):
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0BiG8Rs5v4ItkwykgWUXsavLRZNA9W_EHTDis7klk5mNJnw/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
-Our team will then review your request and send you the required funds.
-
-*Note: Those TOMO are only usable in testnet, they have absolutely no trading value*
 
 ## Applying to become a masternode
-You can now apply by going on the [TomoMaster](https://master.testnet.tomochain.com) page.
-Login with the wallet that contains your newly received 50'000 TOMO.
+You can now apply by going on the [CaelumMaster](https://master.testnet.caelumfoundation.com) page.
+Login with the wallet that contains your newly received 50'000 CLMP.
 
 On the top right corner, click on "Become a Candidate".
 
-Enter the amount of TOMO you want to deposit (minimum 50'000).
+Enter the amount of CLMP you want to deposit (minimum 50'000).
 
 Enter your coinbase address. This is the public key of the account that your masternode is using.
-If your are running your node with `tmn`, you can simply run `tmn inspect` to get it.
+If your are running your node with `Apollo`, you can simply run `bash apollo.sh inspect` to get it.
 
 Confirm with apply and proceed to make the payement.
 
@@ -29,12 +21,12 @@ If your node is in the top 150 most voted nodes, it will be promoted as a master
 
 ## Resigning your masternode
 In case you want to stop your node, you need to resign it from the governance first in order to retrieve your locked funds.
-Access [TomoMaster](https://master.testnet.tomochain.com), go to your candidate detail page, and click the `Resign` button.
+Access [CaelumMaster](https://master.testnet.caelumfoundation.com), go to your candidate detail page, and click the `Resign` button.
 Your funds will be available to withdraw 30 days after the resignation.
 
-After resigning successfully, you can stop your node. If you ran it with `tmn`, simply run:
+After resigning successfully, you can stop your node. If you ran it with `Apollo`, simply run:
 ```
-tmn remove
+bash apollo.sh clean
 ```
 
 At this point, your masternode is completly terminated.

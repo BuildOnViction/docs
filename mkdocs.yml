@@ -1,4 +1,4 @@
-site_name: TomoChain Documentation
+site_name: Go-Caelum Technical Documentation
 site_description: The most efficient platform for token economy
 
 theme:
@@ -30,30 +30,27 @@ extra:
     disqus:
     social:
         - type: 'github'
-          link: 'https://github.com/tomochain'
+          link: 'https://github.com/caelumproject'
         - type: 'twitter'
-          link: 'https://twitter.com/tomochainANN'
+          link: 'https://twitter.com/caelumtoken'
         - type: 'reddit'
-          link: 'https://www.reddit.com/r/Tomochain/'
+          link: ''
         - type: 'facebook'
-          link: 'https://www.facebook.com/tomochainofficial/'
+          link: ''
         - type: 'telegram'
-          link: 'https://t.me/tomochain'
+          link: 'https://t.me/caelumofficial'
         - type: 'medium'
-          link: 'https://medium.com/tomochain'
+          link: 'https://medium.com/caelumproject'
 
-site_url: https://docs.tomochain.com
-repo_url: https://github.com/tomochain/docs
-repo_name: tomochain/docs
-google_analytics: ['UA-124597188-1', 'docs.tomochain.com']
+site_url: https://docs.caelumfoundation.com
+repo_url: https://github.com/caelumproject/docs
+repo_name: caelumproject/docs
+google_analytics: ['UA-124597188-1', 'docs.caelumproject.com']
 
 nav:
     - General:
-      - Introduction: index.md
-      - Use cases: general/use-cases.md
       - Networks: general/networks.md
       - FAQ: general/faq.md
-      - About: general/about.md
     - Get started:
       - 1. Connect your wallet: get-started/wallet.md
       - 2. Voting: get-started/voting.md
@@ -62,10 +59,10 @@ nav:
     # - TomoChain client:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
-    - TomoMaster:
+    - CaelumMaster:
       - Features: tomomaster/features.md
     #   - Contributing: misc/wip.md
-    - TomoScan:
+    - CaelumScan:
       - Features: tomoscan/features.md
     #   - Contributing: misc/wip.md
     # - TomoWallet:
@@ -74,14 +71,14 @@ nav:
     - Masternode:
     #   - Run a masternode:
       - Requirements: masternode/requirements.md
-      - Tmn: masternode/tmn.md
-      - Docker: masternode/docker.md
+      - Apollo: masternode/tmn.md
       - Applying: masternode/applying.md
     #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
     - Whitepapers and research:
-      - Technical whitepaper: wp-and-research/technical-whitepaper.md
-      - Sharding design paper: wp-and-research/sharding-paper.md
-      - Economics paper: wp-and-research/economics-paper.md
+      - Caelum product whitepaper: wp-and-research/whitepaper.md
+      - Tomochain original technical whitepaper: wp-and-research/technical-whitepaper.md
+      - Tomochain original sharding design paper: wp-and-research/sharding-paper.md
+      - Tomochain original economics paper: wp-and-research/economics-paper.md
 
-copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
+copyright: If you wish to improve this site, please <a href="https://github.com/caelumproject/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/caelumproject/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>CaelumDocs v0.1.0. - Forked from TomoChain Project 2018.

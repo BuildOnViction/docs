@@ -1,13 +1,12 @@
-With the recent release of TomoChain Testnet 2.0 with our PoSV consensus, you might be interested in creating a TomoChain full node and applying it to be a masternode.
+With the recent release of Go-Caelum Testnet 2.0 with our PoSV consensus, you might be interested in creating a Caelum full node and applying it to be a masternode.
 
-To run a full node and meet the requirements to apply on our governance DApp, you have to run two services:
+To run a full node and meet the requirements to apply on our governance DApp, you have to run the follwing services:
 
-- The [TomoChain client](https://github.com/tomochain/tomochain), our TomoChain implementation written in _Go_.
-- [Telegraf](https://github.com/influxdata/telegraf), an agent to collect performance metrics of your full node.
+- The [go-caelum client](https://github.com/caelumdev/go-caelum), our Caelum implementation written in _Go_.
 
 ## General hardware notice
 
-Our team extensively tested performances and came up with those minimal requirements for any TomoChain masternode host.
+Our team extensively tested performances and came up with those minimal requirements for any Caelum masternode host.
 
 **Testnet**
 
@@ -30,106 +29,130 @@ We recommand prioritizing CPU. For example with Digital Ocean, pick a CPU optimi
 The full node will serve on port `30303` udp and tcp for p2p communication with other nodes, `8545` tcp for RPC api and `8546` tcp for websocket api.
 You may need to edit your firewall configuration accordingly.
 
-If you have other production grade environment than cloud provider at your displosal, please tell us more about on our [Gitter](https://gitter.im/tomochain).
+If you have other production grade environment than cloud provider at your displosal, please tell us more about on our [Telegram](https://t.me/caelumofficial).
 
-## tmn
+## Apollo
 
-We made a simple command line interface called [tmn](https://github.com/tomochain/masternode) to easily and quickly start a TomoChain masternode.
+We made a simple command line interface called [Apollo](https://github.com/caelumproject/Apollo) to easily and quickly start a Caelum masternode.
 It takes care of starting the necessary docker containers with the proper settings for you.
 It will really suit you if you don't already have a big infrastructure running.
 Spin up a machine in your favorite cloud and get your masternode running in a few minutes!
 
-### Prerequisites
-
-To use tmn, you should meet these requirements in addition to the hardware ones:
-
-- [Docker CE](https://docs.docker.com/install/)
-- [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.5
 
 ### Installation
 
-Simply install it from pip.
+Simply install it from console.
 
 ```
-pip3 install --user tmn
+git clone https://github.com/caelumproject/Apollo
+```
+
+If you don't have Golang and/or go-caelum installed yet, run our installation script
+
+```
+bash install-server.sh
 ```
 
 ### Update
 
-Update it from pip.
+Update it from console.
 
 ```
-pip3 install -U tmn
+bash apollo.sh update
 ```
 
-### First start
 
-When you first start your full node with tmn, you need to give some informations.
+### Configuration
 
-`--name`: The name of your full node.
-It should be formatted as a slug string.
-Slug format authorize all letters and numbers, dashes ("-") and underscores ("\_").
-You can name it to reflect your identity, company name, etc.
+From within the Apollo directory, run `bash apollo.sh start`.
 
-`--net`: The network your full node will connect to.
-You can choose here to connect it to the TomoChain Testnet or Mainnet (once launched).
-
-`--pkey`: The private key of the account that your full node will use.
-A TomoChain full node uses an account to be uniquely identified and to receive transaction fee.
-**Important note:** we advise for security measures to use a fresh new account for your masternode.
-This is not the account who will receive the rewards.
-The rewards are sent to the account who will make the 50k TOMO initial deposit.
-
-It could look like this:
-
-```
-tmn start --name [YOUR_NODE_NAME] \
-    --net testnet \
-    --pkey [YOUR_COINBASE_PRIVATE_KEY]
-```
-
-Once started, you should see your node on the [stats page](https://stats.testnet.tomochain.com)!
-
-Note: it can take up to one hour to properly sync the entire blockchain.
+The start command will execute the configuration helper. Please follow the steps displayed on the console to setup Apollo once.
 
 ### Usage
 
-You can now interact with it via the other commands:
+Run the apollo scipt by executing `bash apollo.sh` along with one of the following parameters:
 
-`stop`: Stop your full node.
+ - `start` Launches the masternode
+ - `stop` Stops the caelum masternodes
+ - `import` Allows a user to import a private key
+ - `force-close` Force close all running caelum instances
+ - `update` Update the Apollo files to their latest version
+ - `log` Shows the daemon output. Ctrl+c to exit.
+ - `clean` Remove the entire datadir
 
-`start`: Start your full node if it is stopped.
+ **Hint!** You can run all these actions in one go by running `bash apollo.sh start`. This executes all needed steps in a single command.
 
-`status`: The current status of your full node.
+ Enter any key in your console to let the masternode run in the background.
 
-`inspect`: Display the details related to your full node.
-Useful for applying your full node as a masternode.
+ Check if you are displayed on our stats page https://stats.testnet.caelumfoundation.com/
 
-`remove`: Completely remove your masternode, unique identity and data.
+ Send our developers a DM to receive some testnet tokens in order to activate and setup your masternode.
 
-### Troubleshooting
+ Subscribe to the Telegram channel for updates/instructions as masternode owner https://t.me/joinchat/AAAAAFankV-nfwLbBRbHMw
 
-#### tmn: command not found
+---
 
-It might happen that your PATH is not set by default to include the default user binary directory.
-You can add it by adding it to your shell $PATH:
+**Setting up a masternode with no initial masternode address**
 
-On GNU/Linux:
+`bash apollo.sh start` for the first time.
+
+It will ask you if you want to create a new coinbase account, or import an existing one.
+
+The password will be saved in `/Apollo/.pwd` and the address will be saved in `/Apollo/testnet.env`.
+
+Complete the setup helper. This will then start the node and begin syncing.
+
+**Setting up a masternode with an existing masternode address (importing)**
+
+Run `bash apollo.sh import` and follow the steps.
+
+**Connecting to our testnet with MetaMask**
+
+You will need to go to https://master.testnet.caelumfoundation.com/
+
+There you must click the `login`button. If you use metamask, you need to connect to a custom network first
+
 ```
-echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+RPC URL: https://testnet.caelumfoundation.com
+Chain ID: 159
+Symbol CLMPTESTNET
+Nickname CLMP_TESTNET
 ```
 
-On MacOS:
-Replace `[VERSION]` by your version of python (3.5, 3.6, 3.7)
-```
-echo 'export PATH=$PATH:~/Library/Python/[VERSION]/bin' >> ~/.bashrc
-```
-
-#### error: could not access the docker daemon
-
-If you have installed Docker, you probably forgot to add your user to the docker group.
-Please run this, close your session and open it again.
+### Run latest dev branch
 
 ```
-usermod -aG docker $your_user_name
+cd && git clone https://github.com/caelumproject/go-caelum-dev && cd go-caelum-dev && git checkout rebrand && make caelum && sudo rm  /usr/local/bin/caelum && sudo cp build/bin/caelum /usr/local/bin
 ```
+
+To return to the stable version:
+
+```
+cd && cd go-caelum && git checkout master && make caelum && sudo rm  /usr/local/bin/caelum && sudo cp build/bin/caelum /usr/local/bin
+```
+
+---
+
+### Common issues
+
+Note: You might need `sudo` permissions to run any commands below.
+
+On first install: `chmod: changing permissions of FILE/DIR denied`: rerun `chmod -R 755 Apollo` with `sudo` permissions.
+
+`permission denied` when running `.sh` files: First execute `chmod +x FILE_NAME` to grant permissions
+
+When updating via `git pull`: `error: Your local changes to the following files would be overwritten by merge:` Stash the local changes made by the `chmod` action by executing `git stash` first.
+
+### Upgrading go-caelum
+
+Whenever new updates are available, please run `bash upgrade-caelum.sh`.
+
+### Upgrade Apollo
+
+`cd && rm -rf Apollo && git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/ && cd Apollo`
+
+This will remove the repository and reinstall it completely.
+
+### Known bugs
+
+After creating the initial account, chances are likely that your node will start without unlocking the account first. Until this is fixed, we recommend you, after first run, to stop the node and restart it. Check the logs to confirm it's running!.

@@ -1,8 +1,8 @@
-Here are the pages and features available on TomoMaster.
+Here are the pages and features available on CaelumMaster.
 
-## [Home](https://master.tomochain.com/)
+## [Home](https://master.caelumfoundation.com/)
 ### Network Status
-On TomoMaster, this area shows you what the current block is, the block time, how many blocks are in each epoch, and the next checkpoint (end of epoch).
+On CaelumMaster, this area shows you what the current block is, the block time, how many blocks are in each epoch, and the next checkpoint (end of epoch).
 
 
 ### Candidates List
@@ -15,26 +15,21 @@ Voters can use this list to help choose which masternode candidate(s) they would
 
 
 ### Voting
-Voters who want to stake their tokens for a masternode or masternodes in order to earn rewards can vote through TomoMaster.
+Voters who want to stake their tokens for a masternode or masternodes in order to earn rewards can vote through CaelumMaster.
 Simply click ‘Vote’ and you will be taken to a page that allows you to vote through staking your tokens.
 
 
 ### Unvoting
-If you do not want to support a masternode you voted for, you can unvote it by clicking the Unvote button on the masternode's page and enter the amount of TOMO you want to unvote.
+If you do not want to support a masternode you voted for, you can unvote it by clicking the Unvote button on the masternode's page and enter the amount of CLMP you want to unvote.
 
 !!! warning
-    After unvoting, your TOMO will be locked in the smart contract for 48 hours before you are able to withdraw.
+    After unvoting, your CLMP will be locked in the smart contract for 48 hours before you are able to withdraw.
 
 
-## [Candidate](https://master.tomochain.com/candidate/0x98ffa09ae64a3ad63289ee0def385e6455b777e5)
+## [Candidate](https://master.caelumfoundation.com/candidate/0x98ffa09ae64a3ad63289ee0def385e6455b777e5)
 ### General Information
 On the top of the page, you can find general information on a masternode candidate.
 Voters can use this information to better understand the masternode candidates they plan to vote for.
-
-
-### Metrics
-The metrics area shows the performance of the masternode.
-This section is useful to see if the masternode candidate is strong or weak.
 
 
 ### Rewards
@@ -43,14 +38,14 @@ If the masternode has been receiving less rewards than other masternodes, it mig
 
 
 ### Voters
-Under the section for voters, you can see the list of TOMO stakers who voted for this candidate.
+Under the section for voters, you can see the list of CLMP stakers who voted for this candidate.
 
 
 ### Transactions
 In this section, you can see all transactions of this candidate.
 
 
-## [Voter](https://master.tomochain.com/voter/0x82d83629f48b690226af91547cbfbfc8a52b73e6)
+## [Voter](https://master.caelumfoundation.com/voter/0x82d83629f48b690226af91547cbfbfc8a52b73e6)
 ### General Information
 On this page you can find general information about specific voters.
 
@@ -65,24 +60,24 @@ The candidates section shows all masternode candidates that have been voted by t
 The rewards section shows the rewards the voter has been receiving.
 
 !!! tip
-    If you voted an equal amount of TOMO for different masternodes and you see one is giving less rewards, you may have voted for a weak masternode and should consider changing your vote.
+    If you voted an equal amount of CLMP for different masternodes and you see one is giving less rewards, you may have voted for a weak masternode and should consider changing your vote.
 
 
 ### Transactions
 This section shows all transactions by the voter.
 
 
-## [Settings](https://master.tomochain.com/setting)
+## [Settings](https://master.caelumfoundation.com/setting)
 ### Network Provider
-Use settings to select the network provider you are using for TomoMaster (e.g., Metamask, TomoChain Testnet, Custom Network).
+Use settings to select the network provider you are using for CaelumMaster (e.g., Metamask, Caelum Testnet, Custom Network).
 
 
 ### Account Infos
-This section will show you information about your public address and TOMO balance.
+This section will show you information about your public address and CLMP balance.
 
 
-## [Apply](https://master.tomochain.com/apply)
-This web page is used by TOMO holders looking to apply to become a masternode candidate.
+## [Apply](https://master.caelumfoundation.com/apply)
+This web page is used by CLMP holders looking to apply to become a masternode candidate.
 
 ## Search
 On the top of the page, you can find a search bar.

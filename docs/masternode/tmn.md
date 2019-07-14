@@ -1,201 +1,119 @@
-We made a simple command line interface called [tmn](https://github.com/tomochain/masternode) to easily and quickly start a TomoChain masternode.
-It takes care of starting the necessary docker containers with the proper settings for you.
+We made a simple command line interface called [Apollo](https://github.com/tomochain/masternode) to easily and quickly start a Caelum masternode.
+It takes care of starting the necessary steps with the proper settings for you.
 It will really suit you if you don't already have a big infrastructure running.
 Spin up a machine in your favorite cloud and get your masternode running in a few minutes!
-
-## Prerequisites
-
-- [Python](https://docs.python-guide.org/starting/install3/linux/) >= 3.6
-- [Docker CE](https://docs.docker.com/install/)
-
-!!! warning 
-    We recommand to run your masternode on Ubuntu 18.04 LTS.
-    This version have python 3.6 and has been reported as working out of the box.
-
-### Installation of Python
-
-To install Python under debian based distribution, run the following commands.
-```
-apt update
-
-apt install python3-pip
-```
-
-To check if you have installed the right Python version (must be greater than 3.5).
-```
-python3 --version
-```
-
-![tmn python](/assets/tmn_python.png)
-
-### Installation of Docker CE
- 
-To install Docker, first update the apt package index.
-```
-sudo apt update
-```
-
-Then Install packages to allow apt to use a repository over HTTPS.
-```
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
-```
-
-Add Docker’s official GPG key.
-```
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-```
-
-Verify that you now have the key with the fingerprint `9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88`, by searching for the last 8 characters of the fingerprint.
-```
-apt-key fingerprint 0EBFCD88
-```
-
-![tmn docker key](/assets/tmn_key.png)
-
-Set up the stable Docker repository.
-```
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-```
-
-Update the apt package index. Then install the latest version of Docker CE.
-```
-sudo apt update
-
-sudo apt install docker-ce
-```
-
-Once installed, add your current user to the Docker group.
-```
-usermod -aG docker $your_user_name
-```
-!!! warning
-    You need to relog into your account for this to take effect.
-
-Verify that Docker CE is installed correctly by running the hello-world image:
-```
-docker run hello-world
-```
-
-This command downloads a test image and runs it in a container.
-When the container runs, it prints an informational message and exits.
-
-## tmn
-
-### Installation
-
-Simply install it from pip.
-```
-pip3 install --user tmn
-```
-
-### Update
-
-Update it from pip.
-```
-pip3 install -U tmn
-```
-
-### First start
-
-When you first start your full node with tmn, you need to give some information.
-
-`--name`: The name of your full node.
-It should be formatted as a slug string.
-Slug format authorize all letters and numbers, dashes ("-") and underscores ("\_").
-You can name it to reflect your identity, company name, etc.
-
-`--net`: The network your full node will connect to.
-You can choose here to connect it to the TomoChain Testnet or Mainnet (once launched).
-
-`--pkey`: The private key of the account that your full node will use.
-A TomoChain full node uses an account to be uniquely identified and to receive transaction fee.
-
-!!! note "Important note:"
-    We advise for security measures to use a fresh new account for your masternode.
-    This is not the account who will receive the rewards.
-    The rewards are sent to the account who will make the 50k TOMO initial deposit.
-
-`--api`: Expose RPC and websocket on ports `8545` and `8546`.
-
-!!! note "Important note:"
-    Those ports should not be accessible directly from the internet.
-    Please setup firewalling accordingly if you need to access them localy.
-    Use a reverse proxy if you want to expose them to the outside.
-
-It could look like this:
-```
-tmn start --name [YOUR_NODE_NAME] --net testnet --pkey [YOUR_COINBASE_PRIVATE_KEY] --api
-```
 
 Once started, you should see your node on the [stats page](https://stats.testnet.tomochain.com)!
 
 Note: it can take up to one hour to properly sync the entire blockchain.
 
-![tmn stats](/assets/tmn_stats.png)
 
-## Usage
+### Installation
 
-You can now interact with it via the other commands:
+Depending on your security level in your shell, the root password can be asked during the installation script to execute `sudo` commands during installation.
 
-`stop`: Stop your full node.
+`git clone https://github.com/caelumproject/Apollo`
 
-`start`: Start your full node if it is stopped.
+If you don't have Golang and/or go-caelum installed yet, run our installation script:
+`cd Apollo`
+`bash install-server.sh`.
+Follow the prompts and accept/enter when asked. Once finished you might be asked to close/restart the terminal.
+On a successfull install you should have `go-caelum` as a directory alongside `Apollo`.
 
-`status`: The current status of your full node.
+Optional: create a directory to store the masternode/chain data:
+`mkdir YOUR_DATADIR`
 
-`inspect`: Display the details related to your full node.
-Useful for applying your full node as a masternode.
+### Configuration
 
-`remove`: Completely remove your masternode, unique identity and data.
+From within the Apollo directory, run `bash apollo.sh start`.
 
-## Troubleshooting
+The start command will execute the configuration helper. Please follow the steps displayed on the console to setup Apollo once.
 
-### tmn: command not found
+### Usage
 
-It might happen that your PATH is not set by default to include the default user binary directory.
-You can add it by adding it to your shell $PATH:
+Run the apollo scipt by executing `bash apollo.sh` along with one of the following parameters:
 
-On GNU/Linux:
+ - `start` Launches the masternode
+ - `stop` Stops the caelum masternodes
+ - `import` Allows a user to import a private key
+ - `force-close` Force close all running caelum instances
+ - `update` Update the Apollo files to their latest version
+ - `log` Shows the daemon output. Ctrl+c to exit.
+ - `clean` Remove the entire datadir
+
+ Hint! You can run all these actions in one go by running `bash apollo.sh start`. This executes all needed steps in a single command.
+
+ Enter any key in your console to let the masternode run in the background.
+
+ Check if you are displayed on our stats page https://stats.testnet.caelumfoundation.com/
+
+ Send our developers a DM to receive some testnet tokens in order to activate and setup your masternode.
+
+ Subscribe to the Telegram channel for updates/instructions as masternode owner https://t.me/joinchat/AAAAAFankV-nfwLbBRbHMw
+
+---
+
+### Setting up a masternode with no initial masternode address
+
+`bash apollo.sh start` for the first time.
+
+It will ask you if you want to create a new coinbase account, or import an existing one.
+
+The password will be saved in `/Apollo/.pwd` and the address will be saved in `/Apollo/testnet.env`.
+
+Complete the setup helper. This will then start the node and begin syncing.
+
+### Setting up a masternode with an existing masternode address (importing)
+
+Run `bash apollo.sh import` and follow the steps.
+
+### Connecting to our testnet with MetaMask
+
+You will need to go to https://master.testnet.caelumfoundation.com/
+
+There you must click the `login`button. If you use metamask, you need to connect to a custom network first
+
 ```
-echo 'export PATH=$PATH:$HOME/.local/bin' >> $HOME/.bashrc
+RPC URL: https://testnet.caelumfoundation.com
+Chain ID: 159
+Symbol CLMPTESTNET
+Nickname CLMP_TESTNET
 ```
 
-On MacOS:
-Replace `[VERSION]` by your version of python (3.5, 3.6, 3.7)
-```
-echo 'export PATH=$PATH:$HOME/Library/Python/[VERSION]/bin' >> $HOME/.bashrc
-```
-
-Then reload your environment:
-```
-source ~/.bashrc
-```
-
-### error: could not access the docker daemon
-
-If you have installed Docker, you probably forgot to add your user to the docker group.
-Please run this, close your session and open it again.
+### Run latest dev branch
 
 ```
-usermod -aG docker $your_user_name
+cd && git clone https://github.com/caelumproject/go-caelum-dev && cd go-caelum-dev && git checkout rebrand && make caelum && sudo rm  /usr/local/bin/caelum && sudo cp build/bin/caelum /usr/local/bin
 ```
 
-### pip3 install fails due to not being able to build some package
-
-Your OS might not come with build tools preinstalled.
-
-For ubuntu, you can solve that by running:
+To return to the stable version:
 
 ```
-sudo apt install build-essential python3-dev python3-wheel
+cd && cd go-caelum && git checkout master && make caelum && sudo rm  /usr/local/bin/caelum && sudo cp build/bin/caelum /usr/local/bin
 ```
 
-### pip3 install fails due to "No Module named Setuptools"
+---
 
-Your OS might not come with setuptools preinstalled.
+### Common issues
 
-For ubuntu, you can solve that by running:
+Note: You might need `sudo` permissions to run any commands below.
 
-```
-sudo apt install python3-setuptools
-```
+On first install: `chmod: changing permissions of FILE/DIR denied`: rerun `chmod -R 755 Apollo` with `sudo` permissions.
+
+`permission denied` when running `.sh` files: First execute `chmod +x FILE_NAME` to grant permissions
+
+When updating via `git pull`: `error: Your local changes to the following files would be overwritten by merge:` Stash the local changes made by the `chmod` action by executing `git stash` first.
+
+### Upgrading go-caelum
+
+Whenever new updates are available, please run `bash upgrade-caelum.sh`.
+
+### Upgrade Apollo
+
+`cd && rm -rf Apollo && git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/ && cd Apollo`
+
+This will remove the repository and reinstall it completely.
+
+### Known bugs
+
+After creating the initial account, chances are likely that your node will start without unlocking the account first. Until this is fixed, we recommend you, after first run, to stop the node and restart it. Check the logs to confirm it's running!.
