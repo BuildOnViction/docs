@@ -46,20 +46,9 @@ You can follow the steps below to interact with the smart contract by using Web3
 At the first step, you need init Web3 provider by connecting TomoChain Fullnode RPC endpoint
 
 ```javascript
-import Web3 from 'web3';
-const web3 = new Web3('https://rpc.tomochain.com');
+const Web3 = require('web3')
+const web3 = new Web3('https://rpc.tomochain.com')
 ```
-
-## Init Web3 TomoChain Validator Contract
-
-```javascript
-const validatorAbi = require('./TomoValidatorAbi.json')
-const address = '0x0000000000000000000000000000000000000088'
-const validator = new web3.eth.Contract(validatorAbi,
-        address, {gasPrice: 250000000, gas: 2000000 })
-```
-
-Note: you can get TomoValidatorAbi.json [here](https://raw.githubusercontent.com/tomochain/tomomaster/master/abis/TomoValidatorAbi.json)
 
 ## Unlock wallet
 You need to unlock the wallet before staking for the nodes
@@ -72,6 +61,17 @@ web3.eth.accounts.wallet.add(account)
 web.eth.defaultAccount = owner
 ```
 
+## Init Web3 TomoChain Validator Contract
+
+```javascript
+const validatorAbi = require('./TomoValidatorAbi.json')
+const address = '0x0000000000000000000000000000000000000088'
+const validator = new web3.eth.Contract(validatorAbi,
+        address, {gasPrice: 250000000, gas: 2000000, chainId: 88 })
+```
+
+Note: you can get TomoValidatorAbi.json [here](https://raw.githubusercontent.com/tomochain/tomomaster/master/abis/TomoValidatorAbi.json)
+
 ## Propose/Apply a candidate
 You need to have at least 50000 TOMO to apply a fullnode to become a Masternode candidate. So make sure you have > 50000 TOMO in your masternode owner wallet to deposit to the smart contract and pay transaction fee.
 
@@ -82,7 +82,7 @@ You can apply a masternode candidate by call `propose` function from the smart c
 // Masternode coinbase address
 const coinbase = "0xf8ac9d5022853c5847ef75aea0104eed09e5f402"
 
-validator.methods.propose(coinbase).call({
+validator.methods.propose(coinbase).send({
     from : owner,
     value: '50000000000000000000000', // 50000 TOMO
     gas: 2000000,
@@ -99,7 +99,7 @@ You can stake at least 100 TOMO for a node by calling `vote` function from the s
 #### Example
 Stake 500 TOMO to a node.
 ```javascript
-validator.methods.vote(coinbase).call({
+validator.methods.vote(coinbase).send({
     from: owner,
     value: '500000000000000000000', // 500 TOMO
     gas: 2000000,
@@ -117,7 +117,7 @@ You can unstake by calling `unvote` function from the smart contract
 // Masternode coinbase address
 const coinbase = "0xf8ac9d5022853c5847ef75aea0104eed09e5f402"
 
-validator.methods.vote(coinbase).call({
+validator.methods.vote(coinbase).send({
     from : owner,
     value: '50000000000000000000000', // 50000 TOMO
     gas: 2000000,
@@ -134,7 +134,7 @@ You can unstake by calling `unvote` function from the smart contract
 ```javascript
 const cap = '500000000000000000000' // unvote 500 TOMO
 
-validator.methods.unvote(coinbase, cap).call({
+validator.methods.unvote(coinbase, cap).send({
     from : owner,
     gas: 2000000,
     gasPrice: 250000000
@@ -147,7 +147,7 @@ validator.methods.unvote(coinbase, cap).call({
 ## Resign a candidate
 
 ```javascript
-validator.methods.resign(coinbase).call({
+validator.methods.resign(coinbase).send({
     from : owner,
     gas: 2000000,
     gasPrice: 250000000
@@ -170,7 +170,7 @@ web3.eth.getBlockNumber().then(blockNumber => {
 }).then(result, blockNumber => {
     let map = result.map(it, idx => {
         if (parseInt(it) < blockNumber) {
-            return validator.methods.withdraw(it, idx).call({
+            return validator.methods.withdraw(it, idx).send({
                 from : owner,
                 gas: 2000000,
                 gasPrice: 250000000
