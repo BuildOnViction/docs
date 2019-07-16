@@ -43,14 +43,15 @@ TomoChain provides RPC APIs. So you can use Web3 library to directly call the fu
 You can follow the steps below to interact with the smart contract by using Web3 library and NodeJS.
 
 ## Init Web3 provider
-At the first step, you need init Web3 provider by connecting TomoChain Fullnode RPC endpoint
+At the first step, you need init Web3 provider by connecting TomoChain Fullnode RPC endpoint.
 
 ```javascript
 const Web3 = require('web3')
 const web3 = new Web3('https://rpc.tomochain.com')
-const chainId = 89
+const chainId = 88
 ```
 
+For testnet/mainnet details, you can get network information [here](https://docs.tomochain.com/general/networks/)
 ## Unlock wallet
 You need to unlock the wallet before staking for the nodes
 #### Example
@@ -68,13 +69,13 @@ web.eth.defaultAccount = owner
 const validatorAbi = require('./TomoValidatorAbi.json')
 const address = '0x0000000000000000000000000000000000000088'
 const validator = new web3.eth.Contract(validatorAbi,
-        address, {gasPrice: 250000000, gas: 2000000, chainId: 88 })
+        address, {gasPrice: 250000000, gas: 2000000 })
 ```
 
 Note: you can get TomoValidatorAbi.json [here](https://raw.githubusercontent.com/tomochain/tomomaster/master/abis/TomoValidatorAbi.json)
 
 ## Propose/Apply a candidate
-You need to have at least 50000 TOMO to apply a fullnode to become a Masternode candidate. So make sure you have > 50000 TOMO in your masternode owner wallet to deposit to the smart contract and pay transaction fee.
+Masternode owner need to have at least 50000 TOMO to apply a fullnode to become a Masternode candidate. So make sure you have > 50000 TOMO in your masternode owner wallet to deposit to the smart contract and pay transaction fee.
 
 You can apply a masternode candidate by call `propose` function from the smart contract
 
@@ -95,6 +96,7 @@ validator.methods.propose(coinbase).send({
 }).catch(e => console.log(e))
 ```
 
+You can refer to [Staking TomoChain script](https://gist.github.com/thanhson1085/7a6471ea0d6c0d6321a0454789d6266c)
 ## Stake/Vote a candidate
 You can stake at least 100 TOMO for a node by calling `vote` function from the smart contract.
 
