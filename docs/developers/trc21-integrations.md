@@ -1,6 +1,6 @@
-Smart Contract ABI: [TRC20.json](https://raw.githubusercontent.com/tomochain/trc20/master/TRC20.json)
+Smart Contract ABI: [TRC21.json](https://raw.githubusercontent.com/tomochain/trc21/master/TRC21.json)
 
-TRC20 Contract Interface:
+TRC21 Contract Interface:
 ```javascript
 function totalSupply() public view returns (uint);
 function balanceOf(address tokenOwner) public view returns (uint balance);
@@ -29,7 +29,7 @@ const chainId = 88
 ```
 
 ## Unlock wallet
-You need to unlock the wallet before interact TRC20 contract
+You need to unlock the wallet before interact TRC21 contract
 #### Example
 ```javascript
 // Unlock wallet by private key
@@ -39,26 +39,26 @@ web3.eth.accounts.wallet.add(account)
 web.eth.defaultAccount = holder
 ```
 
-## Init Web3 TRC20 Contract
+## Init Web3 TRC21 Contract
 
 ```javascript
-const trc20Abi = require('./TRC20.json')
+const trc21Abi = require('./TRC21.json')
 const address = '[enter_your_contract_address]'
-const trc20 = new web3.eth.Contract(trc20Abi,
+const trc21 = new web3.eth.Contract(trc21Abi,
         address, {gasPrice: 250000000, gas: 2000000 })
 ```
 
-Note: you can get TRC20.json [here](https://raw.githubusercontent.com/tomochain/trc20/master/TRC20.json)
+Note: you can get TRC21.json [here](https://raw.githubusercontent.com/tomochain/trc21/master/TRC21.json)
 
 ## Check balance
-You need to call function `balanceOf()` from TRC20 contract to check your token balance for an address.
+You need to call function `balanceOf()` from TRC21 contract to check your token balance for an address.
 
 #### Example
 ```javascript
 // Token holder address
 const address  = "0xf8ac9d5022853c5847ef75aea0104eed09e5f402"
 
-trc20.methods.balanceOf(address).call()
+trc21.methods.balanceOf(address).call()
 .then((result) => {
     console.log(result)
 }).catch(e => console.log(e))
@@ -71,7 +71,7 @@ Token holder needs to call function `transfer` to send token to an address
 ```javascript
 // send 500000000000000000000 tokens to this address (e.g decimals 18)
 const to = "0xf8ac9d5022853c5847ef75aea0104eed09e5f402"
-trc20.methods.transfer(to, '500000000000000000000').send({
+trc21.methods.transfer(to, '500000000000000000000').send({
     from: holder,
     gas: 2000000,
     gasPrice: 250000000,

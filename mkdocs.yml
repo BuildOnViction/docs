@@ -107,8 +107,11 @@ nav:
       - Standard & Specification:
           - TRC21 Specification: wp-and-research/specs/trc21_standard.md
     - Developers guide:
-        - Exchange/Wallet integrations: developers/integrations.md
-        - TomoChain Governance integrations: developers/staking-integrations.md
+        - Integrations:
+          - TOMO Exchange/Wallet: developers/integrations.md
+          - TomoChain Staking Governance: developers/staking-integrations.md
+          - TRC20 Exchange/Wallet: developers/trc20-integrations.md
+          - TRC21 Exchange/Wallet: developers/trc21-integrations.md
         - Working with TomoChain:
            - TomoChain private testnet setup: developers/tutoprivatenet.md
            - Useful manual CLI commands: developers/clicommands.md
