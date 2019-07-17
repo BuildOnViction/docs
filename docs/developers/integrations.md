@@ -86,7 +86,7 @@ const web3 = new Web3(provider)
 const account = web3.eth.accounts.privateKeyToAccount(pkey)
 let coinbase = account.address
 web3.eth.accounts.wallet.add(account)
-web.eth.defaultAccount = coinbase
+web3.eth.defaultAccount = coinbase
 
 // Make a transaction using the promise
 web3.eth.sendTransaction({

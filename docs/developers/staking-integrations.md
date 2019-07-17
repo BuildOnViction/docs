@@ -60,7 +60,7 @@ You need to unlock the wallet before staking for the nodes
 const account = web3.eth.accounts.privateKeyToAccount(pkey)
 const owner = account.address
 web3.eth.accounts.wallet.add(account)
-web.eth.defaultAccount = owner
+web3.eth.defaultAccount = owner
 ```
 
 ## Init Web3 TomoChain Validator Contract
