@@ -65,7 +65,7 @@ function balanceOf(address who) external view returns (uint256);
 ```
 
 - ```estimateFee```: Estimate the transaction fee in terms of the token that the transaction makers will have to pay.
-Transaction fee will be paid to the issuer of the TRC21 token contract following our TomoZ protocol detailed in here[add link].
+Transaction fee will be paid to the issuer of the TRC21 token contract following our TomoZ protocol detailed in [here](https://docs.google.com/document/d/1jxD3DsU7GWhxQhs0R8hCmqIQvfQfJjAQaioBoRrVGIA/edit?usp=sharing).
 
 ```solidity	
 function estimateFee(uint256 value) external view returns (uint256);
@@ -177,7 +177,7 @@ the token contract will be based on the token, not TOMO.
 Ideally minFee will be paid when ``approve`` function is called or when transaction fails.
 - `_issuer`: the address of the token issuer who will receive transaction fees from token holders in terms of token, 
 but will pay transaction fees
-to masternodes by means of TOMO. This is detailed in our TomoZ protocol specification in here[add link].
+to masternodes by means of TOMO. This is detailed in our TomoZ protocol specification [white paper](https://docs.google.com/document/d/1jxD3DsU7GWhxQhs0R8hCmqIQvfQfJjAQaioBoRrVGIA/edit?usp=sharing).
 
 The implementation also defines some additional functions as follows:
 - `minFee`: Returns the minimum fee for any transaction. 
