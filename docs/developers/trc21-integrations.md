@@ -2,16 +2,20 @@ Smart Contract ABI: [TRC21.json](https://raw.githubusercontent.com/tomochain/trc
 
 TRC21 Contract Interface:
 ```javascript
-function totalSupply() public view returns (uint);
-function balanceOf(address tokenOwner) public view returns (uint balance);
-function allowance(address tokenOwner, address spender) public view returns (uint remaining);
-function transfer(address to, uint tokens) public returns (bool success);
-function approve(address spender, uint tokens) public returns (bool success);
-function transferFrom(address from, address to, uint tokens) public returns (bool success);
+function totalSupply() external view returns (uint256);
+function balanceOf(address who) external view returns (uint256);
+function estimateFee(uint256 value) external view returns (uint256);
+function issuer() external view returns (address);
+function allowance(address owner, address spender) external view returns (uint256);
+function transfer(address to, uint256 value) external returns (bool);
+function approve(address spender, uint256 value) external returns (bool);
+function transferFrom(address from, address to, uint256 value) external returns (bool);
 
-event Transfer(address indexed from, address indexed to, uint tokens);
-event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
+event Transfer(address indexed from, address indexed to, uint256 value);
+event Approval(address indexed owner, address indexed spender, uint256 value);
+event Fee(address indexed from, address indexed to, address indexed issuer, uint256 value);
 ```
+Refer to [TRC21 Specification](https://docs.tomochain.com/wp-and-research/specs/trc21_standard/)
 
 TomoChain provides RPC APIs. So you can use Web3 library to directly call the functions in the smart contract.
 
@@ -36,7 +40,7 @@ You need to unlock the wallet before interact TRC21 contract
 const account = web3.eth.accounts.privateKeyToAccount(pkey)
 const holder = account.address
 web3.eth.accounts.wallet.add(account)
-web.eth.defaultAccount = holder
+web3.eth.defaultAccount = holder
 ```
 
 ## Init Web3 TRC21 Contract
