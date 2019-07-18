@@ -68,7 +68,7 @@ trc21.methods.balanceOf(holder).call()
 ```
 
 ## Estimate fee
-Before sending tokens, we need to check TX fee by calling 'estimateFee' function in TRC21 smart contract.
+Before sending tokens, we need to check TX fee by calling `estimateFee` function in TRC21 smart contract.
 
 #### Example
 ```javascript
@@ -78,7 +78,7 @@ trc21.methods.estimateFee().call()
 }).catch(e => console.log(e))
 ```
 
-Note: this is fee you need to pay to send TRC21 token that applied TomoZ
+Note: this fee is amount token you need to pay to send TRC21 token that applied TomoZ
 
 ## Transfer token
 Token holder needs to call function `transfer` to send token to an address
