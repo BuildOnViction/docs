@@ -66,6 +66,25 @@ trc20.methods.balanceOf(address).call()
 }).catch(e => console.log(e))
 ```
 
+## Estimate TX fee (gas)
+Before sending tokens, you need to estimate fee to make sure you have enough TOMO for sending.
+
+You need to use this method:
+```
+myContract.methods.myMethod([param1[, param2[, ...]]]).estimateGas(options[, callback])
+```
+
+#### Example
+```javascript
+trc20.methods.transfer(to, '500000000000000000000').estimateGas({
+    from: holder
+})
+.then((result) => {
+    console.log(result)
+}).catch(e => console.log(e))
+
+```
+
 ## Transfer token
 Token holder needs to call function `transfer` to send token to an address
 
@@ -82,4 +101,7 @@ trc20.methods.transfer(to, '500000000000000000000').send({
 .then((result) => {
     console.log(result)
 }).catch(e => console.log(e))
+
 ```
+
+You can refer to [Transfer TRC20 script](https://gist.github.com/thanhson1085/3c831416287b0c1f4afbf9fcb3aa05dc)
