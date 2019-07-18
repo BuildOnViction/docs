@@ -20,7 +20,7 @@ You can follow the steps below to interact with the smart contract by using Web3
 ## Init Web3 provider
 At the first step, you need init Web3 provider by connecting TomoChain Fullnode RPC endpoint
 
-You can take a look to [TomoChain Networks](https://docs.tomochain.com/general/networks/) page to the details of Testnet/Mainnet network information.
+You can take a look to [TomoChain Networks](https://docs.tomochain.com/general/networks/) page to get the details of Testnet/Mainnet network information.
 
 ```javascript
 const Web3 = require('web3')
@@ -29,6 +29,8 @@ const chainId = 88
 ```
 
 ## Unlock wallet
+In order to create a wallet, you can refer to [Create wallet page](https://docs.tomochain.com/developers/integrations/#create-wallet)
+
 You need to unlock the wallet before interact TRC20 contract
 #### Example
 ```javascript
