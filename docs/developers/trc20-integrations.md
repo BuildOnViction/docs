@@ -1,3 +1,5 @@
+This tutorial is a guide for a developer who wants to know how to integrate TRC20 token to applications (e.g. wallet, exchange)
+
 Smart Contract ABI: [TRC20.json](https://raw.githubusercontent.com/tomochain/trc20/master/TRC20.json)
 
 TRC20 Contract Interface:
@@ -18,7 +20,7 @@ TomoChain provides RPC APIs. So you can use Web3 library to directly call the fu
 You can follow the steps below to interact with the smart contract by using Web3 library and NodeJS.
 
 ## Init Web3 provider
-At the first step, you need init Web3 provider by connecting TomoChain Fullnode RPC endpoint
+At the first step, you need init Web3 provider by connecting TomoChain Fullnode RPC endpoint.
 
 You can take a look to [TomoChain Networks](https://docs.tomochain.com/general/networks/) page to get the details of Testnet/Mainnet network information.
 
@@ -29,7 +31,7 @@ const chainId = 88
 ```
 
 ## Unlock wallet
-In order to create a wallet, you can refer to [Create wallet page](https://docs.tomochain.com/developers/integrations/#create-wallet)
+To create a wallet, you can refer to [Create wallet page](https://docs.tomochain.com/developers/integrations/#create-wallet)
 
 You need to unlock the wallet before interact TRC20 contract
 #### Example
@@ -57,10 +59,7 @@ You need to call function `balanceOf()` from TRC20 contract to check your token 
 
 #### Example
 ```javascript
-// Token holder address
-const address  = "0xf8ac9d5022853c5847ef75aea0104eed09e5f402"
-
-trc20.methods.balanceOf(address).call()
+trc20.methods.balanceOf(holder).call()
 .then((result) => {
     console.log(result)
 }).catch(e => console.log(e))
