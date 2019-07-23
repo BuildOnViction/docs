@@ -42,3 +42,7 @@ Tomo Wallet also allows users to vote for masternodes and track rewards.
 integrated into the core layer of the TomoChain blockchain. 
 Decentralized exchanges called relayers built following the TomoX 
 standard will all interact with TomoX.
+
+* **TomoZ**: is a TomoChain on-chain protocol that allows any token holders to transfer tokens without holding TOMO in their wallet. The transaction fees will be paid in the token the user is holding.
+
+* **TomoIssuer**: provides a friendly UI and a smart contract that allow any user to issue a TRC21 token and apply the token to the TomoZ protocol in minutes without any programming skills required.
