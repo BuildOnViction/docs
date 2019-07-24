@@ -16,7 +16,7 @@ We will have 3 main screens: *Home, Main Game, Result*.
 
 ## Create Cocos Creator project
 
-For making this tutorial simple, I will not go through the details on every step of the implementation for UI on editor. I recommended you read Cocos Creator documents for understand more about how editor working.
+To make this tutorial simple, we will not go through the details on every step of the implementation for UI on the editor. We recommend you read the Cocos Creator documents to understand more about how the editor works.
 
 * Open Cocos Creator -> Choose Empty Project and put your project name.
 
@@ -24,13 +24,13 @@ For making this tutorial simple, I will not go through the details on every step
 
 * Structure our project and create game components 
 
-We create the main scene of our game (Game Scene) and create all components like Background,Button, Layout, Label, Animation… and make sure it will same with our design.
+We create the main scene of our game (Game Scene) and create all components like Background, Button, Layout, Label, Animation… and make sure it will be the same with your design.
 
 ![Cocos Structure](/assets/cocosstructure.png)
 
 * Drinking coffee and complete your core gameplay ☕️ ☕️ ☕️ ☕️ ☕️
 
-After some hours, we completed implement core gameplay of our game without interact with smart contract.
+After a few hours, we completed the implementation of the core gameplay of our game without interacting with smart contract.
 
 [![](http://img.youtube.com/vi/upZ4ZKROqxE/0.jpg)](http://www.youtube.com/watch?v=upZ4ZKROqxE "TomoLuckyBox without TomoChain integration")
 
@@ -48,8 +48,7 @@ After some hours, we completed implement core gameplay of our game without inter
 
 * Create ‘Web3Controller.js’ class to handle all interact with smart contract using web3.js
 
-Check full source code of `Web3Controller.js` on [GitHub](https://github.com/frogdevvn/tomoluckybox-example-cocoscreator/blob/master/assets/scripts/Web3Controller.js?source=post_page---------------------------).
-
+You can check the full source code of `Web3Controller.js` on [GitHub](https://github.com/frogdevvn/tomoluckybox-example-cocoscreator/blob/master/assets/scripts/Web3Controller.js?source=post_page---------------------------).
 
 Let’s walk through `Web3Controller.js` and understand what’s happening on the front-end.
 
