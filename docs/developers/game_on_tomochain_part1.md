@@ -1,35 +1,43 @@
 # Building Your First Game dApp On TomoChain (Part 1)
 
-Interesting challenge by building a simple lucky dApp game with Truffle Framework, Cocos Creator and deploy to TomoChain. 💪
+Challenge yourself  by building a simple lucky dApp game with Truffle Framework, Cocos Creator and deploy to TomoChain. 💪
 
 ## What are dApps?
 
-* Understanding Blockchain: Before we can even fathom what dApps do, we need to be familiar with its underlying technology — the blockchain. Put simply, a blockchain is a ledger of records organized in ‘blocks’ that are linked together by cryptographic validation. It is a digital storage of consensus truth. The key is to understand that this ledger is neither stored in a centralized location nor managed by any single entity, hence its distributed-ness. The block validation system results in new transactions being added irreversibly and old transactions preserved forever for all to see, hence its transparency and resilience. 
-Open-source software that leverage on the blockchain technology are called dApps.
+* Understanding Blockchain: Before we can even fathom what dApps do, we need to be familiar with its underlying technology — the blockchain. 
+Put simply, a blockchain is a ledger of records organized in ‘blocks’ that are linked together by cryptographic validation. 
+It is a digital storage of consensus truth. 
+The key is to understand that this ledger is neither stored in a centralized location nor managed by any single entity, hence its distributed-ness. 
+The block validation system results in new transactions being added irreversibly and old transactions preserved forever for all to see, hence its transparency and resilience. 
+Open-source software that leverage blockchain technology are called dApps.
 
-* Understanding Smart Contract: Smart contracts help you exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman.
-The best way to describe smart contracts is to compare the technology to a vending machine. Ordinarily, you would go to a lawyer or a notary, pay them, and wait while you get the document. 
-With smart contracts, you simply drop a bitcoin into the vending machine (i.e. ledger), and your escrow, driver’s license, or whatever drops into your account. More so, smart contracts not only define the rules and penalties around an agreement in the same way that a traditional contract does, but also automatically enforce those obligations. If you are looking for a more detailed walkthrough of smart contracts please check out our blockchain courses on smart contracts.
+* Understanding Smart Contract: Smart contracts help you exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. 
+The best way to describe smart contracts is to compare the technology to a vending machine. 
+Ordinarily, you would go to a lawyer or a notary, pay them, and wait while you get the document. 
+With smart contracts, you simply drop a bitcoin into the vending machine (i.e. ledger), and your escrow, driver’s license, or whatever drops into your account. 
+More so, smart contracts not only define the rules and penalties around an agreement in the same way that a traditional contract does, but also automatically enforce those obligations. 
+If you are looking for a more detailed walkthrough of smart contracts please check out our blockchain courses on smart contracts.
 
-> dApp is an abbreviation for Decentralized app. dApps are a new paradigm for building apps where a back end centralized server is replaced by a decentralized peer to peer network.
+> dApp is an abbreviation for Decentralized application. dApps are a new paradigm for building apps where a back end centralized server is replaced by a decentralized peer to peer network.
 
-> One of the most popular dApps, cryptokitties, is collectibles-style game built on Ethereum. When we build a game with Ethereum, essentially, each game action and transaction is stored on the Ethereum blockchain.
+> One of the most popular dApps, cryptokitties, is a collectibles-style game built on Ethereum. When we build a game with Ethereum each game action and transaction is stored on the Ethereum blockchain.
+
 
 ## What is TomoChain?
 
 TomoChain is an innovative solution to the scalability problem with the Ethereum blockchain, and other blockchain platforms. 
-TomoChain POSV masternode architecture offers near-zero transaction fee and instant transaction confirmation. Security, stability and chain finality are guaranteed via novel techniques such as double validation and uniform randomization.
+TomoChain supports all EVM-compatible smart-contracts, which basically means that every DApp run on Ethereum
+can be easily ported to TomoChain. 
 
-TomoChain supports all EVM-compatible smart-contracts, protocols, and atomic cross-chain token transfers. 
-Scaling techniques such as sharding, EVM parallelisation, private-chain generation, hardware integration will be continuously researched and integrated into TomoChain which will become an ideal scalable smart-contract public blockchain for decentralized apps, token issuance and token integration for small and big businesses.
+For more information about TomoChain, please refer to our [website](tomochain.com).
 
 ## What is Cocos Creator?
 
-Cocos Creator is a complete package of game development tools and workflow, including a game engine (based on Cocos2d-x), resource management, scene editing, game preview, debug and publish one project to multiple platforms.
+Cocos Creator is a complete package of game development tools and workflow, including a game engine (based on Cocos2d-x), resource management, scene editing, game preview, and debug and publish from one project to multiple platforms.
 
-For the first time we introduced entity-component structure and data-driven workflow to the Cocos2d-x family. With JavaScript, you can scripting your component in no time. The editor and engine extension is also made with JavaScript so you can make games and refine your tool in a single programming language.
+For the first time we introduced entity-component structure and data-driven workflow to the Cocos2d-x family. With JavaScript, you can script your component in no time. The editor and engine extension is also made with JavaScript so you can make games and refine your tools in a single programming language.
 
-Cocos Creator provides an innovative, easy to use toolset such as the UI system and Animation editor. The toolset will be expanding continuously and quickly, thanks to the open editor extension system.
+Cocos Creator provides an innovative, and easy to use toolset such as the UI system and Animation editor. The toolset will be expanding continuously and quickly, thanks to the open editor extension system.
 
 Homepage: https://cocos2d-x.org/creator
 
@@ -39,9 +47,9 @@ Docs: https://docs.cocos2d-x.org/creator/manual/en/
 
 For this tutorial, we will make a simple game dApp called “Tomo Lucky Box” using Cocos Creator.
 
-Gameplay: We have 3 boxes to choose. We need pay 1 TOMO for each time open one box, if you choose the lucky box you will get prize.
+Gameplay: We have 3 boxes to choose. We need to pay 1 TOMO each time we open one box, if you choose the lucky box you will get a prize.
 
-We recommended you have basic understanding:
+We recommend you have a basic understanding of:
 
 * JavaScript (Good [link](https://www.w3schools.com/js/?source=post_page---------------------------) to read)
 * Solidity & smart contract (Good [link](https://cryptozombies.io/?source=post_page---------------------------) to read)
@@ -91,7 +99,7 @@ Now your wallet has enough balance to do everything in this tutorial so… let�
 
 ### The Block Explorer
 
-To check the balance of a wallet address, you can use TomoScan.
+To check the balance of a wallet address, you can search the address on TomoScan.
 
 **Testnet**: https://scan.testnet.tomochain.com/
 
@@ -315,3 +323,9 @@ Summary
 ## Conclusion
 
 We finish part 1 finally. In next part we will create Cocos Creator project for front-end and make it working with our smart contract through web3.js.
+
+
+## More about TomoChain
+TomoChain is an innovative solution to blockchain scalability and functionality. Its decentralized 150 masternode Proof of Stake (POSv) architecture incentivises Tomo token-holders to play an active part in staking, while offering near-zero transaction fees with instant confirmation. TomoChain supports all EVM-compatible smart-contracts, protocols, and atomic cross-chain token transfers. This interoperability creates a product ecosystem that allows solidity developers, entrepreneurs, enterprises, and institutions to build high-performance, feature-rich blockchain solutions on an enhanced platform. Scaling techniques such as sharding, EVM parallelization, private-chain generation, hardware integration will be continuously researched and integrated into TomoChain making it the ideal blockchain platform.
+
+TomoChain has additionally developed three game-changing products; TomoZ, TomoIssuer, and TomoX.  TomoZ, “zero-friction protocol”, uses the innovative TRC21 token standard which allows for transaction fees to be paid in any token.  This means a user does not need to have additional Tomo to pay gas fees, fixing a massive barrier to mass-adoption. TomoIssuer allows individuals, developers, and institutions to be able to create and issue their own unique TRC21 token in a matter of minutes. Next, operating on layer one, TomoChains decentralized exchange, TomoX, empowers a diverse system of relayers, MM providers, and independent projects to work together in a decentralized manner.  TomoX combines the on-chain security and order book aggregation of a DEX, with a high-quality UX and trading speeds formerly offered only by centralized exchanges.  Deployment is simple and relayers can launch their own DEX in 10 minutes.
