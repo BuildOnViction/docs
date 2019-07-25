@@ -1,24 +1,21 @@
 # How to migrate DApps from Ethereum to TomoChain?
 
-This tutorial shows how easy it is to migrate a DApp running on Ethereum to TomoChain 
-in order to take advantages of TomoChain over Ethereum.
+This tutorial shows how easy it is to migrate a DApp running on Ethereum to TomoChain in order to use the many unrivaled features and advantages that TomoChain has over Ethereum.
+
 
 ## What’s a DApp?
 
-Ethereum DApps are built on smart contracts deployed onto the Ethereum blockchain where Ethereum serves as the back-end for the application.
-One of the most popular DApps — Cryptokitties, is collectibles-style game built on Ethereum. 
-When we build a game with Ethereum, essentially, each game action and transaction might be stored on the Ethereum blockchain.
+Ethereum DApps are built on smart contracts deployed onto the Ethereum blockchain where Ethereum serves as the back-end for the application. One of the most popular DApps — Cryptokitties, is collectibles-style Dapp built on Ethereum. When we build a game with Ethereum, essentially, each game action and transaction is be stored on the Ethereum blockchain.
+
 
 ## What’s TomoChain?
-TomoChain is an innovative solution to the scalability problem with the Ethereum blockchain, and other blockchain platforms. 
-TomoChain supports all EVM-compatible smart-contracts, which basically means that every DApp run on Ethereum
-can be easily ported to TomoChain. 
+In short, TomoChain is an innovative solution to blockchain scalability and functionality. TomoChain supports all EVM-compatible smart-contracts, which basically means that every DApp run on Ethereum can be easily ported to TomoChain.
 
 > Every DApp running on Ethereum can be easily ported to TomoChain!
 
 ## Why should developers build DApps on TomoChain?
 
-TomoChain is a blockchain built for practical decentralized applications.
+> TomoChain is a blockchain built for practical decentralized applications.
 
 Remember CryptoKitties in 2017? A single DApp brought the whole Ethereum blockchain to their knees. 
 The network was congested, with endless waiting times for transaction confirmation and high transaction fees. 
