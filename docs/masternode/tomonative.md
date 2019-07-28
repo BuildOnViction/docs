@@ -187,5 +187,21 @@ tomo --help
 ```
 
 ## See your node on stats page
-- Testnet: https://stats.testnet.tomochain.com
-- Mainnet: http://stats.tomochain.com
+- Testnet: [https://stats.testnet.tomochain.com](https://stats.testnet.tomochain.com)
+- Mainnet: [http://stats.tomochain.com](http://stats.tomochain.com)
+
+## Troubleshoot
+If your node seems run smooth with no error logs but still get slash frequently. You need to check system time on your node, your system time have to be synced from NTP server
+
+E.g:
+```
+$ timedatectl
+Local time: Fri 2019-07-26 05:57:40 CEST
+  Universal time: Fri 2019-07-26 03:57:40 UTC
+        RTC time: Fri 2019-07-26 03:58:01
+       Time zone: Europe/Berlin (CEST, +0200)
+ Network time on: yes
+NTP synchronized: no
+ RTC in local TZ: no
+```
+`NTP synchronized: no` means your node does not use NTP, you have to enable it.
