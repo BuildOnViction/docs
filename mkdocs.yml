@@ -92,10 +92,10 @@ nav:
       - Requirements: masternode/requirements.md
       - Detailed guide: masternode/masternode-setup-guide.md
       - Running a node with:
+        - Binary: masternode/tomonative.md
         - Create-tomochain-masternode: masternode/create-tomochain-masternode.md
         - Tmn: masternode/tmn.md
         - Docker: masternode/docker.md
-        - Binary: masternode/tomonative.md
       - Applying for Masternode Candidacy: masternode/applying.md
       - Chaindata Snapshots: masternode/snapshot.md
   #   - Contributing: misc/wip.md
