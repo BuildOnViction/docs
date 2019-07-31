@@ -1,4 +1,4 @@
-# TOMOCHAIN - The Most Efficient Platform for the Token Economy
+# TOMOCHAIN - The Most Efficient Blockchain for the Token Economy
 
 ## Preface
 
