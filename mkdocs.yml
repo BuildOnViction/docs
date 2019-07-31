@@ -115,11 +115,8 @@ nav:
         - Working with TomoChain:
            - TomoChain private testnet setup: developers/tutoprivatenet.md
            - Useful manual CLI commands: developers/clicommands.md
-           - Block header specification: developers/blockheader.md
-           - Transaction types: developers/txtypes.md
         - DApps on TomoChain:
            - Deploy DApp on TomoChain: developers/dappdeploytuto.md
            - Deploy an ICO smart contract: developers/icosmartcontract.md
-           - Using multisignature wallet: developers/multisigwallet.md
         - API Documentation: https://apidocs.tomochain.com
 copyright: If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
