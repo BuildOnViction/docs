@@ -48,7 +48,7 @@ The Testnet network is meant to be a public demo of our products and a way for u
 - Consensus: POSV
 - Block finality: `>75%`
 - Consensus nodes: up to 150 (masternodes)
-- Smart contract creation fee: gas price 1000 Gwei, gas limit >= 1000000
+- Smart contract creation fee: gas price 10000 Gwei, gas limit >= 1000000
 
 ### Usefull links
 
