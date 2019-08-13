@@ -1,5 +1,5 @@
 
-Latest snapshot: [download](https://chaindata.tomochain.com/20190808.tar) (80.7 GB)
+Latest snapshot: [download](https://chaindata.tomochain.com/20190813.tar) (91 GB)
 
 The following commands are step by step instructions for Tomo masternode operators that can be used for two major use-cases:
 
@@ -13,7 +13,7 @@ Basically, you download a compressed version of the last-known "good" chaindata.
 ```
 # Login as user that has access to tmn
 # Download Tomo's chaindata archive (make sure you have enough disk space available)
-wget https://chaindata.tomochain.com/20190808.tar -P /tmp
+wget https://chaindata.tomochain.com/20190813.tar -P /tmp
 
 # Stop your node (for tmn users)
 tmn stop
@@ -31,7 +31,7 @@ docker volume ls
 
 # Extract the data
 cd /tmp
-sudo tar xvC /var/lib/docker/volumes/NAME_OF_YOUR_VOLUME/_data/data/tomo/ -f 20190808.tar
+sudo tar xvC /var/lib/docker/volumes/NAME_OF_YOUR_VOLUME/_data/data/tomo/ -f 20190813.tar
 
 # Start your node back(for tmn users)
 tmn start
@@ -40,12 +40,12 @@ docker-compose start
 
 # If you're really running out of space, remove the tar file
 # keeping it might be a good idea if you get stuck further before a new snapshot is released
-rm /tmp/20190808.tar
+rm /tmp/20190813.tar
 ```
 
 **Tip: extract the data in backgroud**
 
 In case you can not wait for the extraction finish, you can run it in the background
 ```
-nohup tar xvC /var/lib/docker/volumes/NAME_OF_YOUR_VOLUME/_data/data/tomo/ -f 20190808.tar &
+nohup tar xvC /var/lib/docker/volumes/NAME_OF_YOUR_VOLUME/_data/data/tomo/ -f 20190813.tar &
 ```
