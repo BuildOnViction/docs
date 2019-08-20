@@ -1,4 +1,4 @@
-TomoChain is an EVM-compatible public blockchain. So you can use [TomoChain JSON-RPC APIs](https://apidocs.tomochain.com/#tomochain-apis-json-rpc) same as Ethereum.
+TomoChain is an EVM-compatible public blockchain. So you can use [TomoChain JSON-RPC APIs](https://apidocs.tomochain.com/#tomochain-apis-json-rpc) the same as Ethereum.
 
 It means that you can use [Web3 library](https://web3js.readthedocs.io) to create a wallet, check the balance or send the transaction. You just need to change RPC endpoint to TomoChain fullnode or TomoChain public RPC endpoint.
 You can take a look to [TomoChain Networks](https://docs.tomochain.com/general/networks/) page to the details of Testnet/Mainnet network information.
