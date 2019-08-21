@@ -41,8 +41,8 @@ make all
 alias tomo=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/tomo
 ```
 
-#### Use binary
-- Download tomo binary from our [releases page](https://github.com/tomochain/tomochain/releases)
+#### Download TomoChain binary from Github release page
+Download tomo binary from our [releases page](https://github.com/tomochain/tomochain/releases)
 
 ```bash
 alias tomo=path/to/tomo/binary
