@@ -101,7 +101,7 @@ tomo  account import [PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT] \
 #### List all available accounts in keystore folder
 
 ```bash
-tomo account list --datadir ./  --keystore $KEYSTORE_DIR
+tomo account list --datadir $DATA_DIR  --keystore $KEYSTORE_DIR
 ```
 
 ## Start a node
