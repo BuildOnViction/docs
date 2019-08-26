@@ -80,6 +80,7 @@ nav:
       - TomoWallet:
         - Features: products/tomowallet/features.md
         - Voting with TomoWallet: products/tomowallet/voting.md
+        - Terms & Privacy: products/tomowallet/terms.md
       - TomoBridge:
         - FAQ: products/tomobridge/faq.md
       - TomoIssuer:
