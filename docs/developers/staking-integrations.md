@@ -119,25 +119,6 @@ validator.methods.vote(coinbase).send({
 You can unstake by calling `unvote` function from the smart contract
 
 ```javascript
-// Masternode coinbase address
-const coinbase = "0xf8ac9d5022853c5847ef75aea0104eed09e5f402"
-
-validator.methods.unvote(coinbase).send({
-    from : owner,
-    value: '50000000000000000000000', // 50000 TOMO
-    gas: 2000000,
-    gasPrice: 250000000,
-    chainId: chainId
-})
-.then((result) => {
-    console.log(result)
-}).catch(e => console.log(e))
-```
-
-## Unstake/Unvote a candidate
-You can unstake by calling `unvote` function from the smart contract
-
-```javascript
 const cap = '500000000000000000000' // unvote 500 TOMO
 
 validator.methods.unvote(coinbase, cap).send({
