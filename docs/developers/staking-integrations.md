@@ -173,3 +173,18 @@ web3.eth.getBlockNumber().then(blockNumber => {
 }).catch(e => console.log(e))
 ```
 
+## Get list candidates
+You can get list candidates from [RPC endpoint](https://apidocs.tomochain.com/?shell#eth_getcandidates):
+```
+curl https://rpc.tomochain.com \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_getCandidates","params": ["latest"],"id":1}'
+
+```
+Or [get list candidates from TomoMaster](https://apidocs.tomochain.com/?shell#tomomaster-apis-candidates):
+```
+curl -X GET https://master.tomochain.com/api/candidates \
+  -H 'Accept: application/json'
+```
+
