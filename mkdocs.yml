@@ -65,11 +65,10 @@ nav:
       - Overview:
         - Products overview: get-started/productoverview.md
         - How to read: get-started/how_to_read.md
-      - Beginners Tutorials:
-        - Connect your wallet: get-started/wallet.md
-        - Voting: get-started/voting.md
-        - Run a full node in testnet: get-started/run-node.md
-        - Apply your node: get-started/apply-node.md
+      - Connect your wallet: get-started/wallet.md
+      - Voting: get-started/voting.md
+      - Run a full node in testnet: get-started/run-node.md
+      - Apply your node: get-started/apply-node.md
     # - TomoChain client:
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
