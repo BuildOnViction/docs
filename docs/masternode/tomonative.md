@@ -21,7 +21,7 @@ cd $GOPATH/src/github.com/ethereum/
 
 - Download source code and build
 ```bash
-git clone git@github.com:tomochain/tomochain.git go-ethereum
+git clone https://github.com/tomochain/tomochain.git go-ethereum
 cd go-ethereum
 ```
 
