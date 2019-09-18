@@ -13,7 +13,7 @@ Basically, you download a compressed version of the last-known "good" chaindata.
 ```
 # Login as user that has access to tmn
 # Download Tomo's chaindata archive (make sure you have enough disk space available)
-wget https://chaindata.tomochain.com/20190813.tar -P /tmp
+wget -c https://chaindata.tomochain.com/20190813.tar -P /tmp
 
 # Stop your node (for tmn users)
 tmn stop
