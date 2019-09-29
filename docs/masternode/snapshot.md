@@ -1,5 +1,5 @@
 
-Latest snapshot: [download](https://chaindata.tomochain.com/20190813.tar) (91 GB)
+Latest snapshot: [download](https://chaindata.tomochain.com/20190813.tar) (91 GB, md5sum 0b23a48b0d6585690350e91b0f6c9f14)
 
 The following commands are step by step instructions for Tomo masternode operators that can be used for two major use-cases:
 
