@@ -8,19 +8,11 @@ TomoChain has issued BEP-2 TOMO tokens on Binance Chain called TOMOB. With the c
 
 ### Can I trade TOMOB on Binance DEX now after swapping?
 
-Not yet. We are in the process of proposing to be approved for listing on Binance DEX. Please wait for our official announcement on this. At this stage, you can only convert your native TOMO to TOMOB on Binance Chain in preparation for listing.
+Yes, you can.
 
-### How do I swap my TOMO to TOMOB?
+### How do I swap my TOMO to TOMOB and vice versa?
 
-Check out this video for details: [TomoBridge Tutorial](https://www.youtube.com/watch?v=TglV_VyAYI4&feature=youtu.be)
-
-### How do I swap from TOMOB back to TOMO?
-
-This feature will be available 3 months after the successful listing on Binance DEX. In case the proposal to list is not accepted, the 2-way migration will be available by July 14.
-
-### Why is TomoChain requesting for 2,000,000 TOMO to be migrated to TOMOB?
-
-Reaching this target will signal confidence and provide adequate liquidity for our listing on Binance DEX. We appreciate the community’s support in helping to make this listing a reality.
+Go to [TomoBridge](https://bridge.tomochain.com) and swap between TOMO and TOMOB. Check out this video for details: [TomoBridge Tutorial](https://www.youtube.com/watch?v=TglV_VyAYI4&feature=youtu.be)
 
 ### Can TomoB be staked?
 
