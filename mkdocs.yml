@@ -88,7 +88,7 @@ nav:
         - Policy Privacy: products/tomoissuer/policyprivacy.md
     #   - Getting started: misc/wip.md
     #   - Contributing: misc/wip.md
-    - Masternode:
+    - Masternode/DEX:
       - Requirements: masternode/requirements.md
       - Detailed guide: masternode/masternode-setup-guide.md
       - Running a node with:
@@ -99,9 +99,10 @@ nav:
       - Applying for Masternode Candidacy: masternode/applying.md
       - Chaindata Snapshots: masternode/snapshot.md
       - Running a TomoX Mongodb fullnode: masternode/tomox-fullnode.md
+      - Running a TomoX DEX: masternode/tomox-sdk.md
   #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
-    - Whitepapers and research:
+    - Whitepapers/Specs:
       - Technical whitepaper: wp-and-research/technical-whitepaper.md
       - Sharding design paper: wp-and-research/sharding-paper.md
       - Economics paper: wp-and-research/economics-paper.md
