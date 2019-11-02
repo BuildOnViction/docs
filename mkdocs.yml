@@ -98,6 +98,7 @@ nav:
         - Docker: masternode/docker.md
       - Applying for Masternode Candidacy: masternode/applying.md
       - Chaindata Snapshots: masternode/snapshot.md
+      - Running a TomoX Mongodb fullnode: masternode/tomox-fullnode.md
   #   - Contributing: misc/wip.md
     #   - FAQ: misc/wip.md
     - Whitepapers and research:
