@@ -15,6 +15,7 @@ TomoChain, a independent public blockchain, the most efficient platform for the 
 - Genesis block date: `December 14th, 2018`
 - Transaction fee: gas price 0.25 Gwei
 - Smart contract creation fee: gas price 10000 Gwei, gas limit >= 1000000
+- Solidity Compiler version: < 0.5
 
 ### Usefull links
 
@@ -50,6 +51,7 @@ The Testnet network is meant to be a public demo of our products and a way for u
 - Block finality: `>75%`
 - Consensus nodes: up to 150 (masternodes)
 - Smart contract creation fee: gas price 10000 Gwei, gas limit >= 1000000
+- Solidity Compiler version: < 0.5
 
 ### Usefull links
 
