@@ -48,6 +48,8 @@ It is of the owner's responsibility to ensure over time that your node has enoug
 
 ## Prepare RabbitMQ, MongoDB, and TomoX fullnode
 
+Run MongoDB and TomoX Fullnode:
+
 Use this [guide](/masternode/tomox-fullnode/) to run your fullnode and MongoDB on the server.
 
 And run RabbitMQ:
