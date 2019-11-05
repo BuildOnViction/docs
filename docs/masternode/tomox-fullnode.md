@@ -6,7 +6,7 @@ To run the fullnode, you need to have MongoDb instance that enable replica set.
 In this tutorial, we will run a mongo instance with Docker. Run this command:
 ```bash
 docker run -d -p 27017:27017 --name mongodb \
-    --hostname mongodb mongo:3.6 --replSet rs0
+    --hostname mongodb mongo:4.2 --replSet rs0
 ```
 
 Enable Mongodb replica set:
