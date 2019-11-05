@@ -98,7 +98,19 @@ Clone [tomox-sdk-ui](https://github.com/tomochain/tomox-sdk-ui.git) to your serv
 ```bash
 git clone https://github.com/tomochain/tomox-sdk-ui.git
 ```
+Go to `tomox-sdk-ui` to update the `env` file:
+```
+cd tomox-sdk-ui
+cp .env.sample .env
+```
+There are some parameters that need to be changed:
+- `REACT_APP_ENGINE_HTTP_URL`: url backend, `http://[SERVER_IP_OR_DOMAIN]/api`
+- `REACT_APP_ENGINE_WS_URL`: url websocket backend, `ws://[SERVER_IP_OR_DOMAIN]/socket`
 
+You need to have `yarn` and `sass` to build the site, install it:
+```
+npm install -g yarn sass
+```
 Build the site:
 
 ```bash
@@ -107,4 +119,11 @@ yarn install && yarn build
 ```
 
 Your DEX UI is created into `./buid` directory. You can setup web server (nginx) and domain to publish your site to internet.
+
+You can use `nginx` or `nodejs serve` to serve the site:
+E.g: NodeJS serve
+```
+npm i -g serve
+serve -s build/ -p 3000
+```
 
