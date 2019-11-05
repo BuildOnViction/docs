@@ -60,6 +60,7 @@ You node will syn the data from TomoChain network, you need to wait until your n
 
 ## Troubleshoot
 ** Fatal: Failed to write genesis block **
+
 You already inited genesis block for the default datadir. So you need to use another datadir by `--datadir`
 ```
 tomo account new --datadir [YOUR_DATADIR]
