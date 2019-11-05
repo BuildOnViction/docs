@@ -120,7 +120,8 @@ yarn install && yarn build
 
 Your DEX UI is created into `./buid` directory. You can setup web server (nginx) and domain to publish your site to internet.
 
-You can use `nginx` or `nodejs serve` to serve the site:
+You can use `nginx` or `nodejs serve` to serve the site.
+
 E.g: NodeJS serve
 ```
 npm i -g serve
