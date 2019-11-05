@@ -104,6 +104,7 @@ cd tomox-sdk-ui
 cp .env.sample .env
 ```
 There are some parameters that need to be changed:
+
 - `REACT_APP_ENGINE_HTTP_URL`: url backend, `http://[SERVER_IP_OR_DOMAIN]/api`
 - `REACT_APP_ENGINE_WS_URL`: url websocket backend, `ws://[SERVER_IP_OR_DOMAIN]/socket`
 
@@ -127,4 +128,5 @@ E.g: NodeJS serve
 npm i -g serve
 serve -s build/ -p 3000
 ```
+
 
