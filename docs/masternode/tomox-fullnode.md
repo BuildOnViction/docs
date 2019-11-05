@@ -59,7 +59,7 @@ tomo \
 You node will syn the data from TomoChain network, you need to wait until your node catch up the latest block. You can check the status in the logs or the stats page.
 
 ## Troubleshoot
-** Fatal: Failed to write genesis block **
+**Fatal: Failed to write genesis block**
 
 You already inited genesis block for the default datadir. So you need to use another datadir by `--datadir`
 ```
