@@ -25,7 +25,7 @@ fullnode [here](https://docs.tomochain.com/masternode/requirements/))
 #### Application platform ####
 
 * Go 1.12 or higher
-* Docker and docker-compose with the latest version
+* Docker with the latest version
 * Nodejs 8.16.x or higher
 * Nginx
 
