@@ -121,12 +121,46 @@ yarn install && yarn build
 
 Your DEX UI is created into `./buid` directory. You can setup web server (nginx) and domain to publish your site to internet.
 
-You can use `nginx` or `nodejs serve` to serve the site.
+You can use `nginx` to serve the site.
 
-E.g: NodeJS serve
+## Setup web server (nginx)
+
+TomoX-SDK backend run on port 8080 in the default. We can use Nginx to serve both TomoX-SDK and TomoX-SDK-UI and publish it to internet.
+
 ```
-npm i -g serve
-serve -s build/ -p 3000
+server {
+    listen       80;
+    server_name  _;
+
+    root /path_to_your_tomox_sdk_ui_build;
+
+    index index.html index.htm;
+
+    # TomoX-SDK API
+    location /api {
+         proxy_set_header X-Real-IP $remote_addr;
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header Host $host;
+         proxy_pass http://localhost:8080;
+    }
+
+    # TomoX-SDK socket
+    location /socket {
+        auth_basic off;
+        proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:8080/socket;
+    }
+
+    # TomoX-SDK UI
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
 ```
 
+After reloading `nginx` with the new configuration. You can access your DEX via `http://SERVER_IP`
 

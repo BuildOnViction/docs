@@ -57,7 +57,9 @@ tomo \
 
 ```
 
-You node will syn the data from TomoChain network, you need to wait until your node catch up the latest block. You can check the status in the logs or the stats page.
+You node will sync the data from TomoChain network, you need to wait until your node catch up the latest block. You can check the status in the logs or the stats page.
+
+To save your time, you should download [chaindata snapshot](#testnet-chaindata-snapshot) and override your chaindata.
 
 ## Troubleshoot
 **Fatal: Failed to write genesis block**
