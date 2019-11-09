@@ -5,6 +5,7 @@ To start, you need to download TomoX-SDK source code, and it includes two parts:
 * [TomoX-SDK](https://github.com/tomochain/tomox-sdk): Backend server, API, it requires Mongodb database with rabbitmq.
 * [TomoX-SDK-UI](https://github.com/tomochain/tomox-sdk-ui): Frontend - DEX UI, requires NodeJs, React
 
+To enable trading for your DEX, you need to register your DEX on TomoRelayer by depositing 25K TOMO.
 
 ### Prerequisite ###
 
@@ -74,7 +75,7 @@ cp config/config.yaml.example config/config.yaml
 
 We have some parameter that needs to be changed.
 
-* `exchange_address` : Your DEX coinbase (the address you used to register a DEX on TomoRelayer)
+* `exchange_address` : Your DEX coinbase (the address you use to register a DEX on TomoRelayer)
 * `contract_address` : TomoRelayer smart contract address (Testnet: `0xe7c16037992bEcAFaeeE779Dacaf8991637953F3`)
 
 After customizing your config, you can build SDK backend
