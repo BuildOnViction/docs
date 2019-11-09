@@ -63,6 +63,16 @@ docker run -d -p 5672:5672 --name rabbitmq rabbitmq:3.8
 
 ### TomoX SDK Backend
 
+Download `tomox-sdk` binary from [TomoX-SDK Github Releases](https://github.com/tomochain/tomox-sdk/releases).
+
+E.g:
+```
+wget https://github.com/tomochain/tomox-sdk/releases/download/v1.0.1-beta/tomox-sdk.v1.0.1-beta.linux.amd64 -O tomox-sdk
+chmod +x tomox-sdk
+```
+
+Or you can build the binary from the source code by following the steps below:
+
 Clone [tomox-sdk](https://github.com/tomochain/tomox-sdk.git) to your server:
 
 `$ git clone https://github.com/tomochain/tomox-sdk.git`
@@ -94,6 +104,17 @@ And run it:
 To run tomox-sdk as daemon service, you can use `pm2`, `supervisord` or `systemd`.
 
 ### TomoX SDK UI ###
+Download the site from [TomoX-SDK-UI Github Releases](https://github.com/tomochain/tomox-sdk-ui/releases)
+
+E.g:
+```
+# download
+wget https://github.com/tomochain/tomox-sdk-ui/releases/download/v1.0.1-beta/tomox-sdk-ui.v1.0.1-beta.testnet.tar.gz
+# uncompress
+tar xvzf tomox-sdk-ui.v1.0.1-beta.testnet.tar.gz
+```
+
+Or you can build the site by following the steps below:
 
 Clone [tomox-sdk-ui](https://github.com/tomochain/tomox-sdk-ui.git) to your server:
 ```bash
