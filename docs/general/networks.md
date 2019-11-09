@@ -44,7 +44,7 @@ The Testnet network is meant to be a public demo of our products and a way for u
 ### Specifications
 
 - Chain id: `89`
-- RPC endpoint: `https://testnet.tomochain.com`
+- RPC endpoint: `https://rpc.testnet.tomochain.com`
 - Websocket endpoint:  `wss://testnet.tomochain.com/ws`
 - Metrics endpoint: `https://metrics.testnet.tomochain.com`
 - HD derivation path: `m/44'/889'/0'/0/`
