@@ -101,6 +101,8 @@ And run it:
 ```
 ./tomox-sdk
 ```
+Note: `tomox-sdk` requires `./config/config.yaml` and `./config/errors.yaml` file to run the service.
+
 To run tomox-sdk as daemon service, you can use `pm2`, `supervisord` or `systemd`.
 
 ### TomoX SDK UI ###
