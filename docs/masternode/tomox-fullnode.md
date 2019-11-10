@@ -101,3 +101,11 @@ To speed up syncing chaindata, you can download chaindata snapshot and override 
 
 Download: [Testnet chaindata](https://chaindata-testnet.s3-ap-southeast-1.amazonaws.com/chaindata-testnet.tar)
 
+E.g:
+```
+# Download
+wget -c https://chaindata-testnet.s3-ap-southeast-1.amazonaws.com/chaindata-testnet.tar
+
+# Uncompress
+tar xvf chaindata-testnet.tar
+```
