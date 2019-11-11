@@ -7,6 +7,19 @@ To start, you need to download TomoX-SDK source code, and it includes two parts:
 
 To enable trading for your DEX, you need to register your DEX on TomoRelayer by depositing 25K TOMO.
 
+## Quick start
+Simply run this command on a empty server:
+```
+bash <(curl -sSL https://tomochain.com/get-tomox.sh)
+```
+After finishing the command above, you can see the result:
+
+- See fullnode in the Stats Page
+- Open your relayer on browser (http://[SERVER_IP])
+
+
+## Setup manually
+
 ### Prerequisite ###
 
 #### Minimum hardware and software requirements ####
