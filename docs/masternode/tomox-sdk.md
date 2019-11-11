@@ -8,7 +8,7 @@ To start, you need to download TomoX-SDK source code, and it includes two parts:
 To enable trading for your DEX, you need to register your DEX on TomoRelayer by depositing 25K TOMO.
 
 ## Quick start
-Simply run this command on a empty server:
+Simply run this command on a empty server Ubuntu 16+:
 ```
 bash <(curl -sSL https://tomochain.com/get-tomox.sh)
 ```
