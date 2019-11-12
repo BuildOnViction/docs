@@ -34,7 +34,7 @@ fullnode [here](https://docs.tomochain.com/masternode/requirements/))
     * 32 GB of RAM
     * SSD Storage
 
-    **|** <span style="color:green"> If you are running a node in Testnet, 4CPU/16GB
+    **|** <span style="color:green"> If you are running a node in Testnet, 8CPU/32GB
     of RAM is sufficient. </span> **|**
 
 #### Application platform ####
