@@ -14,9 +14,10 @@ bash <(curl -sSL https://tomochain.com/get-tomox.sh)
 ```
 After finishing the command above, you can see the result:
 
-- See fullnode in the Stats Page
+- See fullnode in the Stats Page (Testnet: https://stats.testnet.tomochain.com/)
 - Open your relayer on browser (http://[SERVER_IP])
 
+Note: You need to wait for until your fullnode pass the block number that you registered your relayer to see the pairs
 
 ## Setup manually
 
