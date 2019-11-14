@@ -17,7 +17,8 @@ After finishing the command above, you can see the result:
 - See fullnode in the Stats Page (Testnet: https://stats.testnet.tomochain.com/)
 - Open your relayer on browser (http://[SERVER_IP])
 
-Note: You need to wait for until your fullnode pass the block number that you registered your relayer to see the pairs
+!!! Note
+    You need to wait for until your fullnode pass the block number that you registered your relayer to see the pairs
 
 ## Setup manually
 
@@ -34,8 +35,8 @@ fullnode [here](https://docs.tomochain.com/masternode/requirements/))
     * 32 GB of RAM
     * SSD Storage
 
-    **|** <span style="color:green"> If you are running a node in Testnet, 8CPU/32GB
-    of RAM is sufficient. </span> **|**
+!!! Note
+    If you are running a node in Testnet, 8CPU/32GB of RAM is sufficient.
 
 #### Application platform ####
 
