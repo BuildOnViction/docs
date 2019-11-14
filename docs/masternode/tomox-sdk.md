@@ -202,3 +202,13 @@ server {
 
 After reloading `nginx` with the new configuration. You can access your DEX via `http://SERVER_IP`
 
+## Troubleshot & FAQ
+
+** How to secure my DEX **
+You need to setup HTTPS and firewall for your DEX, open only SSH (22), HTTP (80), HTTPS (443), Fullnode RLPX (30303).
+
+You can setup firewall by using software on your server or create firewall on your cloud provider.
+
+** Why doesn't ledger work with my DEX? **
+Ledger required HTTPS to work properly with your DEX. On testnet, you can only use HD path `44/60` for your ledger, path `44/889` is only supported on mainnet.
+
