@@ -215,3 +215,6 @@ You can setup firewall by using software on your server or create firewall on yo
 
 Ledger required HTTPS to work properly with your DEX. On testnet, you can only use HD path `44/60` for your ledger, path `44/889` is only supported on mainnet.
 
+**Error: Cannot get tokens or pairs**
+
+You need to wait for until your fullnode pass the block number that you registered your relayer to see the pairs.
