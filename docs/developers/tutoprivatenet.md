@@ -11,9 +11,8 @@ The following will walk you step-by-step to setup a TomoChain private net with t
   - Set environment variables
   
 ```
-    set GOROOT=$HOME/usr/local/go
-    
-    set GOPATH=$HOME/go
+set GOROOT=$HOME/usr/local/go
+set GOPATH=$HOME/go
 ```
     
 ## Prepare tomo client software
@@ -21,83 +20,65 @@ The following will walk you step-by-step to setup a TomoChain private net with t
    - Download source code and build
 
 ```
-    git init
-    
-    git remote add git@github.com:tomochain/tomochain.git
-    
-    git pull origin master
-    
-    make all
+git init
+git remote add git@github.com:tomochain/tomochain.git
+git pull origin master
+make all
 ```
 
    - Create shortcuts/alias for easier access
    
 ```
-    alias tomo=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/tomo
-
-    alias bootnode=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/bootnode
-
-    alias puppeth=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/puppeth
+alias tomo=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/tomo
+alias bootnode=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/bootnode
+alias puppeth=$GOPATH/src/github.com/ethereum/go-ethereum/build/bin/puppeth
 ```   
         
 ## Setup chain data folders `datadir` and corresponding `keystore` folders for 3 masternodes
    
 ```
-    mkdir $HOME/tomochain
-
-    mkdir $HOME/tomochain/nodes
-
-    mkdir $HOME/tomochain/nodes/1 $HOME/tomochain/nodes/2 $HOME/tomochain/nodes/3 
-
-    mkdir $HOME/tomochain/keystore/1 $HOME/tomochain/keystore/2 $HOME/tomochain/keystore/3
+mkdir $HOME/tomochain
+mkdir $HOME/tomochain/nodes
+mkdir $HOME/tomochain/nodes/1 $HOME/tomochain/nodes/2 $HOME/tomochain/nodes/3 
+mkdir $HOME/tomochain/keystore/1 $HOME/tomochain/keystore/2 $HOME/tomochain/keystore/3
 ```
 
 ## Initialize / Import accounts for the masternodes's keystore 
    - Initialize new accounts: If you have existing accounts and prefer importing them, please ignore this step and go to `Import Accounts`
    
 ```
-    tomo account new \
-    
+tomo account new \
       --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT] \
-    
       --keystore $HOME/tomochain/keystore/1
-
 ```
 
 ```
-    tomo account new \
-    
+tomo account new \
       --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT] \
-    
       --keystore $HOME/tomochain/keystore/2
 ```
 
 ```
-    tomo account new \
-    
+tomo account new \
       --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT] \
-    
       --keystore $HOME/tomochain/keystore/3
-      
 ```
 
    - Import accounts
    
 ```
-    tomo  account import [PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT] \
-
+tomo  account import [PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT] \
     --keystore $HOME/tomochain/keystore/1 \
-
     --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT]
 ```
 
-   Repeat this step to import two more private keys for our three masternodes.
+Repeat this step to import two more private keys for our three masternodes.
     
 ## Customize genesis block by using the `puppeth` tool
    - Run puppeth command and answer questions about your private chain as follows:
    
 ```
-   puppeth
+puppeth
 ```
 
    - Set chain name
@@ -143,24 +124,22 @@ The following will walk you step-by-step to setup a TomoChain private net with t
 ## Initialize your private chain with above genesis block
 
 ```
-    tomo --datadir $HOME/tomochain/nodes/1 init [PATH/TO/GENESIS_FILE]
-
-    tomo --datadir $HOME/tomochain/nodes/2 init [PATH/TO/GENESIS_FILE]
-
-    tomo --datadir $HOME/tomochain/nodes/3 init [PATH/TO/GENESIS_FILE]
+tomo --datadir $HOME/tomochain/nodes/1 init [PATH/TO/GENESIS_FILE]
+tomo --datadir $HOME/tomochain/nodes/2 init [PATH/TO/GENESIS_FILE]
+tomo --datadir $HOME/tomochain/nodes/3 init [PATH/TO/GENESIS_FILE]
 ```
     
 ## Setup bootnode
    - Initialize bootnode key
    
 ```
-    bootnode -genkey bootnode.key
+bootnode -genkey bootnode.key
 ```
 
    - Start bootnode and copy bootnode information
    
 ```
-    bootnode -nodekey ./bootnode.key
+bootnode -nodekey ./bootnode.key
 ```
 
 `enode://7e59324b1e54f8c282719465eb96786fb3a04a0265deee2cdb0f62e912337ca6f118d0c91f7ebfae6f5c17825205279249cf7ff65ae54d0a1a8908ef16f80f63@[::]:30301`
@@ -170,116 +149,72 @@ The following will walk you step-by-step to setup a TomoChain private net with t
    - Start masternode 1
    
 ```
-    tomo  --syncmode "full" \
-        
+tomo  --syncmode "full" \     
         --datadir $HOME/tomochain/nodes/1 --networkid [YOUR_NETWORK_ID] --port 10303 \
-        
         --keystore $HOME/tomochain/keystore/1 --password [YOUR_PASSWORD_FILE_TO_UNLOCK_YOUR_ACCOUNT] \
-        
         --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 1545 --rpcvhosts "*" \
-        
         --rpcapi "db,eth,net,web3,personal,debug" \
-        
         --gcmode "archive" \
-        
         --ws --wsaddr 0.0.0.0 --wsport 1546 --wsorigins "*" --unlock "[ADDRESS_MASTERNODE_1]" \
-        
         --identity "NODE1" \
-        
         --mine --gasprice 2500 \
-        
         --bootnodes [YOUR_BOOTNODE_INFORMATION] \
-        
         console
 ```
    - Start masternode 2
    
 ```
-        tomo  --syncmode "full" \
-            
+tomo  --syncmode "full" \
             --datadir $HOME/tomochain/nodes/2 --networkid [YOUR_NETWORK_ID] --port 20303 \
-            
             --keystore $HOME/tomochain/keystore/2 --password [YOUR_PASSWORD_FILE_TO_UNLOCK_YOUR_ACCOUNT] \
-            
             --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 2545 --rpcvhosts "*" \
-            
             --rpcapi "db,eth,net,web3,personal,debug" \
-            
             --gcmode "archive" \
-            
             --ws --wsaddr 0.0.0.0 --wsport 2546 --wsorigins "*" --unlock "[ADDRESS_MASTERNODE_2]" \
-            
             --identity "NODE2" \
-            
             --mine --gasprice 2500 \
-            
-            --bootnodes [YOUR_BOOTNODE_INFORMATION] \
-            
+            --bootnodes [YOUR_BOOTNODE_INFORMATION] \         
             console
 ```
 
    - Start masternode 3
 ```
-        tomo  --syncmode "full" \
-
+tomo  --syncmode "full" \
             --datadir $HOME/tomochain/nodes/3 --networkid [YOUR_NETWORK_ID] --port 30303 \
-
             --keystore $HOME/tomochain/keystore/3 --password [YOUR_PASSWORD_FILE_TO_UNLOCK_YOUR_ACCOUNT] \
-
             --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 3545 --rpcvhosts "*" \
-
             --rpcapi "db,eth,net,web3,personal,debug" \
-
             --gcmode "archive" \
-
             --ws --wsaddr 0.0.0.0 --wsport 3546 --wsorigins "*" --unlock "[ADDRESS_MASTERNODE_3]" \
-
             --identity "NODE3" \
-
             --mine --gasprice 2500 \
-
             --bootnodes [YOUR_BOOTNODE_INFORMATION] \
-
             console
 ```
 
    - Some explanations on the flags
    
 ```
-           --verbosity: log level from 1 to 5. Here we're using 4 for debug messages
-           
-           --datadir: path to your data directory created above.
-           
-           --keystore: path to your account's keystore created above.
-           
-           --identity: your full-node's name.
-           
-           --password: your account's password.
-           
-           --networkid: our testnet network ID.
-           
-           --port: your full-node's listening port (default to 30303)
-           
-           --rpc, --rpccorsdomain, --rpcaddr, --rpcport, --rpcvhosts: your full-node will accept RPC requests at 8545 TCP.
-           
-           --ws, --wsaddr, --wsport, --wsorigins: your full-node will accept Websocket requests at 8546 TCP.
-           
-           --mine: your full-node wants to register to be a candidate for masternode selection.
-           
-           --gasprice: Minimal gas price to accept for mining a transaction.
-           
-           --targetgaslimit: Target gas limit sets the artificial target gas floor for the blocks to mine (default: 4712388)
-           
-           --bootnode: bootnode information to help to discover other nodes in the network
-           
-           --gcmode: blockchain garbage collection mode ("full", "archive")
-           
-           --synmode: blockchain sync mode ("fast", "full", or "light". More detail: https://github.com/tomochain/tomochain/blob/master/eth/downloader/modes.go#L24)
+--verbosity: log level from 1 to 5. Here we're using 4 for debug messages
+--datadir: path to your data directory created above.
+--keystore: path to your account's keystore created above.
+--identity: your full-node's name.
+--password: your account's password.
+--networkid: our testnet network ID.
+--port: your full-node's listening port (default to 30303)
+--rpc, --rpccorsdomain, --rpcaddr, --rpcport, --rpcvhosts: your full-node will accept RPC requests at 8545 TCP.
+--ws, --wsaddr, --wsport, --wsorigins: your full-node will accept Websocket requests at 8546 TCP.
+--mine: your full-node wants to register to be a candidate for masternode selection.
+--gasprice: Minimal gas price to accept for mining a transaction.
+--targetgaslimit: Target gas limit sets the artificial target gas floor for the blocks to mine (default: 4712388)
+--bootnode: bootnode information to help to discover other nodes in the network
+--gcmode: blockchain garbage collection mode ("full", "archive")
+--synmode: blockchain sync mode ("fast", "full", or "light". More detail: https://github.com/tomochain/tomochain/blob/master/eth/downloader/modes.go#L24)
 ```
    To see all flags usage
    
 ```
-      tomo --help
+tomo --help
 ```
 
 
@@ -287,27 +222,24 @@ The following will walk you step-by-step to setup a TomoChain private net with t
   - Connect ipc
    
 ```
-    tomo attach $HOME/tomochain/nodes/1/tomo.ipc
+tomo attach $HOME/tomochain/nodes/1/tomo.ipc
 ```
    
 ```
-    admin.nodeInfo
-
-    eth.getBlock(0)
-
-    eth.getBlock(1)
+admin.nodeInfo
+eth.getBlock(0)
+eth.getBlock(1)
 ```
 
    - Connect rpc
 
 ```
-    tomo attach tomo attach http://0.0.0.0:1545
+tomo attach tomo attach http://localhost:1545
 ```
 
 ```
-    eth.getBlock(0)
-
-    eth.getBlock(1)
+eth.getBlock(0)
+eth.getBlock(1)
 ```
  
    - Verify Checkpoints
@@ -316,22 +248,21 @@ The following will walk you step-by-step to setup a TomoChain private net with t
    ![Console log at checkpoint](https://user-images.githubusercontent.com/17243442/57122084-93e80a80-6da5-11e9-81cf-598693bd2779.png)
 
 ```
-    tomo attach http://0.0.0.0:1545
+tomo attach http://0.0.0.0:1545
 ```
 
 ```
-    eth.getBlock(900)
+eth.getBlock(900)
 ```
 
 ## Troubleshooting
    - Reset your chain
    
 ```
-    rm -rf $HOME/tomochain/nodes/1/tomo $HOME/tomochain/nodes/2/tomo  $HOME/tomochain/nodes/3/tomo
-
-    tomo --datadir $HOME/tomochain/nodes/1 init genesis.json
-
-    tomo --datadir $HOME/tomochain/nodes/2 init genesis.json
-
-    tomo --datadir $HOME/tomochain/nodes/3 init genesis.json
+rm -rf $HOME/tomochain/nodes/1/tomo $HOME/tomochain/nodes/2/tomo  $HOME/tomochain/nodes/3/tomo
+tomo --datadir $HOME/tomochain/nodes/1 init genesis.json
+tomo --datadir $HOME/tomochain/nodes/2 init genesis.json
+tomo --datadir $HOME/tomochain/nodes/3 init genesis.json
 ```
+
+Note: we use the Gnosis Multisig Wallet: https://github.com/gnosis/MultiSigWallet
