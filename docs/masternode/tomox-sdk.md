@@ -218,3 +218,5 @@ Ledger required HTTPS to work properly with your DEX. On testnet, you can only u
 **Error: Cannot get tokens or pairs**
 
 You need to wait for until your fullnode pass the block number that you registered your relayer to see the pairs.
+
+In another case, might you setup TomoX-SDK backend incorrectly. You need to make sure that `exchange_address` in `config/config.yaml` file is your DEX coinbase.
