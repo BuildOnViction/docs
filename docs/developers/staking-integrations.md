@@ -155,19 +155,20 @@ You need to wait for 48 epochs (if unvote), 30 days (if resign) to unlock your T
 web3.eth.getBlockNumber().then(blockNumber => {
     return validator.methods.getWithdrawBlockNumbers().call({
         from: owner
-    }).then(result => result, blockNumber)
-}).then(result, blockNumber => {
-    let map = result.map(it, idx => {
-        if (parseInt(it) < blockNumber) {
-            return validator.methods.withdraw(it, idx).send({
-                from : owner,
-                gas: 2000000,
-                gasPrice: 250000000,
-                chainId: chainId
-            })
-        }
+    }).then((result) => {
+        let map = result.map(it, idx => {
+            it = it.toString()
+            if (parseInt(it) < blockNumber && it != "0") {
+                return validator.methods.withdraw(it, idx).send({
+                    from : owner,
+                    gas: 2000000,
+                    gasPrice: 250000000,
+                    chainId: chainId
+                })
+            }
+        })
+        return Promise.all(map)
     })
-    return Promise.all(map)
 }).then((result) => {
     console.log(result)
 }).catch(e => console.log(e))
