@@ -62,6 +62,7 @@ nav:
       - How to read: get-started/how_to_read.md
       - Connect your wallet: get-started/wallet.md
       - Voting: get-started/voting.md
+      - Networks: general/networks.md
       - FAQ: general/faq.md
     # - TomoChain client:
     #   - Getting started: misc/wip.md
