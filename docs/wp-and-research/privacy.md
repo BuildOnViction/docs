@@ -197,8 +197,10 @@ TomoP uses a single private key to generate a dual-key system.
 The user private key `s` of the user's TOMO address is called private spend key and `v = SHA256(s)` is 
 the private view key of the user.
 As the names imply:
-* `s`: This is used for making cryptographic proofs for spending funds in the privacy contract.
-* `v`: This is used for viewing the information of all transactions belonging to the user. 
+
+* Private spend key `s`: This is used for making cryptographic proofs for spending funds in the privacy contract.
+* Private view key `v`: This is used for viewing the information of all transactions belonging to the user. 
+
 Having `v` only allows seeing the transaction history of the user, but does not allow spending funds.
 This could be used as a tool for authorized parties to check the transaction history of a user
 by requiring the user to register her private view key to the authorized parties for regulatory compliance purposes.
