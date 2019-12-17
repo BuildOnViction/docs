@@ -1,6 +1,6 @@
 # TomoP - High Performance and Anonymous Transfer Protocol on TomoChain
 
-Tremendous amount of work and investment has been devoted to the development of blockchain technology to solve current 
+A tremendous amount of work and investment has been devoted to the development of blockchain technology to solve current 
 problems, i.e. scalability and privacy, with the technology itself as well as to 
 maximize the adoption of the technology in daily life. 
 
@@ -9,14 +9,14 @@ in which every transaction shows the amount of tokens or native coins
 that the sender is transferring to the recipient. 
 In this regard, blockchain provides transparency to all users, 
 which is not always expected by the majority of businesses. A business would 
-like to hide the transaction amount, instead of showing to everyone.
+like to hide the transaction amount, instead of showing it to everyone.
 
 This paper presents TomoP - a protocol proposed by TomoChain for private transactions on the TomoChain public blockchain.
-The paper describes a protocol that allows to create anonymous transactions that hide 
+The paper describes a protocol that allows creating anonymous transactions that hide 
 the transaction value, sender, and receiver to 
 preserve the financial privacy of holders of TOMO and tokens on TomoChain.
 TomoP is the first ever EVM-compatible private transaction protocol with very fast transaction speed 
-that allows to anonymize the transaction sender
+that allows anonymizing the transaction sender
 in a transaction without requiring an intermediary.
 
 TomoP solves the following problems:
@@ -37,7 +37,7 @@ could cause the out-of-gas problem in EVM environment.
 To reduce gas consumption and speed up transaction proof verification, TomoP implements a set of 
 precompiled contracts integrated in the core EVM of TomoChain. 
 
-* TomoP allows to create a private token standard to 
+* TomoP allows creating a private token standard to 
 make super fast token-based payment systems and DApps on TomoChain. 
 
 TomoP relies on the following techniques:
@@ -47,12 +47,12 @@ TomoP relies on the following techniques:
     for every transaction recipient so that there is no way for a third party to find the relationships
     between 2 different transaction recipients. What this means is that, if `Alice` is sending 2 transactions to
     `Bob`, no one, except `Alice` and `Bob` could find out the fact that `Bob` is the recipient in both transactions.
-    * Ring Signature and Ring Confidential Transaction (RingCT): These are techniques used Monero for obfuscating
+    * Ring Signature and Ring Confidential Transaction (RingCT): These are techniques used by Monero for obfuscating
     transaction senders and transaction amounts in a transaction. 
-    * Bulletproofs: Zero-knowledge proofs that allow to prove an encrypted number is within a range
+    * Bulletproofs: Zero-knowledge proofs that allow proving an encrypted number is within a range
     without revealing the number itself. 
     Bulletproofs are used in TomoP transactions to prove that a transaction amount in a private transaction
-    is positive in order to prevent from double spending.
+    is positive in order to prevent double spending.
 
 * TomoZ: TomoZ is the first decentralized gasless transaction protocol on TomoChain. 
 TomoP relies on TomoZ to create a transaction fee vault for private transactions.
@@ -106,7 +106,7 @@ infeasible to compute a private key from a given public key
 
 ### Pederson commitment
 
-Pederson commitment is cryptographic commitment scheme equivalent to 
+Pederson commitment is a cryptographic commitment scheme equivalent to 
 secretly writing a secret message m in a sealed, tamper-evident, 
 individually numbered (or/and countersigned) envelope kept by who wrote the message. 
 The envelope's content can't be changed by any means, and the message does not 
@@ -152,7 +152,7 @@ privacy smart contract.
 This transaction is a normal transaction and does not hide the transaction amount.
 This transaction creates a `Note` in the privacy contract. 
 A note is similar to the concept of Unspent Transaction
-Output (UTXO) on Bitcoin blockchain with additional information, i.e. a pedersen commitment, that is used
+Output (UTXO) on Bitcoin blockchain with additional information, i.e. a Pedersen commitment, that is used
 for creating cryptographic proofs when the user wants to make an anonymous send transaction.
 
 * The user makes anonymous send transactions from the user to a recipient. 
@@ -160,9 +160,9 @@ The transaction amount is hidden.
 Funds are not moved out of the privacy contract. 
 The user uses her own private key to create RingCT and Bulletproofs for 
 the privacy contract to verify. 
-Anonymous send obfuscates transaction sender and receive, and hides transaction amounts.
+Anonymous send obfuscates transaction sender and receiver, and hides transaction amounts.
 
-* The user can decide to de-anonymize her private TOMO by withdrawing all or part of his funds from the 
+* The user can decide to de-anonymize her private TOMO by withdrawing all or part of her funds from the 
 privacy contract to the user’s public wallet. 
 The withdrawing amount is visible on the chain but the remaining funds 
 of the user held in the privacy contract is always hidden.
@@ -199,14 +199,14 @@ the private view key of the user.
 As the names imply:
 * `s`: This is used for making cryptographic proofs for spending funds in the privacy contract.
 * `v`: This is used for viewing the information of all transactions belonging to the user. 
-Having `v` only allows to see the transaction history of the user, but does not allow to spend funds.
+Having `v` only allows seeing the transaction history of the user, but does not allow spending funds.
 This could be used as a tool for authorized parties to check the transaction history of a user
 by requiring the user to register her private view key to the authorized parties for regulatory compliance purposes.
 
 Each private spend key `s` has an associated privacy address. 
 The latter is Base58 encoding of the public spend (`S`) and public view (`V`) keys derived from `s` and `v`.  
 
-When `Alice` wants to make anonymous send to `Bob`, `Bob` needs to send his privacy address
+When `Alice` wants to make an anonymous send transaction to `Bob`, `Bob` needs to send his privacy address
 to `Alice`.
 
 ## Ring Confidential Transaction and Bulletproofs
@@ -222,9 +222,9 @@ TomoP uses a similar technique but built upon a smart contract.
 Specifically, if we denote `N`<sub>I</sub> and `N`<sub>O</sub>  
 
 ### Range proofs with Bulletproofs
-Range proofs is a type of zero-knowledge proof used for proving that a 
+Range proof is a type of zero-knowledge proof used for proving that a 
 secret is within a value range without revealing the precise value of the secret. 
-Bulletproofs is a new non-interactive zero-knowledge proof protocol 
+Bulletproof is a new non-interactive zero-knowledge proof protocol 
 with very short proofs and without a trusted setup; the proof size 
 is only logarithmic in the witness size. Bulletproofs are especially 
 well suited for efficient range proofs on committed values: 
@@ -237,9 +237,9 @@ User A creates transaction sending 10 TOMO to User B
 User A sets transaction amount as 10 TOMO in the transaction
 User A generates blinding factor and then Pederson commitment to 10 TOMO
 User A generates Bulletproofs for 10 TOMO and embed the proof in the transaction
-User A sets transaction amount as 0 to hide it from any one, except the recipient of the transaction.
+User A sets transaction amount as 0 to hide it from anyone, except the recipient of the transaction.
 
-The last step reminds us a question: how does the recipient know the transaction amount if the transaction amount is packed in the commitment, given that reversing transaction amount from the commitment is impossible without knowing the blinding factor? This will be solved by using a Symmetric Encryption scheme with a secret encrypting key shared only between the sender and recipient of the transaction. 
+The last step reminds us of a question: how does the recipient know the transaction amount if the transaction amount is packed in the commitment, given that reversing transaction amount from the commitment is impossible without knowing the blinding factor? This will be solved by using a Symmetric Encryption scheme with a secret encrypting key shared only between the sender and recipient of the transaction. 
 
 Using Bulletproofs also allows fullnodes to verify that the sender really has enough balance to V units of cryptocurrency.
 
@@ -258,7 +258,7 @@ The deposit transaction creates a new `Note` `n` in the privacy contract that ha
 
 * A transaction public key `P`<sub>tx</sub>
 * A stealth, one-time public key `P`<sub>st</sub>
-* A pedersen commitment `C` of the deposit amount
+* A Pedersen commitment `C` of the deposit amount
 
 A deposit fee of 0.001 TOMO is applied to pay transaction fees for 
 the person who deposits to the privacy transaction fee vault.
@@ -271,7 +271,7 @@ Suppose `Bob` wants to receive `x` TOMO from `Alice` via an anonymous send trans
 
 1. `Bob` sends his privacy address to `Alice`
 2. `Alice` derives a stealth one-time public key `Stealth`<sub>b</sub> as follows:
-    * `Alice` decode the Base58 privacy address of `Bob` to have the public spend `S`<sub>b</sub> 
+    * `Alice` decodes the Base58 privacy address of `Bob` to have the public spend `S`<sub>b</sub> 
     and public view `V`<sub>b</sub> key of `Bob`.
     * `Alice` generates a random 256-bit number transaction private key `s`<sub>tx</sub> and computes 
     the corresponding transaction public key `S`<sub>tx</sub> `= s`<sub>`tx`</sub>`*G`. 
@@ -279,7 +279,7 @@ Suppose `Bob` wants to receive `x` TOMO from `Alice` via an anonymous send trans
     * `Alice` computes `Stealth`<sub>b</sub> = `E * G + S`<sub>b</sub>.
 3. `Alice` generates Pedersen commitment for the transaction amount `x`.
     * `Alice` randomly generates a 256-bit number called mask `m`
-    * `Alice` creates a pedersen commitment `C = m*G + x*H`
+    * `Alice` creates a Pedersen commitment `C = m*G + x*H`
     * `Alice` encrypts `m` and `x` using the Elliptic Curve Diff Hellman `E` with an Advanced Encryption Standard (AES) algorithm. 
     Let's denote the cipher text produced by this encryption `MX`.
 4. `Alice` generates ring confidential transaction RingCT `sig` for the transaction (details are provided later).
@@ -299,7 +299,7 @@ fee within the internal execution of the privacy smart contract.
 ### Anonymous send transaction verification on smart contracts
 The privacy smart contract basically verifies: 
 
-* The existence of all input notes in in the transaction
+* The existence of all input notes in the transaction
 * The validity of the ring confidential transaction (RingCT) `sig` by calling `RingCTVerifier` precompiled contract.
 * The validity of Bulletproofs `bp` by calling `BulletproofVerifier` precompiled contract.
 
