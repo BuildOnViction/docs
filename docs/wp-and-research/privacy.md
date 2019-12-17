@@ -251,6 +251,7 @@ To reduce the gas consumption of RingCT and Bulletproof verification, we propose
 `RingCTVerifier` and `BulletproofVerifier`, that are implemented in the core EVM of TomoChain, using Golang.
 These two precompiled contracts will be called by the privacy contract to verify the confidential transaction and Bulletproof
 range proof, respectively. 
+The current addresses for those precompiled contracts are 0x000000000000000000000000000000000000001e and 0x0000000000000000000000000000000000000028.
 
 ### Anonymize TOMO
 Anonymizing TOMO is equal to making a deposit transaction to the privacy contract.
@@ -307,12 +308,26 @@ The privacy smart contract basically verifies:
 Once the transaction is confirmed, `Bob` needs to scan all newly created `notes` on the privacy smart contract
 to recognize which one belongs to him.
 `Bob` uses his private view key to decode the encrypted transaction amount. 
+A proof-of-concept code for the privacy contract can be found [here](https://github.com/phamvancam2104/privacy-contracts).
 
 ## Private token standard
-
+TomoP is designed to support private tokens issued on TomoChain.
+A new private token standard TRC21P will be supportec by extending the TRC21 token standard. 
 
 ## Regulatory compliance
 By using a dual-key-like system, any user could register her/his private view key to an authorized authority.
 The latter will then be able to decode all transactions that involve the user but will not be able to 
 create an anonymous send transaction.  
+The authorized authority would be the goverment tax agency or any organization that allows to track user transactions
+for legal purposes.
+Even a bank could use TomoP to keep track of their user balance while leaving only authorized users with private
+spend keys to make transactions.
 
+## References
+
+On-going development Github repositories for TomoP
+
+1. [https://github.com/phamvancam2104/privacy-contracts](https://github.com/phamvancam2104/privacy-contracts) - contains privacy and utility contract solidity code
+2. [https://github.com/anhntbk08/tomochain/commits/privacy](https://github.com/anhntbk08/tomochain/commits/privacy) - contains source code for precompiled contracts
+3. [https://github.com/tomochain/tomowallet-web-testnet](https://github.com/tomochain/tomowallet-web-testnet) - proof-of-concept web wallet
+5. [https://github.com/tomochain/privacyjs](https://github.com/tomochain/privacyjs) - SDK for TomoP to make anonymous transactions
