@@ -306,7 +306,7 @@ The privacy smart contract basically verifies:
 Once the transaction is confirmed, `Bob` needs to scan all newly created `notes` on the privacy smart contract
 to recognize which one belongs to him.
 `Bob` uses his private view key to decode the encrypted transaction amount. 
-A proof-of-concept code for the privacy contract can be found [here](https://github.com/phamvancam2104/privacy-contracts).
+A proof-of-concept code for the privacy contract can be found [here](https://github.com/tomochain/privacy-sc).
 
 Due to the math complexity of RingCT and Bulletproofs, we omit the construction algorithms for those proofs here
 and will detail them in TomoChain's tech blog.
@@ -328,7 +328,7 @@ spend keys to make transactions.
 
 On-going development Github repositories for TomoP
 
-1. [https://github.com/phamvancam2104/privacy-contracts](https://github.com/phamvancam2104/privacy-contracts) - contains privacy and utility contract solidity code
-2. [https://github.com/anhntbk08/tomochain/commits/privacy](https://github.com/anhntbk08/tomochain/commits/privacy) - contains source code for precompiled contracts
+1. [https://github.com/tomochain/privacy-sc](https://github.com/tomochain/privacy-sc) - contains privacy and utility contract solidity code
+2. [https://github.com/tomochain/tomop](https://github.com/tomochain/tomop) - contains source code for precompiled contracts
 3. [https://github.com/tomochain/tomowallet-web-testnet](https://github.com/tomochain/tomowallet-web-testnet) - proof-of-concept web wallet
 5. [https://github.com/tomochain/privacyjs](https://github.com/tomochain/privacyjs) - SDK for TomoP to make anonymous transactions
