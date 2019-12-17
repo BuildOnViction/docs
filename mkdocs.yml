@@ -103,6 +103,7 @@ nav:
       - Economics paper: wp-and-research/economics-paper.md
       - Standard & Specification:
           - TRC21 Specification: wp-and-research/specs/trc21_standard.md
+      - TomoP whitepaper: wp-and-research/privacy.md
     - Products:
       - TomoMaster: products/tomomaster/features.md
     #   - Contributing: misc/wip.md
