@@ -217,32 +217,28 @@ Bitcoin privacy integration by Greg Maxwell.
 It uses Pedersen commitment to encrypt transaction amounts using randomly generated masks.
 Cryptographically, confidential transaction states that the sum of Pedersen commitments of all input `notes`
 must be equal to the sum of all Pedersen commitments of all output `notes`. 
+Users are recommended to check [confidential transaction](https://people.xiph.org/~greg/confidential_values.txt)
+to better understand how it works.
 
-TomoP uses a similar technique but built upon a smart contract.
-Specifically, if we denote `N`<sub>I</sub> and `N`<sub>O</sub>  
+What confidential transaction does not support is transaction sender anonymity, which is
+supported by Ring Confidential Transaction (RingCT) implemented by Monero.
+RingCT is the combination of [Ring Signature](https://en.wikipedia.org/wiki/Ring_signature) and Confidential Transaction.
+Ring Signature allows to obfuscate transaction sender in an anonymity set, whose size is 12 in TomoP.
+
+
+RingCT, however, requires the support of a zero-knowledge range proof in order to prove
+the transaction amount committed in a Pedersen commitment is positive to prevent from double spending.
+This is supported by [Bulletproofs](https://eprint.iacr.org/2017/1066.pdf) which supports short non-interactive proofs without a trusted setup for confidential transactions. 
 
 ### Range proofs with Bulletproofs
 Range proofs is a type of zero-knowledge proof used for proving that a 
-secret is within a value range without revealing the precise value of the secret. 
+secret value is within a value range without revealing the precise value of the secret. 
 Bulletproofs is a new non-interactive zero-knowledge proof protocol 
 with very short proofs and without a trusted setup; the proof size 
-is only logarithmic in the witness size. Bulletproofs are especially 
-well suited for efficient range proofs on committed values: 
-they enable proving that a committed value is in a range using only (2 logn + 9) 
-group and field elements, where n is the bit length of the range. 
-Proof generation and verification times are linear in n.
+is only logarithmic in the witness size. 
 
-Bulletproofs will be used as follows:
-User A creates transaction sending 10 TOMO to User B
-User A sets transaction amount as 10 TOMO in the transaction
-User A generates blinding factor and then Pederson commitment to 10 TOMO
-User A generates Bulletproofs for 10 TOMO and embed the proof in the transaction
-User A sets transaction amount as 0 to hide it from any one, except the recipient of the transaction.
-
-The last step reminds us a question: how does the recipient know the transaction amount if the transaction amount is packed in the commitment, given that reversing transaction amount from the commitment is impossible without knowing the blinding factor? This will be solved by using a Symmetric Encryption scheme with a secret encrypting key shared only between the sender and recipient of the transaction. 
-
-Using Bulletproofs also allows fullnodes to verify that the sender really has enough balance to V units of cryptocurrency.
-
+TomoP uses Bulletproofs range proof to prove the transaction amount commited in Pedersen commitments is positive.
+Both Bulletproofs and RingCT are implemented in our [privacy SDK](https://github.com/tomochain/privacyjs).
 
 ## Implementation
 
@@ -309,6 +305,9 @@ Once the transaction is confirmed, `Bob` needs to scan all newly created `notes`
 to recognize which one belongs to him.
 `Bob` uses his private view key to decode the encrypted transaction amount. 
 A proof-of-concept code for the privacy contract can be found [here](https://github.com/phamvancam2104/privacy-contracts).
+
+Due to the math complexity of RingCT and Bulletproofs, we omit the construction algorithms for those proofs here
+and will detail them in TomoChain's tech blog.
 
 ## Private token standard
 TomoP is designed to support private tokens issued on TomoChain.
