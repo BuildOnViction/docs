@@ -1,4 +1,4 @@
-# Fanxipang - High Performance and Anonymous Transfer Protocol on TomoChain
+# TomoP - High Performance and Anonymous Transfer Protocol on TomoChain
 
 Tremendous amount of work and investment has been devoted to the development of blockchain technology to solve current 
 problems, i.e. scalability and privacy, with the technology itself as well as to 
@@ -11,36 +11,36 @@ In this regard, blockchain provides transparency to all users,
 which is not always expected by the majority of businesses. A business would 
 like to hide the transaction amount, instead of showing to everyone.
 
-This paper presents Fanxipang - a protocol proposed by TomoChain for private transactions on the TomoChain public blockchain.
+This paper presents TomoP - a protocol proposed by TomoChain for private transactions on the TomoChain public blockchain.
 The paper describes a protocol that allows to create anonymous transactions that hide 
 the transaction value, sender, and receiver to 
 preserve the financial privacy of holders of TOMO and tokens on TomoChain.
-Fanxipang is the first ever EVM-compatible private transaction protocol with very fast transaction speed 
+TomoP is the first ever EVM-compatible private transaction protocol with very fast transaction speed 
 that allows to anonymize the transaction sender
 in a transaction without requiring an intermediary.
 
-Fanxipang solves the following problems:
+TomoP solves the following problems:
 
 * Performance: Most (if not all) current privacy `coins`, i.e. Monero, ZCoin, ZCash, are slow
-because of high block time in the consensus protocol of those public chains. Fanxipang operates as
+because of high block time in the consensus protocol of those public chains. TomoP operates as
 a DApp on TomoChain, which provides transaction confirmation within 2-4 seconds.
 
 * Transaction sender anonymity: most EVM smart contract-based private transactions require a 
 [relayer](https://ethresear.ch/t/burn-relay-registry-decentralized-transaction-abstraction-on-layer-2/5820)
 to sign a private transaction to pay the transaction gas that will eventually be refunded.
 This makes the privacy transaction system semi-decentralized. 
-Fanxipang, on the other hand, uses TomoZ - the protocol to make gasless transactions without
+TomoP, on the other hand, uses TomoZ - the protocol to make gasless transactions without
 requiring a `relayer` between the transaction creator and the blockchain.
 
 * Out-of-gas: Verifying cryptographic proofs in private transactions requires intensive computation, which 
 could cause the out-of-gas problem in EVM environment. 
-To reduce gas consumption and speed up transaction proof verification, Fanxipang implements a set of 
+To reduce gas consumption and speed up transaction proof verification, TomoP implements a set of 
 precompiled contracts integrated in the core EVM of TomoChain. 
 
-* Fanxipang allows to create a private token standard to 
+* TomoP allows to create a private token standard to 
 make super fast token-based payment systems and DApps on TomoChain. 
 
-Fanxipang relies on the following techniques:
+TomoP relies on the following techniques:
 
 * Cryptographic privacy building blocks include:
     * Stealth address: This technique is used for obfuscating transaction recipients by generating a new one-time public key
@@ -51,11 +51,11 @@ Fanxipang relies on the following techniques:
     transaction senders and transaction amounts in a transaction. 
     * Bulletproofs: Zero-knowledge proofs that allow to prove an encrypted number is within a range
     without revealing the number itself. 
-    Bulletproofs are used in Fanxipang transactions to prove that a transaction amount in a private transaction
+    Bulletproofs are used in TomoP transactions to prove that a transaction amount in a private transaction
     is positive in order to prevent from double spending.
 
 * TomoZ: TomoZ is the first decentralized gasless transaction protocol on TomoChain. 
-Fanxipang relies on TomoZ to create a transaction fee vault for private transactions.
+TomoP relies on TomoZ to create a transaction fee vault for private transactions.
 This fee vault is stored in [TomoIssuer](http://issuer.tomochain.com/) contract on TomoChain to
 pay the network fee while the actual private transaction fee is paid internally in the private transaction.
 
@@ -112,7 +112,7 @@ individually numbered (or/and countersigned) envelope kept by who wrote the mess
 The envelope's content can't be changed by any means, and the message does not 
 leak any information.
 
-In Fanxipang, a Pederson commitment C to a number `f` is defined as follows:
+In TomoP, a Pederson commitment C to a number `f` is defined as follows:
 
 ```C = m*G + f*H```
 
@@ -129,13 +129,13 @@ which has the following nice property: The sum of two Pederson commitments to f1
 
 This is the key application of Pederson commitment to most privacy-focused blockchains.
 
-## Fanxipang architecture
-Fanxipang supports both an anonymous TOMO transfer method and a private token standard on TomoChain.
+## TomoP architecture
+TomoP supports both an anonymous TOMO transfer method and a private token standard on TomoChain.
 
-The following figure shows the overview of Fanxipang that is integrated both at the core and the smart contract
+The following figure shows the overview of TomoP that is integrated both at the core and the smart contract
 layer of TomoChain.
 
-![overviewprivacy](/assets/overviewprivacy.png){#fig:overviewprivacy}*Figure 1: Overview of Fanxipang*
+![overviewprivacy](/assets/overviewprivacy.png){#fig:overviewprivacy}*Figure 1: Overview of TomoP*
 
 
 Instead of directly sending funds to the recipient, the sender will anonymize their TOMO by making a 
@@ -143,7 +143,7 @@ transaction to the `Privacy` smart contract.
 As long as send transactions are made to the privacy contract, 
 the latter allows TOMO holders to send/receiver TOMO to/from others 
 without showing the transaction amount within it. 
-Fanxipang transactions are like Monero transactions but in a smart contract on the very fast blockchain TomoChain.
+TomoP transactions are like Monero transactions but in a smart contract on the very fast blockchain TomoChain.
 
 Typically, funds flow as follows:
 
@@ -169,9 +169,9 @@ of the user held in the privacy contract is always hidden.
  
 ### Transaction fee and TomoZ integration
 
-Fanxipang utilizes TomoZ - the core protocol of TomoChain allowing gasless transactions in a 
+TomoP utilizes TomoZ - the core protocol of TomoChain allowing gasless transactions in a 
 decentralized way to anonymize `msg.sender` in anonymous send transactions to the privacy smart contract.
-TomoZ integration is very important to Fanxipang because of the way that it does not require an account to 
+TomoZ integration is very important to TomoP because of the way that it does not require an account to 
 hold TOMO to make a transaction.
 
 For example, when `Alice` wants to make an anonymous send transaction to the privacy contract, if `Alice` 
@@ -192,8 +192,8 @@ The transaction fee flow is as the following figure.
 ![privacyfee](/assets/privacyfee.png){#fig:privacyfee}*Figure 1: Privacy transaction fee and TomoZ integration*
 
 
-### Fanxipang's privacy address
-Fanxipang uses a single private key to generate a dual-key system.
+### TomoP's privacy address
+TomoP uses a single private key to generate a dual-key system.
 The user private key `s` of the user's TOMO address is called private spend key and `v = SHA256(s)` is 
 the private view key of the user.
 As the names imply:
@@ -218,7 +218,7 @@ It uses Pedersen commitment to encrypt transaction amounts using randomly genera
 Cryptographically, confidential transaction states that the sum of Pedersen commitments of all input `notes`
 must be equal to the sum of all Pedersen commitments of all output `notes`. 
 
-Fanxipang uses a similar technique but built upon a smart contract.
+TomoP uses a similar technique but built upon a smart contract.
 Specifically, if we denote `N`<sub>I</sub> and `N`<sub>O</sub>  
 
 ### Range proofs with Bulletproofs
@@ -246,6 +246,12 @@ Using Bulletproofs also allows fullnodes to verify that the sender really has en
 
 ## Implementation
 
+### Privacy precompiled contracts
+To reduce the gas consumption of RingCT and Bulletproof verification, we propose two precompiled contracts, 
+`RingCTVerifier` and `BulletproofVerifier`, that are implemented in the core EVM of TomoChain, using Golang.
+These two precompiled contracts will be called by the privacy contract to verify the confidential transaction and Bulletproof
+range proof, respectively. 
+
 ### Anonymize TOMO
 Anonymizing TOMO is equal to making a deposit transaction to the privacy contract.
 The deposit transaction creates a new `Note` `n` in the privacy contract that has the following cryptographic elements:
@@ -260,7 +266,7 @@ the person who deposits to the privacy transaction fee vault.
 Once deposited, the privacy smart contract records that the person that has the private key corresponding to
 the deposit stealth public key has the deposit amount in a note.
 
-## Anonymous send
+### Anonymous send
 Suppose `Bob` wants to receive `x` TOMO from `Alice` via an anonymous send transaction.
 
 1. `Bob` sends his privacy address to `Alice`
@@ -284,16 +290,29 @@ transaction to the privacy smart contract.
 
 The generation of RingCT and Bulletproofs will be posted in details in TomoChain's technical blog later. 
 
+Note that RingCT is generated by taking into account the transaction fee of 0.01 TOMO.
+The algorithm to generate `sig` is similar to the one described in [Monero RingCT](https://lab.getmonero.org/pubs/MRL-0005.pdf).
+
 In Step 6, TomoZ empowers the anonymization of `msg.sender` through the privacy fee vault and the paying of transaction 
 fee within the internal execution of the privacy smart contract.
 
-## Anonymous send transaction verification on smart contracts
+### Anonymous send transaction verification on smart contracts
+The privacy smart contract basically verifies: 
 
+* The existence of all input notes in in the transaction
+* The validity of the ring confidential transaction (RingCT) `sig` by calling `RingCTVerifier` precompiled contract.
+* The validity of Bulletproofs `bp` by calling `BulletproofVerifier` precompiled contract.
+
+### Anonymous reception of TOMO
+Once the transaction is confirmed, `Bob` needs to scan all newly created `notes` on the privacy smart contract
+to recognize which one belongs to him.
+`Bob` uses his private view key to decode the encrypted transaction amount. 
 
 ## Private token standard
 
+
 ## Regulatory compliance
-
-Fanxipang uses a dual-key-like system for any privacy address.
-
+By using a dual-key-like system, any user could register her/his private view key to an authorized authority.
+The latter will then be able to decode all transactions that involve the user but will not be able to 
+create an anonymous send transaction.  
 
