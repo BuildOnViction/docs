@@ -189,7 +189,7 @@ On the other hand, to compensate the privacy transaction fee paid for masternode
 to the issuer/owner within the smart contract execution of the anonymous transaction.
 The transaction fee flow is as the following figure.
 
-![privacyfee](/assets/privacyfee.png){#fig:privacyfee}*Figure 1: Privacy transaction fee and TomoZ integration*
+![privacyfee](/assets/privacyfee.png){#fig:privacyfee}*Figure 2: Privacy transaction fee and TomoZ integration*
 
 
 ### TomoP's privacy address
