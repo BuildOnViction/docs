@@ -5,6 +5,7 @@ mainnet without the need of using Docker and `tmn`.
 ## Install Golang
 - Reference: https://golang.org/doc/install
 - Set environment variables
+- Supports Go 1.10, 1.11, 1.12
   
 ```bash
 export GOROOT=$HOME/usr/local/go
@@ -25,7 +26,7 @@ git clone https://github.com/tomochain/tomochain.git go-ethereum
 cd go-ethereum
 ```
 
-- Checkout the latest version (e.g v1.4.1)
+- Checkout the latest version (e.g v1.5.4)
 ```
 git pull origin --tags
 git checkout v1.4.1
