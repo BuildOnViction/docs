@@ -82,3 +82,5 @@ enode://cf2d05f71f143d85dce45dae6f74fae0ba56fc5ea1d1c548a095e29a5becb3a1fb93eb33
 ### Stats websocket secret
 
 `anna-coal-flee-carrie-zip-hhhh-tarry-laue-felon-rhine`
+
+Host: wss://stats.testnet.tomochain.com:443
