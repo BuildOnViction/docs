@@ -177,8 +177,8 @@ web3.eth.getBlockNumber().then(blockNumber => {
 ## Get list Withdrawals
 We need to call `getWithdrawBlockNumbers` and `getWithdrawCap` function from TomoValidator smart contract to get the data
 
-### Example
-```
+#### Example
+```javascript
 let blks = await contract.getWithdrawBlockNumbers.call({ from: owner })
 // remove duplicate
 blks = [...new Set(blks)]
