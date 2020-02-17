@@ -174,6 +174,30 @@ web3.eth.getBlockNumber().then(blockNumber => {
 }).catch(e => console.log(e))
 ```
 
+## Get list Withdrawals
+We need to call `getWithdrawBlockNumbers` and `getWithdrawCap` function from TomoValidator smart contract to get the data
+
+### Example
+```
+let blks = await contract.getWithdrawBlockNumbers.call({ from: owner })
+// remove duplicate
+blks = [...new Set(blks)]
+let withdraws = []
+
+await Promise.all(blks.map(async (it, index) => {
+    let blk = new BigNumber(it).toString()
+    if (blk !== '0') {
+        self.aw = true
+    }
+    let wd = {
+        blockNumber: blk
+    }
+    wd.cap = await contract.methods.getWithdrawCap(blk).call({ from: owner })
+    withdraws[index] = wd
+}))
+console.log(withdraws)
+```
+
 ## Get list candidates
 You can get list candidates from [RPC endpoint](https://apidocs.tomochain.com/?shell#eth_getcandidates):
 ```
