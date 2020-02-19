@@ -1,9 +1,14 @@
 ## TomoWallet
 
 Download TomoWallet from [Apple Store](https://itunes.apple.com/vn/app/tomo-wallet/id1436476145) or [Google Play](https://play.google.com/store/apps/details?id=com.tomochain.wallet).
-You can create a new wallet, import an existing wallet, vote for Masternodes and transfer/receive TOMO back and forth.
+You can create a new wallet, import an existing wallet, stake for Masternodes and transfer/receive TOMO back and forth.
 
-*Note: Under Settings you can Choose Network: TomoChain (Mainnet) or TomoChain DevNet (Testnet).*
+*Note: Under Settings you can Choose Network: TomoChain (Mainnet) or TomoChain Testnet (Testnet).*
+
+TomoWallet also has Web Application. It allows you to create a new wallet or unlock your wallet with Private Key, Seed Phrase, Harware Wallet, Metamask.
+
+- Mainnet: [https://wallet.tomochain.com](https://wallet.tomochain.com)
+- Mainnet: [https://wallet.testnet.tomochain.com](https://wallet.testnet.tomochain.com)
 
 ![tomowallet1](/assets/tomowallet1.jpg)
 
