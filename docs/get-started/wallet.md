@@ -22,11 +22,13 @@ Once you agree to the Metamask Terms of Use and create an account successfully, 
 **Step 2:** When Settings screen pops up, scroll down to `New Network` and click `Show Advanced Options`.
 Enter the following information, then Save:
 
-- New RPC URL: `https://rpc.tomochain.com`
-- ChainID: `88`
-- Symbol: `TOMO`
-- Nickname: `TomoChain`
-- Block Explorer URL: `https://scan.tomochain.com`
+|                    | **Mainnet**                  | **Testnet**                          |
+|--------------------|------------------------------|--------------------------------------| 
+| New RPC URL        | `https://rpc.tomochain.com`  | `https://rpc.testnet.tomochain.com`  |
+| ChainID            | `88`                         | `89`                                 |
+| Symbol             | `TOMO`                       | `TOMO`                               |
+| Nickname           | `TomoChain`                  | `TomoChain Testnet`                  |
+| Block Explorer URL | `https://scan.tomochain.com` | `https://scan.testnet.tomochain.com` |
 
 ![metamask2](/assets/metamask2.jpg)
 
