@@ -8,7 +8,7 @@ You can create a new wallet, import an existing wallet, stake for Masternodes an
 TomoWallet also has Web Application. It allows you to create a new wallet or unlock your wallet with Private Key, Seed Phrase, Harware Wallet, Metamask.
 
 - Mainnet: [https://wallet.tomochain.com](https://wallet.tomochain.com)
-- Mainnet: [https://wallet.testnet.tomochain.com](https://wallet.testnet.tomochain.com)
+- Testnet: [https://wallet.testnet.tomochain.com](https://wallet.testnet.tomochain.com)
 
 ![tomowallet1](/assets/tomowallet1.jpg)
 
