@@ -25,7 +25,8 @@ Enter the following information, then Save:
 - New RPC URL: `https://rpc.tomochain.com`
 - ChainID: `88`
 - Symbol: `TOMO`
-- Nickname: `TomoChain Mainnet`
+- Nickname: `TomoChain`
+- Block Explorer URL: `https://scan.tomochain.com`
 
 ![metamask2](/assets/metamask2.jpg)
 
