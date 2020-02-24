@@ -99,3 +99,7 @@ trc21.methods.transfer(to, '500000000000000000000').send({
 ```
 
 You can take a look to this example [Transfer TRC21 token](https://gist.github.com/thanhson1085/03e983e933dc9cbf7a3d5c88ef503b18)
+
+## Checking TomoZ
+You need to call `getTokenCapacity` to https://scan.tomochain.com/address/0x8c0faeb5c6bed2129b8674f262fd45c4e9468bee#readContract.
+If the return value > 0, the token enabled TomoZ protocol.
