@@ -4,7 +4,7 @@ site_description: TomoChain aims to be a public EVM-compatible blockchain with t
 theme:
   name: 'material'
   custom_dir: material_override
-  logo: 'images/logo.svg'
+  logo: 'images/logo.png'
   favicon: 'images/favicon.png'
   feature:
     tabs: false
