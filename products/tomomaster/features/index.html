@@ -1,0 +1,1695 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="TomoChain aims to be a public EVM-compatible blockchain with the following advantages as low transaction fee, fast confirmation time, double validation.">
+      
+      
+        <link rel="canonical" href="https://docs.tomochain.com/products/tomomaster/features/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>TomoMaster - TomoChain Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../../css/style.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../../#home" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TomoChain Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                TomoMaster
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../../images/logo.png" width="48" height="48">
+      
+    </a>
+    TomoChain Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Get started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Get started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/productoverview/" title="Products overview" class="md-nav__link">
+      Products overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/how_to_read/" title="How to read" class="md-nav__link">
+      How to read
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/wallet/" title="Connect your wallet" class="md-nav__link">
+      Connect your wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/voting/" title="Voting" class="md-nav__link">
+      Voting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../general/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Masternode/DEX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Masternode/DEX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/requirements/" title="Requirements" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/masternode-setup-guide/" title="Detailed guide" class="md-nav__link">
+      Detailed guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Running a node with
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Running a node with
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/tomonative/" title="Binary" class="md-nav__link">
+      Binary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/create-tomochain-masternode/" title="Create-tomochain-masternode" class="md-nav__link">
+      Create-tomochain-masternode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/tmn/" title="Tmn" class="md-nav__link">
+      Tmn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/applying/" title="Applying for Masternode Candidacy" class="md-nav__link">
+      Applying for Masternode Candidacy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/snapshot/" title="Chaindata Snapshots" class="md-nav__link">
+      Chaindata Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/run-node/" title="Run a full node in testnet" class="md-nav__link">
+      Run a full node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/apply-node/" title="Apply your node in testnet" class="md-nav__link">
+      Apply your node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/tomox-fullnode/" title="Running a TomoX Mongodb fullnode" class="md-nav__link">
+      Running a TomoX Mongodb fullnode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/tomox-sdk/" title="Running a TomoX DEX" class="md-nav__link">
+      Running a TomoX DEX
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developers guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developers guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/integrations/" title="TOMO Exchange/Wallet" class="md-nav__link">
+      TOMO Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/staking-integrations/" title="TomoChain Staking Governance" class="md-nav__link">
+      TomoChain Staking Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/trc20-integrations/" title="TRC20 Exchange/Wallet" class="md-nav__link">
+      TRC20 Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/trc21-integrations/" title="TRC21 Exchange/Wallet" class="md-nav__link">
+      TRC21 Exchange/Wallet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Working with TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Working with TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/tutoprivatenet/" title="TomoChain private testnet setup" class="md-nav__link">
+      TomoChain private testnet setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/clicommands/" title="Useful manual CLI commands" class="md-nav__link">
+      Useful manual CLI commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      DApps on TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        DApps on TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/dappdeploytuto/" title="Deploy DApp on TomoChain" class="md-nav__link">
+      Deploy DApp on TomoChain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/icosmartcontract/" title="Deploy an ICO smart contract" class="md-nav__link">
+      Deploy an ICO smart contract
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://apidocs.tomochain.com" title="API Documentation" class="md-nav__link">
+      API Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Whitepapers/Specs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Whitepapers/Specs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wp-and-research/technical-whitepaper/" title="Technical whitepaper" class="md-nav__link">
+      Technical whitepaper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wp-and-research/sharding-paper/" title="Sharding design paper" class="md-nav__link">
+      Sharding design paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wp-and-research/economics-paper/" title="Economics paper" class="md-nav__link">
+      Economics paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Standard & Specification
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Standard & Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wp-and-research/specs/trc21_standard/" title="TRC21 Specification" class="md-nav__link">
+      TRC21 Specification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wp-and-research/privacy/" title="TomoP whitepaper" class="md-nav__link">
+      TomoP whitepaper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Legal
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../legal/terms-of-use/" title="Terms of Use" class="md-nav__link">
+      Terms of Use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../legal/privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Products
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Products
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        TomoMaster
+      </label>
+    
+    <a href="./" title="TomoMaster" class="md-nav__link md-nav__link--active">
+      TomoMaster
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#home" title="Home" class="md-nav__link">
+    Home
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-status" title="Network Status" class="md-nav__link">
+    Network Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidates-list" title="Candidates List" class="md-nav__link">
+    Candidates List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voting" title="Voting" class="md-nav__link">
+    Voting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unvoting" title="Unvoting" class="md-nav__link">
+    Unvoting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#candidate" title="Candidate" class="md-nav__link">
+    Candidate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-information" title="General Information" class="md-nav__link">
+    General Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics" title="Metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewards" title="Rewards" class="md-nav__link">
+    Rewards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voters" title="Voters" class="md-nav__link">
+    Voters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactions" title="Transactions" class="md-nav__link">
+    Transactions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voter" title="Voter" class="md-nav__link">
+    Voter
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-information_1" title="General Information" class="md-nav__link">
+    General Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidates" title="Candidates" class="md-nav__link">
+    Candidates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewards_1" title="Rewards" class="md-nav__link">
+    Rewards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactions_1" title="Transactions" class="md-nav__link">
+    Transactions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" title="Settings" class="md-nav__link">
+    Settings
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-provider" title="Network Provider" class="md-nav__link">
+    Network Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-infos" title="Account Infos" class="md-nav__link">
+    Account Infos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply" title="Apply" class="md-nav__link">
+    Apply
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search" title="Search" class="md-nav__link">
+    Search
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tomoscan/features/" title="TomoScan" class="md-nav__link">
+      TomoScan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      TomoWallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        TomoWallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tomowallet/features/" title="Features" class="md-nav__link">
+      Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tomowallet/voting/" title="Voting with TomoWallet" class="md-nav__link">
+      Voting with TomoWallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tomowallet/terms/" title="Terms & Privacy" class="md-nav__link">
+      Terms & Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      TomoBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        TomoBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tomobridge/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      TomoIssuer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        TomoIssuer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tomoissuer/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tomoissuer/termofcondition/" title="Term Of Condition" class="md-nav__link">
+      Term Of Condition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tomoissuer/policyprivacy/" title="Policy Privacy" class="md-nav__link">
+      Policy Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#home" title="Home" class="md-nav__link">
+    Home
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-status" title="Network Status" class="md-nav__link">
+    Network Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidates-list" title="Candidates List" class="md-nav__link">
+    Candidates List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voting" title="Voting" class="md-nav__link">
+    Voting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unvoting" title="Unvoting" class="md-nav__link">
+    Unvoting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#candidate" title="Candidate" class="md-nav__link">
+    Candidate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-information" title="General Information" class="md-nav__link">
+    General Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics" title="Metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewards" title="Rewards" class="md-nav__link">
+    Rewards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voters" title="Voters" class="md-nav__link">
+    Voters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactions" title="Transactions" class="md-nav__link">
+    Transactions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voter" title="Voter" class="md-nav__link">
+    Voter
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-information_1" title="General Information" class="md-nav__link">
+    General Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidates" title="Candidates" class="md-nav__link">
+    Candidates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewards_1" title="Rewards" class="md-nav__link">
+    Rewards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactions_1" title="Transactions" class="md-nav__link">
+    Transactions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" title="Settings" class="md-nav__link">
+    Settings
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-provider" title="Network Provider" class="md-nav__link">
+    Network Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-infos" title="Account Infos" class="md-nav__link">
+    Account Infos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply" title="Apply" class="md-nav__link">
+    Apply
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search" title="Search" class="md-nav__link">
+    Search
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tomochain/docs/edit/master/docs/products/tomomaster/features.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>TomoMaster</h1>
+                
+                <p>Here are the pages and features available on TomoMaster.</p>
+<h2 id="home"><a href="https://master.tomochain.com/">Home</a><a class="headerlink" href="#home" title="Permanent link">&para;</a></h2>
+<h3 id="network-status">Network Status<a class="headerlink" href="#network-status" title="Permanent link">&para;</a></h3>
+<p>On TomoMaster, this area shows you what the current block is, the block time, how many blocks are in each epoch, and the next checkpoint (end of epoch).</p>
+<h3 id="candidates-list">Candidates List<a class="headerlink" href="#candidates-list" title="Permanent link">&para;</a></h3>
+<p>The candidates list includes everyone who has deposited enough tokens to run a masternode as well as those who resigned running a masternode.
+A candidate is required to be one of the top 150 most voted masternode candidates on this list to become a masternode earning rewards.
+Voters can use this list to help choose which masternode candidate(s) they would like to stake their tokens for.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Voting for the top voted masternode candidate could lower your rewards as the rewards that go to voters per token is inversely proportional to the number of tokens staked for a specific masternode.</p>
+</div>
+<h3 id="voting">Voting<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h3>
+<p>Voters who want to stake their tokens for a masternode or masternodes in order to earn rewards can vote through TomoMaster.
+Simply click ‘Vote’ and you will be taken to a page that allows you to vote through staking your tokens.</p>
+<h3 id="unvoting">Unvoting<a class="headerlink" href="#unvoting" title="Permanent link">&para;</a></h3>
+<p>If you do not want to support a masternode you voted for, you can unvote it by clicking the Unvote button on the masternode's page and enter the amount of TOMO you want to unvote.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>After unvoting, your TOMO will be locked in the smart contract for 48 hours before you are able to withdraw.</p>
+</div>
+<h2 id="candidate"><a href="https://master.tomochain.com/candidate/0x98ffa09ae64a3ad63289ee0def385e6455b777e5">Candidate</a><a class="headerlink" href="#candidate" title="Permanent link">&para;</a></h2>
+<h3 id="general-information">General Information<a class="headerlink" href="#general-information" title="Permanent link">&para;</a></h3>
+<p>On the top of the page, you can find general information on a masternode candidate.
+Voters can use this information to better understand the masternode candidates they plan to vote for.</p>
+<h3 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h3>
+<p>The metrics area shows the performance of the masternode.
+This section is useful to see if the masternode candidate is strong or weak.</p>
+<h3 id="rewards">Rewards<a class="headerlink" href="#rewards" title="Permanent link">&para;</a></h3>
+<p>The rewards section shows the estimated rewards the masternode has been receiving.
+If the masternode has been receiving less rewards than other masternodes, it might be a weak masternode.</p>
+<h3 id="voters">Voters<a class="headerlink" href="#voters" title="Permanent link">&para;</a></h3>
+<p>Under the section for voters, you can see the list of TOMO stakers who voted for this candidate.</p>
+<h3 id="transactions">Transactions<a class="headerlink" href="#transactions" title="Permanent link">&para;</a></h3>
+<p>In this section, you can see all transactions of this candidate.</p>
+<h2 id="voter"><a href="https://master.tomochain.com/voter/0x82d83629f48b690226af91547cbfbfc8a52b73e6">Voter</a><a class="headerlink" href="#voter" title="Permanent link">&para;</a></h2>
+<h3 id="general-information_1">General Information<a class="headerlink" href="#general-information_1" title="Permanent link">&para;</a></h3>
+<p>On this page you can find general information about specific voters.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As a voter, use this page to make sure you're earning your fair share of rewards.</p>
+</div>
+<h3 id="candidates">Candidates<a class="headerlink" href="#candidates" title="Permanent link">&para;</a></h3>
+<p>The candidates section shows all masternode candidates that have been voted by this voter.</p>
+<h3 id="rewards_1">Rewards<a class="headerlink" href="#rewards_1" title="Permanent link">&para;</a></h3>
+<p>The rewards section shows the rewards the voter has been receiving.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you voted an equal amount of TOMO for different masternodes and you see one is giving less rewards, you may have voted for a weak masternode and should consider changing your vote.</p>
+</div>
+<h3 id="transactions_1">Transactions<a class="headerlink" href="#transactions_1" title="Permanent link">&para;</a></h3>
+<p>This section shows all transactions by the voter.</p>
+<h2 id="settings"><a href="https://master.tomochain.com/setting">Settings</a><a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<h3 id="network-provider">Network Provider<a class="headerlink" href="#network-provider" title="Permanent link">&para;</a></h3>
+<p>Use settings to select the network provider you are using for TomoMaster (e.g., Metamask, TomoChain Testnet, Custom Network).</p>
+<h3 id="account-infos">Account Infos<a class="headerlink" href="#account-infos" title="Permanent link">&para;</a></h3>
+<p>This section will show you information about your public address and TOMO balance.</p>
+<h2 id="apply"><a href="https://master.tomochain.com/apply">Apply</a><a class="headerlink" href="#apply" title="Permanent link">&para;</a></h2>
+<p>This web page is used by TOMO holders looking to apply to become a masternode candidate.</p>
+<h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h2>
+<p>On the top of the page, you can find a search bar.
+You can use this bar to search for a Candidate or Voter by its address.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The search will not work if your input is not an address.</p>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../../legal/privacy/" title="Privacy Policy" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Privacy Policy
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../tomoscan/features/" title="TomoScan" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                TomoScan
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tomochain" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tomochainANN" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/Tomochain/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.facebook.com/tomochainofficial/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://t.me/tomochain" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/tomochain" class="md-footer-social__link fa fa-medium"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-124597188-1","docs.tomochain.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

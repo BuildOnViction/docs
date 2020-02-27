@@ -1,0 +1,1781 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="TomoChain aims to be a public EVM-compatible blockchain with the following advantages as low transaction fee, fast confirmation time, double validation.">
+      
+      
+        <link rel="canonical" href="https://docs.tomochain.com/masternode/tomonative/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Binary - TomoChain Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#install-golang" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TomoChain Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Binary
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../images/logo.png" width="48" height="48">
+      
+    </a>
+    TomoChain Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Get started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Get started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/productoverview/" title="Products overview" class="md-nav__link">
+      Products overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/how_to_read/" title="How to read" class="md-nav__link">
+      How to read
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/wallet/" title="Connect your wallet" class="md-nav__link">
+      Connect your wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/voting/" title="Voting" class="md-nav__link">
+      Voting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Masternode/DEX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Masternode/DEX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/" title="Requirements" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../masternode-setup-guide/" title="Detailed guide" class="md-nav__link">
+      Detailed guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Running a node with
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Running a node with
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Binary
+      </label>
+    
+    <a href="./" title="Binary" class="md-nav__link md-nav__link--active">
+      Binary
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-golang" title="Install Golang" class="md-nav__link">
+    Install Golang
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-tomo-client-software" title="Prepare tomo client software" class="md-nav__link">
+    Prepare tomo client software
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-from-source-code" title="Build from source code" class="md-nav__link">
+    Build from source code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-tomochain-binary-from-github-release-page" title="Download TomoChain binary from Github release page" class="md-nav__link">
+    Download TomoChain binary from Github release page
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-genesis-block" title="Download genesis block" class="md-nav__link">
+    Download genesis block
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-datadir" title="Create datadir" class="md-nav__link">
+    Create datadir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-the-chain-from-genesis" title="Initialize the chain from genesis" class="md-nav__link">
+    Initialize the chain from genesis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-import-accounts-for-the-nodess-keystore" title="Initialize / Import accounts for the nodes's keystore" class="md-nav__link">
+    Initialize / Import accounts for the nodes's keystore
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialize-new-accounts" title="Initialize new accounts" class="md-nav__link">
+    Initialize new accounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-accounts" title="Import accounts" class="md-nav__link">
+    Import accounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-all-available-accounts-in-keystore-folder" title="List all available accounts in keystore folder" class="md-nav__link">
+    List all available accounts in keystore folder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-a-node" title="Start a node" class="md-nav__link">
+    Start a node
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" title="Environment variables" class="md-nav__link">
+    Environment variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lets-start-a-node" title="Let's start a node" class="md-nav__link">
+    Let's start a node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-explanations-on-the-flags" title="Some explanations on the flags" class="md-nav__link">
+    Some explanations on the flags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-your-node-on-stats-page" title="See your node on stats page" class="md-nav__link">
+    See your node on stats page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot" title="Troubleshoot" class="md-nav__link">
+    Troubleshoot
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../create-tomochain-masternode/" title="Create-tomochain-masternode" class="md-nav__link">
+      Create-tomochain-masternode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tmn/" title="Tmn" class="md-nav__link">
+      Tmn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../applying/" title="Applying for Masternode Candidacy" class="md-nav__link">
+      Applying for Masternode Candidacy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../snapshot/" title="Chaindata Snapshots" class="md-nav__link">
+      Chaindata Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/run-node/" title="Run a full node in testnet" class="md-nav__link">
+      Run a full node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/apply-node/" title="Apply your node in testnet" class="md-nav__link">
+      Apply your node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tomox-fullnode/" title="Running a TomoX Mongodb fullnode" class="md-nav__link">
+      Running a TomoX Mongodb fullnode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tomox-sdk/" title="Running a TomoX DEX" class="md-nav__link">
+      Running a TomoX DEX
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developers guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developers guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/integrations/" title="TOMO Exchange/Wallet" class="md-nav__link">
+      TOMO Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/staking-integrations/" title="TomoChain Staking Governance" class="md-nav__link">
+      TomoChain Staking Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/trc20-integrations/" title="TRC20 Exchange/Wallet" class="md-nav__link">
+      TRC20 Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/trc21-integrations/" title="TRC21 Exchange/Wallet" class="md-nav__link">
+      TRC21 Exchange/Wallet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Working with TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Working with TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/tutoprivatenet/" title="TomoChain private testnet setup" class="md-nav__link">
+      TomoChain private testnet setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/clicommands/" title="Useful manual CLI commands" class="md-nav__link">
+      Useful manual CLI commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      DApps on TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        DApps on TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/dappdeploytuto/" title="Deploy DApp on TomoChain" class="md-nav__link">
+      Deploy DApp on TomoChain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/icosmartcontract/" title="Deploy an ICO smart contract" class="md-nav__link">
+      Deploy an ICO smart contract
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://apidocs.tomochain.com" title="API Documentation" class="md-nav__link">
+      API Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Whitepapers/Specs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Whitepapers/Specs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/technical-whitepaper/" title="Technical whitepaper" class="md-nav__link">
+      Technical whitepaper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/sharding-paper/" title="Sharding design paper" class="md-nav__link">
+      Sharding design paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/economics-paper/" title="Economics paper" class="md-nav__link">
+      Economics paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Standard & Specification
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Standard & Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/specs/trc21_standard/" title="TRC21 Specification" class="md-nav__link">
+      TRC21 Specification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/privacy/" title="TomoP whitepaper" class="md-nav__link">
+      TomoP whitepaper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Legal
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/terms-of-use/" title="Terms of Use" class="md-nav__link">
+      Terms of Use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Products
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Products
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomomaster/features/" title="TomoMaster" class="md-nav__link">
+      TomoMaster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoscan/features/" title="TomoScan" class="md-nav__link">
+      TomoScan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      TomoWallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        TomoWallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/features/" title="Features" class="md-nav__link">
+      Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/voting/" title="Voting with TomoWallet" class="md-nav__link">
+      Voting with TomoWallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/terms/" title="Terms & Privacy" class="md-nav__link">
+      Terms & Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      TomoBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        TomoBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomobridge/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      TomoIssuer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        TomoIssuer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/termofcondition/" title="Term Of Condition" class="md-nav__link">
+      Term Of Condition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/policyprivacy/" title="Policy Privacy" class="md-nav__link">
+      Policy Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-golang" title="Install Golang" class="md-nav__link">
+    Install Golang
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-tomo-client-software" title="Prepare tomo client software" class="md-nav__link">
+    Prepare tomo client software
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-from-source-code" title="Build from source code" class="md-nav__link">
+    Build from source code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-tomochain-binary-from-github-release-page" title="Download TomoChain binary from Github release page" class="md-nav__link">
+    Download TomoChain binary from Github release page
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-genesis-block" title="Download genesis block" class="md-nav__link">
+    Download genesis block
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-datadir" title="Create datadir" class="md-nav__link">
+    Create datadir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-the-chain-from-genesis" title="Initialize the chain from genesis" class="md-nav__link">
+    Initialize the chain from genesis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-import-accounts-for-the-nodess-keystore" title="Initialize / Import accounts for the nodes's keystore" class="md-nav__link">
+    Initialize / Import accounts for the nodes's keystore
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialize-new-accounts" title="Initialize new accounts" class="md-nav__link">
+    Initialize new accounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-accounts" title="Import accounts" class="md-nav__link">
+    Import accounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-all-available-accounts-in-keystore-folder" title="List all available accounts in keystore folder" class="md-nav__link">
+    List all available accounts in keystore folder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-a-node" title="Start a node" class="md-nav__link">
+    Start a node
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" title="Environment variables" class="md-nav__link">
+    Environment variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lets-start-a-node" title="Let's start a node" class="md-nav__link">
+    Let's start a node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-explanations-on-the-flags" title="Some explanations on the flags" class="md-nav__link">
+    Some explanations on the flags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-your-node-on-stats-page" title="See your node on stats page" class="md-nav__link">
+    See your node on stats page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot" title="Troubleshoot" class="md-nav__link">
+    Troubleshoot
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tomochain/docs/edit/master/docs/masternode/tomonative.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Binary</h1>
+                
+                <p>This guide shows how to run a TomoChain masternode in testnet and 
+mainnet without the need of using Docker and <code>tmn</code>.</p>
+<h2 id="install-golang">Install Golang<a class="headerlink" href="#install-golang" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Reference: https://golang.org/doc/install</li>
+<li>Set environment variables</li>
+<li>Supports Go 1.10, 1.11, 1.12</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">GOROOT</span><span class="o">=</span><span class="nv">$HOME</span>/usr/local/go
+<span class="nb">export</span> <span class="nv">GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/go
+</code></pre></div>
+
+
+<h2 id="prepare-tomo-client-software">Prepare tomo client software<a class="headerlink" href="#prepare-tomo-client-software" title="Permanent link">&para;</a></h2>
+<h4 id="build-from-source-code">Build from source code<a class="headerlink" href="#build-from-source-code" title="Permanent link">&para;</a></h4>
+<p>Create new directory for the project</p>
+<div class="codehilite"><pre><span></span><code>mkdir -p <span class="nv">$GOPATH</span>/src/github.com/ethereum/
+<span class="nb">cd</span> <span class="nv">$GOPATH</span>/src/github.com/ethereum/
+</code></pre></div>
+
+
+<ul>
+<li>Download source code and build</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/tomochain/tomochain.git go-ethereum
+<span class="nb">cd</span> go-ethereum
+</code></pre></div>
+
+
+<ul>
+<li>Checkout the latest version (e.g v1.5.4)</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>git pull origin --tags
+git checkout v1.4.1
+</code></pre></div>
+
+
+<ul>
+<li>Build the project</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>make all
+</code></pre></div>
+
+
+<ul>
+<li>Binary file should be generated in build folder <code>$GOPATH/src/github.com/ethereum/go-ethereum/build/bin</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nb">alias</span> <span class="nv">tomo</span><span class="o">=</span><span class="nv">$GOPATH</span>/src/github.com/ethereum/go-ethereum/build/bin/tomo
+</code></pre></div>
+
+
+<h4 id="download-tomochain-binary-from-github-release-page">Download TomoChain binary from Github release page<a class="headerlink" href="#download-tomochain-binary-from-github-release-page" title="Permanent link">&para;</a></h4>
+<p>Download tomo binary from our <a href="https://github.com/tomochain/tomochain/releases">releases page</a></p>
+<div class="codehilite"><pre><span></span><code><span class="nb">alias</span> <span class="nv">tomo</span><span class="o">=</span>path/to/tomo/binary
+</code></pre></div>
+
+
+<h2 id="download-genesis-block">Download genesis block<a class="headerlink" href="#download-genesis-block" title="Permanent link">&para;</a></h2>
+<p>$GENESIS_PATH : location of genesis file you would like to put</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">GENESIS_PATH</span><span class="o">=</span>path/to/genesis.json
+</code></pre></div>
+
+
+<ul>
+<li>Testnet</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>curl -L https://raw.githubusercontent.com/tomochain/tomochain/master/genesis/testnet.json -o <span class="nv">$GENESIS_PATH</span>
+</code></pre></div>
+
+
+<ul>
+<li>Mainnet</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>curl -L https://raw.githubusercontent.com/tomochain/tomochain/master/genesis/mainnet.json -o <span class="nv">$GENESIS_PATH</span>
+</code></pre></div>
+
+
+<h2 id="create-datadir">Create datadir<a class="headerlink" href="#create-datadir" title="Permanent link">&para;</a></h2>
+<ul>
+<li>create a folder to store tomochain data on your machine</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>export DATA_DIR=/path/to/your/data/folder
+mkdir -p $DATA_DIR/tomo
+</code></pre></div>
+
+
+<h2 id="initialize-the-chain-from-genesis">Initialize the chain from genesis<a class="headerlink" href="#initialize-the-chain-from-genesis" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>tomo init <span class="nv">$GENESIS_PATH</span> --datadir <span class="nv">$DATA_DIR</span>
+</code></pre></div>
+
+
+<h2 id="initialize-import-accounts-for-the-nodess-keystore">Initialize / Import accounts for the nodes's keystore<a class="headerlink" href="#initialize-import-accounts-for-the-nodess-keystore" title="Permanent link">&para;</a></h2>
+<p>If you already had an existing account, import it. Otherwise, please initialize new accounts </p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">KEYSTORE_DIR</span><span class="o">=</span>path/to/keystore
+</code></pre></div>
+
+
+<h4 id="initialize-new-accounts">Initialize new accounts<a class="headerlink" href="#initialize-new-accounts" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>tomo account new \
+    --password [YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT] \
+    --keystore $KEYSTORE_DIR
+</code></pre></div>
+
+
+<h4 id="import-accounts">Import accounts<a class="headerlink" href="#import-accounts" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>tomo  account import <span class="o">[</span>PRIVATE_KEY_FILE_OF_YOUR_ACCOUNT<span class="o">]</span> <span class="se">\ </span>   
+    --keystore <span class="nv">$KEYSTORE_DIR</span> <span class="se">\</span>
+    --password <span class="o">[</span>YOUR_PASSWORD_FILE_TO_LOCK_YOUR_ACCOUNT<span class="o">]</span>
+</code></pre></div>
+
+
+<h4 id="list-all-available-accounts-in-keystore-folder">List all available accounts in keystore folder<a class="headerlink" href="#list-all-available-accounts-in-keystore-folder" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>tomo account list --datadir <span class="nv">$DATA_DIR</span>  --keystore <span class="nv">$KEYSTORE_DIR</span>
+</code></pre></div>
+
+
+<h2 id="start-a-node">Start a node<a class="headerlink" href="#start-a-node" title="Permanent link">&para;</a></h2>
+<h4 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h4>
+<ul>
+<li>$IDENTITY: the name of your node</li>
+<li>$PASSWORD: the password file to unlock your account</li>
+<li>$YOUR_COINBASE_ADDRESS: address of your account which generated in the previous step</li>
+<li>$NETWORK_ID: the networkId. Mainnet: 88. Testnet: 89</li>
+<li>$BOOTNODES: The comma separated list of bootnodes. Find them <a href="https://docs.tomochain.com/general/networks/">here</a></li>
+<li>$WS_SECRET: The password to send data to the stats website. Find them <a href="https://docs.tomochain.com/general/networks/">here</a></li>
+<li>$NETSTATS_HOST: The stats website to report to, regarding to your environment. Find them <a href="https://docs.tomochain.com/general/networks/">here</a></li>
+<li>$NETSTATS_PORT: The port used by the stats website (usually 443)</li>
+</ul>
+<h4 id="lets-start-a-node">Let's start a node<a class="headerlink" href="#lets-start-a-node" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>tomo  --syncmode <span class="s2">&quot;full&quot;</span> <span class="se">\</span>
+    --datadir <span class="nv">$DATA_DIR</span> --networkid <span class="nv">$NETWORK_ID</span> --port <span class="m">30303</span> <span class="se">\</span>
+    --keystore <span class="nv">$KEYSTORE_DIR</span> --password <span class="nv">$PASSWORD</span> <span class="se">\</span>
+    --identity <span class="nv">$IDENTITY</span> <span class="se">\</span>
+    --mine --gasprice <span class="m">250000000</span> <span class="se">\</span>
+    --bootnodes <span class="nv">$BOOTNODES</span> <span class="se">\</span>
+    --ethstats <span class="nv">$IDENTITY</span>:<span class="nv">$WS_SECRET</span>@<span class="nv">$NETSTATS_HOST</span>:<span class="nv">$NETSTATS_PORT</span>
+</code></pre></div>
+
+
+<p>If you are a dapp developer, you should open RPC and WS apis:</p>
+<div class="codehilite"><pre><span></span><code>tomo  --syncmode <span class="s2">&quot;full&quot;</span> <span class="se">\</span>
+    --datadir <span class="nv">$DATA_DIR</span> --networkid <span class="nv">$NETWORK_ID</span> --port <span class="m">30303</span> <span class="se">\</span>
+    --keystore <span class="nv">$KEYSTORE_DIR</span> --password <span class="nv">$PASSWORD</span> <span class="se">\</span>
+    --rpc --rpccorsdomain <span class="s2">&quot;*&quot;</span> --rpcaddr <span class="m">0</span>.0.0.0 --rpcport <span class="m">8545</span> --rpcvhosts <span class="s2">&quot;*&quot;</span> <span class="se">\</span>
+    --rpcapi <span class="s2">&quot;db,eth,net,web3,personal,debug&quot;</span> <span class="se">\</span>
+    --gcmode <span class="s2">&quot;archive&quot;</span> <span class="se">\</span>
+    --ws --wsaddr <span class="m">0</span>.0.0.0 --wsport <span class="m">8546</span> --wsorigins <span class="s2">&quot;*&quot;</span> --unlock <span class="s2">&quot;</span><span class="nv">$YOUR_COINBASE_ADDRESS</span><span class="s2">&quot;</span> <span class="se">\</span>
+    --identity <span class="nv">$IDENTITY</span> <span class="se">\</span>
+    --mine --gasprice <span class="m">250000000</span> <span class="se">\</span>
+    --bootnodes <span class="nv">$BOOTNODES</span> <span class="se">\</span>
+    --ethstats <span class="nv">$IDENTITY</span>:<span class="nv">$WS_SECRET</span>@<span class="nv">$NETSTATS_HOST</span>:<span class="nv">$NETSTATS_PORT</span>
+</code></pre></div>
+
+
+<h4 id="some-explanations-on-the-flags">Some explanations on the flags<a class="headerlink" href="#some-explanations-on-the-flags" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>--verbosity: log level from 1 to 5. Here we&#39;re using 4 for debug messages
+
+--datadir: path to your data directory created above.
+
+--keystore: path to your account&#39;s keystore created above.
+
+--identity: your full-node&#39;s name.
+
+--password: your account&#39;s password.
+
+--networkid: our network ID.
+
+--port: your full-node&#39;s listening port (default to 30303)
+
+--rpc, --rpccorsdomain, --rpcaddr, --rpcport, --rpcvhosts: your full-node will accept RPC requests at 8545 TCP.
+
+--ws, --wsaddr, --wsport, --wsorigins: your full-node will accept Websocket requests at 8546 TCP.
+
+--mine: your full-node wants to register to be a candidate for masternode selection.
+
+--gasprice: Minimal gas price to accept for mining a transaction.
+
+--targetgaslimit: Target gas limit sets the artificial target gas floor for the blocks to mine (default: 4712388)
+
+--bootnode: bootnode information to help to discover other nodes in the network
+
+--gcmode: blockchain garbage collection mode (&quot;full&quot;, &quot;archive&quot;)
+
+--synmode: blockchain sync mode (&quot;fast&quot;, &quot;full&quot;, or &quot;light&quot;. More detail: https://github.com/tomochain/tomochain/blob/master/eth/downloader/modes.go#L24)
+
+--ethstats: send data to stats website
+
+--tomo-testnet: required when the networkid is testnet(89)
+
+--store-reward: store reward report
+</code></pre></div>
+
+
+<p>To see all flags usage</p>
+<div class="codehilite"><pre><span></span><code>tomo --help
+</code></pre></div>
+
+
+<h2 id="see-your-node-on-stats-page">See your node on stats page<a class="headerlink" href="#see-your-node-on-stats-page" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Testnet: <a href="https://stats.testnet.tomochain.com">https://stats.testnet.tomochain.com</a></li>
+<li>Mainnet: <a href="http://stats.tomochain.com">http://stats.tomochain.com</a></li>
+</ul>
+<h2 id="troubleshoot">Troubleshoot<a class="headerlink" href="#troubleshoot" title="Permanent link">&para;</a></h2>
+<p>If your node seems run smooth with no error logs but still get slash frequently. You need to check system time on your node, your system time have to be synced from NTP server</p>
+<p>E.g:</p>
+<div class="codehilite"><pre><span></span><code>$ timedatectl
+Local time: Fri 2019-07-26 05:57:40 CEST
+  Universal time: Fri 2019-07-26 03:57:40 UTC
+        RTC time: Fri 2019-07-26 03:58:01
+       Time zone: Europe/Berlin (CEST, +0200)
+ Network time on: yes
+NTP synchronized: no
+ RTC in local TZ: no
+</code></pre></div>
+
+
+<p><code>NTP synchronized: no</code> means your node does not use NTP, you have to enable it.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../masternode-setup-guide/" title="Detailed guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Detailed guide
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../create-tomochain-masternode/" title="Create-tomochain-masternode" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Create-tomochain-masternode
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tomochain" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tomochainANN" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/Tomochain/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.facebook.com/tomochainofficial/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://t.me/tomochain" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/tomochain" class="md-footer-social__link fa fa-medium"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-124597188-1","docs.tomochain.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

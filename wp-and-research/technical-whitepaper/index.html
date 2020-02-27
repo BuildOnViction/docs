@@ -1,0 +1,2536 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="TomoChain aims to be a public EVM-compatible blockchain with the following advantages as low transaction fee, fast confirmation time, double validation.">
+      
+      
+        <link rel="canonical" href="https://docs.tomochain.com/wp-and-research/technical-whitepaper/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Technical whitepaper - TomoChain Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#introduction" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TomoChain Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Technical whitepaper
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../images/logo.png" width="48" height="48">
+      
+    </a>
+    TomoChain Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Get started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Get started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/productoverview/" title="Products overview" class="md-nav__link">
+      Products overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/how_to_read/" title="How to read" class="md-nav__link">
+      How to read
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/wallet/" title="Connect your wallet" class="md-nav__link">
+      Connect your wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/voting/" title="Voting" class="md-nav__link">
+      Voting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Masternode/DEX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Masternode/DEX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/requirements/" title="Requirements" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/masternode-setup-guide/" title="Detailed guide" class="md-nav__link">
+      Detailed guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Running a node with
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Running a node with
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomonative/" title="Binary" class="md-nav__link">
+      Binary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/create-tomochain-masternode/" title="Create-tomochain-masternode" class="md-nav__link">
+      Create-tomochain-masternode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tmn/" title="Tmn" class="md-nav__link">
+      Tmn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/applying/" title="Applying for Masternode Candidacy" class="md-nav__link">
+      Applying for Masternode Candidacy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/snapshot/" title="Chaindata Snapshots" class="md-nav__link">
+      Chaindata Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/run-node/" title="Run a full node in testnet" class="md-nav__link">
+      Run a full node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/apply-node/" title="Apply your node in testnet" class="md-nav__link">
+      Apply your node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomox-fullnode/" title="Running a TomoX Mongodb fullnode" class="md-nav__link">
+      Running a TomoX Mongodb fullnode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomox-sdk/" title="Running a TomoX DEX" class="md-nav__link">
+      Running a TomoX DEX
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developers guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developers guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/integrations/" title="TOMO Exchange/Wallet" class="md-nav__link">
+      TOMO Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/staking-integrations/" title="TomoChain Staking Governance" class="md-nav__link">
+      TomoChain Staking Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/trc20-integrations/" title="TRC20 Exchange/Wallet" class="md-nav__link">
+      TRC20 Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/trc21-integrations/" title="TRC21 Exchange/Wallet" class="md-nav__link">
+      TRC21 Exchange/Wallet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Working with TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Working with TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/tutoprivatenet/" title="TomoChain private testnet setup" class="md-nav__link">
+      TomoChain private testnet setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/clicommands/" title="Useful manual CLI commands" class="md-nav__link">
+      Useful manual CLI commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      DApps on TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        DApps on TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/dappdeploytuto/" title="Deploy DApp on TomoChain" class="md-nav__link">
+      Deploy DApp on TomoChain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/icosmartcontract/" title="Deploy an ICO smart contract" class="md-nav__link">
+      Deploy an ICO smart contract
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://apidocs.tomochain.com" title="API Documentation" class="md-nav__link">
+      API Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Whitepapers/Specs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Whitepapers/Specs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Technical whitepaper
+      </label>
+    
+    <a href="./" title="Technical whitepaper" class="md-nav__link md-nav__link--active">
+      Technical whitepaper
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-the-remainder-of-the-paper" title="Structure of the remainder of the paper" class="md-nav__link">
+    Structure of the remainder of the paper
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:MasternodeDesign" title="TomoChain Masternode Design" class="md-nav__link">
+    TomoChain Masternode Design
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Sec:TomochainOverview" title="The TomoChain architecture" class="md-nav__link">
+    The TomoChain architecture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:StakeVoting" title="Stakeholders &amp; Voting" class="md-nav__link">
+    Stakeholders &amp; Voting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coin-holders-masternodes" title="Token holders, Masternodes" class="md-nav__link">
+    Token holders, Masternodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voting-masternode-committee" title="Voting &amp; Masternode Committee" class="md-nav__link">
+    Voting &amp; Masternode Committee
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-mechanism" title="Reward Mechanism" class="md-nav__link">
+    Reward Mechanism
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:ProtocolOverview" title="TomoChain Consensus Protocol" class="md-nav__link">
+    TomoChain Consensus Protocol
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#double-validation-process" title="Double Validation Process" class="md-nav__link">
+    Double Validation Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-validation-dv" title="Double Validation (DV)" class="md-nav__link">
+    Double Validation (DV)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements-of-double-validation-over-single-validation" title="Improvements of Double Validation over Single Validation" class="md-nav__link">
+    Improvements of Double Validation over Single Validation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomization-for-block-verifiers-for-double-validation" title="Randomization for Block Verifiers for Double Validation" class="md-nav__link">
+    Randomization for Block Verifiers for Double Validation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-first-masternodeblock-creator" title="The First Masternode/Block Creator" class="md-nav__link">
+    The First Masternode/Block Creator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-matrix-and-smart-contract" title="Random Matrix and Smart Contract" class="md-nav__link">
+    Random Matrix and Smart Contract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-second-masternodeblock-verifier" title="The Second Masternode/Block Verifier" class="md-nav__link">
+    The Second Masternode/Block Verifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finality-analysis" title="Finality Analysis" class="md-nav__link">
+    Finality Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:ProtocolFormalization" title="Consensus Protocol: Formalization" class="md-nav__link">
+    Consensus Protocol: Formalization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-concepts-protocol-description" title="Basic Concepts &amp; Protocol Description" class="md-nav__link">
+    Basic Concepts &amp; Protocol Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-slots-epoch" title="Time, Slots, Epoch" class="md-nav__link">
+    Time, Slots, Epoch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:SecurityAnalysis" title="Security Analysis" class="md-nav__link">
+    Security Analysis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nothing-at-stake" title="Nothing-at-stake" class="md-nav__link">
+    Nothing-at-stake
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-range-attack" title="Long-range attack" class="md-nav__link">
+    Long-range attack
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#censorship-attack" title="Censorship Attack" class="md-nav__link">
+    Censorship Attack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay-attack" title="Relay Attack" class="md-nav__link">
+    Relay Attack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-and-liveness" title="Safety and liveness" class="md-nav__link">
+    Safety and liveness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddos-attack" title="DDOS Attack" class="md-nav__link">
+    DDOS Attack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spam-attack" title="Spam Attack" class="md-nav__link">
+    Spam Attack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:relatedwork" title="Related work" class="md-nav__link">
+    Related work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:Conclusion" title="Conclusion and perspectives" class="md-nav__link">
+    Conclusion and perspectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perspectives" title="Perspectives" class="md-nav__link">
+    Perspectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:References" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sharding-paper/" title="Sharding design paper" class="md-nav__link">
+      Sharding design paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../economics-paper/" title="Economics paper" class="md-nav__link">
+      Economics paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Standard & Specification
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Standard & Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../specs/trc21_standard/" title="TRC21 Specification" class="md-nav__link">
+      TRC21 Specification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../privacy/" title="TomoP whitepaper" class="md-nav__link">
+      TomoP whitepaper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Legal
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/terms-of-use/" title="Terms of Use" class="md-nav__link">
+      Terms of Use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Products
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Products
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomomaster/features/" title="TomoMaster" class="md-nav__link">
+      TomoMaster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoscan/features/" title="TomoScan" class="md-nav__link">
+      TomoScan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      TomoWallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        TomoWallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/features/" title="Features" class="md-nav__link">
+      Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/voting/" title="Voting with TomoWallet" class="md-nav__link">
+      Voting with TomoWallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/terms/" title="Terms & Privacy" class="md-nav__link">
+      Terms & Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      TomoBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        TomoBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomobridge/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      TomoIssuer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        TomoIssuer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/termofcondition/" title="Term Of Condition" class="md-nav__link">
+      Term Of Condition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/policyprivacy/" title="Policy Privacy" class="md-nav__link">
+      Policy Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-the-remainder-of-the-paper" title="Structure of the remainder of the paper" class="md-nav__link">
+    Structure of the remainder of the paper
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:MasternodeDesign" title="TomoChain Masternode Design" class="md-nav__link">
+    TomoChain Masternode Design
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Sec:TomochainOverview" title="The TomoChain architecture" class="md-nav__link">
+    The TomoChain architecture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:StakeVoting" title="Stakeholders &amp; Voting" class="md-nav__link">
+    Stakeholders &amp; Voting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coin-holders-masternodes" title="Token holders, Masternodes" class="md-nav__link">
+    Token holders, Masternodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voting-masternode-committee" title="Voting &amp; Masternode Committee" class="md-nav__link">
+    Voting &amp; Masternode Committee
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-mechanism" title="Reward Mechanism" class="md-nav__link">
+    Reward Mechanism
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:ProtocolOverview" title="TomoChain Consensus Protocol" class="md-nav__link">
+    TomoChain Consensus Protocol
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#double-validation-process" title="Double Validation Process" class="md-nav__link">
+    Double Validation Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-validation-dv" title="Double Validation (DV)" class="md-nav__link">
+    Double Validation (DV)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements-of-double-validation-over-single-validation" title="Improvements of Double Validation over Single Validation" class="md-nav__link">
+    Improvements of Double Validation over Single Validation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomization-for-block-verifiers-for-double-validation" title="Randomization for Block Verifiers for Double Validation" class="md-nav__link">
+    Randomization for Block Verifiers for Double Validation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-first-masternodeblock-creator" title="The First Masternode/Block Creator" class="md-nav__link">
+    The First Masternode/Block Creator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-matrix-and-smart-contract" title="Random Matrix and Smart Contract" class="md-nav__link">
+    Random Matrix and Smart Contract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-second-masternodeblock-verifier" title="The Second Masternode/Block Verifier" class="md-nav__link">
+    The Second Masternode/Block Verifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finality-analysis" title="Finality Analysis" class="md-nav__link">
+    Finality Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:ProtocolFormalization" title="Consensus Protocol: Formalization" class="md-nav__link">
+    Consensus Protocol: Formalization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-concepts-protocol-description" title="Basic Concepts &amp; Protocol Description" class="md-nav__link">
+    Basic Concepts &amp; Protocol Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-slots-epoch" title="Time, Slots, Epoch" class="md-nav__link">
+    Time, Slots, Epoch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:SecurityAnalysis" title="Security Analysis" class="md-nav__link">
+    Security Analysis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nothing-at-stake" title="Nothing-at-stake" class="md-nav__link">
+    Nothing-at-stake
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-range-attack" title="Long-range attack" class="md-nav__link">
+    Long-range attack
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#censorship-attack" title="Censorship Attack" class="md-nav__link">
+    Censorship Attack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay-attack" title="Relay Attack" class="md-nav__link">
+    Relay Attack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-and-liveness" title="Safety and liveness" class="md-nav__link">
+    Safety and liveness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddos-attack" title="DDOS Attack" class="md-nav__link">
+    DDOS Attack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spam-attack" title="Spam Attack" class="md-nav__link">
+    Spam Attack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:relatedwork" title="Related work" class="md-nav__link">
+    Related work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:Conclusion" title="Conclusion and perspectives" class="md-nav__link">
+    Conclusion and perspectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perspectives" title="Perspectives" class="md-nav__link">
+    Perspectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Sec:References" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tomochain/docs/edit/master/docs/wp-and-research/technical-whitepaper.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>version 1.0 (<a href="https://tomochain.com/docs/technical-whitepaper---1.0.pdf">pdf version</a>)</p>
+<p>The blockchain industry and the infrastructure of the Internet of Value
+are being built rapidly around the globe, and to many the atmosphere is
+eerily similar to the building of the Internet in the late ‘90s, with
+pioneers and dreamers coming together to build a new future. <strong>TomoChain</strong> can be a
+leading part of this phenomenon through seamlessly merging an ecosystem
+of applications with cryptographic tokens used by millions of mainstream
+users with a unique blockchain infrastructure architecture allowing for
+a fast, secure, frictionless payment and trusted store of value.</p>
+<p>Distributed systems have been researched in a “<em>permissioned setting</em>”
+where the number of participants in the system and their identities are
+common knowledge. In 2008, Satoshi Nakamoto - “proposed his celebrated
+“blockchain protocol” which attempts to achieve consensus in a
+permissionless setting: anyone can join (or leave) the protocol
+execution (without getting permission from a centralized or distributed
+authority), and the protocol instructions do not depend on the
+identities of the players” (see <a href="#PassCrypto2017">here</a>). Later on, Ethereum with its
+Ethereum Virtual Machine (EVM) proposed several significant enhancements
+compared to Bitcoin, including Smart Contracts. Both Bitcoin and
+Ethereum have some issues, especially with transaction processing
+performance. In order to construct an efficient and secured consensus
+protocol for <strong>TomoChain</strong>, we tackle the following main bottlenecks of classic
+blockchains:</p>
+<ul>
+<li>
+<p><strong>Efficiency:</strong> Existing blockchains as employed by major
+    crypto-currencies(e.g., Bitcoin or Ethereum) do not scale well to
+    handle a large transaction volume, e.g. Bitcoin and Ethereum can
+    handle around 10 transactions/second. This small throughput severely
+    hinders a wide-spread adoption of such crypto-currencies.</p>
+</li>
+<li>
+<p><strong>Confirmation times:</strong> The 10 minutes <a href="#Bitcoin08">Bitcoin</a> block-time is significantly larger than network latency.
+    Furthermore, a Bitcoin block requires 5 subsequent blocks following
+    it so that it can be confirmed; thus it takes on average one hour
+    for a transaction to be confirmed (with low confidence). While
+    Ethereum uses a smaller block-time, the average confirmation time
+    still remains relatively high, around 13 minutes
+    <a href="#Cardano2017">Cardano</a>. These long confirmation times hinder many important
+    applications (especially smart contract applications).</p>
+</li>
+<li>
+<p><strong>Fork Generation:</strong> The problem of fork chain consumes
+    computational energy, time, and creates potential vulnerabilities
+    for different types of attacks.</p>
+</li>
+</ul>
+<p>With the motivation as mentioned above, our persistent and ultimate goal
+of research is to propose the consensus protocol focusing on the
+following key strategies:</p>
+<ul>
+<li>
+<p>Double Validation to strengthen security and reduce fork</p>
+</li>
+<li>
+<p>Randomization to guarantee the fair and prevent handshaking attack</p>
+</li>
+<li>
+<p>Fast confirmation time and efficient checkpoints for finality or
+    rebase</p>
+</li>
+</ul>
+<p>To start dealing with these problems, in this paper, we present an
+overview architectural design of <strong>TomoChain</strong>’s master nodes. In particular, we
+propose (PoSV) consensus, a Proof-of-Stake (PoS)-based blockchain
+protocol with a fair voting mechanism, rigorous security guarantees and
+fast finality. We also present a novel reward mechanism and show that,
+with this mechanism, the blockchain has a low probability of forks, fast
+confirmation times, plus the contributions and benefits of masternodes
+are fair in the sense that the probability distribution function is
+uniform eventually.</p>
+<h3 id="structure-of-the-remainder-of-the-paper">Structure of the remainder of the paper<a class="headerlink" href="#structure-of-the-remainder-of-the-paper" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Section <a href="#Sec:MasternodeDesign">TomoChain Overview</a>: explains the intuition ideas and
+overview architectural design of masternodes, framework and background
+protocols that help mass readers (e.g., investors, traders, others) who
+may not have technical knowledge understand our mechanism easily.</li>
+<li>Section <a href="#Sec:StakeVoting">Stakeholders &amp; Voting</a> presents <strong>TomoChain</strong> stakeholder policy, masternode
+committee voting systems, and reward mechanism.</li>
+<li>Section <a href="#Sec:ProtocolOverview">TomoChain consensus protocol</a> explains the motivation and double
+validation process as well as finality checkpoint of the protocol.</li>
+<li>In Section <a href="#Sec:ProtocolFormalization">Protocol formalizations</a>, we present the formalization of our model in a mathematical way to show the soundness of our model and protocol.</li>
+<li>Section <a href="#Sec:SecurityAnalysis">Security Analysis</a> discusses the security analysis and resistant strain of potential attacks.</li>
+<li>We discuss and compare <strong>TomoChain</strong> with several existing blockchains in Section <a href="#Sec:relatedwork">related work</a>.</li>
+<li>Finally, we conclude the paper in Section <a href="#Sec:Conclusion">Conclusion</a>.</li>
+</ul>
+<h2 id="Sec:MasternodeDesign">TomoChain Masternode Design<a class="headerlink" href="#Sec:MasternodeDesign" title="Permanent link">&para;</a></h2>
+<h3 id="Sec:TomochainOverview">The TomoChain architecture<a class="headerlink" href="#Sec:TomochainOverview" title="Permanent link">&para;</a></h3>
+<p>The <strong>TomoChain</strong> blockchain is produced and maintained by a set of <em>masternodes</em> in a
+consistent manner through the <strong>TomoChain consensus</strong> protocol as shown in Fig.
+<a href="#fig:architecture">architecture</a>. These masternodes are full nodes that hold TOMO.
+For a token holder to become a masternode, two requirements must be
+satisfied:</p>
+<ul>
+<li>
+<p>The token holder must hold at least a minimum required amount of tokens
+    (see next section for more details).</p>
+</li>
+<li>
+<p>The token holder must be one of the most voted masternode candidates
+    in the system. The voting by token holders is credited through a
+    <em>Voting DApp</em> that allows token holders to <em>send TOMO through the
+    smart contract mechanism</em>.</p>
+</li>
+</ul>
+<p>In addition to the voting system which is an improvement over the
+current Bitcoin and Ethereum blockchain, TomoChain also provides a new technique,
+namely <em>Double Validation</em> complemented with a <em>Randomization</em>
+mechanism. This new technique significantly decreases the probability of
+having invalid blocks in the blockchain. These enhancements and the
+components of <strong>TomoChain</strong> are step-by-step detailed in the followings.</p>
+<p><img alt="architecture" id="fig:architecture" src="/assets/architecture.jpg" /></p>
+<h2 id="Sec:StakeVoting">Stakeholders &amp; Voting<a class="headerlink" href="#Sec:StakeVoting" title="Permanent link">&para;</a></h2>
+<h3 class="unnumbered" id="coin-holders-masternodes">Token holders, Masternodes<a class="headerlink" href="#coin-holders-masternodes" title="Permanent link">&para;</a></h3>
+<p>Token holder is as simple as its name: users who join the network, who
+own and transfer TOMO. Masternodes are full-nodes which maintain a
+copy of the blockchain, produce blocks and keep the chain consistent. It
+is worth noting that, <strong>TomoChain</strong> does not have miners as in the current
+Proof-of-Work-based blockchain systems such as Bitcoin and Ethereum.
+Only masternodes can produce and validate blocks.</p>
+<p>Masternodes are selected via a voting system. The first requirement of
+being masternodes is to deposit 50 000 TOMO to the Voting Smart
+Contract. Then, these depositors are listed as masternode candidates in
+the Voting DApp, which allows token holders to vote for them by sending
+TOMO to the smart contract.</p>
+<p>Masternodes which work hard in the system to create and verify blocks
+will be incentivized with TOMO. Furthermore, token holders who vote for
+these incentivized masternodes will also receive TOMO in proportion to
+the amount of TOMO they have invested via ballots. <strong>TomoChain</strong> engineers take
+responsibility to design that fair, explicit, automated and accountable
+reward mechanism.</p>
+<p>The list of masternode candidates is dynamically sorted based on voted
+tokens. The performance of the masternodes will be tracked and reported
+back to the token holders in terms of three main metrics: CPU/Memory
+charts which ensure the workload of the masternodes, the number of
+signed blocks which indicates their work performance and the last signed
+block which figures out their last activity. Token holders, at any time,
+can unvote masternodes, who have low performance, and give their votes
+to the other masternodes who have beter performance. Token holders have
+incentives to do that because their voted tokens are seen as investment
+to their supported masternodes, thus they should choose a voting
+strategy in order to maximize their profit from the investment.</p>
+<p>This simple trick keeps the system healthy since masternodes always have
+to race for their position so that all weak masternodes will eventually
+be eliminated. Therefore, only the strongest masternodes are voted and
+can flourish.</p>
+<h3 class="unnumbered" id="voting-masternode-committee">Voting &amp; Masternode Committee<a class="headerlink" href="#voting-masternode-committee" title="Permanent link">&para;</a></h3>
+<p>There are maximum one hundred fifty masternodes elected in the masternode
+committee. The required amount of deposit for masternode role is set at
+50 000 TOMO. This amount is locked in a <em>voting smart contract</em>. Once
+a masternode is demoted (by not remaining in the top one hundred fifty voted
+masternodes) or intentionally quits the masternode candidates
+list/masternode committee, the deposit will have been locked for a
+month.</p>
+<p>Token holders can vote at any time, by any number of votes (which is
+actually counted by the amount of TOMO they bet on some masternode
+candidates). They can use masternode’s performance statistics in the
+governance <em>Voting DApp</em> as reference information to give votes. The set
+of masternodes is dynamically sorted by the amount of TOMO and counted
+up to one hundred fifty, upon reception of votes.</p>
+<h3 class="unnumbered" id="reward-mechanism">Reward Mechanism<a class="headerlink" href="#reward-mechanism" title="Permanent link">&para;</a></h3>
+<p>For each iteration of 900 blocks (called epoch), a checkpoint block is
+created, which implements only reward works. The masternode, who takes
+turn in the circular and sequential order to create blocks, has to scan
+all of the created blocks in the epoch and count number of signatures.
+The reward mechanism is designed following the policy as follows: the
+higher number of signatures one masternode has made, the more reward he
+earns. For instance, within an epoch, masternode A who has sealed twice
+the blocks than masternode B earns double amount of TOMO than
+masternode B does.</p>
+<p>Furthermore, there is also a reward sharing ratio among token holders and
+masternode who has been elected supported by the token holders.
+Specifically, each epoch consists of 900 blocks, which will reward a total of 250 TOMO in the first two years.
+This amount of 250 TOMO will be divided to all of the Masternodes proportionally to the number of signatures they sign during the epoch.</p>
+<p>Afterward, the reward achieved by each Masternode  will be divided into three portions.
+-   <strong>Infrastructure Reward</strong>: The first portion of 40% called <strong>Infrastructure Reward</strong> goes to the Masternode.</p>
+<ul>
+<li>
+<p><strong>Staking Reward</strong>: The second portion of 50% called <strong>Staking Reward</strong> goes to the pool of all voters  for that Masternode which is shared proportionally based on the token stake.</p>
+</li>
+<li>
+<p><strong>Foundation Reward</strong>: The last portion of 10% called <strong>Foundation Reward</strong> goes to a special account controlled by the Masternode Foundation, which is run by <strong>TomoChain</strong> company initially.</p>
+</li>
+</ul>
+<p>It is worth noting that coin-holders who unvote before the checkpoint block will not receive any shared reward in the <strong>Staking Reward</strong> portion.</p>
+<h2 id="Sec:ProtocolOverview">TomoChain Consensus Protocol<a class="headerlink" href="#Sec:ProtocolOverview" title="Permanent link">&para;</a></h2>
+<h3 class="unnumbered" id="double-validation-process">Double Validation Process<a class="headerlink" href="#double-validation-process" title="Permanent link">&para;</a></h3>
+<p>In TomoChain, masternodes share equal responsibility to run the system and keep
+it stable. Full nodes should run on powerful hardware configuration and
+high-speed network connectivity in order to ensure the required block
+time (target to two seconds). Only masternodes can produce and seal
+blocks. In order for that, the <strong>TomoChain</strong> consensus relies on the concept of
+<strong>Double Validation</strong> that improves some existing consensus mechanisms,
+namely <strong>Single Validation</strong>. In the followings, we first describe the
+<strong>Double Validation</strong>, then analyze the differences and improvements of
+<strong>Double Validation</strong> compared to <strong>Single Validation</strong>.</p>
+<h3 id="double-validation-dv">Double Validation (DV)<a class="headerlink" href="#double-validation-dv" title="Permanent link">&para;</a></h3>
+<p>Similar to some existing PoS-based blockchains such as <a href="#Cardano2017">Cardano</a>, each
+block is created by a block producer, namely masternode, that takes its
+block creation permission turn following a pre-determined and circular
+sequence of masternodes for each epoch. However, differently from these
+existing blockchains, DV in <strong>TomoChain</strong> requires the signatures of two masternodes
+on a block to be able to push the block to the blockchain. One of the
+masternodes is the <strong>block creator</strong> while the other one, namely <strong>block
+verifier</strong> is randomly selected among the set of voted masternodes that
+validates the block and signs it. In the followings, for more
+convenience, <strong>block creator</strong> and <strong>block verifier</strong> are used
+interchangeably for the masternode 1 (block producer) and the randomly
+selected masternode 2 for a block, respectively. The process of randomly
+selecting the block verifiers is detailed in the next paragraphs. Note
+that, there is no mining in the block creation as in Proof-of-Work-based
+blockchains (e.g. Ethereum and Bitcoin). It means that a created block
+is valid if and only if it is sealed by enough two signatures from a
+block creator and a corresponding block verifier to confirm the
+correctness of it.</p>
+<p>We believe this DV technique enhances the stability of the blockchain by
+diminishing the probability of producing “garbage” blocks while still
+maintaining the system security and consistency. Randomization of block
+verifiers in DV is the key factor of reducing risks coming from paired
+masternodes trying to commit malicious blocks. Furthermore, comparing to
+some current public blockchains in the market, by utilizing the DV
+technique, <strong>TomoChain</strong> brings significant improvements in the block time by only
+requiring two signatures per block. For the purpose of showing our
+enhancement over existing PoS-based blockchains, we analyze the
+differences between DV and the Single Validation mechanism in some
+existing blockchains as follows.</p>
+<h3 id="improvements-of-double-validation-over-single-validation">Improvements of Double Validation over Single Validation<a class="headerlink" href="#improvements-of-double-validation-over-single-validation" title="Permanent link">&para;</a></h3>
+<p>Let’s show the improvements of DV compared to Single Validation through
+analyzing some attacking scenarios as shown in Fig.
+<a href="#fig:singlevalidation">Single Validation example</a> and Fig. <a href="#fig:doublevalidation">Double Validation example</a>.</p>
+<ul>
+<li><strong>Single Validation</strong> In Single Validation, in an epoch, each
+    masternode, e.g. M1, sequentially takes its turn to create a
+    block, e.g. block100. The next masternode, e.g. M2, in the sequence
+    then validates the created block100. If block100 is invalid (that
+    potentially means that M1 is an attacker) and contains a transaction
+    that invalidly benefits M1, if M2 is honest (see Fig.
+    <a href="#fig:singlevalidation">SV a</a>), it rejects block100 and creates
+    another block100 next to block99. But, if M2 is an attacker
+    (see Fig. <a href="#fig:singlevalidation">SV b</a>) that corporates with M1,
+    M2 ignores the invalidation of block100, signs it and creates next
+    block, namely block101 that is valid. Then, the next masternode M3
+    verifies that block101 is valid, M3 signs block101 and creates a
+    block102. By this way, Single Validation potentially leaves the
+    blockchain with “garbage” or invalid blocks which require a “rebase”
+    to restore the validity of the blockchain.</li>
+</ul>
+<p><img alt="singlevalidatioin" id="fig:singlevalidation" src="/assets/singlevalidation.jpg" /><em>Single Validation (SV): (a) SV with block creation masternode as an attacker and (b) SV with two consecutive block creation masternodes as attackers</em></p>
+<ul>
+<li><strong>Double Validation</strong> We claim that our DV technique significantly
+    reduces the probability of having garbage blocks in the blockchain.
+    Assuming that M1 and M2 are the block creator and block verifier,
+    respectively, for block100 in our DV. If block100 is invalid and M2
+    is honest (see Fig. <a href="#fig:doublevalidation">DV a</a>), M2 will not
+    seal this block. Therefore, the next block creator M3 for creating
+    block101 will see that block100 does not have enough 2 signatures,
+    thus reject block100 and create another block100 next to block99. On
+    the other hand, if M2 is also an attacker pairing/handshaking with
+    M1 (see Fig. <a href="#fig:doublevalidation">DV b</a>), M2 signs block100
+    despite its invalidity (remember that the block verifier M2 is
+    randomly selected, there has little chance of successfully pairing
+    M1 and M2). Next, even though M3 will verify that block100 has two
+    valid signatures, M3 still rejects it because block100 is
+    invalidated by M3 that will create another valid block100. In order
+    to break the stability and consistency of the blockchain in this
+    case, M3 should be an attacker together with M1 and M2, which,
+    however, has a very low probability. In other words, DV strengthens
+    the consistency of the blockchain and makes it hard to break.</li>
+</ul>
+<p><img alt="doublevalidatioin" id="fig:doublevalidation" src="/assets/doublevalidation.jpg" /><em>Double Validation (DV): (a) DV with block creator as an attacker and (b) DV with both block creator and block verifier as attackers</em></p>
+<h2 class="unnumbered" id="randomization-for-block-verifiers-for-double-validation">Randomization for Block Verifiers for Double Validation<a class="headerlink" href="#randomization-for-block-verifiers-for-double-validation" title="Permanent link">&para;</a></h2>
+<h3 class="unnumbered" id="the-first-masternodeblock-creator">The First Masternode/Block Creator<a class="headerlink" href="#the-first-masternodeblock-creator" title="Permanent link">&para;</a></h3>
+<p>The first masternode/block creator in a given epoch <script type="math/tex">e</script> can be selected
+by a round-turn game and can be formal defined as an array:</p>
+<p>
+<script type="math/tex; mode=display">\begin{bmatrix}
+\nu_1
+\end{bmatrix}
+= \begin{bmatrix}
+V_{1.1}^e  \\
+V_{1.2}^e\\
+\cdot\\
+\cdot\\
+\cdot\\
+V_{1.n-1}^e\\
+V_{1.n}^e\\
+\end{bmatrix}</script>
+</p>
+<h3 class="unnumbered" id="random-matrix-and-smart-contract">Random Matrix and Smart Contract<a class="headerlink" href="#random-matrix-and-smart-contract" title="Permanent link">&para;</a></h3>
+<p>Let <script type="math/tex">m</script> be the number of masternodes, <script type="math/tex">n</script> be the number of slots in an
+epoch. In order to randomly generate the block verifiers for the next
+epoch <script type="math/tex">e+1</script>, the process is performed by the following steps.</p>
+<ul>
+<li>
+<p><strong>Step 1: Random Numbers Generation and Commitment Phase:</strong></p>
+<p>First, at the beginning of epoch <script type="math/tex">e</script>, each masternode <script type="math/tex">V_i</script> will
+securely create an array of <script type="math/tex">n+1</script> special random numbers
+<script type="math/tex"> Recommend_i= [ r_{i.1}, r_{i.2}, ..., r_{i.n}, \theta_i]</script>, where
+<script type="math/tex">r_{i.k}\in [1, ..., m]</script> indicating the recommendation of ordered
+list of block verifiers for the next epoch of <script type="math/tex">V_i</script>, and
+<script type="math/tex">\theta_i \in \{-1, 0, 1\}</script> is used for increasing the
+unpredictability of the random numbers. Second, each masternode
+<script type="math/tex">V_i</script> has to encrypt the array <script type="math/tex">Recommend_i</script> using a secret key <script type="math/tex">SK_i</script>, say
+<script type="math/tex">Secret_i = Encrypt (Recommend_i, SK_i)</script>. Next, each masternode forms a
+"<em>lock</em>” message that contains encrypted secret array <script type="math/tex">Secret_i</script>; signs off this message with its blockchain’s private key through the Elliptic Curve Digital Signature Algorithm (ECDSA) scheme currently used in Ethereum and Bitcoin along with the corresponding epoch index and its public key generated from its private key. By doing this, every
+masternode can check who created this <em>lock</em> message through ECDSA verification scheme and which epoch
+it relates to. Then, each node <script type="math/tex">V_i</script> sends their <em>lock</em> message with its signature and public key to a
+<strong>Smart contract</strong> stored in the blockchain, so that
+eventually each masternode collects and knows the <em>lock</em>s from all
+other masternodes.</p>
+</li>
+<li>
+<p><strong>Step 2: Discovery and Recovery Phase:</strong> The recovery phase is for every node to reveal its previous lock message so that other nodes can get to know the secret array it has sent before. A masternode only starts revealing its lock message if all masternodes have sent their lock messages to the smart contract or a certain timeout event occurs. Each masternode then opens its lock message by sending an ”<em>unlock</em>” message to the smart contract for other masternodes to open the corresponding lock. Imagine a commitment-like scheme in this case where a lock message is a commitment message locking its contained recommendation array <script type="math/tex">Recommend_i</script> (so that no one can open or guess the contained array), and the unlock message gives the key for other masternodes to decrypt the box and retrieve the values of <script type="math/tex">Recommend_i</script>. Eventually, a masternode has both locks and unlocks of others. If some elector is an adversary which might publish its lock but not intend to send the corresponding unlock, other masternodes can ignore the adversary’s lock and set all its random values be <em>1</em> as default. The idea is simple: the network can keep working successfully even if some masternodes are adversaries.</p>
+</li>
+<li>
+<p><strong>Step 3: Assembled Matrix and Computation Phase:</strong> At the point of
+    the slot <script type="math/tex">n^{th}</script> of the epoch <script type="math/tex">e</script>, the secret arrays <script type="math/tex">Secret_I</script> in
+    the smart contract will be decrypted by each masternode and return
+    the plain version of <script type="math/tex">Recommend_i</script>. Each tuple of the first <script type="math/tex">n</script>
+    numbers of each <script type="math/tex">V_i</script> will be assembled as the <script type="math/tex">i^{th}</script> column of an
+    <script type="math/tex">n \times m</script> matrix. All the last number <script type="math/tex">\theta_i</script> forms a
+    <script type="math/tex">m\times 1</script> matrix. Then each nodes will compute the block verifiers
+    ordered list by some mathematical operations as explained below. The
+    resulting output is a matrix <script type="math/tex">n \times 1</script> indicating the order of
+    block verifiers for the next epoch <script type="math/tex">e+1</script>.</p>
+</li>
+</ul>
+<h3 class="unnumbered" id="the-second-masternodeblock-verifier">The Second Masternode/Block Verifier<a class="headerlink" href="#the-second-masternodeblock-verifier" title="Permanent link">&para;</a></h3>
+<p>Then, each node soon compute the common array <script type="math/tex">\nu_2</script> for the order of
+the block verifiers by the following steps as in the upper equation as belows.
+Then, <script type="math/tex">\nu_2</script> is obtained by modulo operation of element values of
+<script type="math/tex">\nu'_2</script> as in the lower equation in the followings:</p>
+<p>
+<script type="math/tex; mode=display">\label{eq:matrix}
+\begin{bmatrix} \nu'_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+v_{2.1}^{e+1} \\
+v_{2.2}^{e+1} \\
+\vdots \\
+v_{2.n}^{e+1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+r_{1.1}  & r_{2.1}            & \cdots  & r_{m.1}  \\
+r_{1.2}     & r_{2.2}       & \ddots  & \vdots   \\
+r_{1.3}      &  \ddots   & \ddots  & r_{m.3}  \\
+\vdots  &              & r_{m-1.n-1}  & r_{m.n-1}  \\
+r_{1.n}      & \cdots      & r_{m-1.n}      & r_{m.n}
+\end{bmatrix}
+\begin{bmatrix}
+\theta_1  \\
+\theta_2  \\
+\theta_3 \\
+\vdots  \\
+\theta_m
+\end{bmatrix}</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\label{eq:eq2}
+\begin{bmatrix} \nu_2
+\end{bmatrix}
+=
+\begin{bmatrix} \nu'_2 & mod & m
+\end{bmatrix}
+=
+\begin{bmatrix}
+\left| v_{2.1}^{e+1}\right| & mod & m \\
+\left| v_{2.2}^{e+1} \right| & mod &  m\\
+\vdots \\
+\left| v_{2.n}^{e+1} \right| & mod & m
+\end{bmatrix}</script>
+</p>
+<h3 class="unnumbered" id="finality-analysis">Finality Analysis<a class="headerlink" href="#finality-analysis" title="Permanent link">&para;</a></h3>
+<p><em>"There is a standard definition of “total economic finality”: it takes
+place when <script type="math/tex">\frac{3}{4}</script> of all masternodes make maximum-odds bets that
+a given block or state will be finalized. This condition offers very
+strong incentives for masternodes to never try colluding revert the
+block: once masternodes make such maximum-odds bets, in any blockchain
+where that block or state is not present, the masternodes lose their
+entire deposit"</em> (see <a href="#finality">here</a>.</p>
+<p><strong>TomoChain</strong> keeps that standardization in the design so that one block is considered
+as irreversible if it collects at least <script type="math/tex">\frac{3}{4}</script> signatures of all
+masternodes committee. The time-line of blockchain creation process,
+checking finality and mark the block as immutable is described as in
+Figure: <a href="#fig:ChainMaking">ChainMaking</a> below.</p>
+<p><img alt="ChainMaking" id="fig:ChainMaking" src="/assets/ChainMakingProcess3.jpg" /></p>
+<h2 id="Sec:ProtocolFormalization">Consensus Protocol: Formalization<a class="headerlink" href="#Sec:ProtocolFormalization" title="Permanent link">&para;</a></h2>
+<h3 class="unnumbered" id="basic-concepts-protocol-description">Basic Concepts &amp; Protocol Description<a class="headerlink" href="#basic-concepts-protocol-description" title="Permanent link">&para;</a></h3>
+<p>In order to have a solid foundation for us to prove that our blockchain can achieve what are claimed, we first present our preliminary formalizations of the concepts that will be used in our yellow paper later.</p>
+<p>To start, as we are dealing with proof of stake consensus algorithm, we
+follow the way of formalization in the recent works in the literature
+like  <a href="#Cardano2017">Cardano</a> and  <a href="#Pass2017">here</a> and here <a href="#PassCrypto2017">here</a>. In particular, we
+recall the following concepts and definitions that were presented
+in <a href="#Cardano2017">Cardano</a> and adapt them to the context of TomoChain.</p>
+<h3 class="unnumbered" id="time-slots-epoch">Time, Slots, Epoch<a class="headerlink" href="#time-slots-epoch" title="Permanent link">&para;</a></h3>
+<p>As previously described, ideally, each epoch is divided into 900 block time, that is called block slot.
+Only one block can be created in a slot. We assume that there is a roughly synchronized clock that allows for masternodes to learn the current slot. This simplification will effectively permit masternodes to execute the signing and validation process of the PoSV consensus, where each masternode must collectively create a block to the current slot. For more simplification, each slot <script type="math/tex">sl_r</script> is accessed by an integer <script type="math/tex">r \in \{1, 2, ...900\}</script>, and suppose that the real time window that corresponds to each slot has the following properties, which are similar to what are specified in <a href="#Cardano2017">Cardano</a>.</p>
+<ol>
+<li>
+<p>Every masternode can determine the index of the current slot based on the current time and ”any discrepancies between parties’ local time are insignificant in comparison with the length of time represented by a slot” <a href="#Cardano2017">Cardano</a></p>
+</li>
+<li>
+<p>The amount of a slot time is sufficient to guarantee that any message transmitted by an honest party at the beginning of the time window will be received by any other honest party by the end of that time window. While this assumption similar to <a href="#Cardano2017">Cardano</a>, TomoChain requires it in order for a block creator to propagate its created block to the corresponding block verifier to ensure that the block is signed by both the masternodes before the next block creator builds another block on top of it.</p>
+</li>
+</ol>
+<p>As mentioned in Section <a href="#Sec:MasternodeDesign">TomochainOverview</a>, in our setting, we assume that the fixed collection of <script type="math/tex">m</script> (150) masternodes
+<script type="math/tex">V_1, V_2, ...., V_m</script> interact throughout the protocol.
+For each <script type="math/tex">V_i</script> a public/private key pair (<script type="math/tex">pk_i</script>,<script type="math/tex">sk_i</script>) for a prescribed signature scheme, ideally ECDSA, is generated. Furthermore, we assume that the public keys <script type="math/tex">pk_1</script>,..,<script type="math/tex">pk_m</script> of the masternodes are distributed and known by all of them (that means a masternode knows all public keys of other nodes). Some notable definitions of the blockchain concepts are defined following the notation in <a href="#Garay2015">here</a>.</p>
+<ul>
+<li>
+<p><strong>State</strong> A state (defined as in <a href="#Cardano2017">here</a>) is an encoded string <script type="math/tex">st \in \{0,1\}^\lambda</script>.</p>
+</li>
+<li>
+<p><strong>Block</strong> A block (defined as in <a href="#Cardano2017">here</a>) <script type="math/tex">B</script> generated at a slot <script type="math/tex"> sl_i \in \{sl_1,...,sl_R\}</script>
+contains the current state <script type="math/tex">st \in \{0, 1\}^{\lambda}</script>, data
+<script type="math/tex">d \in \{0, 1\}^{*}</script>, the slot number <script type="math/tex">sl_i</script> and a signature
+<script type="math/tex">\Sigma  =  Sign_{ski} (st, d, sl_i)</script> computed under <script type="math/tex">sk_i</script>
+corresponding to the masternode <script type="math/tex">V_i</script> generating the block.</p>
+</li>
+<li>
+<p><strong>Blockchain</strong> A blockchain (defined as in <a href="#Cardano2017">here</a>) <script type="math/tex">C</script> is a sequence of blocks <script type="math/tex">B_1,..., B_n</script> associated with a strictly increasing sequence of slots for which the state sti of <script type="math/tex">B_i</script> is equal to <script type="math/tex">H(B_{i−1})</script>, where <script type="math/tex">H</script> is a collision-resistant cryptography hash function. A blockchain has a number of properties, including the length of a chain <script type="math/tex">len(C) = n</script>, which is its number of blocks, and the block <script type="math/tex">B_n</script> is the head of the chain, denoted <script type="math/tex">head(C)</script>.</p>
+</li>
+</ul>
+<p><img alt="al 1" src="/assets/al1.png" /></p>
+<p>As mentioned earlier, in our <strong>TomoChain</strong> model, we set each time <em>slot</em> <script type="math/tex">sl_i</script> as 2
+seconds; an epoch is a set <script type="math/tex">R</script> of 900 slots
+<script type="math/tex">\{ sl_1, sl_2, ..., sl_{900}\}</script> (an epoch time duration equals to 1800
+seconds).</p>
+<p>In summary, the consensus protocol of <strong>TomoChain</strong> can be formalized in Algorithm ValidatorGeneration. The Algorithm ValidatorGeneration is simulated and explained as a
+process shown in Fig. <a href="#fig:EpochProcess">EpochProcess</a>.</p>
+<p><img alt="image" id="fig:EpochProcess" src="/assets/Figure_Epoch.jpg" /></p>
+<h2 id="Sec:SecurityAnalysis">Security Analysis<a class="headerlink" href="#Sec:SecurityAnalysis" title="Permanent link">&para;</a></h2>
+<h3 class="unnumbered" id="nothing-at-stake">Nothing-at-stake<a class="headerlink" href="#nothing-at-stake" title="Permanent link">&para;</a></h3>
+<p>Nothing-at-stake is a well-known problem in PoS-based blockchain, just
+like 51% attack in PoW algorithm. PoW-based miners require CapEx
+(capital expenditures) for buying mining equipment such as ASICs and
+OpEx (operation expenditures) such as electricity to solve mathematical
+puzzles securing the network (see <a href="#capex">here</a>). That means, there is always an
+intrinsic cost for miners in mining regardless of its success. In case
+of a fork, miners therefore always allocate their resource (equipment)
+to the chain that they believe is correct in order to get incentives for
+compensating the intrinsic costs in mining.</p>
+<p>In the contrary, in PoS-based systems without mining, during an ideal
+execution, for creating a fork only costs, masternodes actually do not
+incur intrinsic costs, other than roughly some block validation and
+signing cost. As a result, there’s an inherent problem of the masternode
+having no downside to staking both forks. Therefore, there are actually
+two issues in the original design of PoS. On one hand, for any
+masternode, the optimal strategy is to validate every chain/fork, so
+that the masternode gets their rewards no matter which fork wins. On the
+other hand, for attackers/malicious masternodes, they can easily create
+a fork for double spending.</p>
+<p>Let’s look back how <strong>TomoChain</strong> handles these two problems. As a reminder, <strong>TomoChain</strong> maintains
+a certain order of masternodes in creating and sealing blocks, in each
+epoch. For the first issue, random/arbitrary forks are hardly happened
+because the order of block creation masternodes is pre-determined for
+each epoch. Furthermore, the Double Validation mechanism eliminates the
+second issue because even one malicious masternode creates two blocks at
+his turn, only one block then can be validated by the second randomly
+selected masternode.</p>
+<h2 class="unnumbered" id="long-range-attack">Long-range attack<a class="headerlink" href="#long-range-attack" title="Permanent link">&para;</a></h2>
+<p>In <strong>TomoChain</strong>, block is valid only if it collects double validation and finalized
+once <script type="math/tex">\frac{3}{4}</script> of masternodes verify. Therefore, as long as the
+number of attackers or malicious nodes and/or fail-stop nodes is less
+equal than <script type="math/tex">\frac{1}{4}</script> the number of masternodes, the number of
+masternodes signing a block is at least <script type="math/tex">\frac{3}{4}</script> the total number
+of masternodes, which makes the block finalized. Thus, there is no
+chance for one malicious masternode to create longer valid chain because
+other masternodes will refuse it.</p>
+<h3 class="unnumbered" id="censorship-attack">Censorship Attack<a class="headerlink" href="#censorship-attack" title="Permanent link">&para;</a></h3>
+<p>If there are more than <script type="math/tex">\frac{3}{4}</script> malicious masternodes in <strong>TomoChain</strong>,
+censorship attack might happen. For example, these masternodes refuse
+valid blocks or simply become inactive. In this case, chain is stuck.</p>
+<p>In fact, masternodes are paid for their effort of correctly working so
+that the chain is actively updated in a consistent manner. More
+importantly, becoming masternode means a certain amount of tokens is
+locked, 50 000 TOMO in particular. As a result, in order to control
+more than<script type="math/tex">\frac{3}{4}</script> masternodes, attackers must hold a considerable
+amount of TOMO and gain huge support from token holders. And because of
+this, the attackers do not have incentives to do any malicious action to
+harm the chain.</p>
+<p>However, in worst case, <strong>TomoChain</strong> has to do a soft fork in order to reduce number
+of masternodes to keep the chain running and figure out slasher
+mechanisms for those malicious masternodes.</p>
+<h3 class="unnumbered" id="relay-attack">Relay Attack<a class="headerlink" href="#relay-attack" title="Permanent link">&para;</a></h3>
+<p><strong>TomoChain</strong> supports <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md">EIP155</a>
+Transactions in <strong>TomoChain</strong> are included <script type="math/tex">CHAIN\_ID</script> specified for different public
+chains. Table <script type="math/tex; mode=display">table:chainid</script> shows recognized <script type="math/tex">CHAIN\_ID</script>s.</p>
+<table>
+<thead>
+<tr>
+<th>CHAIN_ID</th>
+<th>Chain(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ethereum mainnet</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Morden (disused), Expanse mainnet</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ropsten</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rinkeby</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Rootstock mainnet</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Rockstock testnet</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Kovan</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Ethereum Classic mainnet</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Ethereum Classic testnet</td>
+</tr>
+<tr>
+<td>1337</td>
+<td>Geth private chains (default)</td>
+</tr>
+<tr>
+<td>77</td>
+<td>Sokol, the public POA Network testnet</td>
+</tr>
+<tr>
+<td>99</td>
+<td>Core, the public POA Network main network</td>
+</tr>
+<tr>
+<td>88</td>
+<td>Mainnet</td>
+</tr>
+<tr>
+<td>89</td>
+<td>Testnet</td>
+</tr>
+</tbody>
+</table>
+<h3 class="unnumbered" id="safety-and-liveness">Safety and liveness<a class="headerlink" href="#safety-and-liveness" title="Permanent link">&para;</a></h3>
+<p>Safety implies having a single agreed upon chain where there are not two
+or more competing chains with valid transactions in either (see <a href="#Safety">here</a>. A
+consensus protocol can be <em>safe</em> when blocks have settlement finality,
+or else probabilistic finality. This last sentence reveals that can
+provide safety because it has a settlement finality.</p>
+<p>A consensus protocol is considered <em>live</em> if it can eventually propagate
+and make valid transactions onto the blockchain (see <a href="#Safety">here</a>. An occurrence
+of a liveness fault is when transaction omission, information
+withholding, or message reordering, among a number of violations are
+observed. This type of fault is unlikely to happen in <strong>TomoChain</strong> because the block
+creation masternodes list is ordered in a pre-determined way for each
+epoch, thus if even an attacking masternode omits some transactions, the
+latter will be processed and validated by the next honest masternode in
+the next block.</p>
+<h3 class="unnumbered" id="ddos-attack">DDOS Attack<a class="headerlink" href="#ddos-attack" title="Permanent link">&para;</a></h3>
+<p>Masternodes are encouraged to run in well-known public cloud providers
+such as AWS, Google Cloud or Microsoft Azure which provides multiple
+DDOS prevention mechanisms. Even in case that some nodes are attacked or
+fail-stop, the network still works correctly as long as the number of
+failing and/or attacked nodes is less than 1/4 of the number of
+masternodes.</p>
+<h3 class="unnumbered" id="spam-attack">Spam Attack<a class="headerlink" href="#spam-attack" title="Permanent link">&para;</a></h3>
+<p><strong>TomoChain</strong> keeps the same transaction fee mechanism as Ethereum which is indicated
+via gasPrice. However, <strong>TomoChain</strong> supports minimum transaction fee (at 1 wei),
+which somehow enables spamming that attacker tries to broadcast a huge
+amount of low fee transactions to the system. However, <strong>TomoChain</strong> masternodes
+always sort transactions and pick up only high fee transactions into the
+proposing block. Thus, spammers have little chance to harm the system.</p>
+<h2 id="Sec:relatedwork">Related work<a class="headerlink" href="#Sec:relatedwork" title="Permanent link">&para;</a></h2>
+<p>Consensus plays an important role to guarantee the success of
+distributed and decentralized systems. Bitcoin’s core consensus
+protocol, often referred to as Nakamoto consensus <a href="#Bitcoin08">Bitcoin</a>, realizes a
+“replicated state machine” abstraction, where nodes in a permissionless
+network reach agreement about a set of transactions committed as well as
+their ordering  (see <a href="#hybrid">here</a>. However, known permissionless consensus
+protocols such as Bitcoin’s Nakamoto consensus come at a cost. Bitcoin
+and Ethereum rely on PoW to roughly enforce the idea of “one vote per
+hashpower” and to defend against Sybil attacks. Unfortunately, PoW-based
+Bitcoin and Ethereum are known to have terrible performance (Bitcoin’s
+transaction processing performance is at peak of around 7 transactions
+per second as previously mentioned). Moreover, PoW is much criticized
+because it costs a lot of electricity energy.</p>
+<p>In order to design an efficient and cost-effective consensus protocol in
+the permissionless model, PoS has been discussed extensively in the
+Bitcoin and <a href="#Ethe2014">Ethereum forum</a>. A PoS blockchain can
+substitute the costly PoW in Nakamoto’s blockchain while still providing
+similar guarantees in terms of transaction processing in the presence of
+a dishonest minority of users, where this “minority” is to be understood
+here in the context of stake rather than computational
+power <a href="#Cardano2017">Cardano</a>. The Ethereum design <a href="#Casper">Casper</a>, published by
+Buterin &amp; Griffith, provides as its initial version a PoW/PoS hybrid
+consensus protocol, which might eventually switch to a pure PoS system.
+As in <strong>TomoChain</strong>, Ethereum Casper requires that <em>validators</em> (term similar to
+block creators) have to deposit an amount. In fact, some concepts used
+in <strong>TomoChain</strong> such as checkpoint blocks are borrowed from Casper. Our (PoSV)
+consensus protocol proposed in this paper can be seen as a hybrid model.
+In particular, first, we apply with voting and <strong>Double Validation</strong> to
+create, verify and vote for blocks smoothly and efficiently. Whenever
+potentials of fork branches are detected, we employ the idea in PoW to
+select the longest branch with the most votes and discard the other
+branches. This hybrid approach not only increases the
+performance and security of blockchain, but also reduces the fork
+situation in an efficient and practical manner.</p>
+<p>Recently, there are several consensus protocol research works that are
+closely related to <strong>TomoChain</strong> such as <a href="#EOS">EOS</a> and Ouroboros of
+<a href="#Cardano2017">Cardano</a>. The mechanism of <em>voting</em> for masternodes for
+reaching consensus is utilized by <a href="#bitshare">Bitshares</a> and <a href="#EOS">EOS</a>,
+whose consensus protocol is termed <em>Delegated Proof-of-Stake</em> (DPoS).
+DPoS is similar to the Proof-of-Stake Voting consensus of <strong>TomoChain</strong> in the sense
+that masternodes (block creators or <em>witnesses</em> in DPoS) are elected
+through a voting system. However, <strong>TomoChain</strong> requires that masternodes need to
+deposit a required minimum amount of TOMO to become a masternode
+candidate, which puts more pressure on the masternodes to work honestly.
+Furthermore, the <strong>Double Validation</strong> mechanism of <strong>TomoChain</strong> lowers the
+probability of handshaking attacks and having invalid blocks, as
+previously analyzed. EOS also has a maximum of 21 block producers for
+each epoch, which is <em>less decentralized</em> than <strong>TomoChain</strong> with a maximum of 150
+masternodes elected (and this number of masternodes can be changed following the decentralized governance through voting).</p>
+<p>The research-backed <a href="#Cardano2017">Cardano</a> blockchain solution, namely
+Ouroboros, with the ADA coin, which is purely based on Proof-of-Stake,
+promisingly claims to provide rigorous security guarantees. Similarly to
+<strong>TomoChain</strong>, Ouroboros has a set of block producers for each epoch for creating
+blocks and each block producer candidate needs to deposit a minimum
+amount of stake (an amount of ADA). However, note that, Ouroboros only
+provides <strong>Single Validation</strong>, while <strong>Double Validation</strong> of <strong>TomoChain</strong> provides
+several advantages over Single Validation, as previously analyzed. In
+Ouroboros, the order of block producers, selected among stakers, is
+based on a biased randomization while the <strong>TomoChain</strong>’s randomization for block
+verifiers is potentially uniform and based on smart contracts.
+Furthermore, the use of voting as in <strong>TomoChain</strong> and DPoS enables a more incentive
+equality between stakers: In Ouroboros, stakers with very little stake
+have a very small probability of becoming block creators, while, in <strong>TomoChain</strong>,
+these stakers can choose an optimal strategy to vote for potential
+masternodes to get incentives.</p>
+<h2 id="Sec:Conclusion">Conclusion and perspectives<a class="headerlink" href="#Sec:Conclusion" title="Permanent link">&para;</a></h2>
+<p>In this paper, we proposed PoSV, a PoS Voting-based blockchain protocol
+with heuristic and fair voting mechanism, rigorous security guarantees,
+and fast finality. We also presented a novel reward mechanism and show
+that, with this mechanism, the blockchain has a low probability of
+having forks, fast confirmation time, plus the contributions and
+benefits of masternodes are fair in the sense that the probability
+distribution function is uniform eventually.</p>
+<h2 class="unnumbered" id="perspectives">Perspectives<a class="headerlink" href="#perspectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Future work</strong> The <strong>TomoChain</strong> team is currently working on the implementation
+    of the Proof-of-Stake Voting, which will be released on schedule as
+    stated in our roadmap. Furthermore, in parallel with our novel
+    consensus protocol, we will investigate the Sharding mechanism in
+    order to provide even better transaction processing performance. We
+    believe that, the Sharding technique with the stable number of
+    masternodes will provide better stability and efficiency to
+    the blockchain. At the same time, we commit to keep EVM-compatible
+    smart contracts within our masternode sharding framework.</p>
+</li>
+<li>
+<p><strong>Economic sustainability</strong> is also an important concept for a
+    blockchain based decentralized network. That means to maintain the
+    network in a sustainable condition, an equilibrium needs to be
+    achieved, in which the cost of running the network infrastructure
+    could be offset by the revenues generated. In this context, the cost
+    of network infrastructure consists of two parts: the physical cost
+    of having hardware such as servers, memories that passes the network
+    technical requirements; and the capital cost of having TOMO locked
+    into smart-contracts. The revenues for Masternodes would primarily
+    come from Reward Engine emission, and later on from service revenues
+    such as token exchange fees provided by applications running on top
+    of TomoChain. We will publish a TomoChain economic analysis and
+    proposal, separate from this technical paper in a later date.</p>
+</li>
+</ul>
+<h2 id="Sec:References">References<a class="headerlink" href="#Sec:References" title="Permanent link">&para;</a></h2>
+<p>Satoshi Nakamoto. Bitcoin: A peer-to-peer electronics cash system. 2008. <a href="https://bitcoin.org/bitcoin.pdf" id="Bitcoin08">pdf</a></p>
+<p>Ethereum Foundation. Ethereum’s White Paper. , 2014. Online available 25/05/2018. <a href="https://github.com/ethereum/wiki/wiki/White-Paper" id="Ethe2014">link</a>.</p>
+<p>D. Larimer. Delegated Proof-of-Stake (DPOS). BitShare White Paper 2014. <a href="https://bitshares.org/technology/delegated-proof-of-stake-consensus/" id="Larime2016">link</a>.</p>
+<p>S. King and S. Nadal. PPCoin: Peer-to-peer crypto-currency with
+proof-of-stake. Self-Published, 2012. <a href="https://peercoin.net/assets/paper/peercoin-paper.pdf" id="King2012">pdf</a></p>
+<p>V. Buterin. On public and private blockchains. Ethereum Blog, 2015. <a href="https://blog.ethereum.org/2015/08/07/on-public-and-private-blockchains/" id="Vitalik2015">link</a>.</p>
+<p>A. Kiayias, A. Russell, B. David, and R. Oliynykov: Ouroboros: A
+Provably Secure Proof-of-Stake Blockchain Protocol. IACR-CRYPTO-2017.<a href="https://eprint.iacr.org/2016/889.pdf" id="Cardano2017">pdf</a></p>
+<p>D. Mingxiao, et al. A Review on Consensus Algorithms of Blockchain. 2017
+IEEE International Conference on Systems, Man, and Cybernetics (SMC)
+Banff Center, Banff, Canada, October 5-8, 2017<a href="https://ieeexplore.ieee.org/document/8123011/" id="Du2018">link</a></p>
+<p>R. Pass and E. Shi. Rethinking Large-Scale Consensus. In the Proceedings
+of the IEEE 30th Computer Security Foundations Symposium, 2017. Thunder
+Token Foundation: Thunder Consensus White Paper, Janurary, 2018<a href="https://eprint.iacr.org/2018/302.pdf" id="Pass2017">pdf</a>.</p>
+<p>R. Pass, L. Seeman, and A. Shelat. Analysis of the Blockchain Protocol
+in Asynchronous Networks. In EUROCRYPTO 2017<a href="https://eprint.iacr.org/2016/454.pdf" id="PassCrypto2017">pdf</a>.</p>
+<p>Juan A. Garay, A. Kiayias, and N. Leonardos. The bitcoin backbone
+protocol: Analysis and applications. In Elisabeth Oswald and Marc
+Fischlin, editors, Advances in Cryptology - EUROCRYPT 2015, Volume 9057
+of Lecture Notes in Computer Science, pages 281–310. Springer, 2015<a href="https://eprint.iacr.org/2014/765.pdf" id="Garay2015">pdf</a>.</p>
+<p>Tendermint Team. Understanding the Basics of a Proof-of-Stake Security
+Model.<a href="https://blog.cosmos.network/understanding-the-basics-of-a-proof-of-stake-security-model-de3b3e160710" id="Safety">link</a>.</p>
+<p>V. Buterin. On Settlement Finality. <a href="https://blog.ethereum.org/2016/05/09/on-settlement-finality/" id="finality">link</a>.</p>
+<p>EOS Team. EOS.IO Technical White Paper v2.
+<a href="https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md">https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md</a>.
+Online available 25/05/2018. <a href="https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md" id="EOS">link</a></p>
+<p>Bitshares Team. Delegated Proof-of-Stake Consensus.
+https://bitshares.org/technology/delegated-proof-of-stake-consensus/.
+Online available 25/05/2018. <a href="https://bitshares.org/technology/delegated-proof-of-stake-consensus" id="bitshare">link</a></p>
+<p>R. Pass, and E. Shi. (2017). Hybrid consensus: Efficient consensus in
+the permissionless model. In LIPIcs-Leibniz International Proceedings in
+Informatics (Vol. 91). Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik <a href="http://drops.dagstuhl.de/opus/volltexte/2017/8004/pdf/LIPIcs-DISC-2017-39.pdf" id="hybrid">pdf</a>.</p>
+<p>V. Buterin, and V. Griffith. (2017). Casper the Friendly Finality
+Gadget. arXiv preprint arXiv:1710.09437. <a href="https://arxiv.org/abs/1710.09437" id="Casper">link</a></p>
+<p>H. McCook. Under the Microscope: Economic and Environmental Costs of
+Bitcoin Mining.
+<a href="https://www.coindesk.com/microscope-economic-environmental-costs-bitcoin-mining/" id="capex">link</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../developers/icosmartcontract/" title="Deploy an ICO smart contract" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Deploy an ICO smart contract
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../sharding-paper/" title="Sharding design paper" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Sharding design paper
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tomochain" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tomochainANN" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/Tomochain/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.facebook.com/tomochainofficial/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://t.me/tomochain" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/tomochain" class="md-footer-social__link fa fa-medium"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-124597188-1","docs.tomochain.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

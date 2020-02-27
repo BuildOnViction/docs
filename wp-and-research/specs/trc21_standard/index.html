@@ -1,0 +1,1801 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="TomoChain aims to be a public EVM-compatible blockchain with the following advantages as low transaction fee, fast confirmation time, double validation.">
+      
+      
+        <link rel="canonical" href="https://docs.tomochain.com/wp-and-research/specs/trc21_standard/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>TRC21 Specification - TomoChain Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../../css/style.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../../#tomochain-request-for-comment-trc21-token-standard" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TomoChain Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                TRC21 Specification
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../../images/logo.png" width="48" height="48">
+      
+    </a>
+    TomoChain Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Get started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Get started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/productoverview/" title="Products overview" class="md-nav__link">
+      Products overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/how_to_read/" title="How to read" class="md-nav__link">
+      How to read
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/wallet/" title="Connect your wallet" class="md-nav__link">
+      Connect your wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/voting/" title="Voting" class="md-nav__link">
+      Voting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../general/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Masternode/DEX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Masternode/DEX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/requirements/" title="Requirements" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/masternode-setup-guide/" title="Detailed guide" class="md-nav__link">
+      Detailed guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Running a node with
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Running a node with
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/tomonative/" title="Binary" class="md-nav__link">
+      Binary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/create-tomochain-masternode/" title="Create-tomochain-masternode" class="md-nav__link">
+      Create-tomochain-masternode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/tmn/" title="Tmn" class="md-nav__link">
+      Tmn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/applying/" title="Applying for Masternode Candidacy" class="md-nav__link">
+      Applying for Masternode Candidacy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/snapshot/" title="Chaindata Snapshots" class="md-nav__link">
+      Chaindata Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/run-node/" title="Run a full node in testnet" class="md-nav__link">
+      Run a full node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../get-started/apply-node/" title="Apply your node in testnet" class="md-nav__link">
+      Apply your node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/tomox-fullnode/" title="Running a TomoX Mongodb fullnode" class="md-nav__link">
+      Running a TomoX Mongodb fullnode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../masternode/tomox-sdk/" title="Running a TomoX DEX" class="md-nav__link">
+      Running a TomoX DEX
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developers guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developers guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/integrations/" title="TOMO Exchange/Wallet" class="md-nav__link">
+      TOMO Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/staking-integrations/" title="TomoChain Staking Governance" class="md-nav__link">
+      TomoChain Staking Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/trc20-integrations/" title="TRC20 Exchange/Wallet" class="md-nav__link">
+      TRC20 Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/trc21-integrations/" title="TRC21 Exchange/Wallet" class="md-nav__link">
+      TRC21 Exchange/Wallet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Working with TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Working with TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/tutoprivatenet/" title="TomoChain private testnet setup" class="md-nav__link">
+      TomoChain private testnet setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/clicommands/" title="Useful manual CLI commands" class="md-nav__link">
+      Useful manual CLI commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      DApps on TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        DApps on TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/dappdeploytuto/" title="Deploy DApp on TomoChain" class="md-nav__link">
+      Deploy DApp on TomoChain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developers/icosmartcontract/" title="Deploy an ICO smart contract" class="md-nav__link">
+      Deploy an ICO smart contract
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://apidocs.tomochain.com" title="API Documentation" class="md-nav__link">
+      API Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Whitepapers/Specs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Whitepapers/Specs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical-whitepaper/" title="Technical whitepaper" class="md-nav__link">
+      Technical whitepaper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sharding-paper/" title="Sharding design paper" class="md-nav__link">
+      Sharding design paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../economics-paper/" title="Economics paper" class="md-nav__link">
+      Economics paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" checked>
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Standard & Specification
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Standard & Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        TRC21 Specification
+      </label>
+    
+    <a href="./" title="TRC21 Specification" class="md-nav__link md-nav__link--active">
+      TRC21 Specification
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-summary" title="Simple Summary" class="md-nav__link">
+    Simple Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" title="Abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motivation" title="Motivation" class="md-nav__link">
+    Motivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trc21-specification" title="TRC21 Specification" class="md-nav__link">
+    TRC21 Specification
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trc21-api-specification" title="TRC21 API specification" class="md-nav__link">
+    TRC21 API specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trc21-event-specification" title="TRC21 Event specification" class="md-nav__link">
+    TRC21 Event specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trc21-token-example" title="TRC21 Token example" class="md-nav__link">
+    TRC21 Token example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../privacy/" title="TomoP whitepaper" class="md-nav__link">
+      TomoP whitepaper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Legal
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../legal/terms-of-use/" title="Terms of Use" class="md-nav__link">
+      Terms of Use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../legal/privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Products
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Products
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomomaster/features/" title="TomoMaster" class="md-nav__link">
+      TomoMaster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomoscan/features/" title="TomoScan" class="md-nav__link">
+      TomoScan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      TomoWallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        TomoWallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomowallet/features/" title="Features" class="md-nav__link">
+      Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomowallet/voting/" title="Voting with TomoWallet" class="md-nav__link">
+      Voting with TomoWallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomowallet/terms/" title="Terms & Privacy" class="md-nav__link">
+      Terms & Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      TomoBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        TomoBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomobridge/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      TomoIssuer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        TomoIssuer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomoissuer/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomoissuer/termofcondition/" title="Term Of Condition" class="md-nav__link">
+      Term Of Condition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../products/tomoissuer/policyprivacy/" title="Policy Privacy" class="md-nav__link">
+      Policy Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-summary" title="Simple Summary" class="md-nav__link">
+    Simple Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" title="Abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motivation" title="Motivation" class="md-nav__link">
+    Motivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trc21-specification" title="TRC21 Specification" class="md-nav__link">
+    TRC21 Specification
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trc21-api-specification" title="TRC21 API specification" class="md-nav__link">
+    TRC21 API specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trc21-event-specification" title="TRC21 Event specification" class="md-nav__link">
+    TRC21 Event specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trc21-token-example" title="TRC21 Token example" class="md-nav__link">
+    TRC21 Token example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tomochain/docs/edit/master/docs/wp-and-research/specs/trc21_standard.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="tomochain-request-for-comment-trc21-token-standard">TomoChain Request for Comment: TRC21 Token Standard<a class="headerlink" href="#tomochain-request-for-comment-trc21-token-standard" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Standard Name</th>
+<th>TRC21</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Author</td>
+<td>TomoChain R&amp;D Team</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>Token Standard</td>
+</tr>
+<tr>
+<td>Created</td>
+<td>2019-05-17</td>
+</tr>
+</tbody>
+</table>
+<h2 id="simple-summary">Simple Summary<a class="headerlink" href="#simple-summary" title="Permanent link">&para;</a></h2>
+<p>A standard interface for tokens that allows token holders to pay transaction fees by the token itself.</p>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>The following standard allows for the implementation of a standard Application Programmable Interface (API) for tokens within TomoChain smart contracts. 
+Tokens issued on TomoChain following this standard allows token holders to pay fee for transactions 
+to the token contract in terms of the token itself.</p>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
+<p>A standard token interface that extends TRC-20 standard in order to allow 
+holders of a token issued following this standard to make transactions without the need of 
+holding TOMO in the wallet for paying transaction fees.</p>
+<h2 id="trc21-specification">TRC21 Specification<a class="headerlink" href="#trc21-specification" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>/**
+ * @title TRC21 interface
+ */
+interface ITRC21 {
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address who) external view returns (uint256);
+    function estimateFee(uint256 value) external view returns (uint256);
+    function issuer() external view returns (address);
+    function allowance(address owner, address spender) external view returns (uint256);
+    function transfer(address to, uint256 value) external returns (bool);
+    function approve(address spender, uint256 value) external returns (bool);
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Fee(address indexed from, address indexed to, address indexed issuer, uint256 value);
+}
+</code></pre></div>
+
+
+<h3 id="trc21-api-specification">TRC21 API specification<a class="headerlink" href="#trc21-api-specification" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>totalSupply</code>: Returns the token total supply.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">totalSupply</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">external</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<ul>
+<li><code>balanceOf</code>: Returns the account balance of another account with address <code>who</code>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">balanceOf</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">who</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">external</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<ul>
+<li><code>estimateFee</code>: Estimate the transaction fee in terms of the token that the transaction makers will have to pay.
+Transaction fee will be paid to the issuer of the TRC21 token contract following our TomoZ protocol detailed in <a href="https://docs.google.com/document/d/1jxD3DsU7GWhxQhs0R8hCmqIQvfQfJjAQaioBoRrVGIA/edit?usp=sharing">here</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">estimateFee</span><span class="p">(</span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">external</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>Ideally the function will return the transaction fee based on 
+the value (the number of tokens) that the transaction maker wants to transfer.
+Transaction fee for <code>allowance</code> function will be estimated if input parameter <code>value = 0</code>.
+The way fees are computed is not standardized.
+Token issuers can fully customize the implementation of the function.</p>
+<p>This function will also be called by user wallets to evaluate fees the user must be paying.</p>
+<ul>
+<li><code>issuer</code>: Returns the address of the token issuer.  </li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">issuer</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">external</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">address</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>The method returns the address of the token issuer. 
+The is to ensure that only the issuer has the right to apply to the TomoZ protocol for paying fees of token-holder transactions to 
+the token contract in terms of the token itself.
+The method will be called by the TomoZ protocol source code to verify that no one else is able to apply
+the token to the TomoZ protocol, except the issuer.</p>
+<ul>
+<li><code>transfer</code>: 
+Transfers <code>_value</code> amount of tokens to address <code>_to</code>, and MUST fire the <code>Transfer</code> and <code>Fee</code> event. </li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">transfer</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">_to</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">_value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">bool</span><span class=" -WhiteSpace"> </span><span class="nv">success</span><span class="p">)</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>The function will call <code>estimateFee</code> function to compute the transaction fee.
+The function SHOULD throw if the message caller’s account balance does not have enough tokens to spend and to pay transaction fees.
+Once succeeded, the token balance of the sender should be reduced by <code>_value</code> plus the computed transaction fee, the balance of <code>_to</code> should
+be increasing <code>_value</code>, while the balance of the token issuer should be increased by the computed transaction fee.</p>
+<ul>
+<li><code>approve</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">approve</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">spender</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">external</span><span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>Allows <code>_spender</code> to withdraw from your account multiple times, up to the <code>_value</code> amount. 
+If this function is called again it overwrites the current allowance with <code>_value</code>.
+This function also calls <code>estimateFee</code> with input parameter as 0 in order to compute the transaction fee
+in terms of tokens that the transaction sender must pay to the token issuer.</p>
+<ul>
+<li><code>allowance</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">allowance</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">owner</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">spender</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">external</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>Returns the amount which <code>spender</code> is still allowed to withdraw from <code>owner</code>.</p>
+<ul>
+<li><code>transferFrom</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">transferFrom</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">from</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">to</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">external</span><span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>Transfers <code>value</code> amount of tokens from address <code>from</code> to address <code>to</code>.
+The function must fire the <code>Transfer</code> and <code>Fee</code> event.</p>
+<h3 id="trc21-event-specification">TRC21 Event specification<a class="headerlink" href="#trc21-event-specification" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Transfer</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">event</span><span class=" -WhiteSpace"> </span><span class="nv">Transfer</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">indexed</span><span class=" -WhiteSpace"> </span>from<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">indexed</span><span class=" -WhiteSpace"> </span>to<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>This event MUST be emitted when tokens are transferred in functions <code>transfer</code> and <code>transferFrom</code>.</p>
+<ul>
+<li><code>Approval</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">event</span><span class=" -WhiteSpace"> </span><span class="nv">Approval</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">indexed</span><span class=" -WhiteSpace"> </span>owner<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">indexed</span><span class=" -WhiteSpace"> </span>spender<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>This event MUST be emitted on any successful call to <code>approve</code> function.</p>
+<ul>
+<li><code>Fee</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">event</span><span class=" -WhiteSpace"> </span><span class="nv">Fee</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">indexed</span><span class=" -WhiteSpace"> </span>from<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">indexed</span><span class=" -WhiteSpace"> </span>to<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">indexed</span><span class=" -WhiteSpace"> </span>issuer<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>This event MUST be emitted when tokens are transferred in functions <code>transfer</code> and <code>transferFrom</code> in order for clients/DApp/third-party wallets to notify 
+its users about the paid transaction fee in terms of token.</p>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<p>The following implements the basis of the standard. 
+For any implementation of the TRC21 standard, the following contract fields must be defined at the beginning of the contract.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">mapping</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="o">=&gt;</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">private</span><span class=" -WhiteSpace"> </span>_balances<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="k">private </span><span class="nv">_minFee</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="k">private </span><span class="nv">_issuer</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<p>This template allows the TomoZ protocol to consider the implemented token as TRC21 and any fees paid for transactions to 
+the token contract will be based on the token, not TOMO.</p>
+<ul>
+<li><code>_balances</code>: record the balance of each token holder</li>
+<li><code>_minFee</code>: the minimum fee in terms of tokens that the transaction sender must pay. 
+Ideally minFee will be paid when <code>approve</code> function is called or when transaction fails.</li>
+<li><code>_issuer</code>: the address of the token issuer who will receive transaction fees from token holders in terms of token, 
+but will pay transaction fees to masternodes by means of TOMO. This is detailed in our TomoZ protocol specification <a href="https://docs.google.com/document/d/1jxD3DsU7GWhxQhs0R8hCmqIQvfQfJjAQaioBoRrVGIA/edit?usp=sharing">white paper</a>.</li>
+</ul>
+<p>The implementation also defines some additional functions as follows:</p>
+<ul>
+<li><code>minFee</code>: Returns the minimum fee for any transaction. </li>
+<li><code>issuer</code>: Returns the address of the issuer of the token.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * @title Standard TRC21 token</span>
+<span class="cm"> * @dev Implementation of the basic standard token.</span>
+<span class="cm"> */</span><span class=" -WhiteSpace"></span>
+<span class="k">contract</span><span class=" -WhiteSpace"> </span><span class="ni">TRC21</span><span class=" -WhiteSpace"> </span><span class="kt">is</span><span class=" -WhiteSpace"> </span>ITRC21<span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span>using<span class=" -WhiteSpace"> </span>SafeMath<span class=" -WhiteSpace"> </span><span class="kt">for</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="kt">mapping</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="o">=&gt;</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">private</span><span class=" -WhiteSpace"> </span>_balances<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="k">private </span><span class="nv">_minFee</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="k">private </span><span class="nv">_issuer</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">mapping</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="o">=&gt;</span><span class=" -WhiteSpace"> </span><span class="kt">mapping</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="o">=&gt;</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class="p">))</span><span class=" -WhiteSpace"> </span><span class="kt">private</span><span class=" -WhiteSpace"> </span>_allowed<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="k">private </span><span class="nv">_totalSupply</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Total number of tokens in existence</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">totalSupply</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>_totalSupply<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev  The amount fee that will be lost when transferring.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">minFee</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>_minFee<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev token&#39;s foundation</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">issuer</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">address</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>_issuer<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Gets the balance of the specified address.</span>
+<span class="cm">     * @param owner The address to query the balance of.</span>
+<span class="cm">     * @return An uint256 representing the amount owned by the passed address.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">balanceOf</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">owner</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>_balances<span class="p">[</span>owner<span class="p">];</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Estimate transaction fee.</span>
+<span class="cm">     * @param value</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">estimateFee</span><span class="p">(</span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>value<span class="p">.</span>mul<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">).</span>add<span class="p">(</span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Function to check the amount of tokens that an owner allowed to a spender.</span>
+<span class="cm">     * @param owner address The address which owns the funds.</span>
+<span class="cm">     * @param spender address The address which will spend the funds.</span>
+<span class="cm">     * @return A uint256 specifying the amount of tokens still available for the spender.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">allowance</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">owner</span><span class="p">,</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">spender</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace">    </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">){</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>_allowed<span class="p">[</span>owner<span class="p">][</span>spender<span class="p">];</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Transfer token for a specified address</span>
+<span class="cm">     * @param to The address to transfer to.</span>
+<span class="cm">     * @param value The amount to be transferred.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">transfer</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">to</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">total</span><span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>value<span class="p">.</span>add<span class="p">(</span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>to<span class=" -WhiteSpace"> </span><span class="o">!=</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">));</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>value<span class=" -WhiteSpace"> </span><span class="o">&lt;=</span><span class=" -WhiteSpace"> </span>total<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_transfer<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class=" -WhiteSpace"> </span>to<span class="p">,</span><span class=" -WhiteSpace"> </span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_transfer<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class=" -WhiteSpace"> </span>_issuer<span class="p">,</span><span class=" -WhiteSpace"> </span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>emit<span class=" -WhiteSpace"> </span>Fee<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class=" -WhiteSpace"> </span>to<span class="p">,</span><span class=" -WhiteSpace"> </span>_issuer<span class="p">,</span><span class=" -WhiteSpace"> </span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span><span class="kt">true</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.</span>
+<span class="cm">     * Beware that changing an allowance with this method brings the risk that someone may use both the old</span>
+<span class="cm">     * and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this</span>
+<span class="cm">     * race condition is to first reduce the spender&#39;s allowance to 0 and set the desired value afterwards:</span>
+<span class="cm">     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729</span>
+<span class="cm">     * @param spender The address which will spend the funds.</span>
+<span class="cm">     * @param value The amount of tokens to be spent.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">approve</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">spender</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>spender<span class=" -WhiteSpace"> </span><span class="o">!=</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">));</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>_balances<span class="p">[</span><span class="k">msg.sender</span><span class="p">]</span><span class="o">&gt;=</span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_allowed<span class="p">[</span><span class="k">msg.sender</span><span class="p">][</span>spender<span class="p">]</span><span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>value<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_transfer<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class=" -WhiteSpace"> </span>_issuer<span class="p">,</span><span class=" -WhiteSpace"> </span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>emit<span class=" -WhiteSpace"> </span>Approval<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class=" -WhiteSpace"> </span>spender<span class="p">,</span><span class=" -WhiteSpace"> </span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span><span class="kt">true</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Transfer tokens from one address to another</span>
+<span class="cm">     * @param from address The address which you want to send tokens from</span>
+<span class="cm">     * @param to address The address which you want to transfer to</span>
+<span class="cm">     * @param value uint256 the amount of tokens to be transferred</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">transferFrom</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">from</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">to</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace">  </span><span class="kt">public</span><span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">total</span><span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>value<span class="p">.</span>add<span class="p">(</span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>to<span class=" -WhiteSpace"> </span><span class="o">!=</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">));</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>value<span class=" -WhiteSpace"> </span><span class="o">&lt;=</span><span class=" -WhiteSpace"> </span>total<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>total<span class=" -WhiteSpace"> </span><span class="o">&lt;=</span><span class=" -WhiteSpace"> </span>_allowed<span class="p">[</span>from<span class="p">][</span><span class="k">msg.sender</span><span class="p">]);</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">        </span>_allowed<span class="p">[</span>from<span class="p">][</span><span class="k">msg.sender</span><span class="p">]</span><span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>_allowed<span class="p">[</span>from<span class="p">][</span><span class="k">msg.sender</span><span class="p">].</span>sub<span class="p">(</span>total<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_transfer<span class="p">(</span>from<span class="p">,</span><span class=" -WhiteSpace"> </span>to<span class="p">,</span><span class=" -WhiteSpace"> </span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_transfer<span class="p">(</span>from<span class="p">,</span><span class=" -WhiteSpace"> </span>_issuer<span class="p">,</span><span class=" -WhiteSpace"> </span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>emit<span class=" -WhiteSpace"> </span>Fee<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class=" -WhiteSpace"> </span>to<span class="p">,</span><span class=" -WhiteSpace"> </span>_issuer<span class="p">,</span><span class=" -WhiteSpace"> </span>_minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span><span class="kt">true</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Transfer token for a specified addresses</span>
+<span class="cm">     * @param from The address to transfer from.</span>
+<span class="cm">     * @param to The address to transfer to.</span>
+<span class="cm">     * @param value The amount to be transferred.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">_transfer</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">from</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">to</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">internal</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>value<span class=" -WhiteSpace"> </span><span class="o">&lt;=</span><span class=" -WhiteSpace"> </span>_balances<span class="p">[</span>from<span class="p">]);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>to<span class=" -WhiteSpace"> </span><span class="o">!=</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">));</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_balances<span class="p">[</span>from<span class="p">]</span><span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>_balances<span class="p">[</span>from<span class="p">].</span>sub<span class="p">(</span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_balances<span class="p">[</span>to<span class="p">]</span><span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>_balances<span class="p">[</span>to<span class="p">].</span>add<span class="p">(</span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>emit<span class=" -WhiteSpace"> </span>Transfer<span class="p">(</span>from<span class="p">,</span><span class=" -WhiteSpace"> </span>to<span class="p">,</span><span class=" -WhiteSpace"> </span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Internal function that mints an amount of the token and assigns it to</span>
+<span class="cm">     * an account. This encapsulates the modification of balances such that the</span>
+<span class="cm">     * proper events are emitted.</span>
+<span class="cm">     * @param account The account that will receive the created tokens.</span>
+<span class="cm">     * @param value The amount that will be created.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">_mint</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">account</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">internal</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>account<span class=" -WhiteSpace"> </span><span class="o">!=</span><span class=" -WhiteSpace"> </span><span class="m m-Decimal">0</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_totalSupply<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>_totalSupply<span class="p">.</span>add<span class="p">(</span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_balances<span class="p">[</span>account<span class="p">]</span><span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>_balances<span class="p">[</span>account<span class="p">].</span>add<span class="p">(</span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>emit<span class=" -WhiteSpace"> </span>Transfer<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">),</span><span class=" -WhiteSpace"> </span>account<span class="p">,</span><span class=" -WhiteSpace"> </span>value<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Transfers token&#39;s foundation to new issuer</span>
+<span class="cm">     * @param newIssuer The address to transfer ownership to.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">_changeIssuer</span><span class="p">(</span><span class="kt">address</span><span class=" -WhiteSpace"> </span><span class="nv">newIssuer</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">internal</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">require</span><span class="p">(</span>newIssuer<span class=" -WhiteSpace"> </span><span class="o">!=</span><span class=" -WhiteSpace"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">));</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_issuer<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>newIssuer<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Change minFee</span>
+<span class="cm">     * @param value minFee</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">_changeMinFee</span><span class="p">(</span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">value</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">internal</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_minFee<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>value<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+<span class="p">}</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+
+
+<h3 id="trc21-token-example">TRC21 Token example<a class="headerlink" href="#trc21-token-example" title="Permanent link">&para;</a></h3>
+<p>The following shows an example of a TRC21 token which inherits from the TRC21 implementation.
+Token name, symbol, and decimals are also defined.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">contract</span><span class=" -WhiteSpace"> </span><span class="ni">MyTRC21</span><span class=" -WhiteSpace"> </span><span class="kt">is</span><span class=" -WhiteSpace"> </span>TRC21<span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">string</span><span class=" -WhiteSpace"> </span><span class="k">private </span><span class="nv">_name</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">string</span><span class=" -WhiteSpace"> </span><span class="k">private </span><span class="nv">_symbol</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">uint8</span><span class=" -WhiteSpace"> </span><span class="k">private </span><span class="nv">_decimals</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="kt">constructor</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">string</span><span class=" -WhiteSpace"> </span><span class="nv">memory</span><span class=" -WhiteSpace"> </span>name<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">string</span><span class=" -WhiteSpace"> </span><span class="nv">memory</span><span class=" -WhiteSpace"> </span>symbol<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint8</span><span class=" -WhiteSpace"> </span><span class="nv">decimals</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">cap</span><span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="nv">minFee</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_name<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>name<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_symbol<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>symbol<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_decimals<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>decimals<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_mint<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class=" -WhiteSpace"> </span>cap<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_changeIssuer<span class="p">(</span><span class="k">msg.sender</span><span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>_changeMinFee<span class="p">(</span>minFee<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @return the name of the token.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">name</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">string</span><span class=" -WhiteSpace"> </span><span class="nv">memory</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>_name<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @return the symbol of the token.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">symbol</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">string</span><span class=" -WhiteSpace"> </span><span class="nv">memory</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>_symbol<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+
+<span class=" -WhiteSpace">    </span><span class="cm">/**</span>
+<span class="cm">     * @return the number of decimals of the token.</span>
+<span class="cm">     */</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">decimals</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>view<span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">return</span><span class=" -WhiteSpace"> </span>_decimals<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+<span class="p">}</span><span class=" -WhiteSpace"></span>
+</code></pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../economics-paper/" title="Economics paper" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Economics paper
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../privacy/" title="TomoP whitepaper" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                TomoP whitepaper
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tomochain" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tomochainANN" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/Tomochain/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.facebook.com/tomochainofficial/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://t.me/tomochain" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/tomochain" class="md-footer-social__link fa fa-medium"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-124597188-1","docs.tomochain.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2189 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="TomoChain aims to be a public EVM-compatible blockchain with the following advantages as low transaction fee, fast confirmation time, double validation.">
+      
+      
+        <link rel="canonical" href="https://docs.tomochain.com/wp-and-research/economics-paper/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Economics paper - TomoChain Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#tomochain-the-most-efficient-blockchain-for-the-token-economy" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TomoChain Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Economics paper
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../images/logo.png" width="48" height="48">
+      
+    </a>
+    TomoChain Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Get started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Get started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/productoverview/" title="Products overview" class="md-nav__link">
+      Products overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/how_to_read/" title="How to read" class="md-nav__link">
+      How to read
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/wallet/" title="Connect your wallet" class="md-nav__link">
+      Connect your wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/voting/" title="Voting" class="md-nav__link">
+      Voting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Masternode/DEX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Masternode/DEX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/requirements/" title="Requirements" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/masternode-setup-guide/" title="Detailed guide" class="md-nav__link">
+      Detailed guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Running a node with
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Running a node with
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomonative/" title="Binary" class="md-nav__link">
+      Binary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/create-tomochain-masternode/" title="Create-tomochain-masternode" class="md-nav__link">
+      Create-tomochain-masternode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tmn/" title="Tmn" class="md-nav__link">
+      Tmn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/applying/" title="Applying for Masternode Candidacy" class="md-nav__link">
+      Applying for Masternode Candidacy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/snapshot/" title="Chaindata Snapshots" class="md-nav__link">
+      Chaindata Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/run-node/" title="Run a full node in testnet" class="md-nav__link">
+      Run a full node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/apply-node/" title="Apply your node in testnet" class="md-nav__link">
+      Apply your node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomox-fullnode/" title="Running a TomoX Mongodb fullnode" class="md-nav__link">
+      Running a TomoX Mongodb fullnode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomox-sdk/" title="Running a TomoX DEX" class="md-nav__link">
+      Running a TomoX DEX
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developers guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developers guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/integrations/" title="TOMO Exchange/Wallet" class="md-nav__link">
+      TOMO Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/staking-integrations/" title="TomoChain Staking Governance" class="md-nav__link">
+      TomoChain Staking Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/trc20-integrations/" title="TRC20 Exchange/Wallet" class="md-nav__link">
+      TRC20 Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/trc21-integrations/" title="TRC21 Exchange/Wallet" class="md-nav__link">
+      TRC21 Exchange/Wallet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Working with TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Working with TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/tutoprivatenet/" title="TomoChain private testnet setup" class="md-nav__link">
+      TomoChain private testnet setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/clicommands/" title="Useful manual CLI commands" class="md-nav__link">
+      Useful manual CLI commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      DApps on TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        DApps on TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/dappdeploytuto/" title="Deploy DApp on TomoChain" class="md-nav__link">
+      Deploy DApp on TomoChain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/icosmartcontract/" title="Deploy an ICO smart contract" class="md-nav__link">
+      Deploy an ICO smart contract
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://apidocs.tomochain.com" title="API Documentation" class="md-nav__link">
+      API Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Whitepapers/Specs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Whitepapers/Specs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../technical-whitepaper/" title="Technical whitepaper" class="md-nav__link">
+      Technical whitepaper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sharding-paper/" title="Sharding design paper" class="md-nav__link">
+      Sharding design paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Economics paper
+      </label>
+    
+    <a href="./" title="Economics paper" class="md-nav__link md-nav__link--active">
+      Economics paper
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" title="Preface" class="md-nav__link">
+    Preface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tomochains-vision-and-mission" title="TomoChain's vision and mission" class="md-nav__link">
+    TomoChain's vision and mission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope" title="Scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#masternodes" title="Masternodes" class="md-nav__link">
+    Masternodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-voting-and-staking" title="Token Voting and Staking" class="md-nav__link">
+    Token Voting and Staking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-emission-schedule" title="Token Emission Schedule" class="md-nav__link">
+    Token Emission Schedule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#votingstaking-consideration" title="Voting/Staking Consideration" class="md-nav__link">
+    Voting/Staking Consideration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#candidatemasternode-incentives" title="Candidate/Masternode incentives" class="md-nav__link">
+    Candidate/Masternode incentives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-voter-incentives" title="Token voter incentives" class="md-nav__link">
+    Token voter incentives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-term-platform-economics-consideration" title="Long Term Platform Economics Consideration" class="md-nav__link">
+    Long Term Platform Economics Consideration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pe-theory-of-token-value" title="P/E theory of token value" class="md-nav__link">
+    P/E theory of token value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantity-theory-of-money-for-token-value" title="Quantity theory of money for token value" class="md-nav__link">
+    Quantity theory of money for token value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#store-of-value-theory-of-token-value" title="Store of value theory of token value" class="md-nav__link">
+    Store of value theory of token value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-decentralized-exchange" title="Built-in decentralized exchange" class="md-nav__link">
+    Built-in decentralized exchange
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decentralized-governance" title="Decentralized Governance" class="md-nav__link">
+    Decentralized Governance
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#become-a-masternode" title="Become a Masternode" class="md-nav__link">
+    Become a Masternode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masternode-council" title="Masternode Council" class="md-nav__link">
+    Masternode Council
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-decision-making" title="Technical decision making" class="md-nav__link">
+    Technical decision making
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#economic-decision-making" title="Economic decision making" class="md-nav__link">
+    Economic decision making
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-history-of-the-project" title="Appendix A: History of the Project" class="md-nav__link">
+    Appendix A: History of the Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-reward-calculation-formula-and-details" title="Appendix B: Reward Calculation Formula and Details" class="md-nav__link">
+    Appendix B: Reward Calculation Formula and Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-notations" title="General notations" class="md-nav__link">
+    General notations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-the-reward-calculation-formula-to-specific-scenarios" title="Applying the reward calculation formula to specific scenarios" class="md-nav__link">
+    Applying the reward calculation formula to specific scenarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-50-masternodes-25-million-token-voting-a-total-of-5-million-token-locked" title="Scenario 1: 50 Masternodes, 2.5 million token voting, a total of 5 million token locked." class="md-nav__link">
+    Scenario 1: 50 Masternodes, 2.5 million token voting, a total of 5 million token locked.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-epoch" title="Reward per epoch:" class="md-nav__link">
+    Reward per epoch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-week" title="Reward per week:" class="md-nav__link">
+    Reward per week:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-year" title="Reward per year:" class="md-nav__link">
+    Reward per year:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-100-masternodes-3-million-token-voting-a-total-of-8-million-token-locked" title="Scenario 2: 100 Masternodes, 3 million token voting, a total of 8 million token locked." class="md-nav__link">
+    Scenario 2: 100 Masternodes, 3 million token voting, a total of 8 million token locked.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-epoch_1" title="Reward per epoch:" class="md-nav__link">
+    Reward per epoch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-week_1" title="Reward per week:" class="md-nav__link">
+    Reward per week:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-year_1" title="Reward per year:" class="md-nav__link">
+    Reward per year:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-150-masternodes-125-million-token-voting-a-total-of-20-million-token-locked" title="Scenario 3: 150 Masternodes, 12.5 million token voting, a total of 20 million token locked." class="md-nav__link">
+    Scenario 3: 150 Masternodes, 12.5 million token voting, a total of 20 million token locked.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-epoch_2" title="Reward per epoch:" class="md-nav__link">
+    Reward per epoch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-week_2" title="Reward per week:" class="md-nav__link">
+    Reward per week:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-year_2" title="Reward per year:" class="md-nav__link">
+    Reward per year:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Standard & Specification
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Standard & Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../specs/trc21_standard/" title="TRC21 Specification" class="md-nav__link">
+      TRC21 Specification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../privacy/" title="TomoP whitepaper" class="md-nav__link">
+      TomoP whitepaper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Legal
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/terms-of-use/" title="Terms of Use" class="md-nav__link">
+      Terms of Use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Products
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Products
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomomaster/features/" title="TomoMaster" class="md-nav__link">
+      TomoMaster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoscan/features/" title="TomoScan" class="md-nav__link">
+      TomoScan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      TomoWallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        TomoWallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/features/" title="Features" class="md-nav__link">
+      Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/voting/" title="Voting with TomoWallet" class="md-nav__link">
+      Voting with TomoWallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/terms/" title="Terms & Privacy" class="md-nav__link">
+      Terms & Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      TomoBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        TomoBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomobridge/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      TomoIssuer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        TomoIssuer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/termofcondition/" title="Term Of Condition" class="md-nav__link">
+      Term Of Condition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/policyprivacy/" title="Policy Privacy" class="md-nav__link">
+      Policy Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" title="Preface" class="md-nav__link">
+    Preface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tomochains-vision-and-mission" title="TomoChain's vision and mission" class="md-nav__link">
+    TomoChain's vision and mission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope" title="Scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#masternodes" title="Masternodes" class="md-nav__link">
+    Masternodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-voting-and-staking" title="Token Voting and Staking" class="md-nav__link">
+    Token Voting and Staking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-emission-schedule" title="Token Emission Schedule" class="md-nav__link">
+    Token Emission Schedule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#votingstaking-consideration" title="Voting/Staking Consideration" class="md-nav__link">
+    Voting/Staking Consideration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#candidatemasternode-incentives" title="Candidate/Masternode incentives" class="md-nav__link">
+    Candidate/Masternode incentives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-voter-incentives" title="Token voter incentives" class="md-nav__link">
+    Token voter incentives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-term-platform-economics-consideration" title="Long Term Platform Economics Consideration" class="md-nav__link">
+    Long Term Platform Economics Consideration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pe-theory-of-token-value" title="P/E theory of token value" class="md-nav__link">
+    P/E theory of token value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantity-theory-of-money-for-token-value" title="Quantity theory of money for token value" class="md-nav__link">
+    Quantity theory of money for token value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#store-of-value-theory-of-token-value" title="Store of value theory of token value" class="md-nav__link">
+    Store of value theory of token value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-decentralized-exchange" title="Built-in decentralized exchange" class="md-nav__link">
+    Built-in decentralized exchange
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decentralized-governance" title="Decentralized Governance" class="md-nav__link">
+    Decentralized Governance
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#become-a-masternode" title="Become a Masternode" class="md-nav__link">
+    Become a Masternode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masternode-council" title="Masternode Council" class="md-nav__link">
+    Masternode Council
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-decision-making" title="Technical decision making" class="md-nav__link">
+    Technical decision making
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#economic-decision-making" title="Economic decision making" class="md-nav__link">
+    Economic decision making
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-history-of-the-project" title="Appendix A: History of the Project" class="md-nav__link">
+    Appendix A: History of the Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-reward-calculation-formula-and-details" title="Appendix B: Reward Calculation Formula and Details" class="md-nav__link">
+    Appendix B: Reward Calculation Formula and Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-notations" title="General notations" class="md-nav__link">
+    General notations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-the-reward-calculation-formula-to-specific-scenarios" title="Applying the reward calculation formula to specific scenarios" class="md-nav__link">
+    Applying the reward calculation formula to specific scenarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-50-masternodes-25-million-token-voting-a-total-of-5-million-token-locked" title="Scenario 1: 50 Masternodes, 2.5 million token voting, a total of 5 million token locked." class="md-nav__link">
+    Scenario 1: 50 Masternodes, 2.5 million token voting, a total of 5 million token locked.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-epoch" title="Reward per epoch:" class="md-nav__link">
+    Reward per epoch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-week" title="Reward per week:" class="md-nav__link">
+    Reward per week:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-year" title="Reward per year:" class="md-nav__link">
+    Reward per year:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-100-masternodes-3-million-token-voting-a-total-of-8-million-token-locked" title="Scenario 2: 100 Masternodes, 3 million token voting, a total of 8 million token locked." class="md-nav__link">
+    Scenario 2: 100 Masternodes, 3 million token voting, a total of 8 million token locked.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-epoch_1" title="Reward per epoch:" class="md-nav__link">
+    Reward per epoch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-week_1" title="Reward per week:" class="md-nav__link">
+    Reward per week:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-year_1" title="Reward per year:" class="md-nav__link">
+    Reward per year:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-150-masternodes-125-million-token-voting-a-total-of-20-million-token-locked" title="Scenario 3: 150 Masternodes, 12.5 million token voting, a total of 20 million token locked." class="md-nav__link">
+    Scenario 3: 150 Masternodes, 12.5 million token voting, a total of 20 million token locked.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-epoch_2" title="Reward per epoch:" class="md-nav__link">
+    Reward per epoch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-week_2" title="Reward per week:" class="md-nav__link">
+    Reward per week:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-per-year_2" title="Reward per year:" class="md-nav__link">
+    Reward per year:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tomochain/docs/edit/master/docs/wp-and-research/economics-paper.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="tomochain-the-most-efficient-blockchain-for-the-token-economy">TOMOCHAIN - The Most Efficient Blockchain for the Token Economy<a class="headerlink" href="#tomochain-the-most-efficient-blockchain-for-the-token-economy" title="Permanent link">&para;</a></h1>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<h3 id="tomochains-vision-and-mission">TomoChain's vision and mission<a class="headerlink" href="#tomochains-vision-and-mission" title="Permanent link">&para;</a></h3>
+<p>Our mission is to be a leading force in building the Internet of Value, and its infrastructure. 
+We are working to create an alternative, scalable financial system which is more secure, transparent, efficient, inclusive and equitable for everyone.</p>
+<p>TomoChain is an innovative solution to the scalability problem with the Ethereum blockchain, and other current blockchain platforms. 
+TomoChain relies on a system of 150 Masternodes with Proof of Stake Voting (PoSV) consensus that can support near-zero fee, and 2-second transaction confirmation time. 
+Security, stability and chain finality are guaranteed via novel techniques such as double validation, staking via smart-contracts and "true" randomization processes. </p>
+<p>TomoChain supports all EVM-compatible smart-contracts, protocols, and atomic cross-chain token transfers. 
+New scaling techniques such as sharding, EVM parallelisation, private-chain generation, hardware integration will be continuously researched and incorporated into TomoChain's Masternode architecture which will be an ideal scalable smart-contract public blockchain for decentralized apps, token issuances and token integrations for small and big businesses.</p>
+<h3 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h3>
+<p>This document describes TomoChain’s initial draft for the TomoChain blockchain’s economics system.</p>
+<h2 id="masternodes">Masternodes<a class="headerlink" href="#masternodes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Masternodes</strong> are full-nodes that create, verify and validate new blocks in TomoChain’s platform. </p>
+</li>
+<li>
+<p><strong>Masternode Candidate</strong>: Any account can deposit 50K TOMO using the official on-chain governance d-app to become a Masternode Candidate. 
+50K TOMO deposit can earn staking rewards. 
+A Candidate can resign, but the tokens will be locked for the next 30 days (1,296,000 blocks) after the resignation. </p>
+</li>
+<li>
+<p><strong>Becoming a Masternode</strong>: A Candidate becomes a Masternode when he/she belongs to top 150 most voted Candidates in each epoch. 
+A Masternode can resign, but the tokens  will be locked for the next 30 days after the resignation.</p>
+</li>
+<li>
+<p><strong>Reward</strong>: The reward a Masternode receives in each epoch is proportional to the number of signatures he/she  signs.</p>
+</li>
+</ul>
+<h2 id="token-voting-and-staking">Token Voting and Staking<a class="headerlink" href="#token-voting-and-staking" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Token  voting</strong>: Token holders can vote for Masternode Candidates by sending TOMO to each Candidate specific voting address using the official governance d-app. Top 150 most voted Candidates will become Masternodes. 
+Token holders can un-vote a Candidate, but the tokens will be locked for the next 48 hours (86,400  blocks) after the un-voting.   </p>
+</li>
+<li>
+<p><strong>Staking</strong>: Masternode token  deposits, and all  tokens used to vote for Masternodes will enter staking program, and earn block rewards in each epoch, plus any fees. 
+Tokens used to vote for Candidates who do not become Masternodes will not earn staking reward.</p>
+</li>
+</ul>
+<h2 id="token-emission-schedule">Token Emission Schedule<a class="headerlink" href="#token-emission-schedule" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Following the fundraising commitment</strong>: The total amount of tokens at the genesis block is 55 million TOMO tokens in circulation; 
+12 millions are reserved for the team vested over the next 4 years; 
+16 millions are reserved for strategic partners, and an ecosystem building fund which totals 83 millions tokens. 
+Plus, 17 millions are reserved as block rewards for the next 8 years, the amount of tokens  in circulation at the end of the 8th year  after the genesis block is around 100 million TOMO. 
+After the mainnet: the block reward for the first and second year is  4 million TOMO annually; the block reward for the 3rd, 4th, 5th year is 2 millions TOMO annually ; and the block reward for the 6th, 7th and 8th year is 1 million TOMO annually . 
+Subsequently, the block reward will be halted, or activated at a number less than or equal to 1 million TOMO annually.</p>
+</li>
+<li>
+<p><strong>Implementation</strong>: Each epoch consists of 900 blocks, which will reward a total of 250 TOMO in the first two years. 
+250 TOMO will be divided to all the Masternodes proportional to the number of signatures they sign during the epoch. 
+Afterward, the reward achieved by each Masternode  will be divided into three portions. 
+The first portion of 40% called “Infrastructure Reward” goes to the Masternode. 
+The second portion of 50% called “Staking Reward” goes to the pool of all voters for that Masternode which is shared proportionally based on the token stake. 
+The last portion of 10% called “Foundation Reward” goes to a special account controlled by the Masternode Foundation, which is run by TomoChain company initially. </p>
+</li>
+</ul>
+<h2 id="votingstaking-consideration">Voting/Staking Consideration<a class="headerlink" href="#votingstaking-consideration" title="Permanent link">&para;</a></h2>
+<h3 id="candidatemasternode-incentives">Candidate/Masternode incentives<a class="headerlink" href="#candidatemasternode-incentives" title="Permanent link">&para;</a></h3>
+<p>Masternodes will receive a significant amount of block rewards, which likely exceeds the cost for running the infrastructure. 
+However, Masternodes need to invest in TomoChain by depositing  at least 50K Tomo, and stake them for a long term. 
+Furthermore, after depositing 50K TOMO to become a Candidate, if the account cannot become a Masternode (has less votes than Top  150 most voted  Candidates), he/she will receive no rewards. 
+Therefore, Candidates have an incentive to do as much as they can such as signaling their capability to support TomoChain to get into top 150 most voted Candidates.</p>
+<h3 id="token-voter-incentives">Token voter incentives<a class="headerlink" href="#token-voter-incentives" title="Permanent link">&para;</a></h3>
+<p>Token voters should vote for Candidates who signal a strong support for TomoChain because if the Candidate does not become a Masternode, voters will not receive any rewards. 
+However, token voters should also vote for the less voted Candidates because the most voted Candidates will receive less reward per token stake comparatively. </p>
+<h2 id="long-term-platform-economics-consideration">Long Term Platform Economics Consideration<a class="headerlink" href="#long-term-platform-economics-consideration" title="Permanent link">&para;</a></h2>
+<h3 id="pe-theory-of-token-value">P/E theory of token value<a class="headerlink" href="#pe-theory-of-token-value" title="Permanent link">&para;</a></h3>
+<p>Equity price can often be a multiple of annual earnings a company generates. In the case of a blockchain platform, earnings could be considered as the total rewards and fees that the platform produces. 
+The multiples for technology startups in the early days could exceed 200 which is where Ethereum network is approximately at the moment.  </p>
+<h3 id="quantity-theory-of-money-for-token-value">Quantity theory of money for token value<a class="headerlink" href="#quantity-theory-of-money-for-token-value" title="Permanent link">&para;</a></h3>
+<p>In this theory, the total amount of TOMO can be considered the money supply for the blockchain economy including all the d-apps and tokens on top of TomoChain. 
+Assuming a constant price, and velocity of money, demand for money will raise proportionally to the total amount of activities of the whole blockchain network, which will raise the price of TOMO if the supply of Tomo is fixed, or the inflation rate is very small. 
+TomoChain’s advantages of minimal transaction fee, and very fast confirmation time could spur a massive amount of activities for Tomo tokens, and other tokens on top of TomoChain.    </p>
+<h3 id="store-of-value-theory-of-token-value">Store of value theory of token value<a class="headerlink" href="#store-of-value-theory-of-token-value" title="Permanent link">&para;</a></h3>
+<p>Blockchain native tokens can be considered as the means of fundraising, or the store of value within their own blockchain economy if the supply of the token is fixed, or the inflation rate is very small, and predictable. 
+These conditions are applying to Ether and Bitcoin at the moment, and can be applying to TOMO token in the future as the Tomochain’s economy grows. </p>
+<h3 id="built-in-decentralized-exchange">Built-in decentralized exchange<a class="headerlink" href="#built-in-decentralized-exchange" title="Permanent link">&para;</a></h3>
+<p>TomoChain roadmap includes a built-in decentralized exchange, in which a portion of fees will be added to the pool of epoch rewards. These fees could be substantial if there are many valuable tokens on top of TomoChain. 
+This extra feature can increase the future earnings of the network, and raise TOMO price based on the P/E theory.</p>
+<h2 id="decentralized-governance">Decentralized Governance<a class="headerlink" href="#decentralized-governance" title="Permanent link">&para;</a></h2>
+<h3 id="become-a-masternode">Become a Masternode<a class="headerlink" href="#become-a-masternode" title="Permanent link">&para;</a></h3>
+<p>Becoming a Masternode is an important signal of long-term support for TomoChain platform. 
+We would welcome other entities to become a Masternode, to show their supports by helping the network, and gradually decentralize the platform governance.  </p>
+<h3 id="masternode-council">Masternode Council<a class="headerlink" href="#masternode-council" title="Permanent link">&para;</a></h3>
+<p>It is postulated that TomoChain platform would later be coordinated by non-profit body such as Masternode Council (or Foundation) amongst many other decentralized bodies which receive a steady amount of income from the network, and act solely in the interest of the network.</p>
+<h3 id="technical-decision-making">Technical decision making<a class="headerlink" href="#technical-decision-making" title="Permanent link">&para;</a></h3>
+<p>The technical decisions should be considered, debated, and decided upon by qualified experts based on the long-term interest of the network.</p>
+<h3 id="economic-decision-making">Economic decision making<a class="headerlink" href="#economic-decision-making" title="Permanent link">&para;</a></h3>
+<p>The economic decisions such as the amount of block rewards, inflation rate, the division of block rewards might be based on the consensus of majority of the Masternodes (with their voters). 
+Masternode Council could be one of the coordinating bodies for these activities using the official governance d-app.</p>
+<h2 id="appendix-a-history-of-the-project">Appendix A: History of the Project<a class="headerlink" href="#appendix-a-history-of-the-project" title="Permanent link">&para;</a></h2>
+<p>TomoChain PTE. LTD. raised funds to build TomoChain blockchain platform in early 2018. 
+The ICO whitepaper is at https://goo.gl/avtnZ1. 
+The terms of sale and other documents can be found at  https://tomochain.com/exchanges TomoChain platform will be gradually decentralized in 2-8 years after the mainnet launch, and eventually become a secure public blockchain platform for everyone.</p>
+<h2 id="appendix-b-reward-calculation-formula-and-details">Appendix B: Reward Calculation Formula and Details<a class="headerlink" href="#appendix-b-reward-calculation-formula-and-details" title="Permanent link">&para;</a></h2>
+<h3 id="general-notations">General notations<a class="headerlink" href="#general-notations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>N: the current number of masternodes, maximum of N = 1..150</li>
+<li>
+<script type="math/tex">M_1</script>, <script type="math/tex">M_2</script>, .., <script type="math/tex">M_N</script>: the set of masternodes in the current epoch</li>
+<li>
+<script type="math/tex">C_1</script>, <script type="math/tex">C_2</script>, .., <script type="math/tex">C_N</script>: the number of signatures a masternode has made</li>
+<li>
+<script type="math/tex">S_1</script>, <script type="math/tex">S_2</script>, .., <script type="math/tex">S_N</script>: the total amount of staked (including deposited and voted) TOMO for a masternode</li>
+<li>
+<script type="math/tex">D_1</script>, <script type="math/tex">D_2</script>, .., <script type="math/tex">D_N</script>: the amount of deposited TOMO by a masternode</li>
+<li>X: the total reward per epoch for all masternodes</li>
+<li>Total reward per masternode = Infrastructure reward + staking reward</li>
+<li>MN: stand for masternode</li>
+</ul>
+<p>Reward divided to Masternode <script type="math/tex">M_i</script>:             <script type="math/tex">R_i = \frac{C_i*X}{\sum_{i=1}^{N}C_i}</script>
+</p>
+<p>Reward per epoch:   </p>
+<ul>
+<li>
+<p>Masternode infrastructure reward:       0.4<script type="math/tex">R_i</script>
+</p>
+</li>
+<li>
+<p>Voter with 1k voted TOMO:               <script type="math/tex">\frac{0.5R_i*1000}{S_i}</script>
+</p>
+</li>
+<li>
+<p>Masternode staking reward:          <script type="math/tex">\frac{0.5R_i*D_i}{S_i}</script>
+</p>
+</li>
+</ul>
+<p>Reward per week (48 * 7 = 336 epochs):</p>
+<ul>
+<li>
+<p>Masternode infrastructure reward:       336 * 0.4<script type="math/tex">R_i</script>
+</p>
+</li>
+<li>
+<p>Voter with 1k voted TOMO:               336 * <script type="math/tex">\frac{0.5R_i*1000}{S_i}</script>
+</p>
+</li>
+<li>
+<p>Masternode staking reward:          336 * <script type="math/tex">\frac{0.5R_i*D_i}{S_i}</script>
+</p>
+</li>
+</ul>
+<p>Reward per year (48 * 365 = 17520 epochs):</p>
+<ul>
+<li>
+<p>Masternode infrastructure:              17520 * 0.4<script type="math/tex">R_i</script>
+</p>
+</li>
+<li>
+<p>Voter with 1k voted TOMO:               17520 * <script type="math/tex">\frac{0.5R_i*1000}{S_i}</script>
+</p>
+</li>
+<li>
+<p>Masternode staking reward:          17520 * <script type="math/tex">\frac{0.5R_i*D_i}{S_i}</script>
+</p>
+</li>
+<li>
+<p>Total reward for a masternode:      17520 * 0.4<script type="math/tex">R_i</script> + 17520 * <script type="math/tex">\frac{0.5R_i*D_i}{S_i}</script>
+</p>
+</li>
+</ul>
+<h3 id="applying-the-reward-calculation-formula-to-specific-scenarios">Applying the reward calculation formula to specific scenarios<a class="headerlink" href="#applying-the-reward-calculation-formula-to-specific-scenarios" title="Permanent link">&para;</a></h3>
+<p>Note that, for simplification of illustration: </p>
+<ul>
+<li>
+<p>The total amount of staked TOMO for all masternodes is equal </p>
+</li>
+<li>
+<p>The signatures for all masternodes in the scenarios are equal </p>
+</li>
+</ul>
+<p>With these assumptions, all masternodes receive the same divided reward (R) and the same infrastructure reward. 
+Furthermore, the reward for Voters with 1k voted TOMO is equal regardless of which the amount is voted for.</p>
+<h3 id="scenario-1-50-masternodes-25-million-token-voting-a-total-of-5-million-token-locked">Scenario 1: 50 Masternodes, 2.5 million token voting, a total of 5 million token locked.<a class="headerlink" href="#scenario-1-50-masternodes-25-million-token-voting-a-total-of-5-million-token-locked" title="Permanent link">&para;</a></h3>
+<p>N = 50, X = 250, <script type="math/tex">S_1 = S_2 = .. = S_{50} = 5 000 000 / 50 = 100k</script> TOMO</p>
+<p>
+<script type="math/tex">C_1 = C_2 = .. = C_{50}</script>
+</p>
+<p>Therefore, <script type="math/tex">R_1 = R_2 = .. = R_{50} = R = X/50 = 5</script> TOMO</p>
+<h4 id="reward-per-epoch">Reward per epoch:<a class="headerlink" href="#reward-per-epoch" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 0.4 * 5 = 2 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = (0.5 * 5 * 1000) / 100k = 0.025 TOMO</p>
+</li>
+<li>
+<p>MN staking reward with 50k TOMO deposited: 50 * 0.025 = 1.25 TOMO</p>
+</li>
+</ul>
+<h4 id="reward-per-week">Reward per week:<a class="headerlink" href="#reward-per-week" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 336 * 2 = 672 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = 336 * 0.025 = 8.4 TOMO</p>
+</li>
+<li>
+<p>MN staking reward with D = 50k TOMO deposited: 336 * 1.25 = 420 TOMO</p>
+</li>
+</ul>
+<h4 id="reward-per-year">Reward per year:<a class="headerlink" href="#reward-per-year" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 17520 * 2 = 35 040 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = 17520 * 0.025 = 438 TOMO</p>
+</li>
+<li>
+<p>MN staking reward with 50k deposited: 17520 * 1.25 = 21900 TOMO</p>
+</li>
+<li>
+<p>Total reward per MN with D = 50k deposited: 35 040 + 21 900 = 56940 TOMO</p>
+</li>
+</ul>
+<h3 id="scenario-2-100-masternodes-3-million-token-voting-a-total-of-8-million-token-locked">Scenario 2: 100 Masternodes, 3 million token voting, a total of 8 million token locked.<a class="headerlink" href="#scenario-2-100-masternodes-3-million-token-voting-a-total-of-8-million-token-locked" title="Permanent link">&para;</a></h3>
+<p>N = 100, X = 250, <script type="math/tex">S_1 = S_2 = .. = S_{100} = 8 000 000 / 100 = 80k</script> TOMO</p>
+<p>
+<script type="math/tex">C_1 = C_2 = .. = C_{100}</script>
+</p>
+<p>Therefore, <script type="math/tex">R_1 = R_2 = .. = R_{100} = R = X/100 = 2.5</script> TOMO</p>
+<h4 id="reward-per-epoch_1">Reward per epoch:<a class="headerlink" href="#reward-per-epoch_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 0.4 * 2.5 = 1 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = (0.5 * 2.5 * 1000) / 80k = 0.015625</p>
+</li>
+<li>
+<p>MN staking reward with D = 50k deposited: 50 * 0.015625 = 0.78125 TOMO</p>
+</li>
+</ul>
+<h4 id="reward-per-week_1">Reward per week:<a class="headerlink" href="#reward-per-week_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 336 * 1 = 336 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = 336 * 0.015625 = 5.25 TOMO</p>
+</li>
+<li>
+<p>MN staking reward with D = 50k deposited: 336 * 0.78125 = 262.5 TOMO</p>
+</li>
+</ul>
+<h4 id="reward-per-year_1">Reward per year:<a class="headerlink" href="#reward-per-year_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 17520 * 1 = 17 520 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = 17520 * 0.015625 = 273.75 TOMO</p>
+</li>
+<li>
+<p>MN staking reward with D = 50k deposited: 175 20 * 0.78125 = 13687.5 TOMO</p>
+</li>
+<li>
+<p>Total reward per MN with D = 50k deposited: 17 520 + 13 687.5 = 31208 TOMO</p>
+</li>
+</ul>
+<h3 id="scenario-3-150-masternodes-125-million-token-voting-a-total-of-20-million-token-locked">Scenario 3: 150 Masternodes, 12.5 million token voting, a total of 20 million token locked.<a class="headerlink" href="#scenario-3-150-masternodes-125-million-token-voting-a-total-of-20-million-token-locked" title="Permanent link">&para;</a></h3>
+<p>N = 150, X = 250, <script type="math/tex">S_1 = S_2 = .. = S_{150} = 20 000 000 / 150 = 133 333</script> TOMO</p>
+<p>
+<script type="math/tex">C_1 = C_2 = .. = C_{150}</script>
+</p>
+<p>Therefore, <script type="math/tex">R_1 = R_2 = .. = R_{150} = R = X/150 = 1.6667</script> TOMO</p>
+<h4 id="reward-per-epoch_2">Reward per epoch:<a class="headerlink" href="#reward-per-epoch_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 0.4 * 1.6667 = 0.6667 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = (0.5 * 1.6667 * 1000) / 133 333 = 0.00625 TOMO</p>
+</li>
+<li>
+<p>MN staking reward with 50k deposited: 50 * 0.00625 = 0.3125 TOMO</p>
+</li>
+</ul>
+<h4 id="reward-per-week_2">Reward per week:<a class="headerlink" href="#reward-per-week_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 336 * 0.6667 = 224 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = 336 * 0.00625 = 2.1 TOMO</p>
+</li>
+<li>
+<p>MN staking reward with D = 50k deposited: 336 * 0.3125 = 105 TOMO</p>
+</li>
+</ul>
+<h4 id="reward-per-year_2">Reward per year:<a class="headerlink" href="#reward-per-year_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>MN infrastructure reward = 17520 * 0.6667 = 11 680 TOMO</p>
+</li>
+<li>
+<p>For Voter with 1k voted = 17520 * 0.00625 = 109.5 TOMO</p>
+</li>
+<li>
+<p>MN staking reward with D = 50k deposited: 175 20 * 0.3125 = 5475 TOMO</p>
+</li>
+<li>
+<p>Total reward per MN with D = 50k deposited: 11 680 + 5475 = 17155 TOMO</p>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../sharding-paper/" title="Sharding design paper" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Sharding design paper
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../specs/trc21_standard/" title="TRC21 Specification" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                TRC21 Specification
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tomochain" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tomochainANN" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/Tomochain/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.facebook.com/tomochainofficial/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://t.me/tomochain" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/tomochain" class="md-footer-social__link fa fa-medium"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-124597188-1","docs.tomochain.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

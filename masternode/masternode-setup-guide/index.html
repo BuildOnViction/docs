@@ -1,0 +1,2319 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="TomoChain aims to be a public EVM-compatible blockchain with the following advantages as low transaction fee, fast confirmation time, double validation.">
+      
+      
+        <link rel="canonical" href="https://docs.tomochain.com/masternode/masternode-setup-guide/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Detailed guide - TomoChain Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#tomochain-masternode-setup-guide" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TomoChain Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Detailed guide
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../images/logo.png" width="48" height="48">
+      
+    </a>
+    TomoChain Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Get started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Get started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/productoverview/" title="Products overview" class="md-nav__link">
+      Products overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/how_to_read/" title="How to read" class="md-nav__link">
+      How to read
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/wallet/" title="Connect your wallet" class="md-nav__link">
+      Connect your wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/voting/" title="Voting" class="md-nav__link">
+      Voting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Masternode/DEX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Masternode/DEX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/" title="Requirements" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Detailed guide
+      </label>
+    
+    <a href="./" title="Detailed guide" class="md-nav__link md-nav__link--active">
+      Detailed guide
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technical-requirements-recommendations" title="Technical Requirements / Recommendations" class="md-nav__link">
+    Technical Requirements / Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knowledge-requirements" title="Knowledge Requirements" class="md-nav__link">
+    Knowledge Requirements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-advanced-users-go-here-command-line-only-version" title="For Advanced users, go here (Command-line-only-version)" class="md-nav__link">
+    For Advanced users, go here (Command-line-only-version)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginnerintermediate-users-keep-reading" title="Beginner/Intermediate users, keep reading..." class="md-nav__link">
+    Beginner/Intermediate users, keep reading...
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-masternode" title="What is a masternode?" class="md-nav__link">
+    What is a masternode?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-benefits-of-a-masternode" title="What are the benefits of a masternode?" class="md-nav__link">
+    What are the benefits of a masternode?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-vps" title="What is a VPS?" class="md-nav__link">
+    What is a VPS?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-a-vps-highly-recommended-for-masternodes" title="Why is a VPS highly recommended for masternodes?" class="md-nav__link">
+    Why is a VPS highly recommended for masternodes?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-choose-your-hosting-provider" title="1. Choose your hosting provider" class="md-nav__link">
+    1. Choose your hosting provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-start-your-vps-server" title="2. Start your VPS server" class="md-nav__link">
+    2. Start your VPS server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-change-passwords-and-accounts-logged-in-as-root-user" title="3. Change passwords and accounts (logged in as root user)" class="md-nav__link">
+    3. Change passwords and accounts (logged in as root user)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-user" title="Create a new user" class="md-nav__link">
+    Create a new user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-the-user-administrative-privileges" title="Grant the user administrative privileges" class="md-nav__link">
+    Grant the user administrative privileges
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-your-vps-remain-logged-in-as-root-user" title="4. Configure your VPS (remain logged in as root user)" class="md-nav__link">
+    4. Configure your VPS (remain logged in as root user)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-operating-system" title="Upgrade operating system" class="md-nav__link">
+    Upgrade operating system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python" title="Install Python" class="md-nav__link">
+    Install Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-security" title="System Security" class="md-nav__link">
+    System Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setup-docker-logged-in-as-new-user" title="5. Setup Docker (logged in as new user)" class="md-nav__link">
+    5. Setup Docker (logged in as new user)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-repositories" title="Install Docker Repositories" class="md-nav__link">
+    Install Docker Repositories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-ce" title="Install Docker CE" class="md-nav__link">
+    Install Docker CE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assure-docker-is-working" title="Assure Docker is working" class="md-nav__link">
+    Assure Docker is working
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-installing-tmn-utility" title="6. Installing TMN utility" class="md-nav__link">
+    6. Installing TMN utility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-create-wallet-addresses" title="7. Create Wallet Addresses" class="md-nav__link">
+    7. Create Wallet Addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-run-tmn" title="8. Run TMN" class="md-nav__link">
+    8. Run TMN
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-tmn-start" title="Initial TMN start" class="md-nav__link">
+    Initial TMN start
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-check-sync-status" title="9. Check sync status" class="md-nav__link">
+    9. Check sync status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-jumpstart-the-chaindata-optional" title="10. Jumpstart the chaindata (Optional)" class="md-nav__link">
+    10. Jumpstart the chaindata (Optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-apply-for-masternode-candidacy" title="11. Apply for Masternode Candidacy" class="md-nav__link">
+    11. Apply for Masternode Candidacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-name-your-masternode" title="12. Name your Masternode" class="md-nav__link">
+    12. Name your Masternode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-verify-initial-rewards" title="13. Verify initial rewards" class="md-nav__link">
+    13. Verify initial rewards
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Running a node with
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Running a node with
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tomonative/" title="Binary" class="md-nav__link">
+      Binary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../create-tomochain-masternode/" title="Create-tomochain-masternode" class="md-nav__link">
+      Create-tomochain-masternode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tmn/" title="Tmn" class="md-nav__link">
+      Tmn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../applying/" title="Applying for Masternode Candidacy" class="md-nav__link">
+      Applying for Masternode Candidacy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../snapshot/" title="Chaindata Snapshots" class="md-nav__link">
+      Chaindata Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/run-node/" title="Run a full node in testnet" class="md-nav__link">
+      Run a full node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/apply-node/" title="Apply your node in testnet" class="md-nav__link">
+      Apply your node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tomox-fullnode/" title="Running a TomoX Mongodb fullnode" class="md-nav__link">
+      Running a TomoX Mongodb fullnode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tomox-sdk/" title="Running a TomoX DEX" class="md-nav__link">
+      Running a TomoX DEX
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developers guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developers guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/integrations/" title="TOMO Exchange/Wallet" class="md-nav__link">
+      TOMO Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/staking-integrations/" title="TomoChain Staking Governance" class="md-nav__link">
+      TomoChain Staking Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/trc20-integrations/" title="TRC20 Exchange/Wallet" class="md-nav__link">
+      TRC20 Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/trc21-integrations/" title="TRC21 Exchange/Wallet" class="md-nav__link">
+      TRC21 Exchange/Wallet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Working with TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Working with TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/tutoprivatenet/" title="TomoChain private testnet setup" class="md-nav__link">
+      TomoChain private testnet setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/clicommands/" title="Useful manual CLI commands" class="md-nav__link">
+      Useful manual CLI commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      DApps on TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        DApps on TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/dappdeploytuto/" title="Deploy DApp on TomoChain" class="md-nav__link">
+      Deploy DApp on TomoChain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developers/icosmartcontract/" title="Deploy an ICO smart contract" class="md-nav__link">
+      Deploy an ICO smart contract
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://apidocs.tomochain.com" title="API Documentation" class="md-nav__link">
+      API Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Whitepapers/Specs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Whitepapers/Specs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/technical-whitepaper/" title="Technical whitepaper" class="md-nav__link">
+      Technical whitepaper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/sharding-paper/" title="Sharding design paper" class="md-nav__link">
+      Sharding design paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/economics-paper/" title="Economics paper" class="md-nav__link">
+      Economics paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Standard & Specification
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Standard & Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/specs/trc21_standard/" title="TRC21 Specification" class="md-nav__link">
+      TRC21 Specification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/privacy/" title="TomoP whitepaper" class="md-nav__link">
+      TomoP whitepaper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Legal
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/terms-of-use/" title="Terms of Use" class="md-nav__link">
+      Terms of Use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Products
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Products
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomomaster/features/" title="TomoMaster" class="md-nav__link">
+      TomoMaster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoscan/features/" title="TomoScan" class="md-nav__link">
+      TomoScan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      TomoWallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        TomoWallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/features/" title="Features" class="md-nav__link">
+      Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/voting/" title="Voting with TomoWallet" class="md-nav__link">
+      Voting with TomoWallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/terms/" title="Terms & Privacy" class="md-nav__link">
+      Terms & Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      TomoBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        TomoBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomobridge/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      TomoIssuer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        TomoIssuer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/termofcondition/" title="Term Of Condition" class="md-nav__link">
+      Term Of Condition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/policyprivacy/" title="Policy Privacy" class="md-nav__link">
+      Policy Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technical-requirements-recommendations" title="Technical Requirements / Recommendations" class="md-nav__link">
+    Technical Requirements / Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knowledge-requirements" title="Knowledge Requirements" class="md-nav__link">
+    Knowledge Requirements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-advanced-users-go-here-command-line-only-version" title="For Advanced users, go here (Command-line-only-version)" class="md-nav__link">
+    For Advanced users, go here (Command-line-only-version)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginnerintermediate-users-keep-reading" title="Beginner/Intermediate users, keep reading..." class="md-nav__link">
+    Beginner/Intermediate users, keep reading...
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-masternode" title="What is a masternode?" class="md-nav__link">
+    What is a masternode?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-benefits-of-a-masternode" title="What are the benefits of a masternode?" class="md-nav__link">
+    What are the benefits of a masternode?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-vps" title="What is a VPS?" class="md-nav__link">
+    What is a VPS?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-a-vps-highly-recommended-for-masternodes" title="Why is a VPS highly recommended for masternodes?" class="md-nav__link">
+    Why is a VPS highly recommended for masternodes?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-choose-your-hosting-provider" title="1. Choose your hosting provider" class="md-nav__link">
+    1. Choose your hosting provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-start-your-vps-server" title="2. Start your VPS server" class="md-nav__link">
+    2. Start your VPS server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-change-passwords-and-accounts-logged-in-as-root-user" title="3. Change passwords and accounts (logged in as root user)" class="md-nav__link">
+    3. Change passwords and accounts (logged in as root user)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-user" title="Create a new user" class="md-nav__link">
+    Create a new user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-the-user-administrative-privileges" title="Grant the user administrative privileges" class="md-nav__link">
+    Grant the user administrative privileges
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-your-vps-remain-logged-in-as-root-user" title="4. Configure your VPS (remain logged in as root user)" class="md-nav__link">
+    4. Configure your VPS (remain logged in as root user)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-operating-system" title="Upgrade operating system" class="md-nav__link">
+    Upgrade operating system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python" title="Install Python" class="md-nav__link">
+    Install Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-security" title="System Security" class="md-nav__link">
+    System Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setup-docker-logged-in-as-new-user" title="5. Setup Docker (logged in as new user)" class="md-nav__link">
+    5. Setup Docker (logged in as new user)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-repositories" title="Install Docker Repositories" class="md-nav__link">
+    Install Docker Repositories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-ce" title="Install Docker CE" class="md-nav__link">
+    Install Docker CE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assure-docker-is-working" title="Assure Docker is working" class="md-nav__link">
+    Assure Docker is working
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-installing-tmn-utility" title="6. Installing TMN utility" class="md-nav__link">
+    6. Installing TMN utility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-create-wallet-addresses" title="7. Create Wallet Addresses" class="md-nav__link">
+    7. Create Wallet Addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-run-tmn" title="8. Run TMN" class="md-nav__link">
+    8. Run TMN
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-tmn-start" title="Initial TMN start" class="md-nav__link">
+    Initial TMN start
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-check-sync-status" title="9. Check sync status" class="md-nav__link">
+    9. Check sync status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-jumpstart-the-chaindata-optional" title="10. Jumpstart the chaindata (Optional)" class="md-nav__link">
+    10. Jumpstart the chaindata (Optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-apply-for-masternode-candidacy" title="11. Apply for Masternode Candidacy" class="md-nav__link">
+    11. Apply for Masternode Candidacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-name-your-masternode" title="12. Name your Masternode" class="md-nav__link">
+    12. Name your Masternode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-verify-initial-rewards" title="13. Verify initial rewards" class="md-nav__link">
+    13. Verify initial rewards
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tomochain/docs/edit/master/docs/masternode/masternode-setup-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="tomochain-masternode-setup-guide">Tomochain Masternode Setup Guide<a class="headerlink" href="#tomochain-masternode-setup-guide" title="Permanent link">&para;</a></h1>
+<p>This is a procedural step-by-step guide to setting up your first Tomochain Masternode using the <code>tmn</code> tool.
+It is meant for first-time and intermediate-level masternode operators.</p>
+<p>Security Disclaimer:
+Despite there being mention of some security elements in this guide, there is <strong>no implied guarantee of security</strong>.
+You alone must fully secure your server.</p>
+<h2 id="technical-requirements-recommendations">Technical Requirements / Recommendations<a class="headerlink" href="#technical-requirements-recommendations" title="Permanent link">&para;</a></h2>
+<p>The following are required items and server specifications. 
+<a href="https://docs.tomochain.com/masternode/requirements/">Click here for more details</a></p>
+<ul>
+<li>50,000 TOMO deposit</li>
+<li>Server (cloud-VPS or your-own)<ul>
+<li>16 vCPU cores (Prefer higher clock speed. Usually found on "CPU optimized" cloud providers' servers)</li>
+<li>32GB RAM</li>
+</ul>
+</li>
+<li>Storage (Disk Space)<ul>
+<li>100 GB of storage for the base chaindata</li>
+<li>~1 GB of weekly data storage space increase (reccomend SSD-based Block Storage; low-latency, not NAS speeds)</li>
+<li>Note: These numbers may decrease with ongoing optimisations to the code base.</li>
+</ul>
+</li>
+<li>2 TomoChain wallets (addresses) - <a href="#7-create-wallet-addresses">see details below</a></li>
+</ul>
+<h2 id="knowledge-requirements">Knowledge Requirements<a class="headerlink" href="#knowledge-requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>VPS Setup</strong> - You are able to setup your own cloud-hosted virtual private server (VPS)</li>
+<li><strong>Linux familiarity</strong> - You have a basic knowledge of how to ssh-into (ex: putty or terminal) and operate the linux command-line.</li>
+</ul>
+<p><strong>Do not proceed if you are not confident</strong> with the Linux command-line. 
+   Why?
+   The upkeep and troubleshooting will become more complex than this guide.
+   Some commands fail and you must know what you are doing.</p>
+<h3 id="for-advanced-users-go-here-command-line-only-version">For Advanced users, go here (Command-line-only-version)<a class="headerlink" href="#for-advanced-users-go-here-command-line-only-version" title="Permanent link">&para;</a></h3>
+<p>For advanced users or repeat-offenders, <a href="#commands-only-advanced-users">see this super-short command-line-only version</a> of the lengthy guide below.
+If you have done this before or know what you are doing, you might more-easily follow these linux commands instead of having to read through the below lengthy prose.</p>
+<blockquote>
+<p>Note: You will <em>MISS</em> many tips and tricks found in the detailed instructions.</p>
+</blockquote>
+<h3 id="beginnerintermediate-users-keep-reading">Beginner/Intermediate users, keep reading...<a class="headerlink" href="#beginnerintermediate-users-keep-reading" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-a-masternode">What is a masternode?<a class="headerlink" href="#what-is-a-masternode" title="Permanent link">&para;</a></h3>
+<p>A masternode is a computer on a decentralized blockchain network that is running 24 hours a day that keeps the system operating.
+It powers the blockchain network by processing transactions and signing blocks.</p>
+<h3 id="what-are-the-benefits-of-a-masternode">What are the benefits of a masternode?<a class="headerlink" href="#what-are-the-benefits-of-a-masternode" title="Permanent link">&para;</a></h3>
+<p>Masternodes help support the network by creating and signing blocks, providing faster transaction times, and decentralized operations.
+They utilize PoS (Proof of Stake) vs PoW (Proof of Work) consensus-building.
+Masternode operators are paid a reward (coins) as an incentive for their involved investment of coin-deposit, server setup, and continued operation.</p>
+<h3 id="what-is-a-vps">What is a VPS?<a class="headerlink" href="#what-is-a-vps" title="Permanent link">&para;</a></h3>
+<p>VPS stands for Virtual Private Server.
+They are paid servers hosted on a cloud-hosting-provider.
+Each VPS runs an independent installation of an operating system (OS), Linux or Windows, and typically provides root access to the OS for advanced management and control.</p>
+<h3 id="why-is-a-vps-highly-recommended-for-masternodes">Why is a VPS highly recommended for masternodes?<a class="headerlink" href="#why-is-a-vps-highly-recommended-for-masternodes" title="Permanent link">&para;</a></h3>
+<p>A VPS is recommended (and often required) for masternode setups, as you will need a dedicated static IP and 99.9% uptime to provide a stable and efficient node for the network.
+Unlike your home or office PC, a masternode VPS serves one purpose, to securely and efficiently run a masternode.
+A VPS is online 24/7 and provides dedicated resources for the project’s decentralized network.</p>
+<hr />
+<p><br/></p>
+<h2 id="1-choose-your-hosting-provider">1. Choose your hosting provider<a class="headerlink" href="#1-choose-your-hosting-provider" title="Permanent link">&para;</a></h2>
+<p>Choose which VPS hosting provider you want to utilize.</p>
+<p>The following providers are <strong>sample</strong> VPS providers.
+You could choose elsewhere, or even your own 24/7 server.</p>
+<ul>
+<li><a href="https://aws.amazon.com/">AWS (Amazon)</a></li>
+<li><a href="https://www.digitalocean.com/">DigitalOcean</a></li>
+<li><a href="https://cloud.google.com/compute/">GCE (Google)</a></li>
+<li><a href="https://www.linode.com/">Linode</a></li>
+<li><a href="https://www.ovh.com">OVH</a></li>
+<li><a href="https://www.vultr.com/">Vultr</a></li>
+</ul>
+<blockquote>
+<p>Note on provider choice: It is encouraged for masternode operators to utilize various hosting providers so as to encourage a more decentralized network.
+It is in your best interest because if any one popular provider goes down, others will get more rewards.
+<br/></p>
+</blockquote>
+<h2 id="2-start-your-vps-server">2. Start your VPS server<a class="headerlink" href="#2-start-your-vps-server" title="Permanent link">&para;</a></h2>
+<p><strong>Start/Boot your VPS server instance.</strong><br />
+Choose <strong>Ubuntu 18.04</strong>.
+This is an LTS version (<a href="https://wiki.ubuntu.com/LTS">Long Term Support</a>).
+LTS versions are more stable and have seen less errors when installing Docker and Python.
+You must use Ubuntu 18.04 to seek support from the wider community or Tomochain.
+If you need help with this, <a href="https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#6122">see this example</a>.</p>
+<blockquote>
+<p>Data Storage: It is recommended to assure that your provider has Block Storage or expandable disk space on SSD drives (more performant).
+Block Storage is pay-as-you-go disk space that you can expand in the future.
+You may not need it now, but you will in the future.
+Some locations within a hosting provider do not have this, while others will.</p>
+<p>SSH-Key login: Consider utilizing a <strong>SSH-Key login</strong> over passwords.
+Some providers allow you to set it up upon server creation.
+<br/></p>
+</blockquote>
+<h2 id="3-change-passwords-and-accounts-logged-in-as-root-user">3. Change passwords and accounts (logged in as root user)<a class="headerlink" href="#3-change-passwords-and-accounts-logged-in-as-root-user" title="Permanent link">&para;</a></h2>
+<p>Login to your newly created server with SSH / Putty.<br />
+If you need help with this, <a href="https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#20a7">see this example</a>.</p>
+<div class="codehilite"><pre><span></span><code>ssh root@178.62.127.177
+</code></pre></div>
+
+
+<blockquote>
+<p>Note on Users: Login as the <code>root</code> user at first.
+Later, we will create and switch to your own username.</p>
+</blockquote>
+<p>If you did not utilize SSH-key login (highly recommended), you will want to change the root password (only the first time) with the following command.</p>
+<div class="codehilite"><pre><span></span><code>passwd
+</code></pre></div>
+
+
+<blockquote>
+<p>Save your root password as you can get locked out of your own server if you forget it.
+It is strongly recommended to use a 16+ char password with a mix of letters, numbers, special characters.</p>
+</blockquote>
+<p>You are now logged in as root.
+The root user is the administrative user in a Linux environment that has very broad privileges.
+Because of the heightened privileges of the root account, you are <em>discouraged</em> from using it on a regular basis.
+This is because part of the power inherent with the root account is the ability to make very destructive changes, even by accident.</p>
+<p>The next step is to <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04">set up an alternative user account</a> with a reduced scope of influence for day-to-day work.</p>
+<h3 id="create-a-new-user">Create a new user<a class="headerlink" href="#create-a-new-user" title="Permanent link">&para;</a></h3>
+<p>Use the following command to add a new user account that we will use to log in to from now on.
+Our user is called michael, you can replace it with any username that you like.
+Use the same username as your local mac/PC username and you will have an easier time logging in!</p>
+<div class="codehilite"><pre><span></span><code>adduser michael
+</code></pre></div>
+
+
+<p>You will be asked a few questions, starting with the account password.
+Enter a strong password.
+Optionally, fill in any of the additional information if you want or ignore it.
+This is not required and you can just hit ENTER in any field you wish to skip.</p>
+<h3 id="grant-the-user-administrative-privileges">Grant the user administrative privileges<a class="headerlink" href="#grant-the-user-administrative-privileges" title="Permanent link">&para;</a></h3>
+<p>Now we have a new user account with regular account privileges.
+However, we will need to do administrative tasks from this normal account.</p>
+<p>To add these privileges to our new user, we need to add the new user to the <strong>sudo</strong> group.
+This will allow our normal user to run commands with <em>administrative privileges</em> by putting the word <code>sudo</code> before each command.</p>
+<p>As root, run this command to add your new user to the sudo group (substitute michael with your new user):</p>
+<div class="codehilite"><pre><span></span><code>usermod -aG sudo michael
+</code></pre></div>
+
+
+<blockquote>
+<p>-a stands for Append and -G is Group; sudo is the groupname you are adding to your user</p>
+</blockquote>
+<p>You can check to make sure that the usermod command worked:</p>
+<div class="codehilite"><pre><span></span><code>cat /etc/group <span class="p">|</span> grep sudo
+groups michael
+</code></pre></div>
+
+
+<p>Assure that you get a response such as <code>sudo:x:27:michael</code> from first command and <code>michael : michael sudo</code> from the second command. </p>
+<p>When you eventually (not yet) log in as your new user, you can type <code>sudo</code> before commands to perform actions with superuser privileges.
+Remain logged in as the root user for now, as we have more initial setup to do. 
+After this, you will almost always login as your new user.
+<br/>
+<br/></p>
+<h2 id="4-configure-your-vps-remain-logged-in-as-root-user">4. Configure your VPS (remain logged in as root user)<a class="headerlink" href="#4-configure-your-vps-remain-logged-in-as-root-user" title="Permanent link">&para;</a></h2>
+<p>We will now prepare the <a href="https://docs.tomochain.com/get-started/run-node/">prerequisites for tmn</a>.
+You need Python 3.6+ and Docker installed.</p>
+<h3 id="upgrade-operating-system">Upgrade operating system<a class="headerlink" href="#upgrade-operating-system" title="Permanent link">&para;</a></h3>
+<p>We should upgrade the Ubuntu operating system and all installed package libraries first.
+You may consider doing this upgrade occasionally  in the future.
+Type these two commands on the console with an ENTER after each:</p>
+<div class="codehilite"><pre><span></span><code>apt update
+apt upgrade
+</code></pre></div>
+
+
+<blockquote>
+<p>Watch out for WARNINGs or ERRORs. 
+A lot of text could fly by, and you should watch all of it in case something installs incorrectly.
+Google anything out of the ordinary and try to understand or fix it.</p>
+</blockquote>
+<p>Reboot your VPS instace in case any of the upgraded components will only fully engage until rebooted fresh.</p>
+<div class="codehilite"><pre><span></span><code>reboot
+</code></pre></div>
+
+
+<h3 id="install-python">Install Python<a class="headerlink" href="#install-python" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>apt install python3
+apt install python3-pip
+</code></pre></div>
+
+
+<p>Check if you have installed the right Python version (must be newer than version 3.6).</p>
+<div class="codehilite"><pre><span></span><code>python3 --version
+</code></pre></div>
+
+
+<h3 id="system-security">System Security<a class="headerlink" href="#system-security" title="Permanent link">&para;</a></h3>
+<p>This topic is optional, but highly recommended.
+If the default SSH port is not changed, you could see nefarious connection-attempts in a short time-period.</p>
+<p><a href="https://github.com/tomochain/docs/wiki/Security-of-Masternodes">Look at our wiki security doc for more details</a></p>
+<p>At a minimum, you will want to consider:</p>
+<ul>
+<li>SSHD on non-standard port</li>
+<li>UFW (Uncomplicated Fire Wall) (open port 30303 tcp &amp; udp, and above non-standard SSH)</li>
+</ul>
+<p>Other security options you could consider:</p>
+<ul>
+<li>SSH key-based login (vs password)</li>
+<li>Fail2ban</li>
+<li>Blocking remote password auth</li>
+<li>Blocking remote root SSH-access
+<br/>
+<br/></li>
+</ul>
+<h2 id="5-setup-docker-logged-in-as-new-user">5. Setup Docker (logged in as new user)<a class="headerlink" href="#5-setup-docker-logged-in-as-new-user" title="Permanent link">&para;</a></h2>
+<p>From now on, you will almost always want to login as your <strong>new user</strong>.
+If you are logged in as root still, logout and log back in as the new user.
+You may want to consider denying remote root ssh logins.</p>
+<div class="codehilite"><pre><span></span><code>ssh michael@178.62.127.177
+</code></pre></div>
+
+
+<h3 id="install-docker-repositories">Install Docker Repositories<a class="headerlink" href="#install-docker-repositories" title="Permanent link">&para;</a></h3>
+<p>Update the apt package index.
+Then install various packages to allow apt to use a repository over HTTPS.
+The third line adds Docker’s official GPG key.</p>
+<div class="codehilite"><pre><span></span><code>sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+</code></pre></div>
+
+
+<blockquote>
+<p>"OK" is normal output of that last command; -fsS shows less progress, but still error messages and -L allows redirect</p>
+<p>NOTE: Be careful with certain ssh consoles.
+They may not paste the ‘|’ symbol correctly.</p>
+</blockquote>
+<p>Next, verify that you have the correct key, by searching for the last 8 characters of the fingerprint.
+Compare the results to what is below.</p>
+<div class="codehilite"><pre><span></span><code>apt-key fingerprint 0EBFCD88
+</code></pre></div>
+
+
+<p>Example Results (format may be slightly different, but the string of char-numbers the same):</p>
+<div class="codehilite"><pre><span></span><code>pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) &lt;docker@docker.com&gt;
+sub   rsa4096 2017-02-22 [S]
+</code></pre></div>
+
+
+<p>Use the following command to set up the "stable" repository.
+You could get errors here if you have a release of Ubuntu that is too recent (non LSB).</p>
+<div class="codehilite"><pre><span></span><code>sudo add-apt-repository <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&quot;</span>
+</code></pre></div>
+
+
+<h3 id="install-docker-ce">Install Docker CE<a class="headerlink" href="#install-docker-ce" title="Permanent link">&para;</a></h3>
+<p>Update the apt package index.
+Then install the latest version of Docker CE:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt update
+sudo apt install docker-ce
+</code></pre></div>
+
+
+<blockquote>
+<p>Watch out for WARNINGs or ERRORs. 
+Google anything out of the ordinary and try to understand or fix it.</p>
+</blockquote>
+<p>Once installed, add your current user to the Docker group and verify that the user has been added.</p>
+<div class="codehilite"><pre><span></span><code>sudo usermod -aG docker michael
+groups michael
+cat /etc/group <span class="p">|</span> grep docker
+</code></pre></div>
+
+
+<h3 id="assure-docker-is-working">Assure Docker is working<a class="headerlink" href="#assure-docker-is-working" title="Permanent link">&para;</a></h3>
+<p>Verify that Docker CE is installed correctly by running the hello-world image.
+This command downloads a test image and runs it in a container.
+When the container runs, it prints an informational message and exits.
+The second command shows more detailed docker information.</p>
+<div class="codehilite"><pre><span></span><code>docker run hello-world
+sudo systemctl status docker  <span class="c1"># hit &#39;q&#39; to exit</span>
+</code></pre></div>
+
+
+<p><strong>Docker CE is installed and running.</strong></p>
+<p>Congratulations! You have installed Python and Docker.
+You have the prerequisites ready to run TomoChain’s tmn.</p>
+<hr />
+<p>TROUBLESHOOTING</p>
+<p>error: could not access the docker daemon</p>
+<p>If you have installed Docker, and get this error, you probably forgot to add your user to the docker group.
+Please run this, close your session and open it again.</p>
+<p><code>usermod -aG docker $(whoami)</code></p>
+<hr />
+<p><br/></p>
+<h2 id="6-installing-tmn-utility">6. Installing TMN utility<a class="headerlink" href="#6-installing-tmn-utility" title="Permanent link">&para;</a></h2>
+<p><code>Tmn</code> is a simple interface created by TomoChain developers to <strong>help you quickstart your masternode</strong>.
+It is installed as a python package and it utilizes two docker containers once operating.
+We will follow through the steps found here: <a href="https://docs.tomochain.com/get-started/run-node/">guide to install tmn</a></p>
+<blockquote>
+<p>“We made a simple command line interface called tmn to easily and quickly start a TomoChain masternode.
+It takes care of starting the necessary docker containers with the proper settings for you.
+It will really suit you if you don’t already have a big infrastructure running.
+Spin up a machine in your favorite cloud and get your masternode running in a few minutes!”</p>
+</blockquote>
+<p>Install and update the tomochain-created <code>tmn</code> utility from pip:</p>
+<div class="codehilite"><pre><span></span><code>pip3 install --user tmn
+pip3 install -U tmn
+</code></pre></div>
+
+
+<blockquote>
+<p>Watch out for WARNINGs or ERRORs and troubleshoot (see end of this section).</p>
+</blockquote>
+<p>To check that <code>tmn</code> has been correctly installed, use the following command to show some tmn info:</p>
+<div class="codehilite"><pre><span></span><code>pip3 show tmn
+
+Name: tmn
+Version: <span class="m">0</span>.5
+Summary: Quickstart your masternode
+Home-page: https://tomochain.com
+Author: Etienne Napoleone
+Author-email: etienne@tomochain.com
+License: GPL-3.0+
+Location: /home/michael/.local/lib/python3.6/site-packages
+Requires: python-slugify, click, clint, pastel, docker
+</code></pre></div>
+
+
+<p>The next step will be to actually <strong>START TMN</strong>, however we cannot do this until we have two wallet addresses.
+See the next section for this.</p>
+<hr />
+<p>TROUBLESHOOTING</p>
+<p>Occasionally a VPS image will not come installed with all of the software packages needed to install what we need.
+If you get any of the errors below, you are in need of particular packages to be installed.</p>
+<div class="codehilite"><pre><span></span><code>ERROR:
+ModuleNotFoundError: No module named ‘setuptools’
+SOLUTION:
+sudo apt-get install python3-setuptools
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code>ERROR:
+Failed building wheel for &lt;package&gt;
+SOLUTION:
+pip3 install wheel
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code>ERROR:
+error: command &#39;x86_64-linux-gnu-gcc&#39; failed with exit status 1
+SOLUTION:
+sudo apt install build-essential
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code>ERROR:
+fatal error: Python.h: No such file or directory
+SOLUTION:
+sudo apt install python3-dev
+</code></pre></div>
+
+
+<hr />
+<p><br/></p>
+<h2 id="7-create-wallet-addresses">7. Create Wallet Addresses<a class="headerlink" href="#7-create-wallet-addresses" title="Permanent link">&para;</a></h2>
+<p>Before being able to proceed further, you will need <strong>two</strong> seperate Tomo wallet addresses to operate a masternode.
+One helps to operate the masternode day-to-day, and the other is where the 50,000 TOMO (50k) is staked from.
+The genius of this is that the wallet where the 50k will pass through (and where rewards will eventually come into) is never stored or seen by the VPS server.
+This is a security strategy that keeps your coins safe.</p>
+<blockquote>
+<p>WALLET1 - Operating Wallet:
+Used for operating the masternode, including signing blocks.
+It effectively acts as a unique identifier of your masternode.
+No coins need to be inserted in this wallet; It's even advised to be empty, so in case of breach, no funds are exposed.</p>
+<p>WALLET2 - Deposit Wallet:
+Your 50k of staked coins need to be placed here; later, the 50k will go into a smart contract; eventually, masternode rewards will show here.</p>
+</blockquote>
+<p>You will need both the <strong>Public Key</strong> and <strong>Private Key</strong> for both addresses.
+It is advise that you store all of this information somewhere safe, yet accessible.
+You may need to utilize this information during continued operations of your masternode.
+Password manager apps like KeePass/KeePassXC, LastPass, or 1Password are your friend.
+Your private key is your money.
+Give it to no one.</p>
+<ul>
+<li>
+<p>WALLET1 Suggestions - 
+  If setting up a single masternode, you can use a mobile wallet.
+  Binances <code>Trust Wallet</code> and Tomochains <code>Tomo Wallet</code> apps are best.
+  Alternatives are Metamask and MEW (MyEtherWallet), in that order.
+  You can use Ledger Hardware Wallet, however the added security on WALLET1 isn't as necessary.</p>
+</li>
+<li>
+<p>WALLET2 Suggestions - 
+  Preferred to use Ledger / Hardware Wallet (if possible) in combo with Metamask because 50k and rewards will be handled here.
+  Assure to use an address you do not have history on eth chain with - otherwise others will be able to see your unrelated investment history.</p>
+</li>
+</ul>
+<p>Because most wallet apps do not have Tomo mainnet as a selectable network yet, you will need to manually add the new mainnet if you have not already. 
+See the first link below for the guide on how to do this.</p>
+<p>How to Set Up a Wallet:</p>
+<ul>
+<li><a href="http://bit.ly/2A6zrC7">Setting Up MyEtherWallet, Metamask, or Binance TrustWallet</a></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li><a href="https://docs.tomochain.com/get-started/wallet/">Using Metamask or Mobile Tomo Wallet</a></li>
+<li><a href="https://medium.com/tomochain/tomochain-all-in-one-overview-9fce16e13b5#6b8c">Links to mobile downloads and other tomo info</a></li>
+<li><a href="https://medium.com/tomochain/how-to-run-a-tomochain-masternode-from-a-to-z-3793752dc3d1#0e58">Old Masternode guide (testnet) Section on wallets</a>
+<br/></li>
+</ul>
+<h2 id="8-run-tmn">8. Run TMN<a class="headerlink" href="#8-run-tmn" title="Permanent link">&para;</a></h2>
+<p>Below, you will finally start your Tomochain node with a utility called <code>tmn</code>.</p>
+<h3 id="initial-tmn-start">Initial TMN start<a class="headerlink" href="#initial-tmn-start" title="Permanent link">&para;</a></h3>
+<p><strong>IMPORTANT:</strong> Logout and SSH back in so that the $PATH variable takes effect.
+This allows you to run <code>tmn</code> from any directory.</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">exit</span>
+ssh michael@178.62.127.177
+</code></pre></div>
+
+
+<p>When you first start your full node with <code>tmn start</code>, you need to give some information.</p>
+<blockquote>
+<p><strong>--name:</strong> The name of your full node.
+Your input will be converted to a "slugified" name. 
+Slug format allows all letters and numbers, dashes ("-") and underscores ("_"). 
+Ex: <code>MyMaStErNode#24 cool</code> -&gt; <code>mymasternode24-cool</code>. 
+You can name it to reflect your identity, company name, etc.  </p>
+<p><strong>--net:</strong> The network your full node will connect to.
+You can choose here to connect it to the TomoChain <code>mainnet</code> or <code>testnet</code>.  </p>
+<p><strong>--pkey:</strong> The private key of your WALLET1 wallet (non 50k).
+A TomoChain full node uses a wallet address to be uniquely identified and to receive transaction fees.
+Transaction fees are not rewards, and they are usually tiny.
+Important note: we advise for security measures to use a fresh new wallet for your masternode.
+This is not the wallet that will receive the rewards.
+The rewards are sent to the wallet that will make the 50k TOMO initial deposit.</p>
+</blockquote>
+<p>The command is structured like this:</p>
+<div class="codehilite"><pre><span></span><code>tmn start --name <span class="o">[</span>YOUR_NODE_NAME<span class="o">]</span> --net mainnet --pkey <span class="o">[</span>YOUR_WALLET1_PRIVATE_KEY<span class="o">]</span>
+</code></pre></div>
+
+
+<p>We used the following command for our node (copy your own <strong>name</strong> &amp; <strong>private key</strong>):</p>
+<div class="codehilite"><pre><span></span><code>tmn start --name Atlantis --net mainnet --pkey cf03cb58************
+</code></pre></div>
+
+
+<hr />
+<p>TROUBLESHOOTING</p>
+<p><code>tmn: command not found</code></p>
+<p>It might happen that your PATH is not set by default to include the default user binary directory. You can add it by adding it to your shell $PATH:</p>
+<p>On GNU/Linux:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;export PATH=</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/.local/bin&quot;</span> &gt;&gt; <span class="nv">$HOME</span>/.bashrc
+<span class="nb">source</span> <span class="nv">$HOME</span>/.bashrc
+</code></pre></div>
+
+
+<hr />
+<p><br/></p>
+<h2 id="9-check-sync-status">9. Check sync status<a class="headerlink" href="#9-check-sync-status" title="Permanent link">&para;</a></h2>
+<p>This section coming soon.</p>
+<p>Contents to come: <code>tmn status</code>; <code>tmn inspect</code>; <code>top</code> command; https://stats.tomochain.com/ website; # of blocks command; <code>tmn update</code>, <code>tmn --help</code>, etc
+<br/></p>
+<h2 id="10-jumpstart-the-chaindata-optional">10. Jumpstart the chaindata (Optional)<a class="headerlink" href="#10-jumpstart-the-chaindata-optional" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync">Full Jumpstart instructions can be found here</a></p>
+<p>The basic structure has been created, blocks have started synchronizing, and now we want to speed up the process by pulling in the latest chaindata.</p>
+<blockquote>
+<p>Chaindata is where the entire history of tomo's blockchain records are stored.
+All coin transactions, all smart contracts, all operations.
+This takes up a <em>lot</em> of space.
+To syncrhonize it from decentralized nodes piecemeal-like could take days or weeks.
+Instead, lets download the latest image of the data, and synchronize from there.</p>
+</blockquote>
+<p><br/></p>
+<h2 id="11-apply-for-masternode-candidacy">11. Apply for Masternode Candidacy<a class="headerlink" href="#11-apply-for-masternode-candidacy" title="Permanent link">&para;</a></h2>
+<p>This section coming soon.
+<a href="https://docs.tomochain.com/get-started/apply-node/">For now, see here</a></p>
+<p>Contents to come: Explain; Assure synced; master.tomo; login; apply
+<br/></p>
+<h2 id="12-name-your-masternode">12. Name your Masternode<a class="headerlink" href="#12-name-your-masternode" title="Permanent link">&para;</a></h2>
+<p>This section coming soon.</p>
+<p>Contents to come: https://master.tomochain.com/ ; login as 50k wallet; find your MN; edit; enter name; sign data
+<br/></p>
+<h2 id="13-verify-initial-rewards">13. Verify initial rewards<a class="headerlink" href="#13-verify-initial-rewards" title="Permanent link">&para;</a></h2>
+<p>This section coming soon.</p>
+<p>Contents to come: https://master.tomochain.com/ ; https://scan.tomochain.com/ ; explain infra vs stake reward; link to economics</p>
+<hr />
+<h1 id="appendix">APPENDIX<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h1>
+<h2 id="commands-only-advanced-users">Commands-only (ADVANCED users)<a class="headerlink" href="#commands-only-advanced-users" title="Permanent link">&para;</a></h2>
+<p>If you have done this before or know what you are doing, you can follow these linux commands.</p>
+<blockquote>
+<p>Note: You will <em>MISS</em> many tips and tricks in the detailed instructions.</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code>ssh root@178.62.127.177
+passwd
+
+adduser michael<span class="p">;</span> usermod -aG sudo michael
+groups michael
+
+apt update<span class="p">;</span> apt upgrade<span class="p">;</span> reboot
+
+apt install python3
+apt install python3-pip
+python3 --version
+
+ssh michael@178.62.127.177
+sudo apt update<span class="p">;</span> sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+apt-key fingerprint 0EBFCD88
+sudo add-apt-repository <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&quot;</span>
+sudo apt update<span class="p">;</span> sudo apt install docker-ce
+sudo usermod -aG docker michael<span class="p">;</span> groups michael
+docker run hello-world
+
+pip3 install --user tmn
+pip3 install -U tmn
+pip3 show tmn
+
+<span class="c1"># Create Wallet Addresses</span>
+
+<span class="c1"># logoff SSH and back in to set $PATH variable</span>
+tmn start --name Atlantis --net mainnet --pkey cf03cb58************
+tmn status<span class="p">;</span> tmn inspect<span class="p">;</span> tmn --help
+
+<span class="c1"># Enact Jumpstart: https://github.com/tomochain/docs/wiki/Update-stuck-node-or-Jumpstart-chain-sync</span>
+</code></pre></div>
+
+
+<hr />
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../requirements/" title="Requirements" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Requirements
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../tomonative/" title="Binary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Binary
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tomochain" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tomochainANN" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/Tomochain/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.facebook.com/tomochainofficial/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://t.me/tomochain" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/tomochain" class="md-footer-social__link fa fa-medium"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-124597188-1","docs.tomochain.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

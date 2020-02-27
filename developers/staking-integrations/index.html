@@ -1,0 +1,1759 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="TomoChain aims to be a public EVM-compatible blockchain with the following advantages as low transaction fee, fast confirmation time, double validation.">
+      
+      
+        <link rel="canonical" href="https://docs.tomochain.com/developers/staking-integrations/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>TomoChain Staking Governance - TomoChain Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#init-web3-provider" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TomoChain Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                TomoChain Staking Governance
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.tomochain.com" title="TomoChain Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../images/logo.png" width="48" height="48">
+      
+    </a>
+    TomoChain Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/tomochain/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      tomochain/docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Get started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Get started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/productoverview/" title="Products overview" class="md-nav__link">
+      Products overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/how_to_read/" title="How to read" class="md-nav__link">
+      How to read
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/wallet/" title="Connect your wallet" class="md-nav__link">
+      Connect your wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/voting/" title="Voting" class="md-nav__link">
+      Voting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Masternode/DEX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Masternode/DEX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/requirements/" title="Requirements" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/masternode-setup-guide/" title="Detailed guide" class="md-nav__link">
+      Detailed guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Running a node with
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Running a node with
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomonative/" title="Binary" class="md-nav__link">
+      Binary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/create-tomochain-masternode/" title="Create-tomochain-masternode" class="md-nav__link">
+      Create-tomochain-masternode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tmn/" title="Tmn" class="md-nav__link">
+      Tmn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/applying/" title="Applying for Masternode Candidacy" class="md-nav__link">
+      Applying for Masternode Candidacy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/snapshot/" title="Chaindata Snapshots" class="md-nav__link">
+      Chaindata Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/run-node/" title="Run a full node in testnet" class="md-nav__link">
+      Run a full node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/apply-node/" title="Apply your node in testnet" class="md-nav__link">
+      Apply your node in testnet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomox-fullnode/" title="Running a TomoX Mongodb fullnode" class="md-nav__link">
+      Running a TomoX Mongodb fullnode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../masternode/tomox-sdk/" title="Running a TomoX DEX" class="md-nav__link">
+      Running a TomoX DEX
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Developers guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developers guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../general/networks/" title="Networks" class="md-nav__link">
+      Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../integrations/" title="TOMO Exchange/Wallet" class="md-nav__link">
+      TOMO Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        TomoChain Staking Governance
+      </label>
+    
+    <a href="./" title="TomoChain Staking Governance" class="md-nav__link md-nav__link--active">
+      TomoChain Staking Governance
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#init-web3-provider" title="Init Web3 provider" class="md-nav__link">
+    Init Web3 provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unlock-wallet" title="Unlock wallet" class="md-nav__link">
+    Unlock wallet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#init-web3-tomochain-validator-contract" title="Init Web3 TomoChain Validator Contract" class="md-nav__link">
+    Init Web3 TomoChain Validator Contract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposeapply-a-candidate" title="Propose/Apply a candidate" class="md-nav__link">
+    Propose/Apply a candidate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stakevote-a-candidate" title="Stake/Vote a candidate" class="md-nav__link">
+    Stake/Vote a candidate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_2" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unstakeunvote-a-candidate" title="Unstake/Unvote a candidate" class="md-nav__link">
+    Unstake/Unvote a candidate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resign-a-candidate" title="Resign a candidate" class="md-nav__link">
+    Resign a candidate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#withdraw-tomo" title="Withdraw TOMO" class="md-nav__link">
+    Withdraw TOMO
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-list-withdrawals" title="Get list Withdrawals" class="md-nav__link">
+    Get list Withdrawals
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_4" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-list-candidates" title="Get list candidates" class="md-nav__link">
+    Get list candidates
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trc20-integrations/" title="TRC20 Exchange/Wallet" class="md-nav__link">
+      TRC20 Exchange/Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trc21-integrations/" title="TRC21 Exchange/Wallet" class="md-nav__link">
+      TRC21 Exchange/Wallet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Working with TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Working with TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutoprivatenet/" title="TomoChain private testnet setup" class="md-nav__link">
+      TomoChain private testnet setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clicommands/" title="Useful manual CLI commands" class="md-nav__link">
+      Useful manual CLI commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      DApps on TomoChain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        DApps on TomoChain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dappdeploytuto/" title="Deploy DApp on TomoChain" class="md-nav__link">
+      Deploy DApp on TomoChain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../icosmartcontract/" title="Deploy an ICO smart contract" class="md-nav__link">
+      Deploy an ICO smart contract
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://apidocs.tomochain.com" title="API Documentation" class="md-nav__link">
+      API Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Whitepapers/Specs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Whitepapers/Specs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/technical-whitepaper/" title="Technical whitepaper" class="md-nav__link">
+      Technical whitepaper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/sharding-paper/" title="Sharding design paper" class="md-nav__link">
+      Sharding design paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/economics-paper/" title="Economics paper" class="md-nav__link">
+      Economics paper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Standard & Specification
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Standard & Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/specs/trc21_standard/" title="TRC21 Specification" class="md-nav__link">
+      TRC21 Specification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp-and-research/privacy/" title="TomoP whitepaper" class="md-nav__link">
+      TomoP whitepaper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Legal
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/terms-of-use/" title="Terms of Use" class="md-nav__link">
+      Terms of Use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../legal/privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Products
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Products
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomomaster/features/" title="TomoMaster" class="md-nav__link">
+      TomoMaster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoscan/features/" title="TomoScan" class="md-nav__link">
+      TomoScan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      TomoWallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        TomoWallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/features/" title="Features" class="md-nav__link">
+      Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/voting/" title="Voting with TomoWallet" class="md-nav__link">
+      Voting with TomoWallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomowallet/terms/" title="Terms & Privacy" class="md-nav__link">
+      Terms & Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      TomoBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        TomoBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomobridge/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      TomoIssuer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        TomoIssuer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/termofcondition/" title="Term Of Condition" class="md-nav__link">
+      Term Of Condition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../products/tomoissuer/policyprivacy/" title="Policy Privacy" class="md-nav__link">
+      Policy Privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#init-web3-provider" title="Init Web3 provider" class="md-nav__link">
+    Init Web3 provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unlock-wallet" title="Unlock wallet" class="md-nav__link">
+    Unlock wallet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#init-web3-tomochain-validator-contract" title="Init Web3 TomoChain Validator Contract" class="md-nav__link">
+    Init Web3 TomoChain Validator Contract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposeapply-a-candidate" title="Propose/Apply a candidate" class="md-nav__link">
+    Propose/Apply a candidate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stakevote-a-candidate" title="Stake/Vote a candidate" class="md-nav__link">
+    Stake/Vote a candidate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_2" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unstakeunvote-a-candidate" title="Unstake/Unvote a candidate" class="md-nav__link">
+    Unstake/Unvote a candidate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resign-a-candidate" title="Resign a candidate" class="md-nav__link">
+    Resign a candidate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#withdraw-tomo" title="Withdraw TOMO" class="md-nav__link">
+    Withdraw TOMO
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-list-withdrawals" title="Get list Withdrawals" class="md-nav__link">
+    Get list Withdrawals
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_4" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-list-candidates" title="Get list candidates" class="md-nav__link">
+    Get list candidates
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tomochain/docs/edit/master/docs/developers/staking-integrations.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>TomoChain Staking Governance</h1>
+                
+                <p>Masternodes and stakers is stored and governared in <a href="https://scan.tomochain.com/address/0x0000000000000000000000000000000000000088">TomoChain Validator smart contract</a>:</p>
+<ul>
+<li>Smart Contract Code: <a href="https://github.com/tomochain/tomomaster/blob/master/contracts/TomoValidator.sol">TomoChain Validator</a></li>
+<li>Smart Contract ABI: <a href="https://raw.githubusercontent.com/tomochain/tomomaster/master/abis/TomoValidatorAbi.json">TomoValidatorAbi.json</a></li>
+</ul>
+<p>TomoChain Validator Smart Contract Interface:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// apply a new masternode candidate</span>
+<span class="kd">function</span> <span class="nx">propose</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">)</span> <span class="nx">external</span> <span class="nx">payable</span><span class="p">;</span>
+
+<span class="c1">// Deposit to stake/vote for a candidate</span>
+<span class="kd">function</span> <span class="nx">vote</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">)</span> <span class="nx">external</span> <span class="nx">payable</span><span class="p">;</span>
+
+<span class="c1">// Unstake/unvote for a candidate</span>
+<span class="kd">function</span> <span class="nx">unvote</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">,</span> <span class="nx">uint256</span> <span class="nx">_cap</span><span class="p">)</span> <span class="kr">public</span><span class="p">;</span>
+
+<span class="c1">// Resign a candidate</span>
+<span class="kd">function</span> <span class="nx">resign</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">)</span> <span class="kr">public</span><span class="p">;</span>
+
+<span class="c1">// Withdraw after unvote, resign</span>
+<span class="kd">function</span> <span class="nx">withdraw</span><span class="p">(</span><span class="nx">uint256</span> <span class="nx">_blockNumber</span><span class="p">,</span> <span class="nx">uint</span> <span class="nx">_index</span><span class="p">)</span> <span class="kr">public</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">getCandidates</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span><span class="p">(</span><span class="nx">address</span><span class="p">[]);</span>
+
+<span class="kd">function</span> <span class="nx">getCandidateCap</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span><span class="p">(</span><span class="nx">uint256</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">getCandidateOwner</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">getVoterCap</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">_voter</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span><span class="p">(</span><span class="nx">uint256</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">getVoters</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span><span class="p">(</span><span class="nx">address</span><span class="p">[]);</span>
+
+<span class="kd">function</span> <span class="nx">isCandidate</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_candidate</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span><span class="p">(</span><span class="nx">bool</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">getWithdrawBlockNumbers</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span><span class="p">(</span><span class="nx">uint256</span><span class="p">[]);</span>
+
+<span class="kd">function</span> <span class="nx">getWithdrawCap</span><span class="p">(</span><span class="nx">uint256</span> <span class="nx">_blockNumber</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span><span class="p">(</span><span class="nx">uint256</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p>TomoChain provides RPC APIs. So you can use Web3 library to directly call the functions in the smart contract.</p>
+<p>You can follow the steps below to interact with the smart contract by using Web3 library and NodeJS.</p>
+<h2 id="init-web3-provider">Init Web3 provider<a class="headerlink" href="#init-web3-provider" title="Permanent link">&para;</a></h2>
+<p>At the first step, you need init Web3 provider by connecting TomoChain Fullnode RPC endpoint.</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">Web3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;web3&#39;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">&#39;https://rpc.tomochain.com&#39;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">chainId</span> <span class="o">=</span> <span class="mi">88</span>
+</code></pre></div>
+
+
+<p>For testnet/mainnet details, you can get network information <a href="https://docs.tomochain.com/general/networks/">here</a></p>
+<h2 id="unlock-wallet">Unlock wallet<a class="headerlink" href="#unlock-wallet" title="Permanent link">&para;</a></h2>
+<p>You need to unlock the wallet before staking for the nodes</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Unlock wallet by private key</span>
+<span class="kr">const</span> <span class="nx">account</span> <span class="o">=</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">privateKeyToAccount</span><span class="p">(</span><span class="nx">pkey</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">owner</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">address</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">account</span><span class="p">)</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">defaultAccount</span> <span class="o">=</span> <span class="nx">owner</span>
+</code></pre></div>
+
+
+<h2 id="init-web3-tomochain-validator-contract">Init Web3 TomoChain Validator Contract<a class="headerlink" href="#init-web3-tomochain-validator-contract" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">validatorAbi</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./TomoValidatorAbi.json&#39;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">address</span> <span class="o">=</span> <span class="s1">&#39;0x0000000000000000000000000000000000000088&#39;</span>
+<span class="kr">const</span> <span class="nx">validator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">validatorAbi</span><span class="p">,</span>
+        <span class="nx">address</span><span class="p">,</span> <span class="p">{</span><span class="nx">gasPrice</span><span class="o">:</span> <span class="mi">250000000</span><span class="p">,</span> <span class="nx">gas</span><span class="o">:</span> <span class="mi">2000000</span> <span class="p">})</span>
+</code></pre></div>
+
+
+<p>Note: you can get TomoValidatorAbi.json <a href="https://raw.githubusercontent.com/tomochain/tomomaster/master/abis/TomoValidatorAbi.json">here</a></p>
+<h2 id="proposeapply-a-candidate">Propose/Apply a candidate<a class="headerlink" href="#proposeapply-a-candidate" title="Permanent link">&para;</a></h2>
+<p>Masternode owner need to have at least 50000 TOMO to apply a fullnode to become a Masternode candidate. So make sure you have &gt; 50000 TOMO in your masternode owner wallet to deposit to the smart contract and pay transaction fee.</p>
+<p>You can apply a masternode candidate by call <code>propose</code> function from the smart contract</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Masternode coinbase address</span>
+<span class="kr">const</span> <span class="nx">coinbase</span> <span class="o">=</span> <span class="s2">&quot;0xf8ac9d5022853c5847ef75aea0104eed09e5f402&quot;</span>
+
+<span class="nx">validator</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">propose</span><span class="p">(</span><span class="nx">coinbase</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+    <span class="nx">from</span> <span class="o">:</span> <span class="nx">owner</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;50000000000000000000000&#39;</span><span class="p">,</span> <span class="c1">// 50000 TOMO</span>
+    <span class="nx">gas</span><span class="o">:</span> <span class="mi">2000000</span><span class="p">,</span>
+    <span class="nx">gasPrice</span><span class="o">:</span> <span class="mi">250000000</span><span class="p">,</span>
+    <span class="nx">chainId</span><span class="o">:</span> <span class="nx">chainId</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+</code></pre></div>
+
+
+<p>You can refer to <a href="https://gist.github.com/thanhson1085/7a6471ea0d6c0d6321a0454789d6266c">Staking TomoChain script</a></p>
+<h2 id="stakevote-a-candidate">Stake/Vote a candidate<a class="headerlink" href="#stakevote-a-candidate" title="Permanent link">&para;</a></h2>
+<p>You can stake at least 100 TOMO for a node by calling <code>vote</code> function from the smart contract.</p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<p>Stake 500 TOMO to a node.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">validator</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">vote</span><span class="p">(</span><span class="nx">coinbase</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+    <span class="nx">from</span><span class="o">:</span> <span class="nx">owner</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;500000000000000000000&#39;</span><span class="p">,</span> <span class="c1">// 500 TOMO</span>
+    <span class="nx">gas</span><span class="o">:</span> <span class="mi">2000000</span><span class="p">,</span>
+    <span class="nx">gasPrice</span><span class="o">:</span> <span class="mi">250000000</span><span class="p">,</span>
+    <span class="nx">chainId</span><span class="o">:</span> <span class="nx">chainId</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+</code></pre></div>
+
+
+<h2 id="unstakeunvote-a-candidate">Unstake/Unvote a candidate<a class="headerlink" href="#unstakeunvote-a-candidate" title="Permanent link">&para;</a></h2>
+<p>You can unstake by calling <code>unvote</code> function from the smart contract</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">cap</span> <span class="o">=</span> <span class="s1">&#39;500000000000000000000&#39;</span> <span class="c1">// unvote 500 TOMO</span>
+
+<span class="nx">validator</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">unvote</span><span class="p">(</span><span class="nx">coinbase</span><span class="p">,</span> <span class="nx">cap</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+    <span class="nx">from</span> <span class="o">:</span> <span class="nx">owner</span><span class="p">,</span>
+    <span class="nx">gas</span><span class="o">:</span> <span class="mi">2000000</span><span class="p">,</span>
+    <span class="nx">gasPrice</span><span class="o">:</span> <span class="mi">250000000</span><span class="p">,</span>
+    <span class="nx">chainId</span><span class="o">:</span> <span class="nx">chainId</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+</code></pre></div>
+
+
+<h2 id="resign-a-candidate">Resign a candidate<a class="headerlink" href="#resign-a-candidate" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="nx">validator</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">resign</span><span class="p">(</span><span class="nx">coinbase</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+    <span class="nx">from</span> <span class="o">:</span> <span class="nx">owner</span><span class="p">,</span>
+    <span class="nx">gas</span><span class="o">:</span> <span class="mi">2000000</span><span class="p">,</span>
+    <span class="nx">gasPrice</span><span class="o">:</span> <span class="mi">250000000</span><span class="p">,</span>
+    <span class="nx">chainId</span><span class="o">:</span> <span class="nx">chainId</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+</code></pre></div>
+
+
+<h2 id="withdraw-tomo">Withdraw TOMO<a class="headerlink" href="#withdraw-tomo" title="Permanent link">&para;</a></h2>
+<p>You need to wait for 48 epochs (if unvote), 30 days (if resign) to unlock your TOMO staked</p>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">// get highest block number</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getBlockNumber</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">blockNumber</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">getWithdrawBlockNumbers</span><span class="p">().</span><span class="nx">call</span><span class="p">({</span>
+        <span class="nx">from</span><span class="o">:</span> <span class="nx">owner</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">it</span><span class="p">,</span> <span class="nx">idx</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">it</span> <span class="o">=</span> <span class="nx">it</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">it</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nx">blockNumber</span> <span class="o">&amp;&amp;</span> <span class="nx">it</span> <span class="o">!=</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">withdraw</span><span class="p">(</span><span class="nx">it</span><span class="p">,</span> <span class="nx">idx</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+                    <span class="nx">from</span> <span class="o">:</span> <span class="nx">owner</span><span class="p">,</span>
+                    <span class="nx">gas</span><span class="o">:</span> <span class="mi">2000000</span><span class="p">,</span>
+                    <span class="nx">gasPrice</span><span class="o">:</span> <span class="mi">250000000</span><span class="p">,</span>
+                    <span class="nx">chainId</span><span class="o">:</span> <span class="nx">chainId</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+</code></pre></div>
+
+
+<h2 id="get-list-withdrawals">Get list Withdrawals<a class="headerlink" href="#get-list-withdrawals" title="Permanent link">&para;</a></h2>
+<p>We need to call <code>getWithdrawBlockNumbers</code> and <code>getWithdrawCap</code> function from TomoValidator smart contract to get the data</p>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span> <span class="nx">blks</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">contract</span><span class="p">.</span><span class="nx">getWithdrawBlockNumbers</span><span class="p">.</span><span class="nx">call</span><span class="p">({</span> <span class="nx">from</span><span class="o">:</span> <span class="nx">owner</span> <span class="p">})</span>
+<span class="c1">// remove duplicate</span>
+<span class="nx">blks</span> <span class="o">=</span> <span class="p">[...</span><span class="k">new</span> <span class="nx">Set</span><span class="p">(</span><span class="nx">blks</span><span class="p">)]</span>
+<span class="kd">let</span> <span class="nx">withdraws</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nx">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">blks</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">async</span> <span class="p">(</span><span class="nx">it</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">blk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BigNumber</span><span class="p">(</span><span class="nx">it</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">blk</span> <span class="o">!==</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">aw</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">wd</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">blockNumber</span><span class="o">:</span> <span class="nx">blk</span>
+    <span class="p">}</span>
+    <span class="nx">wd</span><span class="p">.</span><span class="nx">cap</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">contract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">getWithdrawCap</span><span class="p">(</span><span class="nx">blk</span><span class="p">).</span><span class="nx">call</span><span class="p">({</span> <span class="nx">from</span><span class="o">:</span> <span class="nx">owner</span> <span class="p">})</span>
+    <span class="nx">withdraws</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">wd</span>
+<span class="p">}))</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">withdraws</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2 id="get-list-candidates">Get list candidates<a class="headerlink" href="#get-list-candidates" title="Permanent link">&para;</a></h2>
+<p>You can get list candidates from <a href="https://apidocs.tomochain.com/?shell#eth_getcandidates">RPC endpoint</a>:</p>
+<div class="codehilite"><pre><span></span><code>curl https://rpc.tomochain.com \
+    -X POST \
+    -H &quot;Content-Type: application/json&quot; \
+    -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getCandidates&quot;,&quot;params&quot;: [&quot;latest&quot;],&quot;id&quot;:1}&#39;
+</code></pre></div>
+
+
+<p>Or <a href="https://apidocs.tomochain.com/?shell#tomomaster-apis-candidates">get list candidates from TomoMaster</a>:</p>
+<div class="codehilite"><pre><span></span><code>curl -X GET https://master.tomochain.com/api/candidates \
+  -H &#39;Accept: application/json&#39;
+</code></pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../integrations/" title="TOMO Exchange/Wallet" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                TOMO Exchange/Wallet
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../trc20-integrations/" title="TRC20 Exchange/Wallet" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                TRC20 Exchange/Wallet
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/tomochain/docs/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/tomochain/docs/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>TomoDocs v0.1.0. TomoChain Project 2018.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/tomochain" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/tomochainANN" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/Tomochain/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.facebook.com/tomochainofficial/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://t.me/tomochain" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/tomochain" class="md-footer-social__link fa fa-medium"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-124597188-1","docs.tomochain.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
