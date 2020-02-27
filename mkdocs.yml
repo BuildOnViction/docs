@@ -106,6 +106,7 @@ nav:
       - TomoP whitepaper: wp-and-research/privacy.md
     - Legal:
       - Terms of Use: legal/terms-of-use.md
+      - Privacy Policy: legal/privacy.md
     - Products:
       - TomoMaster: products/tomomaster/features.md
     #   - Contributing: misc/wip.md
