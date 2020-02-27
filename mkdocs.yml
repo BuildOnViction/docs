@@ -104,6 +104,8 @@ nav:
       - Standard & Specification:
           - TRC21 Specification: wp-and-research/specs/trc21_standard.md
       - TomoP whitepaper: wp-and-research/privacy.md
+    - Legal:
+      - Terms of Use: legal/terms-of-use.md
     - Products:
       - TomoMaster: products/tomomaster/features.md
     #   - Contributing: misc/wip.md
